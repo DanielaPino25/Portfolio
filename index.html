@@ -1,28 +1,42 @@
-<header class="topbar">
-  <a class="logo" href="index.html" aria-label="Inicio">
-    <!-- Cambia por tu logo si quieres -->
-    <span>LOGO</span>
-    <!-- <img src="assets/logo.png" alt="Daniela Pino"> -->
-  </a>
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Daniela Pino — Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
-  <nav class="menu" aria-label="Main">
+  <!-- AQUÍ va el header -->
+  <!-- (pega tu header completo aquí; NO dentro del <head>) -->
+  <!-- ⬇️ Header de ejemplo para probar -->
+  <header class="topbar">
+    <a class="logo" href="index.html"><span>LOGO</span></a>
+    <nav class="menu">
+      <a href="sobre-mi.html" data-nav="sobre-mi">ABOUT ME</a>
+      <a href="proyectos.html" data-nav="proyectos">PORTFOLIO</a>
+      <a href="contacto.html" data-nav="contacto">CONTACTO</a>
+      <button class="lang" type="button">ES / EN</button>
+    </nav>
+    <button class="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="navdrawer">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <nav id="navdrawer" class="navdrawer">
     <a href="sobre-mi.html" data-nav="sobre-mi">ABOUT ME</a>
     <a href="proyectos.html" data-nav="proyectos">PORTFOLIO</a>
     <a href="contacto.html" data-nav="contacto">CONTACTO</a>
-    <button class="lang" type="button" aria-label="Cambiar idioma">ES / EN</button>
+    <button class="lang" type="button">ES / EN</button>
   </nav>
 
-  <!-- Botón hamburguesa (funcionará en el siguiente paso) -->
-  <button class="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="navdrawer">
-    <span></span><span></span><span></span>
-  </button>
-</header>
+  <!-- Añade un contenido de prueba para verificar que se ve -->
+  <main style="padding:24px">
+    <h1>Hola 👋</h1>
+    <p>Si puedes leer esto, tu página ya no está en blanco.</p>
+  </main>
 
-<!-- Cajón de navegación móvil (lo activaremos en el siguiente paso) -->
-<nav id="navdrawer" class="navdrawer" aria-label="Main mobile">
-  <a href="sobre-mi.html" data-nav="sobre-mi">ABOUT ME</a>
-  <a href="proyectos.html" data-nav="proyectos">PORTFOLIO</a>
-  <a href="contacto.html" data-nav="contacto">CONTACTO</a>
-  <button class="lang" type="button">ES / EN</button>
-</nav>
-
+  <!-- (el script lo añadiremos en el paso 2) -->
+</body>
+</html>
