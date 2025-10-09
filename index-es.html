@@ -1,1 +1,103 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Daniela Pino — Portfolio</title>
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Meta descripción -->
+  <meta name="description" content="Portfolio de Daniela Pino, diseñadora de producto y UX/UI." />
+
+  <!-- Tipografía Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS principal -->
+<link rel="stylesheet" href="style.css?v=9" />
+</head>
+
+<body>
+  <!-- MENÚ SUPERIOR -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="logo" href="https://www.danielapino.com" aria-label="Inicio">
+        <img src="assets/Logo.svg?v=2" alt="Logo de Daniela Pino" />
+      </a>
+
+<nav class="menu" aria-label="Principal">
+  <a href="sobre-mi-es.html" data-nav="sobre-mi-es.html">SOBRE MÍ</a>
+  <a href="proyectos-es.html" data-nav="proyectos-es.html">PORTAFOLIO</a>
+  <a href="contacto-es.html" data-nav="contacto-es.html">CONTACTO</a>
+
+  <div class="lang-switch" aria-label="Selector de idioma">
+    <a href="index-es.html" class="active">ES</a>
+    <span>/</span>
+    <a href="index.html">EN</a>
+  </div>
+</nav>
+
+      <button class="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="navdrawer">
+  <span></span><span></span><span></span>
+</button>
+    </div>
+</header>
+
+<!-- MENÚ MÓVIL -->
+<nav id="navdrawer" class="navdrawer" aria-label="Principal móvil">
+  <a href="sobre-mi-es.html">SOBRE MÍ</a>
+  <a href="proyectos-es.html">PORTAFOLIO</a>
+  <a href="contacto-es.html">CONTACTO</a>
+
+  <div class="lang-switch" aria-label="Selector de idioma">
+    <a href="index-es.html" class="active">ES</a>
+    <span>/</span>
+    <a href="index.html">EN</a>
+  </div>
+</nav>
+
+  <!-- CONTENIDO -->
+  <main style="padding: 2rem;">
+    <h1>Hola 👋 Soy Daniela Pino</h1>
+    <p>Esta es mi página en construcción. Si puedes leer esto, el menú ya se muestra correctamente.</p>
+  </main>
+
+  <footer style="text-align:center; padding:1rem; border-top:1px solid #eee;">
+    © <span id="year"></span> Daniela Pino
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Año dinámico
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Enlace activo
+    const path = location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('[data-nav]').forEach(a => {
+      const file = a.getAttribute('href');
+      if (file === path) a.classList.add('is-active');
+    });
+
+    // Menú móvil (abrir/cerrar)
+    const burger = document.querySelector('.burger');
+    if (burger) {
+      burger.addEventListener('click', () => {
+        const open = document.body.classList.toggle('nav-open');
+        burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    }
+
+    // Cerrar menú al hacer click en un enlace
+    document.querySelectorAll('#navdrawer a').forEach(a => {
+      a.addEventListener('click', () => document.body.classList.remove('nav-open'));
+    });
+
+    // Sombra del toolbar al hacer scroll
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 10) document.body.classList.add('scrolled');
+      else document.body.classList.remove('scrolled');
+    });
+  </script>
+</body>
+</html>
