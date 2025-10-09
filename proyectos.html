@@ -3,15 +3,18 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portfolio — Daniela Pino</title>
+  <title>PAGE TITLE — Daniela Pino</title>
 
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
-  <meta name="description" content="Selected work by Daniela Pino, Product & UX/UI Designer." />
+  <meta name="description" content="Short page description." />
 
+  <!-- Poppins -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- CSS principal: AJUSTA LA RUTA si este archivo está en una carpeta -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- TOPBAR -->
   <header class="topbar">
     <div class="topbar-inner">
       <a class="logo" href="https://www.danielapino.com" aria-label="Home">
@@ -19,9 +22,10 @@
       </a>
 
       <nav class="menu" aria-label="Main">
-        <a href="sobre-mi.html" data-nav="sobre-mi">ABOUT ME</a>
-        <a href="proyectos.html" data-nav="proyectos">PORTFOLIO</a>
-        <a href="contacto.html" data-nav="contacto">CONTACT</a>
+        <a href="sobre-mi.html" data-nav="sobre-mi.html">ABOUT ME</a>
+        <a href="proyectos.html" data-nav="proyectos.html">PORTFOLIO</a>
+        <a href="contacto.html" data-nav="contacto.html">CONTACT</a>
+
         <div class="lang-switch" aria-label="Language switcher">
           <a href="index-es.html">ES</a>
           <span>/</span>
@@ -35,10 +39,11 @@
     </div>
   </header>
 
+  <!-- MENÚ MÓVIL -->
   <nav id="navdrawer" class="navdrawer" aria-label="Main mobile">
-    <a href="sobre-mi.html" data-nav="sobre-mi">ABOUT ME</a>
-    <a href="proyectos.html" data-nav="proyectos">PORTFOLIO</a>
-    <a href="contacto.html" data-nav="contacto">CONTACT</a>
+    <a href="sobre-mi.html">ABOUT ME</a>
+    <a href="proyectos.html">PORTFOLIO</a>
+    <a href="contacto.html">CONTACT</a>
     <div class="lang-switch" aria-label="Language switcher">
       <a href="index-es.html">ES</a>
       <span>/</span>
@@ -46,24 +51,28 @@
     </div>
   </nav>
 
-  <main>
-    <h1>Portfolio</h1>
-    <p>Projects list…</p>
+  <!-- CONTENIDO DE LA PÁGINA -->
+  <main style="padding:2rem;">
+    <h1>PAGE TITLE</h1>
+    <p>Contenido de la página…</p>
   </main>
 
   <footer style="text-align:center; padding:1rem; border-top:1px solid #eee;">
     © <span id="year"></span> Daniela Pino
   </footer>
 
+  <!-- Scripts (mismo que en index) -->
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    const path = location.pathname.split('/').pop() || 'index.html';
+    // marcar enlace activo por archivo (usa el nombre de archivo exacto)
+    const path = location.pathname.split('/').pop();
     document.querySelectorAll('[data-nav]').forEach(a=>{
-      const file = a.getAttribute('href');
+      const file = a.getAttribute('data-nav') || a.getAttribute('href');
       if (file === path) a.classList.add('is-active');
     });
 
+    // burger / navdrawer
     const burger = document.querySelector('.burger');
     if (burger) {
       burger.addEventListener('click', ()=>{
@@ -74,14 +83,8 @@
     document.querySelectorAll('#navdrawer a').forEach(a=>{
       a.addEventListener('click', ()=> document.body.classList.remove('nav-open'));
     });
-
-    document.querySelector('.topbar-inner')?.classList.add('nowrap');
-
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 10) document.body.classList.add('scrolled');
-      else document.body.classList.remove('scrolled');
-    });
   </script>
 </body>
 </html>
+
 
