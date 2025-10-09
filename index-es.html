@@ -46,9 +46,9 @@
 
 <!-- MENÚ MÓVIL -->
 <nav id="navdrawer" class="navdrawer" aria-label="Principal móvil">
-  <a href="sobre-mi-es.html">SOBRE MÍ</a>
-  <a href="proyectos-es.html">PORTAFOLIO</a>
-  <a href="contacto-es.html">CONTACTO</a>
+  <a href="SobreMi.html">SOBRE MÍ</a>
+  <a href="Portfolio-es.html">PORTAFOLIO</a>
+  <a href="Contacto.html">CONTACTO</a>
 
   <div class="lang-switch" aria-label="Selector de idioma">
     <a href="index-es.html" class="active">ES</a>
@@ -67,37 +67,41 @@
     © <span id="year"></span> Daniela Pino
   </footer>
 
-  <!-- Scripts -->
-  <script>
-    // Año dinámico
-    document.getElementById('year').textContent = new Date().getFullYear();
+<script>
+  // Año
+  document.getElementById('year')?.textContent = new Date().getFullYear();
 
-    // Enlace activo
-    const path = location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('[data-nav]').forEach(a => {
-      const file = a.getAttribute('href');
-      if (file === path) a.classList.add('is-active');
-    });
+  // Normaliza rutas: quita query/hash y toma solo el archivo
+  const raw = location.pathname.split('/').pop() || '';
+  const clean = raw.replace(/[#?].*$/, '').toLowerCase();
 
-    // Menú móvil (abrir/cerrar)
-    const burger = document.querySelector('.burger');
-    if (burger) {
-      burger.addEventListener('click', () => {
-        const open = document.body.classList.toggle('nav-open');
-        burger.setAttribute('aria-expanded', open ? 'true' : 'false');
-      });
-    }
+  // Home por idioma si no hay archivo en la URL
+  const home = (document.documentElement.lang === 'es') ? 'index-es.html' : 'index.html';
+  const current = clean === '' ? home : clean;
 
-    // Cerrar menú al hacer click en un enlace
-    document.querySelectorAll('#navdrawer a').forEach(a => {
-      a.addEventListener('click', () => document.body.classList.remove('nav-open'));
-    });
+  // Marca activo comparando con data-nav (preferente) o href
+  document.querySelectorAll('.menu a, #navdrawer a').forEach(a => {
+    const target = (a.getAttribute('data-nav') || a.getAttribute('href') || '')
+      .replace(/[#?].*$/, '')
+      .split('/').pop()
+      .toLowerCase();
+    if (target === current) a.classList.add('is-active');
+  });
 
-    // Sombra del toolbar al hacer scroll
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 10) document.body.classList.add('scrolled');
-      else document.body.classList.remove('scrolled');
-    });
-  </script>
+  // Burger / navdrawer
+  const burger = document.querySelector('.burger');
+  burger?.addEventListener('click', () => {
+    const open = document.body.classList.toggle('nav-open');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  document.querySelectorAll('#navdrawer a').forEach(a => {
+    a.addEventListener('click', () => document.body.classList.remove('nav-open'));
+  });
+
+  // Sombra al hacer scroll (opcional)
+  window.addEventListener('scroll', () => {
+    document.body.classList.toggle('scrolled', window.scrollY > 10);
+  });
+</script>
 </body>
 </html>
