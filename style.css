@@ -10,9 +10,9 @@ body{ font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica,
   position: sticky; top:0; z-index:50;
   backdrop-filter: saturate(1.2) blur(6px);
   background: rgba(255,255,255,.85);
-  /* border-bottom:1px solid var(--line);  ← eliminado para quitar la línea */
-  max-width:var(--max); margin:0 auto; padding:10px var(--pad);
-  display:flex; align-items:center; gap:12px;
+  max-width:var(--max); margin:0 auto;
+  padding:20px var(--pad); /* antes era 10px → ahora el toolbar es más grueso */
+  display:flex; align-items:center; gap:20px;
 }
 .logo{
   display:flex;
