@@ -24,11 +24,11 @@ body{
 .topbar-inner{
   max-width: var(--max);
   margin: 0 auto;
-  padding: 30px var(--pad);   /* arriba y abajo = 50px, laterales = var(--pad) */
+  padding: 40px var(--pad);   /* arriba y abajo = 50px, laterales = var(--pad) */
   display: flex;
   align-items: center;
   justify-content: space-between; /* separa logo y menú */
-  gap: 18px;
+  gap: 10px;
 }
 
 /* Logo mini */
