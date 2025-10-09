@@ -14,23 +14,6 @@ body{
   color:var(--fg); background:var(--bg); line-height:1.6;
 }
 
-/* ===== Toolbar: fondo full-bleed + contenido centrado ===== */
-.topbar{
-  position: sticky; top:0; z-index:50;
-  width:100%;
-  background:#fff;                 /* limpio, sin transparencia ni borde */
-  transition: background .25s ease;
-}
-.topbar-inner{
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 40px var(--pad);   /* arriba y abajo = 50px, laterales = var(--pad) */
-  display: flex;
-  align-items: center;
-  justify-content: space-between; /* separa logo y menú */
-  gap: 18px;
-}
-
 /* Logo mini */
 .logo{ display:flex; align-items:center; text-decoration:none; }
 .logo img{ height:26px; width:auto; display:block; }
@@ -94,23 +77,6 @@ h3{ font-weight:500; font-size: clamp(18px, 2.4vw, 22px); margin:0 0 .5rem; }
 .text-light{font-weight:300;} .text-regular{font-weight:400;}
 .text-medium{font-weight:500;} .text-semibold{font-weight:600;} .text-bold{font-weight:700;}
 
-/* Wrapper interno del toolbar: centra el contenido y habilita el flex */
-.topbar-inner{
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 12px var(--pad);
-  display: flex;               /* IMPORTANTE */
-  align-items: center;
-  gap: 18px;
-}
-
-/* Empuja el menú a la derecha */
-.menu{
-  margin-left: auto !important; /* fuerza que se vaya a la derecha */
-  display: flex;
-  align-items: center;
-  gap: 24px;
-}
 /* ======== TOOLBAR: versión final ======== */
 .topbar{
   position: sticky; top: 0; z-index: 50;
