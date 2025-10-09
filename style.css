@@ -363,7 +363,6 @@ h3{ font-weight:500; font-size:clamp(18px,2.4vw,22px); margin:0 0 .5rem; }
   background: transparent !important;  /* neutraliza bg antiguo en el <a> */
   box-shadow: none !important;          /* neutraliza sombras antiguas */
 }
-
 /* 2) El “token” se dibuja DEBAJO del texto */
 .topbar .menu a::before,
 #navdrawer a::before{
@@ -376,7 +375,6 @@ h3{ font-weight:500; font-size:clamp(18px,2.4vw,22px); margin:0 0 .5rem; }
   z-index: -1;                    /* queda por debajo del texto */
   transition: background .25s ease, box-shadow .25s ease;
 }
-
 /* 3) Hover/focus → AZUL translúcido (#80B3FB) */
 .topbar .menu a:hover::before,
 .topbar .menu a:focus-visible::before,
@@ -387,7 +385,6 @@ h3{ font-weight:500; font-size:clamp(18px,2.4vw,22px); margin:0 0 .5rem; }
     inset 0 2px 6px rgba(128,179,251,.45),
     0 2px 6px rgba(0,0,0,.04);
 }
-
 /* 4) Activo → NARANJA translúcido (#FB9280) */
 .topbar .menu a.is-active::before,
 #navdrawer a.is-active::before{
@@ -396,11 +393,17 @@ h3{ font-weight:500; font-size:clamp(18px,2.4vw,22px); margin:0 0 .5rem; }
     inset 0 2px 8px rgba(251,146,128,.55),
     0 2px 6px rgba(0,0,0,.03);
 }
-
 /* 5) Por si algún :hover de otra regla insistía en pintar bg en el <a> */
 .topbar .menu a:hover,
 #navdrawer a:hover{
   background: transparent !important;
   box-shadow: none !important;
 }
-
+/* === Idiomas: SIN token === */
+.lang-switch a {
+  background: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  border-radius: 0;
+  transition: none !important;
+}
