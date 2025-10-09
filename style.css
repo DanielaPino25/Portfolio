@@ -73,7 +73,7 @@ header.topbar .logo {
 }
 
 header.topbar .logo img {
-  height: 24px !important;  /* ← cambia este número para ajustar (24px o 28px) */
+  height: 26px !important;  /* ← cambia este número para ajustar (24px o 28px) */
   width: auto !important;
   display: block;
   object-fit: contain;
