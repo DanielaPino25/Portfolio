@@ -104,5 +104,28 @@
     document.body.classList.toggle('scrolled', window.scrollY > 10);
   });
 </script>
+<script>
+  // Redirigir el logo al home correcto según el idioma de la página
+  (function () {
+    const logoLink = document.querySelector('a.logo');
+    if (!logoLink) return;
+
+    // Idioma actual: 'es' o 'en' (sale del <html lang="...">)
+    const lang = (document.documentElement.lang || 'en').toLowerCase();
+
+    // Destino por idioma (ajusta si cambias los nombres)
+    const target = (lang === 'es') ? 'index-es.html' : 'index.html';
+
+    // También actualizamos el href para SEO / menú contextual / long-press en móvil
+    logoLink.setAttribute('href', target);
+
+    // Intercepta el click normal (respetamos abrir en nueva pestaña con Ctrl/⌘)
+    logoLink.addEventListener('click', function (e) {
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return; // permitir abrir en nueva pestaña
+      e.preventDefault();
+      window.location.href = target;
+    });
+  })();
+</script>  
 </body>
 </html>
