@@ -84,5 +84,13 @@ header.topbar .logo img {
     height: 22px !important;
   }
 }
+/* === Sombra suave del toolbar al hacer scroll === */
+.topbar{
+  transition: box-shadow 0.3s ease, background 0.3s ease;
+}
 
-
+/* Cuando el usuario hace scroll */
+body.scrolled .topbar{
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  background: rgba(255,255,255,0.95);
+}
