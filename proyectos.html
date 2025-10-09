@@ -1,15 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio — Daniela Pino</title>
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <meta name="description" content="Selected work by Daniela Pino, Product & UX/UI Designer." />
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
 <body>
   <header class="topbar">
     <div class="topbar-inner">
-      <a class="logo" href="https://www.danielapino.com" aria-label="Inicio">
-        <img src="assets/Logo.svg?v=2" alt="Logo de Daniela Pino" />
+      <a class="logo" href="https://www.danielapino.com" aria-label="Home">
+        <img src="assets/Logo.svg?v=2" alt="Daniela Pino logo" />
       </a>
 
       <nav class="menu" aria-label="Main">
         <a href="sobre-mi.html" data-nav="sobre-mi">ABOUT ME</a>
         <a href="proyectos.html" data-nav="proyectos">PORTFOLIO</a>
         <a href="contacto.html" data-nav="contacto">CONTACT</a>
-
         <div class="lang-switch" aria-label="Language switcher">
           <a href="index-es.html">ES</a>
           <span>/</span>
@@ -17,7 +29,7 @@
         </div>
       </nav>
 
-      <button class="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="navdrawer">
+      <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="navdrawer">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -35,7 +47,41 @@
   </nav>
 
   <main>
-    <!-- contenido propio de cada página -->
+    <h1>Portfolio</h1>
+    <p>Projects list…</p>
   </main>
+
+  <footer style="text-align:center; padding:1rem; border-top:1px solid #eee;">
+    © <span id="year"></span> Daniela Pino
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const path = location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('[data-nav]').forEach(a=>{
+      const file = a.getAttribute('href');
+      if (file === path) a.classList.add('is-active');
+    });
+
+    const burger = document.querySelector('.burger');
+    if (burger) {
+      burger.addEventListener('click', ()=>{
+        const open = document.body.classList.toggle('nav-open');
+        burger.setAttribute('aria-expanded', open ? 'true':'false');
+      });
+    }
+    document.querySelectorAll('#navdrawer a').forEach(a=>{
+      a.addEventListener('click', ()=> document.body.classList.remove('nav-open'));
+    });
+
+    document.querySelector('.topbar-inner')?.classList.add('nowrap');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 10) document.body.classList.add('scrolled');
+      else document.body.classList.remove('scrolled');
+    });
+  </script>
 </body>
+</html>
 
