@@ -1,12 +1,10 @@
 /* ===== Base ===== */
 :root{
-  --max:1280px;           /* ancho de contenido como tu mock */
-  --pad:10px;             /* padding lateral compacto */
+  --max:1280px;
   --fg:#3a3a3a; --muted:#666; --line:#eee; --bg:#fff;
 }
-@media (min-width:1600px){
-  :root{ --max:1440px; --pad:22px; }  /* en monitores muy grandes */
-}
+@media (min-width:1600px){ :root{ --max:1440px; } }
+
 *{ box-sizing:border-box }
 html,body{ margin:0; padding:0 }
 body{
@@ -14,122 +12,73 @@ body{
   color:var(--fg); background:var(--bg); line-height:1.6;
 }
 
-/* Logo mini */
-.logo{ display:flex; align-items:center; text-decoration:none; }
-.logo img{ height:30px; width:auto; display:block; }
-@media (max-width:600px){
-  .logo img{ height:20px; }
+/* ===== Toolbar ===== */
+.topbar{
+  position: sticky; top:0; z-index:50; width:100%;
+  background:#fff;
+}
+.topbar-inner{
+  width:100%; margin:0;
+  /* alto cómodo y laterales fluidos: 16px–64px según pantalla (~5vw) */
+  padding: 28px clamp(16px, 5vw, 64px);
+  display:flex; align-items:center; justify-content:space-between; gap:24px;
 }
 
-/* Menú minimal a la derecha */
+/* Logo */
+.logo{ display:flex; align-items:center; text-decoration:none; }
+.logo img{ height:32px; width:auto; display:block; }
+@media (max-width:600px){ .logo img{ height:24px; } }
+
+/* Menú */
 .menu{ margin-left:auto; display:flex; align-items:center; gap:40px; }
-.menu a{
-  text-decoration:none; color:#111;
-  font-weight:600; font-size:12.5px;
-  letter-spacing:.08em; text-transform:uppercase;
+.menu a,
+.menu .lang,
+.topbar a,
+.topbar button{
+  color:var(--fg);
+  font-weight:300;                 /* LIGHT */
+  font-size:12.5px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  text-decoration:none;
+  transition:opacity .2s ease;
 }
-.menu a:hover{ text-decoration:underline; }
-.menu a.is-active{ text-decoration:underline; }
-.menu .lang{ border:none; background:transparent; cursor:pointer;
-  font-size:12px; letter-spacing:0.05em; }
+.menu a:hover, .menu .lang:hover{ opacity:.6; }
+
+/* separa ES/EN del bloque de links */
+.menu .lang{ margin-left:40px; border:none; background:transparent; cursor:pointer; }
 
 /* Burger (móvil) */
 .burger{ display:none; margin-left:8px; background:transparent; border:0; cursor:pointer; }
-.burger span{ display:block; width:20px; height:2px; background:#111; margin:4px 0; }
+.burger span{ display:block; width:20px; height:2px; background:var(--fg); margin:4px 0; }
 @media (max-width:900px){ .menu{display:none;} .burger{display:block;} }
 
 /* Cajón móvil */
 .navdrawer{
-  display:none; position: fixed; inset:56px 0 auto 0;
-  background:#fff; border-bottom:1px solid var(--line); z-index:40;
-  padding:12px var(--pad); gap:16px; flex-direction:column;
+  display:none; position:fixed; inset:56px 0 auto 0; z-index:40;
+  background:#fff; border-bottom:1px solid var(--line);
+  padding:12px clamp(16px, 5vw, 64px); gap:16px; flex-direction:column;
 }
-.navdrawer a{ text-decoration:none; color:#111; font-weight:600; font-size:16px; }
+.navdrawer a{ color:var(--fg); font-weight:300; font-size:16px; letter-spacing:.04em; text-decoration:none; }
 body.nav-open #navdrawer{ display:flex; }
-body.nav-open .burger span:nth-child(1){ transform: translateY(6px) rotate(45deg); }
+body.nav-open .burger span:nth-child(1){ transform:translateY(6px) rotate(45deg); }
 body.nav-open .burger span:nth-child(2){ opacity:0; }
-body.nav-open .burger span:nth-child(3){ transform: translateY(-6px) rotate(-45deg); }
+body.nav-open .burger span:nth-child(3){ transform:translateY(-6px) rotate(-45deg); }
 
-/* ===== Contenido (márgenes como el mock) ===== */
+/* ===== Contenido ===== */
 main{
-  max-width: var(--max);
-  margin: 32px auto;
-  padding: 0 var(--pad);
-}
-@media (min-width:1600px){
-  main{ margin: 40px auto; padding: 0 calc(var(--pad) + 6px); }
-}
-@media (max-width:900px){
-  main{ max-width:100%; padding: 0 16px; }
+  max-width:var(--max);
+  margin:32px auto;
+  padding:0 clamp(16px, 4vw, 40px);
 }
 
-/* Footer */
-footer{ text-align:center; padding:16px 0; border-top:1px solid var(--line); color:#777; }
-
-/* ===== Tipografía base y jerarquía ===== */
-h1{
-  font-weight:700; /* bold */
-  font-size: clamp(28px, 4vw, 40px);
-  letter-spacing:-.3px; margin:0 0 .75rem;
-}
-h2{ font-weight:600; font-size: clamp(22px, 3vw, 28px); margin:0 0 .6rem; }
-h3{ font-weight:500; font-size: clamp(18px, 2.4vw, 22px); margin:0 0 .5rem; }
-.text-light{font-weight:300;} .text-regular{font-weight:400;}
-.text-medium{font-weight:500;} .text-semibold{font-weight:600;} .text-bold{font-weight:700;}
-
-/* ======== TOOLBAR: versión final ======== */
-.topbar{
-  position: sticky; top: 0; z-index: 50;
-  width: 100%;
-  background: #fff;
-  transition: background .25s ease;
+/* ===== Footer ===== */
+footer{
+  text-align:center; padding:16px 0; border-top:1px solid var(--line); color:var(--muted);
 }
 
-.topbar-inner {
-  width: 100%;               /* ocupa todo el ancho de la pantalla */
-  margin: 0;
-  padding: 40px 24px;        /* arriba/abajo = 40px, laterales = 24px */
-  display: flex;
-  align-items: center;       /* centra verticalmente */
-  justify-content: space-between; /* logo a izq, menú a der */
-  gap: 18px;
-}
+/* ===== Títulos ===== */
+h1{ font-weight:700; font-size:clamp(28px,4vw,40px); letter-spacing:-.3px; margin:0 0 .75rem; }
+h2{ font-weight:600; font-size:clamp(22px,3vw,28px); margin:0 0 .6rem; }
+h3{ font-weight:500; font-size:clamp(18px,2.4vw,22px); margin:0 0 .5rem; }
 
-/* Menú: solo una definición */
-.menu{
-  margin-left: auto;            /* empuja a la derecha */
-  display: flex;
-  align-items: center;
-  gap: 40px;
-}
-.menu .lang{
-  margin-left: 60px;      /* separación extra del bloque ES / EN */
-  border: none;
-  background: transparent;
-  font-weight: 300;
-  font-size: 12px;
-  letter-spacing: 0.05em;
-  cursor: pointer;
-  opacity: 0.8;
-  transition: opacity 0.2s ease;
-}
-
-.menu .lang:hover{
-  opacity: 0.6;
-}
-/* === Estilo más ligero para el texto del toolbar === */
-.topbar a,
-.topbar button {
-  font-weight: 300;       /* LIGHT (antes 600 o 500) */
-  color: #111;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  text-decoration: none;
-  transition: opacity 0.2s ease;
-}
-
-.topbar a:hover,
-.topbar button:hover {
-  opacity: 0.6;           /* efecto suave al pasar el mouse */
-  text-decoration: none;  /* sin subrayado */
-}
