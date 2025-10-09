@@ -1,7 +1,7 @@
 /* ===== Base ===== */
 :root{
   --max:1280px;           /* ancho de contenido como tu mock */
-  --pad:10px;             /* padding lateral compacto */
+  --pad:16px;             /* padding lateral compacto */
   --fg:#111; --muted:#666; --line:#eee; --bg:#fff;
 }
 @media (min-width:1600px){
@@ -28,7 +28,7 @@ body{
   display: flex;
   align-items: center;
   justify-content: space-between; /* separa logo y menú */
-  gap: 10px;
+  gap: 18px;
 }
 
 /* Logo mini */
