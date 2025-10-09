@@ -1,5 +1,5 @@
 /* ===== Base ===== */
-:root{ --max:1200px; --pad:24px; --fg:#111; --muted:#666; --line:#eee; --bg:#fff; }
+:root{ --max:1400px; --pad:32px; --fg:#111; --muted:#666; --line:#eee; --bg:#fff; }
 *{ box-sizing:border-box }
 html,body{ margin:0; padding:0 }
 body{ font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
@@ -52,7 +52,27 @@ body{ font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica,
 .navdrawer a{ text-decoration:none; color:#111; font-weight:600; font-size:16px; }
 
 /* ===== Contenido demo ===== */
-main{ max-width:var(--max); margin:24px auto; padding:0 var(--pad); }
+main {
+  max-width: var(--max);
+  margin: 40px auto;
+  padding: 0 40px;
+}
+
+/* En pantallas grandes, usa aún más espacio */
+@media (min-width:1600px){
+  main {
+    max-width: 1600px;
+    padding: 0 60px;
+  }
+}
+
+/* En pantallas pequeñas, mantenlo cómodo */
+@media (max-width:900px){
+  main {
+    max-width: 100%;
+    padding: 0 24px;
+  }
+}
 footer{ text-align:center; padding:16px 0; border-top:1px solid var(--line); color:#777; }
 
 /* ===== Responsive ===== */
