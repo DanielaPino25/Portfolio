@@ -22,7 +22,7 @@ body{
 }
 
 /* Menú minimal a la derecha */
-.menu{ margin-left:auto; display:flex; align-items:center; gap:24px; }
+.menu{ margin-left:auto; display:flex; align-items:center; gap:40px; }
 .menu a{
   text-decoration:none; color:#111;
   font-weight:600; font-size:12.5px;
@@ -30,8 +30,8 @@ body{
 }
 .menu a:hover{ text-decoration:underline; }
 .menu a.is-active{ text-decoration:underline; }
-.menu .lang{ border:0; background:transparent; cursor:pointer;
-  font-size:12.5px; letter-spacing:.08em; }
+.menu .lang{ border:none; background:transparent; cursor:pointer;
+  font-size:12px; letter-spacing:0.05em; }
 
 /* Burger (móvil) */
 .burger{ display:none; margin-left:8px; background:transparent; border:0; cursor:pointer; }
@@ -100,7 +100,22 @@ h3{ font-weight:500; font-size: clamp(18px, 2.4vw, 22px); margin:0 0 .5rem; }
   margin-left: auto;            /* empuja a la derecha */
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 40px;
+}
+.menu .lang{
+  margin-left: 60px;      /* separación extra del bloque ES / EN */
+  border: none;
+  background: transparent;
+  font-weight: 300;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+.menu .lang:hover{
+  opacity: 0.6;
 }
 /* === Estilo más ligero para el texto del toolbar === */
 .topbar a,
