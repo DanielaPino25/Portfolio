@@ -88,11 +88,11 @@ h3{ font-weight:500; font-size: clamp(18px, 2.4vw, 22px); margin:0 0 .5rem; }
 .topbar-inner{
   max-width: var(--max);
   margin: 0 auto;
-  padding: 25px var(--pad);     /* alto del toolbar */
+  padding: 20px var(--pad);     /* alto del toolbar */
   display: flex;
   align-items: center;          /* centro vertical */
   justify-content: space-between; /* logo izq, menú der */
-  gap: 10px;
+  gap: 5px;
 }
 
 /* Menú: solo una definición */
@@ -100,7 +100,7 @@ h3{ font-weight:500; font-size: clamp(18px, 2.4vw, 22px); margin:0 0 .5rem; }
   margin-left: auto;            /* empuja a la derecha */
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 10px;
 }
 /* === Estilo más ligero para el texto del toolbar === */
 .topbar a,
