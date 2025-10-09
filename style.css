@@ -119,3 +119,21 @@ h3{ font-weight:500; font-size:clamp(18px,2.4vw,22px); margin:0 0 .5rem; }
 .menu{ flex-wrap: nowrap; }
 .menu a{ white-space: nowrap; }      /* ABOUT ME siempre en una línea */
 .lang-switch{ white-space: nowrap; } /* ES / EN en una sola línea también */
+
+/* El header ocupa toda la fila y no comparte línea con nada */
+.topbar{ display:block; width:100%; position:sticky; top:0; z-index:100; }
+.topbar-inner{
+  display:flex; align-items:center; justify-content:space-between;
+  flex-wrap: nowrap;            /* evita saltos de línea en el toolbar */
+  width:100%;
+}
+
+/* Menú y selector de idioma en una sola línea */
+.menu{ display:flex; align-items:center; gap:40px; flex-wrap:nowrap; }
+.menu a{ white-space:nowrap; }
+.lang-switch{ display:flex; align-items:center; gap:10px; white-space:nowrap; }
+.lang-switch span{ color:#aaa; }
+
+/* Por si algo quedó con floats de pruebas anteriores */
+.logo, .menu, .burger{ float:none; }
+
