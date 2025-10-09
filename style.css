@@ -36,9 +36,9 @@ body{
 .topbar a,
 .topbar button{
   color:var(--fg);
-  font-weight:300;                 /* LIGHT */
+  font-weight:400;                 /* LIGHT */
   font-size:12.5px;
-  letter-spacing:.08em;
+  letter-spacing:.07em;
   text-transform:uppercase;
   text-decoration:none;
   transition:opacity .2s ease;
