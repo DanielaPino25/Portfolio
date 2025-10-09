@@ -1,7 +1,7 @@
 /* ===== Base ===== */
 :root{
   --max:1280px;           /* ancho de contenido como tu mock */
-  --pad:18px;             /* padding lateral compacto */
+  --pad:10px;             /* padding lateral compacto */
   --fg:#111; --muted:#666; --line:#eee; --bg:#fff;
 }
 @media (min-width:1600px){
@@ -24,8 +24,11 @@ body{
 .topbar-inner{
   max-width: var(--max);
   margin: 0 auto;
-  padding: 50px var(--pad);        /* barra finita como el mock */
-  display: flex; align-items: center; gap: 18px;
+  padding: 50px var(--pad);   /* arriba y abajo = 50px, laterales = var(--pad) */
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* separa logo y menú */
+  gap: 18px;
 }
 
 /* Logo mini */
