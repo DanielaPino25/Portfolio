@@ -40,43 +40,41 @@
     <p>Esta es mi página en construcción. Si puedes leer esto, el menú ya se muestra correctamente.</p>
   </main>
 
-  <footer style="text-align:center; padding:1rem; border-top:1px solid #eee;">
+    <footer style="text-align:center; padding:1rem; border-top:1px solid #eee;">
     © <span id="year"></span> Daniela Pino
   </footer>
 
-  <!-- 🔽 Scripts SIEMPRE dentro del <body>, mejor al final -->
+  <!-- Scripts: siempre dentro del body -->
   <script>
+    // año
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // marcar enlace activo según la página
+    // marcar enlace activo
     const path = location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('[data-nav]').forEach(a=>{
       const file = a.getAttribute('href');
       if (file === path) a.classList.add('is-active');
     });
-<script>
-  // Efecto de sombra al hacer scroll
-  window.addEventListener('scroll', () => {
-    if(window.scrollY > 10){
-      document.body.classList.add('scrolled');
-    } else {
-      document.body.classList.remove('scrolled');
-    }
-  });
-</script>
 
     // abrir/cerrar menú móvil
     const burger = document.querySelector('.burger');
-    burger?.addEventListener('click', ()=>{
-      const open = document.body.classList.toggle('nav-open');
-      burger.setAttribute('aria-expanded', open ? 'true':'false');
-    });
+    if (burger) {
+      burger.addEventListener('click', ()=>{
+        const open = document.body.classList.toggle('nav-open');
+        burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    }
 
-    // cerrar el cajón al navegar
+    // cerrar cajón al navegar
     document.querySelectorAll('#navdrawer a').forEach(a=>{
       a.addEventListener('click', ()=> document.body.classList.remove('nav-open'));
+    });
+
+    // sombra del toolbar al hacer scroll
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 10) document.body.classList.add('scrolled');
+      else document.body.classList.remove('scrolled');
     });
   </script>
 </body>
 </html>
-
