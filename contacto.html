@@ -12,6 +12,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <!-- CSS principal: AJUSTA LA RUTA si este archivo está en una carpeta -->
   <link rel="stylesheet" href="style.css?v=9" />
+  <style>
+  /* Diagnóstico: mostrar siempre el menú en escritorio y móvil */
+  .topbar { display:block; width:100%; }
+  .topbar-inner { display:flex; align-items:center; justify-content:space-between; flex-wrap:nowrap; }
+  .menu { display:flex !important; gap:40px; }
+  .menu a { white-space:nowrap; }
+  .burger { display:none !important; }   /* oculta hamburguesa temporalmente */
+  .navdrawer { display:none !important; }/* oculta menú móvil temporalmente */
+</style>
+
 </head>
 <body>
   <!-- TOPBAR -->
