@@ -8,6 +8,27 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 
+  <script>
+  // marcar enlace activo según la página
+  const path = location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('[data-nav]').forEach(a=>{
+    const file = a.getAttribute('href');
+    if (file === path) a.classList.add('is-active');
+  });
+
+  // abrir/cerrar menú móvil
+  const burger = document.querySelector('.burger');
+  burger?.addEventListener('click', ()=>{
+    const open = document.body.classList.toggle('nav-open');
+    burger.setAttribute('aria-expanded', open ? 'true':'false');
+  });
+
+  // cerrar el cajón al hacer click en un enlace
+  document.querySelectorAll('#navdrawer a').forEach(a=>{
+    a.addEventListener('click', ()=> document.body.classList.remove('nav-open'));
+  });
+</script>
+
 <body>
   <!-- MENÚ SUPERIOR -->
   <header class="topbar">
