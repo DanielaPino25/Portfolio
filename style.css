@@ -102,3 +102,19 @@ h3{ font-weight:500; font-size: clamp(18px, 2.4vw, 22px); margin:0 0 .5rem; }
   align-items: center;
   gap: 24px;
 }
+/* === Estilo más ligero para el texto del toolbar === */
+.topbar a,
+.topbar button {
+  font-weight: 300;       /* LIGHT (antes 600 o 500) */
+  color: #111;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.topbar a:hover,
+.topbar button:hover {
+  opacity: 0.6;           /* efecto suave al pasar el mouse */
+  text-decoration: none;  /* sin subrayado */
+}
