@@ -7,34 +7,12 @@
   <meta name="description" content="Portfolio de Daniela Pino, diseñadora de producto y UX/UI." />
   <link rel="stylesheet" href="style.css" />
 </head>
-
-  <script>
-  // marcar enlace activo según la página
-  const path = location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('[data-nav]').forEach(a=>{
-    const file = a.getAttribute('href');
-    if (file === path) a.classList.add('is-active');
-  });
-
-  // abrir/cerrar menú móvil
-  const burger = document.querySelector('.burger');
-  burger?.addEventListener('click', ()=>{
-    const open = document.body.classList.toggle('nav-open');
-    burger.setAttribute('aria-expanded', open ? 'true':'false');
-  });
-
-  // cerrar el cajón al hacer click en un enlace
-  document.querySelectorAll('#navdrawer a').forEach(a=>{
-    a.addEventListener('click', ()=> document.body.classList.remove('nav-open'));
-  });
-</script>
-
 <body>
   <!-- MENÚ SUPERIOR -->
   <header class="topbar">
-<a class="logo" href="index.html" aria-label="Inicio">
-  <img src="assets/Logo.svg" alt="Logo de Daniela Pino" />
-</a>
+    <a class="logo" href="index.html" aria-label="Inicio">
+      <img src="assets/Logo.svg" alt="Logo de Daniela Pino" />
+    </a>
 
     <nav class="menu" aria-label="Main">
       <a href="sobre-mi.html" data-nav="sobre-mi">ABOUT ME</a>
@@ -66,8 +44,28 @@
     © <span id="year"></span> Daniela Pino
   </footer>
 
+  <!-- 🔽 Scripts SIEMPRE dentro del <body>, mejor al final -->
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // marcar enlace activo según la página
+    const path = location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('[data-nav]').forEach(a=>{
+      const file = a.getAttribute('href');
+      if (file === path) a.classList.add('is-active');
+    });
+
+    // abrir/cerrar menú móvil
+    const burger = document.querySelector('.burger');
+    burger?.addEventListener('click', ()=>{
+      const open = document.body.classList.toggle('nav-open');
+      burger.setAttribute('aria-expanded', open ? 'true':'false');
+    });
+
+    // cerrar el cajón al navegar
+    document.querySelectorAll('#navdrawer a').forEach(a=>{
+      a.addEventListener('click', ()=> document.body.classList.remove('nav-open'));
+    });
   </script>
 </body>
 </html>
