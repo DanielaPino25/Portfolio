@@ -1,166 +1,93 @@
 /* ===== Base ===== */
-:root{ --max:1400px; --pad:32px; --fg:#111; --muted:#666; --line:#eee; --bg:#fff; }
+:root{
+  --max:1280px;           /* ancho de contenido como tu mock */
+  --pad:18px;             /* padding lateral compacto */
+  --fg:#111; --muted:#666; --line:#eee; --bg:#fff;
+}
+@media (min-width:1600px){
+  :root{ --max:1440px; --pad:22px; }  /* en monitores muy grandes */
+}
 *{ box-sizing:border-box }
 html,body{ margin:0; padding:0 }
-body{ font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      color:var(--fg); background:var(--bg); line-height:1.5; }
+body{
+  font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  color:var(--fg); background:var(--bg); line-height:1.6;
+}
 
-/* ===== Topbar fija ===== */
+/* ===== Toolbar: fondo full-bleed + contenido centrado ===== */
 .topbar{
   position: sticky; top:0; z-index:50;
-  backdrop-filter: saturate(1.2) blur(6px);
-  background: rgba(255,255,255,.85);
-  max-width:var(--max); margin:0 auto;
-  padding:20px var(--pad); /* antes era 10px → ahora el toolbar es más grueso */
-  display:flex; align-items:center; gap:20px;
+  width:100%;
+  background:#fff;                 /* limpio, sin transparencia ni borde */
+  transition: background .25s ease;
 }
-.logo{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  height:40px; /* tamaño normal */
-  text-decoration:none;
+.topbar-inner{
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 12px var(--pad);        /* barra finita como el mock */
+  display: flex; align-items: center; gap: 18px;
 }
 
-.logo img{
-  height:100%;
-  width:auto;
-  display:block;
+/* Logo mini */
+.logo{ display:flex; align-items:center; text-decoration:none; }
+.logo img{ height:22px; width:auto; display:block; }
+@media (max-width:600px){
+  .logo img{ height:20px; }
 }
 
-/* Versión más pequeña en pantallas pequeñas */
-@media (max-width: 600px){
-  .logo{
-    height:28px;
-  }
+/* Menú minimal a la derecha */
+.menu{ margin-left:auto; display:flex; align-items:center; gap:24px; }
+.menu a{
+  text-decoration:none; color:#111;
+  font-weight:600; font-size:12.5px;
+  letter-spacing:.08em; text-transform:uppercase;
 }
-.menu{ margin-left:auto; display:flex; align-items:center; gap:28px; }
-.menu a{ text-decoration:none; color:#111; font-weight:600; font-size:14px; }
 .menu a:hover{ text-decoration:underline; }
-.menu a.is-active{ color:#0077ff; }
-.menu .lang, .navdrawer .lang{ border:0; background:transparent; font-weight:600; cursor:pointer; }
+.menu a.is-active{ text-decoration:underline; }
+.menu .lang{ border:0; background:transparent; cursor:pointer;
+  font-size:12.5px; letter-spacing:.08em; }
 
-/* ===== Burger + cajón móvil ===== */
-.burger{ display:none; margin-left:12px; background:transparent; border:0; cursor:pointer; }
-.burger span{ display:block; width:22px; height:2px; background:#111; margin:5px 0; transition:.25s; }
+/* Burger (móvil) */
+.burger{ display:none; margin-left:8px; background:transparent; border:0; cursor:pointer; }
+.burger span{ display:block; width:20px; height:2px; background:#111; margin:4px 0; }
+@media (max-width:900px){ .menu{display:none;} .burger{display:block;} }
 
+/* Cajón móvil */
 .navdrawer{
-  display:none; position: fixed; inset:56px 0 auto 0; /* debajo de la topbar */
+  display:none; position: fixed; inset:56px 0 auto 0;
   background:#fff; border-bottom:1px solid var(--line); z-index:40;
   padding:12px var(--pad); gap:16px; flex-direction:column;
 }
 .navdrawer a{ text-decoration:none; color:#111; font-weight:600; font-size:16px; }
+body.nav-open #navdrawer{ display:flex; }
+body.nav-open .burger span:nth-child(1){ transform: translateY(6px) rotate(45deg); }
+body.nav-open .burger span:nth-child(2){ opacity:0; }
+body.nav-open .burger span:nth-child(3){ transform: translateY(-6px) rotate(-45deg); }
 
-/* ===== Contenido demo ===== */
-main {
+/* ===== Contenido (márgenes como el mock) ===== */
+main{
   max-width: var(--max);
-  margin: 40px auto;
-  padding: 0 40px;
+  margin: 32px auto;
+  padding: 0 var(--pad);
 }
-
-/* En pantallas grandes, usa aún más espacio */
 @media (min-width:1600px){
-  main {
-    max-width: 1600px;
-    padding: 0 60px;
-  }
+  main{ margin: 40px auto; padding: 0 calc(var(--pad) + 6px); }
+}
+@media (max-width:900px){
+  main{ max-width:100%; padding: 0 16px; }
 }
 
-/* En pantallas pequeñas, mantenlo cómodo */
-@media (max-width:900px){
-  main {
-    max-width: 100%;
-    padding: 0 24px;
-  }
-}
+/* Footer */
 footer{ text-align:center; padding:16px 0; border-top:1px solid var(--line); color:#777; }
 
-/* ===== Responsive ===== */
-@media (max-width: 900px){
-  .menu{ display:none; }               /* ocultar menú de escritorio */
-  .burger{ display:block; }            /* mostrar burger */
-  body.nav-open #navdrawer{ display:flex; } /* abrir cajón con JS */
-  body.nav-open .burger span:nth-child(1){ transform: translateY(7px) rotate(45deg); }
-  body.nav-open .burger span:nth-child(2){ opacity:0; }
-  body.nav-open .burger span:nth-child(3){ transform: translateY(-7px) rotate(-45deg); }
-}
-/* === Tamaño final del logo === */
-header.topbar .logo {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  height: auto;
-}
-
-header.topbar .logo img {
-  height: 28px !important;  /* ← cambia este número para ajustar (24px o 28px) */
-  width: auto !important;
-  display: block;
-  object-fit: contain;
-}
-/* versión más pequeña en móvil */
-@media (max-width: 600px){
-  header.topbar .logo img {
-    height: 22px !important;
-  }
-}
-/* === Sombra suave del toolbar al hacer scroll === */
-.topbar{
-  transition: box-shadow 0.3s ease, background 0.3s ease;
-}
-
-/* Cuando el usuario hace scroll */
-body.scrolled .topbar{
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-  background: rgba(255,255,255,0.95);
-}
-/* === Sombra suave del toolbar al hacer scroll === */
-.topbar{
-  transition: box-shadow 0.3s ease, background 0.3s ease;
-}
-
-/* Cuando el usuario hace scroll */
-body.scrolled .topbar{
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-  background: rgba(255,255,255,0.95);
-}
-/* === Tipografía global === */
-body {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 400;       /* texto normal */
-  line-height: 1.6;
-  color: #111;
-}
-
-/* === Toolbar === */
-.topbar a,
-.topbar button {
-  font-weight: 500;       /* MEDIUM para los links del menú */
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-}
-
-/* === Jerarquía de títulos / subtítulos === */
-h1 {
-  font-weight: 700;       /* BOLD */
+/* ===== Tipografía base y jerarquía ===== */
+h1{
+  font-weight:700; /* bold */
   font-size: clamp(28px, 4vw, 40px);
-  letter-spacing: -0.3px;
-  margin: 0 0 0.75rem;
+  letter-spacing:-.3px; margin:0 0 .75rem;
 }
-h2 {
-  font-weight: 600;       /* SEMIBOLD */
-  font-size: clamp(22px, 3vw, 28px);
-  margin: 0 0 0.6rem;
-}
-h3 {
-  font-weight: 500;       /* MEDIUM */
-  font-size: clamp(18px, 2.4vw, 22px);
-  margin: 0 0 0.5rem;
-}
+h2{ font-weight:600; font-size: clamp(22px, 3vw, 28px); margin:0 0 .6rem; }
+h3{ font-weight:500; font-size: clamp(18px, 2.4vw, 22px); margin:0 0 .5rem; }
+.text-light{font-weight:300;} .text-regular{font-weight:400;}
+.text-medium{font-weight:500;} .text-semibold{font-weight:600;} .text-bold{font-weight:700;}
 
-/* Utilidades rápidas por si las quieres usar en textos sueltos */
-.text-light  { font-weight: 300; }
-.text-regular{ font-weight: 400; }
-.text-medium { font-weight: 500; }
-.text-semibold{font-weight: 600; }
-.text-bold   { font-weight: 700; }
