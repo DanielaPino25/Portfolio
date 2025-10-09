@@ -11,7 +11,6 @@ body{
   font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
   color:var(--fg); background:var(--bg); line-height:1.6;
 }
-
 /* ===== Toolbar ===== */
 .topbar{
   position: sticky; top:0; z-index:50; width:100%;
@@ -23,12 +22,10 @@ body{
   padding: 28px clamp(16px, 5vw, 64px);
   display:flex; align-items:center; justify-content:space-between; gap:24px;
 }
-
 /* Logo */
 .logo{ display:flex; align-items:center; text-decoration:none; }
 .logo img{ height:32px; width:auto; display:block; }
 @media (max-width:600px){ .logo img{ height:24px; } }
-
 /* Menú */
 .menu{ margin-left:auto; display:flex; align-items:center; gap:40px; }
 .menu a,
@@ -249,7 +246,6 @@ h3{ font-weight:500; font-size:clamp(18px,2.4vw,22px); margin:0 0 .5rem; }
     inset 0 2px 8px rgba(251,146,128,.55),
     0 2px 6px rgba(0,0,0,.03);
 }
-
 /* Evitar subrayado heredado */
 .topbar .menu a:hover{ text-decoration: none; }
 
@@ -268,7 +264,6 @@ h3{ font-weight:500; font-size:clamp(18px,2.4vw,22px); margin:0 0 .5rem; }
   transition: background .25s ease, box-shadow .25s ease, transform .2s ease;
   background: transparent !important;
 }
-
 /* Hover/focus → azul translúcido (#80B3FB) */
 .topbar .menu a:hover,
 .topbar .menu a:focus-visible,
@@ -281,7 +276,6 @@ h3{ font-weight:500; font-size:clamp(18px,2.4vw,22px); margin:0 0 .5rem; }
   transform: translateY(-1px);
   outline: none;
 }
-
 /* Activo → naranja translúcido (#FB9280) */
 .topbar .menu a.is-active,
 #navdrawer a.is-active{
@@ -328,7 +322,6 @@ h3{ font-weight:500; font-size:clamp(18px,2.4vw,22px); margin:0 0 .5rem; }
     inset 0 2px 6px rgba(128,179,251,.45),
     0 2px 6px rgba(0,0,0,.04);
 }
-
 /* Activo → naranja translúcido */
 .topbar .menu a.is-active::before,
 #navdrawer a.is-active::before {
@@ -337,7 +330,6 @@ h3{ font-weight:500; font-size:clamp(18px,2.4vw,22px); margin:0 0 .5rem; }
     inset 0 2px 8px rgba(251,146,128,.55),
     0 2px 6px rgba(0,0,0,.03);
 }
-
 /* Evita cambio de opacidad del texto al hacer hover */
 .topbar .menu a:hover,
 .topbar .menu a.is-active,
@@ -406,4 +398,72 @@ h3{ font-weight:500; font-size:clamp(18px,2.4vw,22px); margin:0 0 .5rem; }
   padding: 0 !important;
   border-radius: 0;
   transition: none !important;
+}
+/* ===== TOKENS solo en enlaces principales (no idioma) ===== */
+
+/* Enlaces principales del menú (hijos directos del nav) */
+.topbar .menu > a,
+#navdrawer > a{
+  position: relative;
+  color: #3a3a3a !important;
+  opacity: 1 !important;
+  text-decoration: none !important;
+  z-index: 1;
+  padding: .52rem .9rem;
+  border-radius: 9999px;
+  transition: background .25s ease, box-shadow .25s ease;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Token debajo del texto */
+.topbar .menu > a::before,
+#navdrawer > a::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: transparent;
+  z-index: -1;
+  transition: background .25s ease, box-shadow .25s ease;
+}
+
+/* Hover (azul translúcido) */
+.topbar .menu > a:hover::before,
+.topbar .menu > a:focus-visible::before,
+#navdrawer > a:hover::before,
+#navdrawer > a:focus-visible::before{
+  background: rgba(128,179,251,.28);   /* #80B3FB */
+  box-shadow:
+    inset 0 2px 6px rgba(128,179,251,.45),
+    0 2px 6px rgba(0,0,0,.04);
+}
+
+/* Activo (naranja translúcido) */
+.topbar .menu > a.is-active::before,
+#navdrawer > a.is-active::before{
+  background: rgba(251,146,128,.34);   /* #FB9280 */
+  box-shadow:
+    inset 0 2px 8px rgba(251,146,128,.55),
+    0 2px 6px rgba(0,0,0,.03);
+}
+
+/* ===== Idiomas: desactiva cualquier token/hover/sombra ===== */
+.lang-switch a{
+  position: static !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.lang-switch a::before{
+  content: none !important;
+}
+
+/* Por si alguna regla genérica intentaba pintar fondo al hacer hover */
+.lang-switch a:hover,
+.lang-switch a:focus{
+  background: transparent !important;
+  box-shadow: none !important;
 }
