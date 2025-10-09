@@ -86,7 +86,7 @@ h3{ font-weight:500; font-size:clamp(18px,2.4vw,22px); margin:0 0 .5rem; }
 .lang-switch {
   display: flex;
   align-items: center;
-  gap: 3px;                     /* espacio entre ES / barra / EN */
+  gap: 10px;                     /* espacio entre ES / barra / EN */
   margin-left: 56px;            /* separación del bloque de links */
 }
 
@@ -114,3 +114,8 @@ h3{ font-weight:500; font-size:clamp(18px,2.4vw,22px); margin:0 0 .5rem; }
   font-weight: 700;             /* bold para el idioma actual */
   opacity: 1;
 }
+/* Evitar que el menú y sus items se rompan en varias líneas */
+.topbar-inner{ flex-wrap: nowrap; }
+.menu{ flex-wrap: nowrap; }
+.menu a{ white-space: nowrap; }      /* ABOUT ME siempre en una línea */
+.lang-switch{ white-space: nowrap; } /* ES / EN en una sola línea también */
