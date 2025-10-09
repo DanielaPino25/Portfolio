@@ -137,3 +137,29 @@ h3{ font-weight:500; font-size:clamp(18px,2.4vw,22px); margin:0 0 .5rem; }
 /* Por si algo quedó con floats de pruebas anteriores */
 .logo, .menu, .burger{ float:none; }
 
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+}
+
+.lang-switch a {
+  font-weight: 300;
+  color: var(--fg);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.lang-switch a.active {
+  font-weight: 600; /* negrita solo para el idioma activo */
+}
+
+.lang-switch a:hover {
+  opacity: 0.6;
+}
+
+.lang-switch span {
+  color: #aaa;
+}
+
