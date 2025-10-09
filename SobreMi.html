@@ -27,7 +27,7 @@
   <!-- TOPBAR -->
   <header class="topbar">
     <div class="topbar-inner">
-      <a class="logo" href="https://www.danielapino.com" aria-label="Home">
+      <a class="logo" href="index-es.html" aria-label="Home">
         <img src="assets/Logo.svg?v=2" alt="Daniela Pino logo" />
       </a>
 
@@ -109,71 +109,26 @@
     document.body.classList.toggle('scrolled', window.scrollY > 10);
   });
 </script>
-<script>
-  // Redirigir el logo al home correcto según el idioma de la página
-  (function () {
-    const logoLink = document.querySelector('a.logo');
-    if (!logoLink) return;
-
-    // Idioma actual: 'es' o 'en' (sale del <html lang="...">)
-    const lang = (document.documentElement.lang || 'en').toLowerCase();
-
-    // Destino por idioma (ajusta si cambias los nombres)
-    const target = (lang === 'es') ? 'index-es.html' : 'index.html';
-
-    // También actualizamos el href para SEO / menú contextual / long-press en móvil
-    logoLink.setAttribute('href', target);
-
-    // Intercepta el click normal (respetamos abrir en nueva pestaña con Ctrl/⌘)
-    logoLink.addEventListener('click', function (e) {
-      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return; // permitir abrir en nueva pestaña
-      e.preventDefault();
-      window.location.href = target;
-    });
-  })();
-</script>
   <script>
-/* === Mantener idioma al pulsar el logo (no más cambios involuntarios) === */
 (function(){
-  const STORAGE_KEY = 'siteLang';
+  const KEY = 'siteLang';
 
-  // 1) Detecta idioma actual de la página
-  function detectLangFromPage(){
-    const htmlLang = (document.documentElement.lang || '').toLowerCase();
-    if (htmlLang === 'es' || htmlLang === 'en') return htmlLang;
-    const p = location.pathname.toLowerCase();
-    if (/-es\.html?$/.test(p)) return 'es';
-    return 'en';
-  }
-
-  // 2) Preferencia guardada o idioma de la página
-  const currentLang = detectLangFromPage();
-  const savedLang = localStorage.getItem(STORAGE_KEY);
-  const prefLang  = savedLang || currentLang || 'en';
-
-  // 3) Guardar preferencia cuando se hace clic en ES / EN
+  // Guardar preferencia SOLO al pulsar ES/EN
   document.querySelectorAll('.lang-switch a').forEach(a=>{
     a.addEventListener('click', ()=>{
       const txt = (a.textContent || '').trim().toLowerCase();
-      const lang = txt.includes('es') ? 'es' : 'en';
-      localStorage.setItem(STORAGE_KEY, lang);
+      localStorage.setItem(KEY, txt.includes('es') ? 'es' : 'en');
     });
   });
 
-  // 4) Forzar que el logo vaya SIEMPRE al home del idioma preferido
-  const logoLink = document.querySelector('a.logo');
-  if (logoLink){
-    const homeFor = lang => (lang === 'es') ? 'index-es.html' : 'index.html';
-    // setea el href correcto (útil para abrir en nueva pestaña)
-    logoLink.setAttribute('href', homeFor(prefLang));
+  // Preferencia guardada o idioma del documento
+  const pageLang = (document.documentElement.lang || 'en').toLowerCase();
+  const pref = localStorage.getItem(KEY) || pageLang;
 
-    logoLink.addEventListener('click', (e)=>{
-      // permite Ctrl/⌘ click para nueva pestaña
-      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
-      e.preventDefault();
-      const lang = localStorage.getItem(STORAGE_KEY) || detectLangFromPage();
-      window.location.href = homeFor(lang);
-    });
+  // Apuntar el logo al home del idioma preferido (sin interceptar el click)
+  const logo = document.querySelector('a.logo');
+  if (logo){
+    logo.setAttribute('href', pref === 'es' ? 'index-es.html' : 'index.html');
   }
 })();
 </script>
