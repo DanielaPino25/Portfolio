@@ -1,1 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PAGE TITLE — Daniela Pino</title>
 
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <meta name="description" content="Short page description." />
+
+  <!-- Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- CSS principal: AJUSTA LA RUTA si este archivo está en una carpeta -->
+<link rel="stylesheet" href="style.css?v=9" />
+  <style>
+  /* Diagnóstico: mostrar siempre el menú en escritorio y móvil */
+  .topbar { display:block; width:100%; }
+  .topbar-inner { display:flex; align-items:center; justify-content:space-between; flex-wrap:nowrap; }
+  .menu { display:flex !important; gap:40px; }
+  .menu a { white-space:nowrap; }
+  .burger { display:none !important; }   /* oculta hamburguesa temporalmente */
+  .navdrawer { display:none !important; }/* oculta menú móvil temporalmente */
+</style>
+
+</head>
+<body>
+  <!-- TOPBAR -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="logo" href="https://www.danielapino.com" aria-label="Home">
+        <img src="assets/Logo.svg?v=2" alt="Daniela Pino logo" />
+      </a>
+
+<nav class="menu" aria-label="Principal">
+  <a href="sobre-mi-es.html" data-nav="sobre-mi-es.html">SOBRE MÍ</a>
+  <a href="proyectos-es.html" data-nav="proyectos-es.html">PORTAFOLIO</a>
+  <a href="contacto-es.html" data-nav="contacto-es.html">CONTACTO</a>
+
+  <div class="lang-switch" aria-label="Selector de idioma">
+    <a href="index-es.html" class="active">ES</a>
+    <span>/</span>
+    <a href="index.html">EN</a>
+  </div>
+</nav>
+
+      <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="navdrawer">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MENÚ MÓVIL -->
+ <nav id="navdrawer" class="navdrawer" aria-label="Principal móvil">
+  <a href="sobre-mi-es.html">SOBRE MÍ</a>
+  <a href="proyectos-es.html">PORTAFOLIO</a>
+  <a href="contacto-es.html">CONTACTO</a>
+
+  <div class="lang-switch" aria-label="Selector de idioma">
+    <a href="index-es.html" class="active">ES</a>
+    <span>/</span>
+    <a href="index.html">EN</a>
+  </div>
+</nav>
+
+  <!-- CONTENIDO DE LA PÁGINA -->
+  <main style="padding:2rem;">
+    <h1>PAGE TITLE</h1>
+    <p>Contenido de la página…</p>
+  </main>
+
+  <footer style="text-align:center; padding:1rem; border-top:1px solid #eee;">
+    © <span id="year"></span> Daniela Pino
+  </footer>
+
+  <!-- Scripts (mismo que en index) -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // marcar enlace activo por archivo (usa el nombre de archivo exacto)
+    const path = location.pathname.split('/').pop();
+    document.querySelectorAll('[data-nav]').forEach(a=>{
+      const file = a.getAttribute('data-nav') || a.getAttribute('href');
+      if (file === path) a.classList.add('is-active');
+    });
+
+    // burger / navdrawer
+    const burger = document.querySelector('.burger');
+    if (burger) {
+      burger.addEventListener('click', ()=>{
+        const open = document.body.classList.toggle('nav-open');
+        burger.setAttribute('aria-expanded', open ? 'true':'false');
+      });
+    }
+    document.querySelectorAll('#navdrawer a').forEach(a=>{
+      a.addEventListener('click', ()=> document.body.classList.remove('nav-open'));
+    });
+  </script>
+</body>
+</html>
