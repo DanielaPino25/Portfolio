@@ -24,7 +24,7 @@ body{
 .topbar-inner{
   max-width: var(--max);
   margin: 0 auto;
-  padding: 8px var(--pad);        /* barra finita como el mock */
+  padding: 2px var(--pad);        /* barra finita como el mock */
   display: flex; align-items: center; gap: 18px;
 }
 
