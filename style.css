@@ -16,7 +16,7 @@ body{
 
 /* Logo mini */
 .logo{ display:flex; align-items:center; text-decoration:none; }
-.logo img{ height:26px; width:auto; display:block; }
+.logo img{ height:30px; width:auto; display:block; }
 @media (max-width:600px){
   .logo img{ height:20px; }
 }
