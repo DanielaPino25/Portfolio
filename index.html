@@ -4,43 +4,35 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Daniela Pino — Portfolio</title>
-  
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
 
-  <!-- Descripción -->
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Meta descripción -->
   <meta name="description" content="Portfolio de Daniela Pino, diseñadora de producto y UX/UI." />
 
   <!-- Tipografía Poppins -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Estilos -->
+  <!-- CSS principal -->
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <!-- MENÚ SUPERIOR -->
   <header class="topbar">
     <div class="topbar-inner">
-      <!-- LOGO -->
       <a class="logo" href="https://www.danielapino.com" aria-label="Inicio">
         <img src="assets/Logo.svg?v=2" alt="Logo de Daniela Pino" />
       </a>
 
-      <!-- MENÚ PRINCIPAL -->
       <nav class="menu" aria-label="Main">
         <a href="sobre-mi.html" data-nav="sobre-mi">ABOUT ME</a>
         <a href="proyectos.html" data-nav="proyectos">PORTFOLIO</a>
         <a href="contacto.html" data-nav="contacto">CONTACT</a>
-
-        <!-- SELECTOR DE IDIOMA -->
-        <div class="lang-switch">
-          <a href="index.html" class="lang es active">ES</a>
-          <span>/</span>
-          <a href="index-en.html" class="lang en">EN</a>
-        </div>
+        <button class="lang" type="button" aria-label="Cambiar idioma">ES / EN</button>
       </nav>
 
-      <!-- BOTÓN MENÚ MÓVIL -->
       <button class="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="navdrawer">
         <span></span><span></span><span></span>
       </button>
@@ -52,51 +44,46 @@
     <a href="sobre-mi.html" data-nav="sobre-mi">ABOUT ME</a>
     <a href="proyectos.html" data-nav="proyectos">PORTFOLIO</a>
     <a href="contacto.html" data-nav="contacto">CONTACT</a>
-    <div class="lang-switch">
-      <a href="index.html" class="lang es active">ES</a>
-      <span>/</span>
-      <a href="index-en.html" class="lang en">EN</a>
-    </div>
+    <button class="lang" type="button">ES / EN</button>
   </nav>
 
-  <!-- CONTENIDO DE PRUEBA -->
+  <!-- CONTENIDO -->
   <main style="padding: 2rem;">
     <h1>Hola 👋 Soy Daniela Pino</h1>
     <p>Esta es mi página en construcción. Si puedes leer esto, el menú ya se muestra correctamente.</p>
   </main>
 
-  <!-- FOOTER -->
   <footer style="text-align:center; padding:1rem; border-top:1px solid #eee;">
     © <span id="year"></span> Daniela Pino
   </footer>
 
   <!-- Scripts -->
   <script>
-    // año
+    // Año dinámico
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // marcar enlace activo
+    // Enlace activo
     const path = location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('[data-nav]').forEach(a=>{
+    document.querySelectorAll('[data-nav]').forEach(a => {
       const file = a.getAttribute('href');
       if (file === path) a.classList.add('is-active');
     });
 
-    // abrir/cerrar menú móvil
+    // Menú móvil (abrir/cerrar)
     const burger = document.querySelector('.burger');
     if (burger) {
-      burger.addEventListener('click', ()=>{
+      burger.addEventListener('click', () => {
         const open = document.body.classList.toggle('nav-open');
         burger.setAttribute('aria-expanded', open ? 'true' : 'false');
       });
     }
 
-    // cerrar cajón al navegar
-    document.querySelectorAll('#navdrawer a').forEach(a=>{
-      a.addEventListener('click', ()=> document.body.classList.remove('nav-open'));
+    // Cerrar menú al hacer click en un enlace
+    document.querySelectorAll('#navdrawer a').forEach(a => {
+      a.addEventListener('click', () => document.body.classList.remove('nav-open'));
     });
 
-    // sombra del toolbar al hacer scroll
+    // Sombra del toolbar al hacer scroll
     window.addEventListener('scroll', () => {
       if (window.scrollY > 10) document.body.classList.add('scrolled');
       else document.body.classList.remove('scrolled');
