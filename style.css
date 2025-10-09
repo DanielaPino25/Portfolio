@@ -85,14 +85,14 @@ h3{ font-weight:500; font-size: clamp(18px, 2.4vw, 22px); margin:0 0 .5rem; }
   transition: background .25s ease;
 }
 
-.topbar-inner{
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 30px var(--pad);     /* alto del toolbar */
+.topbar-inner {
+  width: 100%;               /* ocupa todo el ancho de la pantalla */
+  margin: 0;
+  padding: 40px 24px;        /* arriba/abajo = 40px, laterales = 24px */
   display: flex;
-  align-items: center;          /* centro vertical */
-  justify-content: space-between; /* logo izq, menú der */
-  gap: 5px;
+  align-items: center;       /* centra verticalmente */
+  justify-content: space-between; /* logo a izq, menú a der */
+  gap: 18px;
 }
 
 /* Menú: solo una definición */
