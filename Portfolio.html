@@ -131,6 +131,52 @@
     });
   })();
 </script>
+  <script>
+/* === Mantener idioma al pulsar el logo (no más cambios involuntarios) === */
+(function(){
+  const STORAGE_KEY = 'siteLang';
+
+  // 1) Detecta idioma actual de la página
+  function detectLangFromPage(){
+    const htmlLang = (document.documentElement.lang || '').toLowerCase();
+    if (htmlLang === 'es' || htmlLang === 'en') return htmlLang;
+    const p = location.pathname.toLowerCase();
+    if (/-es\.html?$/.test(p)) return 'es';
+    return 'en';
+  }
+
+  // 2) Preferencia guardada o idioma de la página
+  const currentLang = detectLangFromPage();
+  const savedLang = localStorage.getItem(STORAGE_KEY);
+  const prefLang  = savedLang || currentLang || 'en';
+
+  // 3) Guardar preferencia cuando se hace clic en ES / EN
+  document.querySelectorAll('.lang-switch a').forEach(a=>{
+    a.addEventListener('click', ()=>{
+      const txt = (a.textContent || '').trim().toLowerCase();
+      const lang = txt.includes('es') ? 'es' : 'en';
+      localStorage.setItem(STORAGE_KEY, lang);
+    });
+  });
+
+  // 4) Forzar que el logo vaya SIEMPRE al home del idioma preferido
+  const logoLink = document.querySelector('a.logo');
+  if (logoLink){
+    const homeFor = lang => (lang === 'es') ? 'index-es.html' : 'index.html';
+    // setea el href correcto (útil para abrir en nueva pestaña)
+    logoLink.setAttribute('href', homeFor(prefLang));
+
+    logoLink.addEventListener('click', (e)=>{
+      // permite Ctrl/⌘ click para nueva pestaña
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      e.preventDefault();
+      const lang = localStorage.getItem(STORAGE_KEY) || detectLangFromPage();
+      window.location.href = homeFor(lang);
+    });
+  }
+})();
+</script>
+
 </body>
 </html>
 
