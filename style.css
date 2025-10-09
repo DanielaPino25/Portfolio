@@ -16,8 +16,12 @@ body{ font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica,
 }
 .logo{
   display:inline-flex; align-items:center; justify-content:center;
-  width:48px; height:48px; border:1px solid #e8e8e8; border-radius:8px;
-  text-decoration:none; color:#111; font-weight:700; font-size:12px; background:#fafafa;
+  width:auto; height:48px; text-decoration:none;
+}
+.logo img{
+  height:48px;
+  width:auto;
+  display:block;
 }
 .menu{ margin-left:auto; display:flex; align-items:center; gap:28px; }
 .menu a{ text-decoration:none; color:#111; font-weight:600; font-size:14px; }
