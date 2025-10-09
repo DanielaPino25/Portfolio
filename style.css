@@ -91,3 +91,20 @@ h3{ font-weight:500; font-size: clamp(18px, 2.4vw, 22px); margin:0 0 .5rem; }
 .text-light{font-weight:300;} .text-regular{font-weight:400;}
 .text-medium{font-weight:500;} .text-semibold{font-weight:600;} .text-bold{font-weight:700;}
 
+/* Wrapper interno del toolbar: centra el contenido y habilita el flex */
+.topbar-inner{
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 12px var(--pad);
+  display: flex;               /* IMPORTANTE */
+  align-items: center;
+  gap: 18px;
+}
+
+/* Empuja el menú a la derecha */
+.menu{
+  margin-left: auto !important; /* fuerza que se vaya a la derecha */
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
