@@ -15,11 +15,25 @@ body{ font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica,
   display:flex; align-items:center; gap:12px;
 }
 .logo{
-  display:flex; align-items:center; gap:8px;
-  height:48px; text-decoration:none;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  height:40px; /* tamaño normal */
+  text-decoration:none;
 }
-.logo img{ height:100%; width:auto; display:block; }
 
+.logo img{
+  height:100%;
+  width:auto;
+  display:block;
+}
+
+/* Versión más pequeña en pantallas pequeñas */
+@media (max-width: 600px){
+  .logo{
+    height:28px;
+  }
+}
 .menu{ margin-left:auto; display:flex; align-items:center; gap:28px; }
 .menu a{ text-decoration:none; color:#111; font-weight:600; font-size:14px; }
 .menu a:hover{ text-decoration:underline; }
