@@ -2,7 +2,7 @@
 :root{
   --max:1280px;           /* ancho de contenido como tu mock */
   --pad:10px;             /* padding lateral compacto */
-  --fg:#111; --muted:#666; --line:#eee; --bg:#fff;
+  --fg:#3a3a3a; --muted:#666; --line:#eee; --bg:#fff;
 }
 @media (min-width:1600px){
   :root{ --max:1440px; --pad:22px; }  /* en monitores muy grandes */
