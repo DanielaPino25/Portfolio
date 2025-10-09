@@ -15,7 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- CSS principal -->
-<link rel="stylesheet" href="style.css?v=13" />
+  <link rel="stylesheet" href="style.css?v=13" />
 </head>
 
 <body>
@@ -26,36 +26,36 @@
         <img src="assets/Logo.svg?v=2" alt="Logo de Daniela Pino" />
       </a>
 
-<nav class="menu" aria-label="Principal">
-  <a href="SobreMi.html" data-nav="SobreMi.html">SOBRE MÍ</a>
-  <a href="Portfolio-es.html" data-nav="Portfolio-es.html">PORTFOLIO</a>
-  <a href="Contacto.html" data-nav="Contacto.html">CONTACTO</a>
+      <nav class="menu" aria-label="Principal">
+        <a href="SobreMi.html" data-nav="SobreMi.html">SOBRE MÍ</a>
+        <a href="Portfolio-es.html" data-nav="Portfolio-es.html">PORTFOLIO</a>
+        <a href="Contacto.html" data-nav="Contacto.html">CONTACTO</a>
 
-  <div class="lang-switch" aria-label="Selector de idioma">
-    <a href="index-es.html" class="active">ES</a>
-    <span>/</span>
-    <a href="index.html">EN</a>
-  </div>
-</nav>
+        <div class="lang-switch" aria-label="Selector de idioma">
+          <a href="index-es.html" class="active">ES</a>
+          <span>/</span>
+          <a href="index.html">EN</a>
+        </div>
+      </nav>
 
       <button class="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="navdrawer">
-  <span></span><span></span><span></span>
-</button>
+        <span></span><span></span><span></span>
+      </button>
     </div>
-</header>
+  </header>
 
-<!-- MENÚ MÓVIL -->
-<nav id="navdrawer" class="navdrawer" aria-label="Principal móvil">
-  <a href="SobreMi.html">SOBRE MÍ</a>
-  <a href="Portfolio-es.html">PORTAFOLIO</a>
-  <a href="Contacto.html">CONTACTO</a>
+  <!-- MENÚ MÓVIL -->
+  <nav id="navdrawer" class="navdrawer" aria-label="Principal móvil">
+    <a href="SobreMi.html">SOBRE MÍ</a>
+    <a href="Portfolio-es.html">PORTFOLIO</a>
+    <a href="Contacto.html">CONTACTO</a>
 
-  <div class="lang-switch" aria-label="Selector de idioma">
-    <a href="index-es.html" class="active">ES</a>
-    <span>/</span>
-    <a href="index.html">EN</a>
-  </div>
-</nav>
+    <div class="lang-switch" aria-label="Selector de idioma">
+      <a href="index-es.html" class="active">ES</a>
+      <span>/</span>
+      <a href="index.html">EN</a>
+    </div>
+  </nav>
 
   <!-- CONTENIDO -->
   <main style="padding: 2rem;">
@@ -67,127 +67,68 @@
     © <span id="year"></span> Daniela Pino
   </footer>
 
-<script>
-  // Año
-  document.getElementById('year')?.textContent = new Date().getFullYear();
-
-  // Normaliza rutas: quita query/hash y toma solo el archivo
-  const raw = location.pathname.split('/').pop() || '';
-  const clean = raw.replace(/[#?].*$/, '').toLowerCase();
-
-  // Home por idioma si no hay archivo en la URL
-  const home = (document.documentElement.lang === 'es') ? 'index-es.html' : 'index.html';
-  const current = clean === '' ? home : clean;
-
-  // Marca activo comparando con data-nav (preferente) o href
-  document.querySelectorAll('.menu a, #navdrawer a').forEach(a => {
-    const target = (a.getAttribute('data-nav') || a.getAttribute('href') || '')
-      .replace(/[#?].*$/, '')
-      .split('/').pop()
-      .toLowerCase();
-    if (target === current) a.classList.add('is-active');
-  });
-
-  // Burger / navdrawer
-  const burger = document.querySelector('.burger');
-  burger?.addEventListener('click', () => {
-    const open = document.body.classList.toggle('nav-open');
-    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
-  document.querySelectorAll('#navdrawer a').forEach(a => {
-    a.addEventListener('click', () => document.body.classList.remove('nav-open'));
-  });
-
-  // Sombra al hacer scroll (opcional)
-  window.addEventListener('scroll', () => {
-    document.body.classList.toggle('scrolled', window.scrollY > 10);
-  });
-</script
-<script>
-(function(){
-  const KEY = 'siteLang';
-
-  // Guardar preferencia SOLO al pulsar ES/EN
-  document.querySelectorAll('.lang-switch a').forEach(a=>{
-    a.addEventListener('click', ()=>{
-      const txt = (a.textContent || '').trim().toLowerCase();
-      localStorage.setItem(KEY, txt.includes('es') ? 'es' : 'en');
-    });
-  });
-
-  // Preferencia guardada o idioma del documento
-  const pageLang = (document.documentElement.lang || 'en').toLowerCase();
-  const pref = localStorage.getItem(KEY) || pageLang;
-
-  // Apuntar el logo al home del idioma preferido (sin interceptar el click)
-  const logo = document.querySelector('a.logo');
-  if (logo){
-    logo.setAttribute('href', pref === 'es' ? 'index-es.html' : 'index.html');
-  }
-})();
-</script>
   <!-- Script de navegación y enlace activo -->
-<script>
-  // Año
-  document.getElementById('year')?.textContent = new Date().getFullYear();
+  <script>
+    // Año
+    document.getElementById('year')?.textContent = new Date().getFullYear();
 
-  // Normaliza rutas: quita query/hash y toma solo el archivo
-  const raw = location.pathname.split('/').pop() || '';
-  const clean = raw.replace(/[#?].*$/, '').toLowerCase();
+    // Normaliza rutas: quita query/hash y toma solo el archivo
+    const raw = location.pathname.split('/').pop() || '';
+    const clean = raw.replace(/[#?].*$/, '').toLowerCase();
 
-  // Home por idioma si no hay archivo en la URL
-  const home = (document.documentElement.lang === 'es') ? 'index-es.html' : 'index.html';
-  const current = clean === '' ? home : clean;
+    // Home por idioma si no hay archivo en la URL
+    const home = (document.documentElement.lang === 'es') ? 'index-es.html' : 'index.html';
+    const current = clean === '' ? home : clean;
 
-  // Marca activo comparando con data-nav (preferente) o href
-  document.querySelectorAll('.menu a, #navdrawer a').forEach(a => {
-    const target = (a.getAttribute('data-nav') || a.getAttribute('href') || '')
-      .replace(/[#?].*$/, '')
-      .split('/').pop()
-      .toLowerCase();
-    if (target === current) a.classList.add('is-active');
-  });
-
-  // Burger / navdrawer
-  const burger = document.querySelector('.burger');
-  burger?.addEventListener('click', () => {
-    const open = document.body.classList.toggle('nav-open');
-    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
-  document.querySelectorAll('#navdrawer a').forEach(a => {
-    a.addEventListener('click', () => document.body.classList.remove('nav-open'));
-  });
-
-  // Sombra al hacer scroll (opcional)
-  window.addEventListener('scroll', () => {
-    document.body.classList.toggle('scrolled', window.scrollY > 10);
-  });
-</script>
-
-<!-- Script para que el logo respete el idioma preferido (sin cambiarlo) -->
-<script>
-(function(){
-  const KEY = 'siteLang';
-
-  // Guardar preferencia SOLO al pulsar ES/EN
-  document.querySelectorAll('.lang-switch a').forEach(a=>{
-    a.addEventListener('click', ()=>{
-      const txt = (a.textContent || '').trim().toLowerCase();
-      localStorage.setItem(KEY, txt.includes('es') ? 'es' : 'en');
+    // Marca activo comparando con data-nav (preferente) o href
+    document.querySelectorAll('.menu a, #navdrawer a').forEach(a => {
+      const target = (a.getAttribute('data-nav') || a.getAttribute('href') || '')
+        .replace(/[#?].*$/, '')
+        .split('/').pop()
+        .toLowerCase();
+      if (target === current) a.classList.add('is-active');
     });
-  });
 
-  // Preferencia guardada o idioma del documento
-  const pageLang = (document.documentElement.lang || 'en').toLowerCase();
-  const pref = localStorage.getItem(KEY) || pageLang;
+    // Burger / navdrawer
+    const burger = document.querySelector('.burger');
+    burger?.addEventListener('click', () => {
+      const open = document.body.classList.toggle('nav-open');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    document.querySelectorAll('#navdrawer a').forEach(a => {
+      a.addEventListener('click', () => document.body.classList.remove('nav-open'));
+    });
 
-  // Apuntar el logo al home del idioma preferido (sin interceptar el click)
-  const logo = document.querySelector('a.logo');
-  if (logo){
-    logo.setAttribute('href', pref === 'es' ? 'index-es.html' : 'index.html');
-  }
-})();
-</script>
+    // Sombra al hacer scroll (opcional)
+    window.addEventListener('scroll', () => {
+      document.body.classList.toggle('scrolled', window.scrollY > 10);
+    });
+  </script>
 
+  <!-- Script: el logo respeta SIEMPRE el idioma preferido (sin cambiarlo) -->
+  <script>
+    (function(){
+      const KEY = 'siteLang';
+
+      // Guardar preferencia SOLO al pulsar ES/EN
+      document.querySelectorAll('.lang-switch a').forEach(a=>{
+        a.addEventListener('click', ()=>{
+          const txt = (a.textContent || '').trim().toLowerCase();
+          localStorage.setItem(KEY, txt.includes('es') ? 'es' : 'en');
+        });
+      });
+
+      // Preferencia guardada o idioma del documento
+      const pageLang = (document.documentElement.lang || 'en').toLowerCase();
+      const pref = localStorage.getItem(KEY) || pageLang;
+
+      // Apuntar el logo al home del idioma preferido (sin interceptar el click)
+      const logo = document.querySelector('a.logo');
+      if (logo){
+        logo.setAttribute('href', pref === 'es' ? 'index-es.html' : 'index.html');
+      }
+    })();
+  </script>
 </body>
 </html>
+
