@@ -4,42 +4,59 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Daniela Pino — Portfolio</title>
+  
   <!-- Favicon -->
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+  <!-- Descripción -->
   <meta name="description" content="Portfolio de Daniela Pino, diseñadora de producto y UX/UI." />
 
-  <!-- Tipografía Poppins (300,400,500,600,700) -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
- 
+  <!-- Tipografía Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Estilos -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <!-- MENÚ SUPERIOR -->
   <header class="topbar">
-      <div class="topbar-inner">
-        <a class="logo" href="https://www.danielapino.com" aria-label="Inicio">
-      <img src="assets/Logo.svg?v=2" alt="Logo de Daniela Pino" />
-    </a>
-        
-    <nav class="menu" aria-label="Main">
-      <a href="sobre-mi.html" data-nav="sobre-mi">ABOUT ME</a>
-      <a href="proyectos.html" data-nav="proyectos">PORTFOLIO</a>
-      <a href="contacto.html" data-nav="contacto">CONTACT</a>
-      <button class="lang" type="button" aria-label="Cambiar idioma">ES / EN</button>
-    </nav>
+    <div class="topbar-inner">
+      <!-- LOGO -->
+      <a class="logo" href="https://www.danielapino.com" aria-label="Inicio">
+        <img src="assets/Logo.svg?v=2" alt="Logo de Daniela Pino" />
+      </a>
 
-    <button class="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="navdrawer">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</header>
+      <!-- MENÚ PRINCIPAL -->
+      <nav class="menu" aria-label="Main">
+        <a href="sobre-mi.html" data-nav="sobre-mi">ABOUT ME</a>
+        <a href="proyectos.html" data-nav="proyectos">PORTFOLIO</a>
+        <a href="contacto.html" data-nav="contacto">CONTACT</a>
+
+        <!-- SELECTOR DE IDIOMA -->
+        <div class="lang-switch">
+          <a href="index.html" class="lang es active">ES</a>
+          <span>/</span>
+          <a href="index-en.html" class="lang en">EN</a>
+        </div>
+      </nav>
+
+      <!-- BOTÓN MENÚ MÓVIL -->
+      <button class="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="navdrawer">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
 
   <!-- MENÚ MÓVIL -->
   <nav id="navdrawer" class="navdrawer" aria-label="Main mobile">
     <a href="sobre-mi.html" data-nav="sobre-mi">ABOUT ME</a>
     <a href="proyectos.html" data-nav="proyectos">PORTFOLIO</a>
-    <a href="contacto.html" data-nav="contacto">CONTACTO</a>
-    <button class="lang" type="button">ES / EN</button>
+    <a href="contacto.html" data-nav="contacto">CONTACT</a>
+    <div class="lang-switch">
+      <a href="index.html" class="lang es active">ES</a>
+      <span>/</span>
+      <a href="index-en.html" class="lang en">EN</a>
+    </div>
   </nav>
 
   <!-- CONTENIDO DE PRUEBA -->
@@ -48,11 +65,12 @@
     <p>Esta es mi página en construcción. Si puedes leer esto, el menú ya se muestra correctamente.</p>
   </main>
 
-    <footer style="text-align:center; padding:1rem; border-top:1px solid #eee;">
+  <!-- FOOTER -->
+  <footer style="text-align:center; padding:1rem; border-top:1px solid #eee;">
     © <span id="year"></span> Daniela Pino
   </footer>
 
-  <!-- Scripts: siempre dentro del body -->
+  <!-- Scripts -->
   <script>
     // año
     document.getElementById('year').textContent = new Date().getFullYear();
