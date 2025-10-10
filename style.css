@@ -254,4 +254,65 @@ html{
   /* solo color/overlay del token, sin mover el enlace */
   transform: none !important;
 }
+/* === FIX: texto SIEMPRE por encima del token y sin perder intensidad === */
+
+/* Enlaces principales del menú (no idiomas) */
+.topbar .menu > a,
+#navdrawer > a{
+  position: relative;
+  z-index: 1;                       /* texto por encima */
+  color: var(--fg) !important;      /* gris constante */
+  background: transparent !important;
+  opacity: 1 !important;            /* nunca bajar la opacidad del texto */
+  text-decoration: none !important;
+  transform: none !important;       /* evita mini saltos */
+}
+
+/* El token va DEBAJO del texto */
+.topbar .menu > a::before,
+#navdrawer > a::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: transparent;
+  box-shadow: none;
+  z-index: -1;                      /* debajo del texto */
+  transition: background .25s ease, box-shadow .25s ease;
+}
+
+/* Hover → azul translúcido, solo en el ::before */
+.topbar .menu > a:hover::before,
+.topbar .menu > a:focus-visible::before,
+#navdrawer > a:hover::before,
+#navdrawer > a:focus-visible::before{
+  background: rgba(128,179,251,.28);  /* #80B3FB */
+  box-shadow:
+    inset 0 2px 6px rgba(128,179,251,.45),
+    0 2px 6px rgba(0,0,0,.04);
+}
+
+/* Activo → naranja translúcido, solo en el ::before */
+.topbar .menu > a.is-active::before,
+#navdrawer > a.is-active::before{
+  background: rgba(251,146,128,.34);  /* #FB9280 */
+  box-shadow:
+    inset 0 2px 8px rgba(251,146,128,.55),
+    0 2px 6px rgba(0,0,0,.03);
+}
+
+/* Anula el desvanecido de hover heredado en los enlaces principales */
+.topbar .menu > a:hover,
+#navdrawer > a:hover{
+  opacity: 1 !important;             /* texto siempre igual de intenso */
+}
+
+/* El selector de idioma sigue sin tokens ni efectos */
+.lang-switch a{
+  background: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  opacity: 1 !important;
+}
+.lang-switch a::before{ content: none !important; }
 
