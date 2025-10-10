@@ -129,6 +129,27 @@
       }
     })();
   </script>
+  <script>
+(function(){
+  // 1) Nombre de archivo actual, sin query ni hash (p.ej., "AboutMe.html")
+  const file = (location.pathname.split('/').pop() || '').replace(/[#?].*$/, '');
+  // Si no hay archivo (p. ej., dominio raíz), decide el "home" por idioma
+  const htmlLang = (document.documentElement.lang || 'en').toLowerCase();
+  const home = htmlLang === 'es' ? 'index-es.html' : 'index.html';
+  const current = file || home;
+
+  // 2) Busca enlaces con data-nav en menú de escritorio y cajón móvil
+  const links = document.querySelectorAll('.menu a[data-nav], #navdrawer a[data-nav]');
+  links.forEach(a => {
+    const target = (a.getAttribute('data-nav') || '').toLowerCase();
+    if (target === current.toLowerCase()) {
+      a.classList.add('is-active');          // ← activa token naranja
+      // accesibilidad opcional:
+      a.setAttribute('aria-current', 'page');
+    }
+  });
+})();
+</script>
 </body>
 </html>
 
