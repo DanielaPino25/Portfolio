@@ -1,670 +1,227 @@
-/* ===== Base ===== */
+/* ========== Variables ========== */
 :root{
-  --max:1280px;
-  --fg:#3a3a3a; --muted:#666; --line:#eee; --bg:#fff;
-}
-@media (min-width:1600px){ :root{ --max:1440px; } }
+  --max: 1280px;
+  --fg: #3a3a3a;
+  --muted: #6b6b6b;
+  --line: #eee;
+  --bg: #fff;
 
-*{ box-sizing:border-box }
-html,body{ margin:0; padding:0 }
+  --orange: #FB9280;   /* acento nombre / CTA */
+  --blue:   #80B3FB;   /* acento rol */
+
+  /* alturas dinámicas (las rellena JS) */
+  --topbar-h: 0px;
+  --footer-h: 0px;
+}
+
+@media (min-width: 1600px){
+  :root{ --max: 1440px; }
+}
+
+/* ========== Base ========== */
+*{ box-sizing: border-box; }
+html, body{ margin:0; padding:0; }
 body{
   font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-  color:var(--fg); background:var(--bg); line-height:1.6;
+  color: var(--fg);
+  background: var(--bg);
+  line-height: 1.6;
 }
-/* ===== Toolbar ===== */
+
+/* ========== Toolbar ========== */
 .topbar{
-  position: sticky; top:0; z-index:50; width:100%;
-  background:#fff;
+  position: sticky; top: 0; z-index: 100; width: 100%;
+  background: #fff;
 }
 .topbar-inner{
-  width:100%; margin:0;
-  /* alto cómodo y laterales fluidos: 16px–64px según pantalla (~5vw) */
-  padding: 28px clamp(16px, 5vw, 64px);
-  display:flex; align-items:center; justify-content:space-between; gap:24px;
+  width: 100%;
+  padding: 28px clamp(16px, 5vw, 64px);  /* alto y laterales fluidos */
+  margin: 0;
+  display: flex; align-items: center; justify-content: space-between; gap: 24px;
+  flex-wrap: nowrap; /* evita saltos de línea */
 }
+
 /* Logo */
 .logo{ display:flex; align-items:center; text-decoration:none; }
 .logo img{ height:32px; width:auto; display:block; }
-@media (max-width:600px){ .logo img{ height:24px; } }
-/* Menú */
-.menu{ margin-left:auto; display:flex; align-items:center; gap:40px; }
-.menu a,
-.menu .lang,
-.topbar a,
-.topbar button{
-  color:var(--fg);
-  font-weight:500;                 /* LIGHT */
-  font-size:12.5px;
-  letter-spacing:.07em;
-  text-transform:uppercase;
-  text-decoration:none;
-  transition:opacity .2s ease;
+@media (max-width: 600px){ .logo img{ height:24px; } }
+
+/* Menú desktop */
+.menu{
+  margin-left: auto;
+  display: flex; align-items: center; gap: 40px; flex-wrap: nowrap;
 }
-.menu a:hover, .menu .lang:hover{ opacity:.6; }
+.menu a,
+.topbar button{
+  color: var(--fg);
+  font-weight: 500;
+  font-size: 12.5px;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: opacity .2s ease;
+  white-space: nowrap;
+}
+.menu a:hover{ opacity: .6; }
 
-/* separa ES/EN del bloque de links */
-.menu .lang{ margin-left:40px; border:none; background:transparent; cursor:pointer; }
+/* Selector de idioma (sin tokens) */
+.lang-switch{
+  display: flex; align-items: center; gap: 10px;
+  margin-left: 40px; white-space: nowrap;
+}
+.lang-switch span{ color: #aaa; }
+.lang-switch a{
+  color: var(--fg);
+  text-decoration: none;
+  font-size: 12.5px; letter-spacing: .07em; text-transform: uppercase;
+  font-weight: 300; transition: opacity .2s ease;
+}
+.lang-switch a:hover{ opacity: .6; }
+.lang-switch a.active{ font-weight: 600; } /* bold solo idioma activo */
 
-/* Burger (móvil) */
+/* Burger solo en móvil */
 .burger{ display:none; margin-left:8px; background:transparent; border:0; cursor:pointer; }
 .burger span{ display:block; width:20px; height:2px; background:var(--fg); margin:4px 0; }
-@media (max-width:900px){ .menu{display:none;} .burger{display:block;} }
+@media (max-width: 640px){
+  .menu{ display:none !important; }
+  .burger{ display:inline-flex !important; align-items:center; justify-content:center; }
+}
 
 /* Cajón móvil */
 .navdrawer{
   display:none; position:fixed; inset:56px 0 auto 0; z-index:40;
   background:#fff; border-bottom:1px solid var(--line);
-  padding:12px clamp(16px, 5vw, 64px); gap:16px; flex-direction:column;
+  padding:12px clamp(16px, 5vw, 64px);
+  gap:16px; flex-direction:column;
 }
-.navdrawer a{ color:var(--fg); font-weight:300; font-size:16px; letter-spacing:.04em; text-decoration:none; }
+.navdrawer a{
+  color: var(--fg);
+  font-weight: 300; font-size:16px; letter-spacing:.04em;
+  text-decoration: none;
+}
 body.nav-open #navdrawer{ display:flex; }
-body.nav-open .burger span:nth-child(1){ transform:translateY(6px) rotate(45deg); }
+body.nav-open .burger span:nth-child(1){ transform: translateY(6px) rotate(45deg); }
 body.nav-open .burger span:nth-child(2){ opacity:0; }
-body.nav-open .burger span:nth-child(3){ transform:translateY(-6px) rotate(-45deg); }
+body.nav-open .burger span:nth-child(3){ transform: translateY(-6px) rotate(-45deg); }
 
-/* ===== Contenido ===== */
-main{
-  max-width:var(--max);
-  margin:32px auto;
-  padding:0 clamp(16px, 4vw, 40px);
-}
-
-/* ===== Footer ===== */
-footer{
-  text-align:center; padding:16px 0; border-top:1px solid var(--line); color:var(--muted);
-}
-
-/* ===== Títulos ===== */
-h1{ font-weight:700; font-size:clamp(28px,4vw,40px); letter-spacing:-.3px; margin:0 0 .75rem; }
-h2{ font-weight:600; font-size:clamp(22px,3vw,28px); margin:0 0 .6rem; }
-h3{ font-weight:500; font-size:clamp(18px,2.4vw,22px); margin:0 0 .5rem; }
-
-/* === Selector de idioma === */
-.lang-switch {
-  display: flex;
-  align-items: center;
-  gap: 10px;                     /* espacio entre ES / barra / EN */
-  margin-left: 56px;            /* separación del bloque de links */
-}
-
-.lang-switch span {
-  color: var(--fg);
-  opacity: 0.5;                 /* la barra más sutil */
-}
-
-.lang-switch .lang {
-  text-decoration: none;
-  color: var(--fg);
-  font-weight: 400;             /* peso normal */
-  font-size: 12.5px;
-  letter-spacing: .07em;
-  text-transform: uppercase;
-  transition: opacity 0.2s ease, font-weight 0.2s ease;
-}
-
-.lang-switch .lang:hover {
-  opacity: 0.6;
-}
-
-/* cuando el idioma está activo */
-.lang-switch .lang.active {
-  font-weight: 700;             /* bold para el idioma actual */
-  opacity: 1;
-}
-/* Evitar que el menú y sus items se rompan en varias líneas */
-.topbar-inner{ flex-wrap: nowrap; }
-.menu{ flex-wrap: nowrap; }
-.menu a{ white-space: nowrap; }      /* ABOUT ME siempre en una línea */
-.lang-switch{ white-space: nowrap; } /* ES / EN en una sola línea también */
-
-/* El header ocupa toda la fila y no comparte línea con nada */
-.topbar{ display:block; width:100%; position:sticky; top:0; z-index:100; }
-.topbar-inner{
-  display:flex; align-items:center; justify-content:space-between;
-  flex-wrap: nowrap;            /* evita saltos de línea en el toolbar */
-  width:100%;
-}
-
-/* Menú y selector de idioma en una sola línea */
-.menu{ display:flex; align-items:center; gap:40px; flex-wrap:nowrap; }
-.menu a{ white-space:nowrap; }
-.lang-switch{ display:flex; align-items:center; gap:10px; white-space:nowrap; }
-.lang-switch span{ color:#aaa; }
-
-/* Por si algo quedó con floats de pruebas anteriores */
-.logo, .menu, .burger{ float:none; }
-
-.lang-switch {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  white-space: nowrap;
-}
-
-.lang-switch a {
-  font-weight: 300;
-  color: var(--fg);
-  text-decoration: none;
-  transition: opacity 0.2s ease;
-}
-
-.lang-switch a.active {
-  font-weight: 600; /* negrita solo para el idioma activo */
-}
-
-.lang-switch a:hover {
-  opacity: 0.6;
-}
-
-.lang-switch span {
-  color: #aaa;
-}
-/* ===== Tokens para el menú ===== */
-
-/* base de cada enlace del menú */
-.menu a,
-#navdrawer a{
-  position: relative;
-  padding: .52rem .9rem;         /* espacio para la píldora */
-  border-radius: 9999px;          /* forma de píldora */
-  transition: background .25s ease, box-shadow .25s ease, transform .2s ease;
-  -webkit-tap-highlight-color: transparent;
-  color: var(--fg);
-}
-
-/* hover/focus → token AZUL translúcido (#80B3FB) */
-.menu a:hover,
-.menu a:focus-visible,
-#navdrawer a:hover,
-#navdrawer a:focus-visible{
-  background: rgba(128,179,251,.28); /* #80B3FB */
-  box-shadow:
-    inset 0 2px 6px rgba(128,179,251,.45),
-    0 2px 6px rgba(0,0,0,.04);
-  transform: translateY(-1px);
-  outline: none;
-}
-
-/* click corto (feedback) */
-.menu a:active,
-#navdrawer a:active{
-  transform: translateY(0);
-}
-
-/* página ACTIVA → token NARANJA translúcido (#FB9280) */
-.menu a.is-active,
-#navdrawer a.is-active{
-  background: rgba(251,146,128,.34); /* #FB9280 */
-  box-shadow:
-    inset 0 2px 8px rgba(251,146,128,.55),
-    0 2px 6px rgba(0,0,0,.03);
-}
-
-/* accesibilidad: foco visible con contorno suave */
-.menu a:focus-visible,
-#navdrawer a:focus-visible{
-  box-shadow:
-    0 0 0 2px rgba(128,179,251,.35),
-    inset 0 2px 6px rgba(128,179,251,.45);
-}
-
-/* respeta preferencia de reducir animaciones */
-@media (prefers-reduced-motion: reduce){
-  .menu a, #navdrawer a{
-    transition: none;
-  }
-}
-/* ===== TOKENS MENU ===== */
-.topbar .menu a,
-#navdrawer a{
-  position: relative;
-  padding: .52rem .9rem;            /* espacio para la píldora */
-  border-radius: 9999px;             /* forma pill */
-  transition: background .25s ease, box-shadow .25s ease, transform .2s ease;
-  color: var(--fg);
-  text-decoration: none;
-}
-
-/* Hover/focus → azul translúcido */
-.topbar .menu a:hover,
-.topbar .menu a:focus-visible,
-#navdrawer a:hover,
-#navdrawer a:focus-visible{
-  background: rgba(128,179,251,.28); /* #80B3FB */
-  box-shadow:
-    inset 0 2px 6px rgba(128,179,251,.45),
-    0 2px 6px rgba(0,0,0,.04);
-  transform: translateY(-1px);
-  outline: none;
-}
-
-/* Activo (página actual) → naranja translúcido */
-.topbar .menu a.is-active,
-#navdrawer a.is-active{
-  background: rgba(251,146,128,.34); /* #FB9280 */
-  box-shadow:
-    inset 0 2px 8px rgba(251,146,128,.55),
-    0 2px 6px rgba(0,0,0,.03);
-}
-/* Evitar subrayado heredado */
-.topbar .menu a:hover{ text-decoration: none; }
-
-/* Accesibilidad */
-@media (prefers-reduced-motion: reduce){
-  .topbar .menu a, #navdrawer a{ transition: none; }
-}
-/* ===== TOKENS MENU (forzado) ===== */
-.topbar .menu a,
-#navdrawer a{
-  position: relative;
-  padding: .52rem .9rem;
-  border-radius: 9999px;
-  text-decoration: none;
-  color: var(--fg);
-  transition: background .25s ease, box-shadow .25s ease, transform .2s ease;
-  background: transparent !important;
-}
-/* Hover/focus → azul translúcido (#80B3FB) */
-.topbar .menu a:hover,
-.topbar .menu a:focus-visible,
-#navdrawer a:hover,
-#navdrawer a:focus-visible{
-  background: rgba(128,179,251,.28) !important; /* #80B3FB */
-  box-shadow:
-    inset 0 2px 6px rgba(128,179,251,.45),
-    0 2px 6px rgba(0,0,0,.04) !important;
-  transform: translateY(-1px);
-  outline: none;
-}
-/* Activo → naranja translúcido (#FB9280) */
-.topbar .menu a.is-active,
-#navdrawer a.is-active{
-  background: rgba(251,146,128,.34) !important; /* #FB9280 */
-  box-shadow:
-    inset 0 2px 8px rgba(251,146,128,.55),
-    0 2px 6px rgba(0,0,0,.03) !important;
-}
-
-/* Evitar subrayados heredados */
-.topbar .menu a:hover{ text-decoration: none !important; }
-
-/* Por si algún media-query escondía el menú en escritorio durante pruebas: */
-@media (min-width: 901px){
-  .menu{ display: flex !important; }
-}
-/* ===== Mantener texto visible sobre el token ===== */
-.topbar .menu a,
-#navdrawer a {
-  position: relative;
-  color: #3a3a3a; /* gris oscuro constante */
-  z-index: 1;
-}
-
-/* Fondo del token debajo del texto */
-.topbar .menu a::before,
-#navdrawer a::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 9999px;
-  background: transparent;
-  z-index: -1; /* queda debajo del texto */
-  transition: background .25s ease, box-shadow .25s ease, transform .2s ease;
-}
-
-/* Hover / Focus → azul translúcido */
-.topbar .menu a:hover::before,
-.topbar .menu a:focus-visible::before,
-#navdrawer a:hover::before,
-#navdrawer a:focus-visible::before {
-  background: rgba(128,179,251,.28);
-  box-shadow:
-    inset 0 2px 6px rgba(128,179,251,.45),
-    0 2px 6px rgba(0,0,0,.04);
-}
-/* Activo → naranja translúcido */
-.topbar .menu a.is-active::before,
-#navdrawer a.is-active::before {
-  background: rgba(251,146,128,.34);
-  box-shadow:
-    inset 0 2px 8px rgba(251,146,128,.55),
-    0 2px 6px rgba(0,0,0,.03);
-}
-/* Evita cambio de opacidad del texto al hacer hover */
-.topbar .menu a:hover,
-.topbar .menu a.is-active,
-#navdrawer a:hover,
-#navdrawer a.is-active {
-  color: #3a3a3a !important; /* mantiene el gris original */
-  transform: none;
-}
-/* ===== TOKENS: fondo por debajo del texto (fix definitivo) ===== */
-
-/* 1) Reset: que NUNCA cambie la opacidad/color del texto del menú */
-.topbar .menu a,
-#navdrawer a{
-  position: relative;
-  color: #3a3a3a !important;     /* gris constante */
-  opacity: 1 !important;         /* por si algún :hover le bajaba la opacidad */
-  text-decoration: none !important;
-  transform: none !important;    /* evita “salto” si tienes transform previos */
-  z-index: 1;                    /* por encima del pseudo-elemento */
-  padding: .52rem .9rem;
-  border-radius: 9999px;
-  transition: background .25s ease, box-shadow .25s ease;
-  background: transparent !important;  /* neutraliza bg antiguo en el <a> */
-  box-shadow: none !important;          /* neutraliza sombras antiguas */
-}
-/* 2) El “token” se dibuja DEBAJO del texto */
-.topbar .menu a::before,
-#navdrawer a::before{
-  content: "";
-  position: absolute;
-  inset: 0;                       /* ocupa todo el enlace */
-  border-radius: inherit;
-  background: transparent;
-  box-shadow: none;
-  z-index: -1;                    /* queda por debajo del texto */
-  transition: background .25s ease, box-shadow .25s ease;
-}
-/* 3) Hover/focus → AZUL translúcido (#80B3FB) */
-.topbar .menu a:hover::before,
-.topbar .menu a:focus-visible::before,
-#navdrawer a:hover::before,
-#navdrawer a:focus-visible::before{
-  background: rgba(128,179,251,.28);
-  box-shadow:
-    inset 0 2px 6px rgba(128,179,251,.45),
-    0 2px 6px rgba(0,0,0,.04);
-}
-/* 4) Activo → NARANJA translúcido (#FB9280) */
-.topbar .menu a.is-active::before,
-#navdrawer a.is-active::before{
-  background: rgba(251,146,128,.34);
-  box-shadow:
-    inset 0 2px 8px rgba(251,146,128,.55),
-    0 2px 6px rgba(0,0,0,.03);
-}
-/* 5) Por si algún :hover de otra regla insistía en pintar bg en el <a> */
-.topbar .menu a:hover,
-#navdrawer a:hover{
-  background: transparent !important;
-  box-shadow: none !important;
-}
-/* === Idiomas: SIN token === */
-.lang-switch a {
-  background: none !important;
-  box-shadow: none !important;
-  padding: 0 !important;
-  border-radius: 0;
-  transition: none !important;
-}
-/* ===== TOKENS solo en enlaces principales (no idioma) ===== */
-
-/* Enlaces principales del menú (hijos directos del nav) */
+/* ========== Tokens SOLO para enlaces principales (no idiomas) ========== */
 .topbar .menu > a,
 #navdrawer > a{
   position: relative;
-  color: #3a3a3a !important;
-  opacity: 1 !important;
-  text-decoration: none !important;
-  z-index: 1;
   padding: .52rem .9rem;
   border-radius: 9999px;
-  transition: background .25s ease, box-shadow .25s ease;
-  background: transparent !important;
-  box-shadow: none !important;
+  color: var(--fg);
+  background: transparent;
+  transition: background .25s ease, box-shadow .25s ease, transform .2s ease;
 }
-
-/* Token debajo del texto */
 .topbar .menu > a::before,
 #navdrawer > a::before{
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: transparent;
-  z-index: -1;
+  content:""; position:absolute; inset:0; border-radius:inherit;
+  background: transparent; box-shadow: none; z-index:-1;
   transition: background .25s ease, box-shadow .25s ease;
 }
-
-/* Hover (azul translúcido) */
+/* Hover → azul translúcido */
 .topbar .menu > a:hover::before,
 .topbar .menu > a:focus-visible::before,
 #navdrawer > a:hover::before,
 #navdrawer > a:focus-visible::before{
-  background: rgba(128,179,251,.28);   /* #80B3FB */
-  box-shadow:
-    inset 0 2px 6px rgba(128,179,251,.45),
-    0 2px 6px rgba(0,0,0,.04);
+  background: rgba(128,179,251,.28);
+  box-shadow: inset 0 2px 6px rgba(128,179,251,.45), 0 2px 6px rgba(0,0,0,.04);
 }
-
-/* Activo (naranja translúcido) */
+/* Activo → naranja translúcido */
 .topbar .menu > a.is-active::before,
 #navdrawer > a.is-active::before{
-  background: rgba(251,146,128,.34);   /* #FB9280 */
-  box-shadow:
-    inset 0 2px 8px rgba(251,146,128,.55),
-    0 2px 6px rgba(0,0,0,.03);
+  background: rgba(251,146,128,.34);
+  box-shadow: inset 0 2px 8px rgba(251,146,128,.55), 0 2px 6px rgba(0,0,0,.03);
 }
 
-/* ===== Idiomas: desactiva cualquier token/hover/sombra ===== */
-.lang-switch a{
-  position: static !important;
-  padding: 0 !important;
-  border-radius: 0 !important;
-  background: transparent !important;
-  box-shadow: none !important;
+/* Idiomas: sin token pase lo que pase */
+.lang-switch a{ background:none !important; box-shadow:none !important; padding:0 !important; }
+.lang-switch a::before{ content:none !important; }
+
+/* ========== Contenido general ========== */
+main{ max-width: var(--max); margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px); }
+
+/* ========== Footer ========== */
+footer{
+  text-align:center; padding:16px 0; border-top:1px solid var(--line); color:var(--muted);
 }
 
-.lang-switch a::before{
-  content: none !important;
-}
+/* ========== Títulos genéricos ========== */
+h1{ font-weight:700; font-size:clamp(28px,4vw,40px); letter-spacing:-.3px; margin:0 0 .75rem; }
+h2{ font-weight:600; font-size:clamp(22px,3vw,28px); margin:0 0 .6rem; }
+h3{ font-weight:500; font-size:clamp(18px,2.4vw,22px); margin:0 0 .5rem; }
 
-/* Por si alguna regla genérica intentaba pintar fondo al hacer hover */
-.lang-switch a:hover,
-.lang-switch a:focus{
-  background: transparent !important;
-  box-shadow: none !important;
-}
-/* ====== HERO PRINCIPAL ====== */
-.hero {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-  max-width: var(--max);
-  height: 100vh;              /* ← ocupa toda la altura visible */
-  margin: 0 auto;             /* sin márgenes arriba o abajo */
-  padding: 0 var(--pad);
-  overflow: hidden;           /* evita scroll si algo sobresale */
-}
-
-.hero-text h1 {
-  font-size: clamp(48px, 8vw, 120px);
-  font-weight: 700;
-  margin: 0 0 12px 0;
-  letter-spacing: -2px;
-  line-height: 1;
-}
-
-.hero-text h2 {
-  font-size: clamp(20px, 2vw, 26px);
-  font-weight: 400;
-  line-height: 1.3;
-  margin: 0;
-}
-
-.hero-photo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.hero-photo img {
-  max-width: 85%;             /* controla el tamaño relativo */
-  height: auto;
-  border-radius: 8px;
-  object-fit: cover;
-  filter: grayscale(100%);
-  transition: filter .3s ease, transform .3s ease;
-}
-
-.hero-photo img:hover {
-  filter: grayscale(0%);
-  transform: scale(1.02);
-}
-
-/* Adaptación móvil */
-@media (max-width: 900px) {
-  .hero {
-    grid-template-columns: 1fr;
-    text-align: center;
-    height: auto;             /* en móvil permitimos scroll */
-    padding-top: 60px;        /* espacio extra debajo del toolbar */
-  }
-  .hero-photo {
-    order: -1;
-  }
-  .hero-photo img {
-    max-width: 70%;
-  }
-  .hero-text h1 {
-    font-size: clamp(36px, 10vw, 72px);
-  }
-}
-/* Paleta (usa tus colores) */
-:root{
-  --orange:#FB9280;   /* acento principal (nombre / CTA) */
-  --blue:#80B3FB;     /* acento secundario (rol) */
-  --fg:#3a3a3a;       /* gris oscuro del texto */
-  --muted:#6b6b6b;    /* gris para párrafos */
-}
-
-/* Tipos del hero */
-.hero-title{
-  margin: 0 0 .35rem 0;
-  line-height: 1.05;
-}
-
-.hero-title .hi{
-  display:inline-block;
-  font-weight: 400;
-  font-size: clamp(16px, 1.6vw, 20px); /* más pequeño */
-  margin-right: .5rem;
-  color: var(--fg);
-}
-
-.hero-title .name{
-  display:inline-block;
-  font-weight: 700;                    /* más grueso */
-  font-size: clamp(38px, 5.2vw, 64px); /* más grande */
-  color: var(--orange);                /* naranja */
-  letter-spacing: -0.5px;
-}
-
-.role{
-  margin: .1rem 0 1rem 0;
-  font-weight: 600;
-  font-size: clamp(18px, 2.2vw, 26px); /* menor que el nombre */
-  color: var(--blue);                  /* azul */
-}
-
-/* párrafo separado y más pequeño en gris */
-.lead{
-  margin-top: 1.25rem;                 /* más separación respecto a arriba */
-  color: var(--muted);
-  font-size: clamp(14px, 1.4vw, 16px);
-  line-height: 1.6;
-  max-width: 46ch;                     /* ancho cómodo de lectura */
-}
-
-/* Botón tipo token (CTA) */
-.btn-cta{
-  --cta: var(--orange);
-  margin-top: 1.25rem;
-  display:inline-flex;
-  align-items:center;
-  gap: .55rem;
-  padding: .62rem 1rem;
-  border-radius: 9999px;
-  color: var(--cta);
-  border: 1.6px solid var(--cta);
-  background: transparent;
-  text-decoration:none;
-  font-weight: 600;
-  transition: background .2s ease, color .2s ease, transform .2s ease;
-}
-
-.btn-cta .arrow{ transition: transform .2s ease; }
-
-.btn-cta:hover,
-.btn-cta:focus-visible{
-  background: var(--cta);
-  color:#fff;                          /* texto/ícono pasan a blanco */
-}
-
-.btn-cta:hover .arrow,
-.btn-cta:focus-visible .arrow{
-  transform: translateX(3px);
-}
-
-/* Respeta reduced motion */
-@media (prefers-reduced-motion: reduce){
-  .btn-cta, .btn-cta .arrow{ transition:none; }
-}
-/* Variables para alturas dinámicas */
-:root{
-  --topbar-h: 0px;
-  --footer-h: 0px;
-}
-
-/* HERO a pantalla completa sin scroll (desktop/tablet) */
+/* ========== HERO (sin scroll en desktop) ========== */
 .hero{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
+  display: grid; grid-template-columns: 1fr 1fr;
+  align-items: center; justify-content: center; gap: 40px;
   max-width: var(--max);
-  /* Toma la altura de la ventana y descuenta header + footer */
-  min-height: calc(100svh - var(--topbar-h) - var(--footer-h));
+  min-height: calc(100svh - var(--topbar-h) - var(--footer-h)); /* pantalla completa real */
   margin: 0 auto;
-  padding: 0 var(--pad);
+  padding: 0 clamp(16px, 4vw, 40px);
   overflow: hidden;
 }
 
-/* Foto */
+/* Tipos del hero */
+.hero-title{ margin: 0 0 .35rem 0; line-height: 1.05; }
+.hero-title .hi{
+  display:inline-block; font-weight:400;
+  font-size: clamp(16px, 1.6vw, 20px);
+  margin-right:.5rem; color: var(--fg);
+}
+.hero-title .name{
+  display:inline-block; font-weight:700;
+  font-size: clamp(38px, 5.2vw, 64px);
+  color: var(--orange); letter-spacing:-0.5px;
+}
+.role{
+  margin: .1rem 0 1rem 0;
+  font-weight: 600; font-size: clamp(18px, 2.2vw, 26px);
+  color: var(--blue);
+}
+.lead{
+  margin-top: 1.25rem;
+  color: var(--muted);
+  font-size: clamp(14px, 1.4vw, 16px);
+  line-height: 1.6;
+  max-width: 46ch;
+}
+
+/* CTA */
+.btn-cta{
+  --cta: var(--orange);
+  margin-top: 1.25rem;
+  display:inline-flex; align-items:center; gap:.55rem;
+  padding:.62rem 1rem; border-radius:9999px;
+  color: var(--cta); border: 1.6px solid var(--cta); background: transparent;
+  text-decoration:none; font-weight:600;
+  transition: background .2s ease, color .2s ease, transform .2s ease;
+}
+.btn-cta .arrow{ transition: transform .2s ease; }
+.btn-cta:hover, .btn-cta:focus-visible{ background: var(--cta); color:#fff; }
+.btn-cta:hover .arrow, .btn-cta:focus-visible .arrow{ transform: translateX(3px); }
+@media (prefers-reduced-motion: reduce){
+  .btn-cta, .btn-cta .arrow{ transition:none; }
+}
+
+/* Foto del hero */
 .hero-photo{ display:flex; justify-content:center; align-items:center; }
 .hero-photo img{
-  max-width: 85%;
-  height: auto;
-  border-radius: 8px;
-  object-fit: cover;
-  filter: grayscale(100%);
-  transition: filter .3s ease, transform .3s ease;
+  max-width: 85%; height:auto; border-radius:8px; object-fit:cover;
+  filter: grayscale(100%); transition: filter .3s ease, transform .3s ease;
 }
 .hero-photo img:hover{ filter: grayscale(0%); transform: scale(1.02); }
 
-/* Quita márgenes que puedan empujar el layout */
-main{ margin:0; }
-.hero-text h1{ margin: 0 0 12px 0; }
-.hero-text h2, .role{ margin: 0 0 16px 0; }
-
-/* Sin scroll vertical en desktop/tablet */
-@media (min-width: 901px){
-  html, body{ height:100%; overflow-y:hidden; }
-}
-
-/* En móvil SÍ permitimos scroll (contenido apilado) */
+/* ========== Responsive ========== */
 @media (max-width: 900px){
   .hero{
     grid-template-columns: 1fr;
     text-align: center;
-    min-height: auto;              /* deja fluir en móvil */
-    padding-top: 12px;             /* pequeño respiro si quieres */
+    min-height: auto;    /* en móvil permitimos scroll */
+    padding-top: 12px;
   }
-  .hero-photo{ order:-1; }
+  .hero-photo{ order: -1; }
   .hero-photo img{ max-width: 70%; }
+  .hero-title .name{ font-size: clamp(32px, 9vw, 56px); }
 }
