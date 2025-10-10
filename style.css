@@ -534,3 +534,83 @@ h3{ font-weight:500; font-size:clamp(18px,2.4vw,22px); margin:0 0 .5rem; }
     font-size: clamp(36px, 10vw, 72px);
   }
 }
+/* Paleta (usa tus colores) */
+:root{
+  --orange:#FB9280;   /* acento principal (nombre / CTA) */
+  --blue:#80B3FB;     /* acento secundario (rol) */
+  --fg:#3a3a3a;       /* gris oscuro del texto */
+  --muted:#6b6b6b;    /* gris para párrafos */
+}
+
+/* Tipos del hero */
+.hero-title{
+  margin: 0 0 .35rem 0;
+  line-height: 1.05;
+}
+
+.hero-title .hi{
+  display:inline-block;
+  font-weight: 400;
+  font-size: clamp(16px, 1.6vw, 20px); /* más pequeño */
+  margin-right: .5rem;
+  color: var(--fg);
+}
+
+.hero-title .name{
+  display:inline-block;
+  font-weight: 700;                    /* más grueso */
+  font-size: clamp(38px, 5.2vw, 64px); /* más grande */
+  color: var(--orange);                /* naranja */
+  letter-spacing: -0.5px;
+}
+
+.role{
+  margin: .1rem 0 1rem 0;
+  font-weight: 600;
+  font-size: clamp(18px, 2.2vw, 26px); /* menor que el nombre */
+  color: var(--blue);                  /* azul */
+}
+
+/* párrafo separado y más pequeño en gris */
+.lead{
+  margin-top: 1.25rem;                 /* más separación respecto a arriba */
+  color: var(--muted);
+  font-size: clamp(14px, 1.4vw, 16px);
+  line-height: 1.6;
+  max-width: 46ch;                     /* ancho cómodo de lectura */
+}
+
+/* Botón tipo token (CTA) */
+.btn-cta{
+  --cta: var(--orange);
+  margin-top: 1.25rem;
+  display:inline-flex;
+  align-items:center;
+  gap: .55rem;
+  padding: .62rem 1rem;
+  border-radius: 9999px;
+  color: var(--cta);
+  border: 1.6px solid var(--cta);
+  background: transparent;
+  text-decoration:none;
+  font-weight: 600;
+  transition: background .2s ease, color .2s ease, transform .2s ease;
+}
+
+.btn-cta .arrow{ transition: transform .2s ease; }
+
+.btn-cta:hover,
+.btn-cta:focus-visible{
+  background: var(--cta);
+  color:#fff;                          /* texto/ícono pasan a blanco */
+}
+
+.btn-cta:hover .arrow,
+.btn-cta:focus-visible .arrow{
+  transform: translateX(3px);
+}
+
+/* Respeta reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .btn-cta, .btn-cta .arrow{ transition:none; }
+}
