@@ -225,3 +225,88 @@ h3{ font-weight:500; font-size:clamp(18px,2.4vw,22px); margin:0 0 .5rem; }
   .hero-photo img{ max-width: 70%; }
   .hero-title .name{ font-size: clamp(32px, 9vw, 56px); }
 }
+/* ===== HERO LAYOUT FINAL ===== */
+.hero {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr; /* texto + proyectos a la izquierda, foto a la derecha */
+  align-items: start;
+  justify-content: center;
+  gap: 60px;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 40px clamp(16px, 5vw, 60px);
+  overflow: hidden;
+  height: 100vh; /* ocupa toda la pantalla */
+}
+
+/* --- Columna izquierda --- */
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* --- Texto principal --- */
+.hero-text {
+  margin-bottom: 40px;
+}
+
+/* --- Cuadrícula de proyectos --- */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  max-width: 100%;
+}
+
+.project-card {
+  background: #f5f5f5;
+  border: 1.5px solid var(--line);
+  border-radius: 12px;
+  aspect-ratio: 1 / 1; /* cuadrados */
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Foto a la derecha --- */
+.hero-photo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-photo img {
+  width: 100%;
+  max-width: 380px;
+  border-radius: 8px;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: filter .3s ease, transform .3s ease;
+}
+
+.hero-photo img:hover {
+  filter: grayscale(0%);
+  transform: scale(1.02);
+}
+
+/* --- Móvil --- */
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    height: auto;
+    text-align: center;
+  }
+  .hero-left {
+    order: 2;
+  }
+  .hero-photo {
+    order: 1;
+  }
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
