@@ -3,28 +3,19 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PAGE TITLE — Daniela Pino</title>
+  <title>Contact — Daniela Pino</title>
 
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
-  <meta name="description" content="Short page description." />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <meta name="description" content="Get in touch with Daniela Pino.">
 
   <!-- Poppins -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <!-- CSS principal: AJUSTA LA RUTA si este archivo está en una carpeta -->
-  <link rel="stylesheet" href="style.css?v=13" />
-  <style>
-  /* Diagnóstico: mostrar siempre el menú en escritorio y móvil */
-  .topbar { display:block; width:100%; }
-  .topbar-inner { display:flex; align-items:center; justify-content:space-between; flex-wrap:nowrap; }
-  .menu { display:flex !important; gap:40px; }
-  .menu a { white-space:nowrap; }
-  .burger { display:none !important; }   /* oculta hamburguesa temporalmente */
-  .navdrawer { display:none !important; }/* oculta menú móvil temporalmente */
-</style>
-
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css?v=15">
 </head>
+
 <body>
-  <!-- TOPBAR -->
+  <!-- TOPBAR (igual que en el resto) -->
   <header class="topbar">
     <div class="topbar-inner">
       <a class="logo" href="index.html" aria-label="Home">
@@ -32,14 +23,14 @@
       </a>
 
       <nav class="menu" aria-label="Main">
-        <a href="AboutMe.html" data-nav="AboutMe.html">ABOUT ME</a>
+        <a href="AboutMe.html"   data-nav="AboutMe.html">ABOUT ME</a>
         <a href="Portfolio.html" data-nav="Portfolio.html">PORTFOLIO</a>
-        <a href="Contact.html" data-nav="Contact.html">CONTACT</a>
+        <a href="Contact.html"   data-nav="Contact.html">CONTACT</a>
 
         <div class="lang-switch" aria-label="Language switcher">
           <a href="index-es.html">ES</a>
           <span>/</span>
-          <a href="index.html" class="active">EN</a>
+          <a class="active" href="index.html">EN</a>
         </div>
       </nav>
 
@@ -51,129 +42,122 @@
 
   <!-- MENÚ MÓVIL -->
   <nav id="navdrawer" class="navdrawer" aria-label="Main mobile">
-    <a href="AboutMe.html">ABOUT ME</a>
-    <a href="Portfolio.html">PORTFOLIO</a>
-    <a href="Contact.html">CONTACT</a>
+    <a href="AboutMe.html"   data-nav="AboutMe.html">ABOUT ME</a>
+    <a href="Portfolio.html" data-nav="Portfolio.html">PORTFOLIO</a>
+    <a href="Contact.html"   data-nav="Contact.html">CONTACT</a>
     <div class="lang-switch" aria-label="Language switcher">
       <a href="index-es.html">ES</a>
       <span>/</span>
-      <a href="index.html" class="active">EN</a>
+      <a class="active" href="index.html">EN</a>
     </div>
   </nav>
 
-  <!-- CONTENIDO DE LA PÁGINA -->
-  <main style="padding:2rem;">
-    <h1>PAGE TITLE</h1>
-    <p>Contenido de la página…</p>
+  <!-- CONTACT -->
+  <main class="contact">
+    <!-- palabra gigante de fondo -->
+    <span class="contact-bg">CONTACT</span>
+
+    <section class="contact-grid">
+      <!-- Columna izquierda -->
+      <div class="contact-left">
+        <h2 class="contact-title">
+          Thank You for Visiting!<br>
+          Let’s Get in Touch
+        </h2>
+
+        <p class="contact-lead">
+          I hope you enjoyed exploring my work! I’m always open to new
+          opportunities and collaborations. If you have any questions,
+          a project in mind, or just want to say hello, feel free to reach out.
+          Don’t forget to follow me to stay updated on my latest projects!
+        </p>
+
+        <!-- Redes (placeholders; pon tus links) -->
+        <ul class="socials" aria-label="Social media">
+          <li><a class="social" href="#" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5C0 2.12 1.12 1 2.5 1S4.98 2.12 4.98 3.5zM.5 8h4V24h-4V8zM8 8h3.8v2.2h.05C12.58 8.78 14.18 8 16.1 8 20.46 8 21 10.86 21 14.7V24h-4v-7.7c0-1.84-.03-4.2-2.56-4.2-2.56 0-2.95 2-2.95 4.06V24H7.5V8H8z"/></svg>
+          </a></li>
+          <li><a class="social" href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 2 .3 2.7.6.7.3 1.3.7 1.8 1.2.5.5.9 1.1 1.2 1.8.3.7.5 1.5.6 2.7.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.3 2-.6 2.7-.3.7-.7 1.3-1.2 1.8-.5.5-1.1.9-1.8 1.2-.7.3-1.5.5-2.7.6-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-2-.3-2.7-.6a5.4 5.4 0 0 1-3-3c-.3-.7-.5-1.5-.6-2.7C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8c.1-1.2.3-2 .6-2.7.3-.7.7-1.3 1.2-1.8.5-.5 1.1-.9 1.8-1.2.7-.3 1.5-.5 2.7-.6C8.4 2.2 8.8 2.2 12 2.2m0 1.8c-3.1 0-3.5 0-4.7.1-1 .1-1.5.2-1.8.4-.5.2-.9.4-1.3.8-.4.4-.6.8-.8 1.3-.2.3-.3.8-.4 1.8-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 1 .2 1.5.4 1.8.2.5.4.9.8 1.3.4.4.8.6 1.3.8.3.2.8.3 1.8.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1-.1 1.5-.2 1.8-.4.5-.2.9-.4 1.3-.8.4-.4.6-.8.8-1.3.2-.3.3-.8.4-1.8.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1-.2-1.5-.4-1.8-.2-.5-.4-.9-.8-1.3-.4-.4-.8-.6-1.3-.8-.3-.2-.8-.3-1.8-.4-1.2-.1-1.6-.1-4.7-.1m0 3.2a6.8 6.8 0 1 1 0 13.6 6.8 6.8 0 0 1 0-13.6m0 11.3a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9m5.8-11.9a1.6 1.6 0 1 1 0-3.2 1.6 1.6 0 0 1 0 3.2z"/></svg>
+          </a></li>
+          <li><a class="social" href="#" aria-label="Behance">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M10.7 10.6c.7-.3 1.2-1 1.2-1.9 0-2-1.5-2.7-3.4-2.7H3V19h5.9c1.9 0 3.7-.9 3.7-3 0-1.2-.6-2.2-1.9-2.4zM5.8 8h2.4c.8 0 1.3.3 1.3 1 0 .8-.5 1.1-1.3 1.1H5.8V8zm2.6 8H5.8v-3h2.8c1 0 1.6.4 1.6 1.5 0 1-.7 1.5-1.8 1.5zM21 9.3h-5.6v-1H21v1zm.1 5.7c0-2.4-1.4-4.3-4-4.3-2.4 0-4 1.8-4 4.2 0 2.5 1.6 4.1 4.1 4.1 1.8 0 3.1-.8 3.6-2.3h-1.9c-.2.5-.9.8-1.7.8-1.1 0-1.9-.7-2-1.9H22c.1-.2.1-.4.1-.6zm-6.1-1.1c.1-1 .8-1.8 2-1.8s1.8.8 1.9 1.8h-3.9z"/></svg>
+          </a></li>
+        </ul>
+      </div>
+
+      <!-- Columna derecha: formulario -->
+      <form class="contact-form" action="https://formspree.io/f/your-id" method="POST">
+        <label class="field">
+          <span class="label">Name:</span>
+          <input type="text" name="name" placeholder="Your name" required>
+        </label>
+
+        <label class="field">
+          <span class="label">Email or Phone number</span>
+          <input type="text" name="contact" placeholder="email@example.com or +1 555..." required>
+        </label>
+
+        <label class="field">
+          <span class="label">Message</span>
+          <textarea name="message" rows="7" placeholder="Write your message here..." required></textarea>
+        </label>
+
+        <button class="btn-cta" type="submit">
+          Send message <span class="arrow">→</span>
+        </button>
+      </form>
+    </section>
   </main>
 
-  <footer style="text-align:center; padding:1rem; border-top:1px solid #eee;">
+  <footer style="text-align:center; padding:16px 0; border-top:none;">
     © <span id="year"></span> Daniela Pino
   </footer>
 
-  <!-- Scripts (mismo que en index) -->
-<script>
-  // Año
-  document.getElementById('year')?.textContent = new Date().getFullYear();
+  <!-- Scripts (mismos que index, resumidos) -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-  // Normaliza rutas: quita query/hash y toma solo el archivo
-  const raw = location.pathname.split('/').pop() || '';
-  const clean = raw.replace(/[#?].*$/, '').toLowerCase();
+    // Activa token por archivo
+    (function(){
+      const file = (location.pathname.split('/').pop() || '').replace(/[#?].*$/, '');
+      const lang = (document.documentElement.lang || 'en').toLowerCase();
+      const home = lang === 'es' ? 'index-es.html' : 'index.html';
+      const current = file || home;
+      document.querySelectorAll('.menu a[data-nav], #navdrawer a[data-nav]').forEach(a=>{
+        if ((a.getAttribute('data-nav')||'').toLowerCase() === current.toLowerCase()){
+          a.classList.add('is-active');
+          a.setAttribute('aria-current','page');
+        }
+      });
+    })();
 
-  // Home por idioma si no hay archivo en la URL
-  const home = (document.documentElement.lang === 'es') ? 'index-es.html' : 'index.html';
-  const current = clean === '' ? home : clean;
+    // Burger
+    (function(){
+      const b = document.querySelector('.burger');
+      b?.addEventListener('click', ()=>{
+        const open = document.body.classList.toggle('nav-open');
+        b.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      document.querySelectorAll('#navdrawer a').forEach(a=>{
+        a.addEventListener('click', ()=> document.body.classList.remove('nav-open'));
+      });
+    })();
 
-  // Marca activo comparando con data-nav (preferente) o href
-  document.querySelectorAll('.menu a, #navdrawer a').forEach(a => {
-    const target = (a.getAttribute('data-nav') || a.getAttribute('href') || '')
-      .replace(/[#?].*$/, '')
-      .split('/').pop()
-      .toLowerCase();
-    if (target === current) a.classList.add('is-active');
-  });
-
-  // Burger / navdrawer
-  const burger = document.querySelector('.burger');
-  burger?.addEventListener('click', () => {
-    const open = document.body.classList.toggle('nav-open');
-    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
-  document.querySelectorAll('#navdrawer a').forEach(a => {
-    a.addEventListener('click', () => document.body.classList.remove('nav-open'));
-  });
-
-  // Sombra al hacer scroll (opcional)
-  window.addEventListener('scroll', () => {
-    document.body.classList.toggle('scrolled', window.scrollY > 10);
-  });
-</script>
-<script>
-  // Redirigir el logo al home correcto según el idioma de la página
-  (function () {
-    const logoLink = document.querySelector('a.logo');
-    if (!logoLink) return;
-
-    // Idioma actual: 'es' o 'en' (sale del <html lang="...">)
-    const lang = (document.documentElement.lang || 'en').toLowerCase();
-
-    // Destino por idioma (ajusta si cambias los nombres)
-    const target = (lang === 'es') ? 'index-es.html' : 'index.html';
-
-    // También actualizamos el href para SEO / menú contextual / long-press en móvil
-    logoLink.setAttribute('href', target);
-
-    // Intercepta el click normal (respetamos abrir en nueva pestaña con Ctrl/⌘)
-    logoLink.addEventListener('click', function (e) {
-      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return; // permitir abrir en nueva pestaña
-      e.preventDefault();
-      window.location.href = target;
-    });
-  })();
-</script>
-<script>
-(function(){
-  const KEY = 'siteLang';
-
-  // Guardar preferencia SOLO al pulsar ES/EN
-  document.querySelectorAll('.lang-switch a').forEach(a=>{
-    a.addEventListener('click', ()=>{
-      const txt = (a.textContent || '').trim().toLowerCase();
-      localStorage.setItem(KEY, txt.includes('es') ? 'es' : 'en');
-    });
-  });
-
-  // Preferencia guardada o idioma del documento
-  const pageLang = (document.documentElement.lang || 'en').toLowerCase();
-  const pref = localStorage.getItem(KEY) || pageLang;
-
-  // Apuntar el logo al home del idioma preferido (sin interceptar el click)
-  const logo = document.querySelector('a.logo');
-  if (logo){
-    logo.setAttribute('href', pref === 'es' ? 'index-es.html' : 'index.html');
-  }
-})();
-</script>
-<script>
-(function(){
-  // 1) Nombre de archivo actual, sin query ni hash (p.ej., "AboutMe.html")
-  const file = (location.pathname.split('/').pop() || '').replace(/[#?].*$/, '');
-  // Si no hay archivo (p. ej., dominio raíz), decide el "home" por idioma
-  const htmlLang = (document.documentElement.lang || 'en').toLowerCase();
-  const home = htmlLang === 'es' ? 'index-es.html' : 'index.html';
-  const current = file || home;
-
-  // 2) Busca enlaces con data-nav en menú de escritorio y cajón móvil
-  const links = document.querySelectorAll('.menu a[data-nav], #navdrawer a[data-nav]');
-  links.forEach(a => {
-    const target = (a.getAttribute('data-nav') || '').toLowerCase();
-    if (target === current.toLowerCase()) {
-      a.classList.add('is-active');          // ← activa token naranja
-      // accesibilidad opcional:
-      a.setAttribute('aria-current', 'page');
-    }
-  });
-})();
-</script>
+    // Logo respeta preferencia de idioma (si la usas)
+    (function(){
+      const KEY = 'siteLang';
+      document.querySelectorAll('.lang-switch a').forEach(a=>{
+        a.addEventListener('click', ()=>{
+          const txt = (a.textContent||'').trim().toLowerCase();
+          localStorage.setItem(KEY, txt.includes('es') ? 'es':'en');
+        });
+      });
+      const pageLang = (document.documentElement.lang || 'en').toLowerCase();
+      const pref = localStorage.getItem(KEY) || pageLang;
+      const logo = document.querySelector('a.logo');
+      if (logo) logo.setAttribute('href', pref === 'es' ? 'index-es.html' : 'index.html');
+    })();
+  </script>
 </body>
 </html>
