@@ -382,3 +382,30 @@ h3{ font-weight:500; font-size:clamp(18px,2.4vw,22px); margin:0 0 .5rem; }
     flex: 0 0 120px;
   }
 }
+/* === Ajuste de márgenes generales para una vista más compacta === */
+
+/* Reduce el margen general del body */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Ajusta el hero para que ocupe mejor el espacio sin tanto margen */
+.hero {
+  padding: 0 40px; /* antes usaba var(--pad), más grande */
+  gap: 24px;       /* menos espacio entre columnas */
+}
+
+/* En móvil, mantenemos un poco más de aire */
+@media (max-width: 900px) {
+  .hero {
+    padding: 20px 24px;
+  }
+}
+
+/* Compacta también el espacio de los proyectos */
+.projects-grid {
+  gap: 18px;        /* menos separación entre cuadros */
+  padding-top: 20px;
+  justify-content: space-between;
+}
