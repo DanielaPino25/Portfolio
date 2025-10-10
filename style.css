@@ -330,4 +330,63 @@ body.index .hero-photo img {
   width: auto;
   object-fit: cover;
 }
+/* ===== HOME (index) SIN SCROLL Y GRID AJUSTADO ===== */
+body.index{
+  overflow: hidden;                  /* sin scroll en la principal */
+}
 
+/* Hero a pantalla completa y centrado vertical */
+body.index main.hero{
+  min-height: 100svh;                /* alto de la ventana (mejor en móvil) */
+  display: grid;
+  grid-template-columns: minmax(520px, 1fr) clamp(420px, 36vw, 520px);
+  align-items: center;
+  column-gap: clamp(32px, 5vw, 64px);
+  padding-inline: clamp(16px, 4vw, 40px);
+}
+
+/* Foto contenida para que no provoque scroll */
+body.index .hero-photo img{
+  max-height: 85svh;                 /* no más alta que la ventana */
+  width: auto;
+  object-fit: cover;
+}
+
+/* Tira de 6 proyectos en una sola línea, alineada con la parte baja del texto */
+body.index .projects-strip{
+  display: grid;
+  grid-template-columns: repeat(6, minmax(120px, 1fr));
+  gap: clamp(12px, 1.8vw, 20px);
+  align-self: end;                   /* “pega” la fila hacia abajo */
+  margin-top: clamp(20px, 3vw, 40px);
+}
+
+/* Tarjetas tipo rectángulo bajo (como tu boceto) */
+body.index .projects-strip .project{
+  height: clamp(72px, 11vh, 110px);
+  border-radius: 12px;
+  background: #f5f5f5;
+  border: 1.5px solid #eee;
+  box-shadow: 0 2px 4px rgba(0,0,0,.05);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+body.index .projects-strip .project:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0,0,0,.10);
+}
+
+/* Responsive: en móvil apilar (con scroll permitido) */
+@media (max-width: 900px){
+  body.index{ overflow: auto; }      /* deja hacer scroll en móvil */
+  body.index main.hero{
+    grid-template-columns: 1fr;
+    text-align: center;
+    min-height: auto;
+  }
+  body.index .hero-photo{ order: -1; }
+  body.index .hero-photo img{ max-height: 50svh; }
+  body.index .projects-strip{
+    grid-template-columns: repeat(2, 1fr);
+    align-self: center;
+  }
+}
