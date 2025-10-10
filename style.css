@@ -1,6 +1,9 @@
 /* ========== Variables ========== */
 :root{
-  --max: 1280px;
+  --max: 1200px;
+  --pad: clamp(16px, 4vw, 40px); /* padding lateral coherente */
+  --gap: 16px;                   /* separación base */
+
   --fg: #3a3a3a;
   --muted: #6b6b6b;
   --line: #eee;
@@ -9,11 +12,10 @@
   --orange: #FB9280;   /* acento nombre / CTA */
   --blue:   #80B3FB;   /* acento rol */
 
-  /* alturas dinámicas (las rellena JS) */
+  /* alturas dinámicas (si las rellenas con JS) */
   --topbar-h: 0px;
   --footer-h: 0px;
 }
-
 @media (min-width: 1600px){
   :root{ --max: 1440px; }
 }
@@ -35,10 +37,10 @@ body{
 }
 .topbar-inner{
   width: 100%;
-  padding: 28px clamp(16px, 5vw, 64px);  /* alto y laterales fluidos */
+  padding: 28px clamp(16px, 5vw, 64px);
   margin: 0;
   display: flex; align-items: center; justify-content: space-between; gap: 24px;
-  flex-wrap: nowrap; /* evita saltos de línea */
+  flex-wrap: nowrap;
 }
 
 /* Logo */
@@ -140,9 +142,9 @@ body.nav-open .burger span:nth-child(3){ transform: translateY(-6px) rotate(-45d
 .lang-switch a::before{ content:none !important; }
 
 /* ========== Contenido general ========== */
-main{ max-width: var(--max); margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px); }
+main{ max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
 
-/* ========== Footer ========== */
+/* ========== Footer (sin línea) ========== */
 footer{
   text-align:center; padding:16px 0; border-top:none; color:var(--muted); background:transparent;
 }
@@ -153,88 +155,70 @@ h2{ font-weight:600; font-size:clamp(22px,3vw,28px); margin:0 0 .6rem; }
 h3{ font-weight:500; font-size:clamp(18px,2.4vw,22px); margin:0 0 .5rem; }
 
 /* ===== HERO + PROYECTOS alineados ===== */
-.hero {
+.hero{
   display: grid;
-  grid-template-columns: 1fr 1fr; /* texto + foto */
+  grid-template-columns: minmax(520px, 1fr) clamp(420px, 36vw, 520px);
+  grid-template-areas:
+    "left  photo"
+    "strip photo";
   align-items: start;
-  justify-content: center;
-  gap: 40px;
+  column-gap: clamp(36px, 5vw, 64px);
   max-width: var(--max);
-  min-height: calc(100vh - var(--topbar-h) - var(--footer-h));
   margin: 0 auto;
-  padding-inline: clamp(40px, 5vw, 80px);
-  overflow: hidden;
+  padding: 0 var(--pad);
 }
 
 /* lado izquierdo: texto + proyectos */
-.hero-left {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  gap: 28px;
-}
+.hero-left { grid-area: left; display:flex; flex-direction:column; gap: 28px; }
+.projects-row{ grid-area: strip; }
 
 /* lado derecho: foto */
-.hero-photo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.hero-photo img {
+.hero-photo { grid-area: photo; display:flex; justify-content:center; align-items:center; }
+.hero-photo img{
   width: 100%;
-  max-width: 400px;
+  max-width: 520px;                 /* consistente con columna */
   border-radius: 10px;
   filter: grayscale(100%);
   object-fit: cover;
   transition: filter .3s ease, transform .3s ease;
 }
+.hero-photo img:hover{ filter: grayscale(0%); transform: scale(1.02); }
 
-.hero-photo img:hover {
-  filter: grayscale(0%);
-  transform: scale(1.02);
-}
-
-/* los proyectos quedan bajo el texto */
-.projects-row {
-  display: flex;
-  justify-content: space-between;
+/* ===== Proyectos: 6 rectángulos en línea ===== */
+.projects-row{
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
   gap: var(--gap);
 }
-
-.project-card {
-  flex: 1;
-  height: 100px; /* rectángulos horizontales */
+.project-card{
+  height: 110px;                     /* rectángulos horizontales */
   background: #f5f5f5;
   border-radius: 10px;
   border: 1.5px solid #eee;
   box-shadow: 0 2px 4px rgba(0,0,0,.05);
   transition: transform .25s ease, box-shadow .25s ease;
 }
-
-.project-card:hover {
+.project-card:hover{
   transform: translateY(-4px);
   box-shadow: 0 6px 14px rgba(0,0,0,.1);
 }
 
-/* en móvil, apila todo */
-@media (max-width: 900px) {
-  .hero {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-  .hero-left {
-    order: 2;
-  }
-  .hero-photo {
-    order: 1;
-  }
-  .projects-row {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .project-card {
-    width: 90%;
-    height: 120px;
-  }
+/* ===== Responsive ===== */
+@media (max-width: 1200px){
+  .projects-row{ grid-template-columns: repeat(3, 1fr); }
 }
+@media (max-width: 900px){
+  .hero{
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "photo"
+      "left"
+      "strip";
+    text-align: center;
+    row-gap: 24px;
+  }
+  .hero-photo{ order: -1; }
+  .projects-row{ grid-template-columns: repeat(2, 1fr); }
+  .project-card{ height: 120px; }
+}
+
