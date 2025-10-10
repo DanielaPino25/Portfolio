@@ -48,9 +48,9 @@
 
   <!-- MOBILE NAV -->
   <nav id="navdrawer" class="navdrawer" aria-label="Main mobile">
-    <a href="AboutMe.html">ABOUT ME</a>
-    <a href="Portfolio.html">PORTFOLIO</a>
-    <a href="Contact.html">CONTACT</a>
+    <a href="AboutMe.html"   data-nav="AboutMe.html">ABOUT ME</a>
+    <a href="Portfolio.html" data-nav="Portfolio.html">PORTFOLIO</a>
+    <a href="Contact.html"   data-nav="Contact.html">CONTACT</a>
 
     <div class="lang-switch" aria-label="Language switcher">
       <a href="index-es.html">ES</a>
@@ -59,154 +59,103 @@
     </div>
   </nav>
 
-<main class="hero">
-  <!-- Texto + proyectos -->
-  <section class="hero">
-  <div class="hero-left">
-    <div class="hero-text">
-      <h1 class="hero-title">
-        <span class="hi">Hi, I’m</span>
-        <span class="name">Daniela Pino</span>
-      </h1>
-<h2 class="role">a Product and UX/UI Designer.</h2>
-      <p class="lead">
-        Welcome to my page! Here you can explore a glimpse of my work.<br>
-        I hope you enjoy it.
-      </p>
-      <a href="Contact.html" class="btn-cta">
-        Contact me <span class="arrow">→</span>
-      </a>
+  <!-- HERO (dos columnas: texto + foto) -->
+  <main class="hero">
+    <!-- Columna izquierda: texto + proyectos -->
+    <div class="hero-left">
+      <div class="hero-text">
+        <h1 class="hero-title">
+          <span class="hi">Hi, I’m</span>
+          <span class="name">Daniela Pino</span>
+        </h1>
+
+        <h2 class="role">a Product and UX/UI Designer.</h2>
+
+        <p class="lead">
+          Welcome to my page! Here you can explore a glimpse of my work.
+          I hope you enjoy it.
+        </p>
+
+        <a class="btn-cta" href="Contact.html">
+          Contact me <span class="arrow">→</span>
+        </a>
+      </div>
+
+      <!-- Fila de 6 proyectos (rectángulos) -->
+      <section class="projects-strip" aria-label="Selected projects">
+        <div class="project" aria-hidden="true"></div>
+        <div class="project" aria-hidden="true"></div>
+        <div class="project" aria-hidden="true"></div>
+        <div class="project" aria-hidden="true"></div>
+        <div class="project" aria-hidden="true"></div>
+        <div class="project" aria-hidden="true"></div>
+      </section>
     </div>
 
-      <a class="btn-cta" href="Contact.html" aria-label="Go to contact page">
-        <span>Contact me</span>
-        <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </a>
-    </div>
+    <!-- Columna derecha: foto -->
+    <figure class="hero-photo">
+      <img src="assets/principal.jpg" alt="Daniela Pino smiling at the camera" />
+    </figure>
+  </main>
 
-    <!-- Cuadrícula de proyectos -->
-    <div class="projects-row">
-      <div class="project-card"></div>
-      <div class="project-card"></div>
-      <div class="project-card"></div>
-      <div class="project-card"></div>
-      <div class="project-card"></div>
-      <div class="project-card"></div>
-    </div>
-  </div>
-
-  <div class="hero-photo">
-    <img src="assets/principal.jpg" alt="Daniela Pino"/>
-  </div>
-</section>
-</main>
-  
-  <footer style="text-align:center; padding:1rem; border-top:1px solid #eee;">
+  <!-- FOOTER SIN LÍNEA -->
+  <footer style="text-align:center; padding:1rem; border-top:none;">
     © <span id="year"></span> Daniela Pino
   </footer>
 
-  <!-- Navigation + active link -->
+  <!-- SCRIPTS -->
   <script>
-    // Year
+    // Año dinámico
     document.getElementById('year')?.textContent = new Date().getFullYear();
 
-    // Get current filename (no query/hash)
-    const raw  = location.pathname.split('/').pop() || '';
-    const file = raw.replace(/[#?].*$/, '').toLowerCase();
+    // Resaltar enlace activo según archivo
+    (function(){
+      const file = (location.pathname.split('/').pop() || '').replace(/[#?].*$/, '');
+      const htmlLang = (document.documentElement.lang || 'en').toLowerCase();
+      const home = htmlLang === 'es' ? 'index-es.html' : 'index.html';
+      const current = file || home;
 
-    // If URL has no file, treat as home of current lang
-    const home    = (document.documentElement.lang === 'es') ? 'index-es.html' : 'index.html';
-    const current = file === '' ? home : file;
-
-    // Mark active link comparing to data-nav (exact filename) or href fallback
-    document.querySelectorAll('.menu a, #navdrawer a').forEach(a => {
-      const target = (a.getAttribute('data-nav') || a.getAttribute('href') || '')
-        .replace(/[#?].*$/, '')
-        .split('/').pop()
-        .toLowerCase();
-      if (target === current) a.classList.add('is-active');
-    });
+      document.querySelectorAll('.menu a[data-nav], #navdrawer a[data-nav]').forEach(a=>{
+        const target = (a.getAttribute('data-nav') || '').toLowerCase();
+        if (target === current.toLowerCase()){
+          a.classList.add('is-active');
+          a.setAttribute('aria-current','page');
+        }
+      });
+    })();
 
     // Burger / drawer
-    const burger = document.querySelector('.burger');
-    burger?.addEventListener('click', () => {
-      const open = document.body.classList.toggle('nav-open');
-      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-    document.querySelectorAll('#navdrawer a').forEach(a => {
-      a.addEventListener('click', () => document.body.classList.remove('nav-open'));
-    });
+    (function(){
+      const burger = document.querySelector('.burger');
+      burger?.addEventListener('click', () => {
+        const open = document.body.classList.toggle('nav-open');
+        burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      document.querySelectorAll('#navdrawer a').forEach(a => {
+        a.addEventListener('click', () => document.body.classList.remove('nav-open'));
+      });
+      window.addEventListener('scroll', () => {
+        document.body.classList.toggle('scrolled', window.scrollY > 10);
+      });
+    })();
 
-    // Toolbar shadow on scroll (optional)
-    window.addEventListener('scroll', () => {
-      document.body.classList.toggle('scrolled', window.scrollY > 10);
-    });
-  </script>
-
-  <!-- Logo respects preferred language (doesn't change it) -->
-  <script>
+    // El logo respeta el idioma preferido (no lo cambia)
     (function(){
       const KEY = 'siteLang';
-
-      // Save preference ONLY when user clicks ES / EN
       document.querySelectorAll('.lang-switch a').forEach(a=>{
         a.addEventListener('click', ()=>{
           const txt = (a.textContent || '').trim().toLowerCase();
           localStorage.setItem(KEY, txt.includes('es') ? 'es' : 'en');
         });
       });
-
-      // Preferred language or document lang
       const pageLang = (document.documentElement.lang || 'en').toLowerCase();
       const pref = localStorage.getItem(KEY) || pageLang;
-
-      // Point logo to the home of the preferred language
       const logo = document.querySelector('a.logo');
       if (logo){
         logo.setAttribute('href', pref === 'es' ? 'index-es.html' : 'index.html');
       }
     })();
   </script>
-  <script>
-(function(){
-  function setHeights(){
-    const top = document.querySelector('.topbar');
-    const foot = document.querySelector('footer');
-    const th = top ? top.offsetHeight : 0;
-    const fh = foot ? foot.offsetHeight : 0;
-    document.documentElement.style.setProperty('--topbar-h', th + 'px');
-    document.documentElement.style.setProperty('--footer-h', fh + 'px');
-  }
-  window.addEventListener('load', setHeights);
-  window.addEventListener('resize', setHeights);
-})();
-</script>
-  
-<script>
-(function(){
-  // 1) Nombre de archivo actual, sin query ni hash (p.ej., "AboutMe.html")
-  const file = (location.pathname.split('/').pop() || '').replace(/[#?].*$/, '');
-  // Si no hay archivo (p. ej., dominio raíz), decide el "home" por idioma
-  const htmlLang = (document.documentElement.lang || 'en').toLowerCase();
-  const home = htmlLang === 'es' ? 'index-es.html' : 'index.html';
-  const current = file || home;
-
-  // 2) Busca enlaces con data-nav en menú de escritorio y cajón móvil
-  const links = document.querySelectorAll('.menu a[data-nav], #navdrawer a[data-nav]');
-  links.forEach(a => {
-    const target = (a.getAttribute('data-nav') || '').toLowerCase();
-    if (target === current.toLowerCase()) {
-      a.classList.add('is-active');          // ← activa token naranja
-      // accesibilidad opcional:
-      a.setAttribute('aria-current', 'page');
-    }
-  });
-})();
-</script>
 </body>
 </html>
 
-</body>
-</html>
