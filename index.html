@@ -153,6 +153,20 @@
       }
     })();
   </script>
+  <script>
+(function(){
+  function setHeights(){
+    const top = document.querySelector('.topbar');
+    const foot = document.querySelector('footer');
+    const th = top ? top.offsetHeight : 0;
+    const fh = foot ? foot.offsetHeight : 0;
+    document.documentElement.style.setProperty('--topbar-h', th + 'px');
+    document.documentElement.style.setProperty('--footer-h', fh + 'px');
+  }
+  window.addEventListener('load', setHeights);
+  window.addEventListener('resize', setHeights);
+})();
+</script>
 </body>
 </html>
 
