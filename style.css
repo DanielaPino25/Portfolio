@@ -310,3 +310,75 @@ h3{ font-weight:500; font-size:clamp(18px,2.4vw,22px); margin:0 0 .5rem; }
     grid-template-columns: repeat(2, 1fr);
   }
 }
+/* ===== GRID DE PROYECTOS EN UNA SOLA LÍNEA ===== */
+.projects-grid {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;   /* alinea con la parte inferior de la foto */
+  flex-wrap: nowrap;       /* evita que pasen a la siguiente línea */
+  gap: 18px;
+  margin-top: auto;        /* empuja la cuadrícula hacia abajo dentro de la columna izquierda */
+}
+
+.project-card {
+  flex: 0 0 clamp(90px, 10vw, 130px); /* ancho fijo adaptable (más pequeño o grande según pantalla) */
+  aspect-ratio: 1 / 1;                /* cuadrados perfectos */
+  background: #f5f5f5;
+  border: 1.5px solid var(--line);
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0,0,0,.05);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0,0,0,.1);
+}
+
+/* En pantallas pequeñas: que se ajusten en 2 filas */
+@media (max-width: 900px) {
+  .projects-grid {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 32px;
+  }
+}
+/* ===== GRID DE PROYECTOS — LÍNEA ÚNICA ===== */
+.projects-grid {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;   /* alineado con la base de la foto */
+  flex-wrap: nowrap;       /* evita salto de línea */
+  gap: 24px;               /* espacio entre cada cuadro */
+  margin-top: auto;
+  padding-top: 40px;
+}
+
+.project-card {
+  flex: 0 0 140px;          /* ancho fijo para pantallas de 1920px aprox. */
+  aspect-ratio: 1 / 1;      /* mantiene forma cuadrada */
+  background: #f5f5f5;
+  border: 1.5px solid var(--line);
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0,0,0,.05);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0,0,0,.1);
+}
+
+/* 📱 En pantallas pequeñas → pasa a 2 filas */
+@media (max-width: 1024px) {
+  .projects-grid {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
+    padding-top: 20px;
+  }
+
+  .project-card {
+    flex: 0 0 120px;
+  }
+}
