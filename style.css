@@ -221,4 +221,37 @@ h3{ font-weight:500; font-size:clamp(18px,2.4vw,22px); margin:0 0 .5rem; }
   .projects-row{ grid-template-columns: repeat(2, 1fr); }
   .project-card{ height: 120px; }
 }
+/* 1) Bloquea el ancho de la ventana cuando cambie el scroll (adiós saltos) */
+html{
+  /* En navegadores modernos reserva el canal del scroll siempre */
+  scrollbar-gutter: stable both-edges;
+  /* Fallback universal por si acaso */
+  overflow-y: scroll;
+}
+
+/* 2) Evita que el cambio a bold de EN/ES mueva el layout
+      (reservamos ancho fijo para cada etiqueta) */
+.lang-switch{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  /* opcional: si quieres clavar aún más el bloque completo
+     descomenta esta línea con un ancho total aproximado
+     width: 82px; justify-content: space-between; */
+}
+.lang-switch a{
+  display: inline-block;
+  width: 24px;        /* ← reserva ancho fijo “ES” / “EN” */
+  text-align: center; /* ambas quedan centradas */
+}
+
+/* 3) Elimina cualquier “empujón” por transformaciones en los enlaces del menú */
+.topbar .menu > a{
+  transform: none !important;
+}
+.topbar .menu > a:hover,
+.topbar .menu > a:focus-visible{
+  /* solo color/overlay del token, sin mover el enlace */
+  transform: none !important;
+}
 
