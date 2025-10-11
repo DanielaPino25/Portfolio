@@ -43,7 +43,7 @@ body.scrolled .topbar{ box-shadow: 0 4px 18px rgba(0,0,0,.06); }
 
 .topbar-inner{
   width: 100%;
-  padding: 28px clamp(16px, 5vw, 64px);
+  padding: 20px clamp(16px, 5vw, 64px);
   margin: 0;
   display: flex; align-items: center; justify-content: space-between; gap: 24px;
   flex-wrap: nowrap;
@@ -188,14 +188,14 @@ html{ scrollbar-gutter: stable both-edges; overflow-y: scroll; } /* evita “sal
 body.index{ overflow: hidden; }  /* sin scroll en desktop */
 
 body.index main.hero{
-  min-height: 100svh;
+  min-height: calc(100svh - var(--topbar-h));
   display: grid;
   grid-template-columns: minmax(520px, 1fr) clamp(420px, 38vw, 540px);
   align-items: center;
   column-gap: clamp(24px, 3vw, 40px);
-  padding-left: var(--pad);   /* margen a la izquierda */
-  padding-right: 0;           /* sin margen a la derecha: foto pegada */
-  max-width: none;
+  padding: clamp(24px, 4vw, 48px) clamp(16px, 4vw, 40px); /* ← igual que .contact */
+  max-width: var(--max);
+  margin: 0 auto;
 }
 
 /* Izquierda (texto + proyectos) */
