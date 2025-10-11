@@ -504,3 +504,8 @@ body.index .hero-photo img{
 
 /* Si aún tienes la lista <ul class="socials">, neutralízala para que no interfiera */
 .socials{ display:none !important; }
+.social i {
+  width: 18px;
+  height: 18px;
+  stroke-width: 1.8;
+}
