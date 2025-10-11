@@ -72,5 +72,15 @@
     burger?.addEventListener('click',()=>{const open=document.body.classList.toggle('nav-open');burger.setAttribute('aria-expanded',open?'true':'false')});
     document.querySelectorAll('#navdrawer a').forEach(a=>a.addEventListener('click',()=>document.body.classList.remove('nav-open')));
   </script>
+  <script>
+  // Sombra del toolbar cuando hay desplazamiento
+  (function(){
+    const onScroll = () => {
+      document.body.classList.toggle('scrolled', window.scrollY > 8);
+    };
+    window.addEventListener('scroll', onScroll, {passive:true});
+    onScroll(); // estado inicial
+  })();
+</script>
 </body>
 </html>
