@@ -208,12 +208,16 @@ body.index main.hero{
   margin: 0 auto;
   padding: 0 var(--pad);
 }
-.hero-left{ display:flex; flex-direction:column; gap:22px; }
+.hero-left{
+  min-height: 80svh;                        /* igual al alto de la foto */
+  display:flex;
+  flex-direction:column;
+}
 
 /* Foto a la derecha, pegada al borde */
 .hero-photo{ display:flex; justify-content:flex-end; align-items:center; }
 body.index .hero-photo img{
-  height: 85svh; width:auto; object-fit:cover;
+  height: 80svh; width:auto; object-fit:cover;
   border-radius:10px 0 0 10px;
 }
 
@@ -221,9 +225,9 @@ body.index .hero-photo img{
 .projects-strip{
   display:grid;
   grid-template-columns:repeat(6, minmax(120px,1fr));
-  gap:clamp(12px,1.6vw,18px);
+  gap:clamp(16px,1.2vw,10px);
   align-self:end;
-  margin-top:clamp(14px,2vw,22px);
+  margin-top: auto;
 }
 .projects-strip .project{
   height:clamp(80px, 10vh, 110px);
@@ -234,7 +238,18 @@ body.index .hero-photo img{
   transition:transform .25s, box-shadow .25s;
 }
 .projects-strip .project:hover{ transform:translateY(-3px); box-shadow:0 8px 18px rgba(0,0,0,.09); }
-
+.project{
+  height: clamp(72px, 9vh, 100px);
+  background:#f7f7f7;
+  border:1px solid #e6e6e6;
+  border-radius:8px;
+  box-shadow:0 2px 4px rgba(0,0,0,.04);
+  transition: transform .25s, box-shadow .25s;
+}
+.project:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0,0,0,.09);
+}
 /* Botón + redes (a la misma línea) */
 .hero-actions{ display:flex; align-items:center; gap:14px; }
 .btn-cta{
