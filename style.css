@@ -142,7 +142,7 @@ body.nav-open .burger span:nth-child(3){ transform: translateY(-6px) rotate(-45d
 .lang-switch a::before{ content:none !important; }
 
 /* ========== Contenido general ========== */
-main{ max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
+main{ max-width: var(--max); margin: 0 auto; padding: 0 clamp(16px, 2.5vw, 32px); }
 
 /* ========== Footer (sin línea) ========== */
 footer{
