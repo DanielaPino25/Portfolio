@@ -299,14 +299,6 @@ html{
   opacity: 1 !important;
 }
 .lang-switch a::before{ content: none !important; }
-/* Solo en la página principal */
-body.index main.hero {
-  height: 100vh;              /* ocupa toda la altura visible */
-  overflow: hidden;           /* oculta cualquier excedente vertical */
-  box-sizing: border-box;
-  display: grid;
-  align-content: center;      /* centra verticalmente el contenido */
-}
 
 /* Ajusta el tamaño de la foto para que siempre quepa */
 body.index .hero-photo img {
@@ -321,15 +313,26 @@ body.index{
 
 /* Hero a pantalla completa y centrado vertical */
 body.index main.hero{
-  min-height: 95svh;                /* alto de la ventana (mejor en móvil) */
+  min-height: 95svh;
   display: grid;
-  grid-template-columns: minmax(520px, 1fr) clamp(420px, 36vw, 520px);
+  grid-template-columns: minmax(520px, 1fr) clamp(420px, 38vw, 540px);
   align-items: center;
-  column-gap: clamp(24px, 4vw, 48px);       /* menos espacio entre texto y foto */
-  padding-inline: clamp(24px, 3vw, 56px);   /* márgenes laterales más pequeños */
-  max-width: 1300px;                        /* limita ancho general */
-  margin-inline: auto;                      /* centra todo el bloque */
+  column-gap: clamp(24px, 3vw, 40px);
+  padding-left: clamp(24px, 3vw, 56px); /* margen solo a la izquierda */
+  padding-right: 0;                     /* SIN margen derecho */
+  max-width: none;                      /* ocupa todo el ancho de la ventana */
 }
+body.index .hero-photo {
+  justify-content: flex-end; /* empuja la imagen al borde derecho */
+}
+
+body.index .hero-photo img {
+  max-width: 100%;
+  height: 85svh;
+  object-fit: cover;
+  border-radius: 10px 0 0 10px; /* redondeo solo en el borde interior */
+}
+
 /* Foto contenida para que no provoque scroll */
 body.index .hero-photo img{
   max-height: 85svh;                 /* no más alta que la ventana */
