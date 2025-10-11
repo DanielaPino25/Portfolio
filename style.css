@@ -520,7 +520,7 @@ body.index .projects-strip .project:hover{
 }
 /* ===== Ajuste de posición de la foto en la home ===== */
 body.index .hero-photo {
-  margin-top: -40px; /* sube la foto 40px; puedes probar -30 o -50 según tu pantalla */
+  margin-top: -50px; /* sube la foto 40px; puedes probar -30 o -50 según tu pantalla */
 }
 
 /* Además reducimos un poco el alto general para evitar scroll */
