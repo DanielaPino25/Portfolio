@@ -387,3 +387,44 @@ body.index .hero-photo img{
 #navdrawer > a:hover {
   opacity: 1 !important;  /* texto siempre igual de fuerte */
 }
+/* === Desactiva reglas viejas que rompen el grid === */
+.projects-row,
+.project-card{ display:none !important; }
+
+/* === Hero izquierdo mantiene columna de contenido + grid === */
+.hero-left{
+  display:flex;
+  flex-direction:column;
+  gap:18px;                 /* separación entre texto/botón y el grid */
+}
+
+/* === GRID FINAL: 6 rectángulos en una sola línea (desktop) === */
+.projects-strip{
+  display:grid;
+  grid-template-columns: repeat(6, minmax(112px, 1fr));
+  gap: clamp(10px, 1.2vw, 16px);
+  align-self: stretch;                    /* ocupa ancho de su columna */
+  margin-top: clamp(12px, 1.6vw, 20px);
+}
+
+/* Tarjetas: rectangulares, borde fino */
+.project{
+  height: clamp(72px, 9vh, 100px);        /* rectángulo bajo */
+  background:#f7f7f7;
+  border:1px solid #e6e6e6;               /* como tu referencia */
+  border-radius:8px;
+  box-shadow:0 2px 4px rgba(0,0,0,.04);
+  transition: transform .25s, box-shadow .25s;
+}
+.project:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0,0,0,.09);
+}
+
+/* === Responsivo: cuando falte ancho, cambia a 3 y luego 2 columnas === */
+@media (max-width: 1200px){
+  .projects-strip{ grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 900px){
+  .projects-strip{ grid-template-columns: repeat(2, 1fr); }
+}
