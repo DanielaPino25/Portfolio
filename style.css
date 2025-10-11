@@ -428,3 +428,64 @@ body.index .hero-photo img{
 @media (max-width: 900px){
   .projects-strip{ grid-template-columns: repeat(2, 1fr); }
 }
+/* === Acciones del hero: bandeja de redes + botón ======================= */
+.hero-actions{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+
+/* ancho y altura unificados para ambos */
+:root{
+  --cta-h: 46px;
+  --cta-w: 240px;      /* ← ajusta aquí si quieres más/menos ancho */
+}
+
+/* bandeja que contiene los 3 círculos, con el MISMO ancho del botón */
+.socials-tray{
+  display:inline-flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  height:var(--cta-h);
+  min-width:var(--cta-w);
+  padding:0 12px;
+  border:1.6px solid var(--orange);
+  border-radius:9999px;
+  color:var(--orange);
+  background:#fff;
+}
+
+/* cada círculo */
+.social{
+  width:36px; height:36px;
+  display:inline-flex; align-items:center; justify-content:center;
+  border:1.5px solid #ddd;
+  border-radius:50%;
+  color:var(--fg);
+  text-decoration:none;
+  font-size:13px;
+  background:#fff;
+  transition:transform .2s,border-color .2s,box-shadow .2s;
+}
+.social:hover{ transform:translateY(-2px); border-color:var(--blue); box-shadow:0 6px 14px rgba(0,0,0,.08); }
+
+/* botón con el MISMO ancho/alto */
+.btn-cta{
+  --cta: var(--orange);
+  display:inline-flex; align-items:center; justify-content:center; gap:.55rem;
+  height:var(--cta-h);
+  min-width:var(--cta-w);
+  padding:0 16px;
+  border-radius:9999px;
+  color:var(--cta); border:1.6px solid var(--cta);
+  background:#fff;
+  text-decoration:none; font-weight:600;
+  transition:background .2s,color .2s,transform .2s;
+}
+.btn-cta:hover{ background:var(--cta); color:#fff; }
+.btn-cta .arrow{ transition:transform .2s; }
+.btn-cta:hover .arrow{ transform:translateX(3px); }
+
+/* Si aún tienes la lista <ul class="socials">, neutralízala para que no interfiera */
+.socials{ display:none !important; }
