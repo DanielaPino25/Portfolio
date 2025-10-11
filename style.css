@@ -509,3 +509,85 @@ body.index .hero-photo img{
   height: 18px;
   stroke-width: 1.8;
 }
+/* ===== Ajustes home (index) ===== */
+
+/* A) Menos espacio entre toolbar y contenido */
+body.index main.hero{
+  /* si ya tienes padding-top, esta regla lo hará más pequeño */
+  padding-top: clamp(6px, 1.2vh, 14px);
+}
+
+/* B) Rail de acciones: fija un ancho común para redes y botón */
+.hero-actions{
+  --cta-w: clamp(220px, 24vw, 280px);   /* ancho compartido */
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+
+/* C) Bandeja de redes sin token (sin borde/fondo) */
+.socials-tray{
+  width: var(--cta-w);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;  /* extiende los círculos para ocupar el mismo ancho del botón */
+  padding:0;
+  background: transparent !important;
+  border: none !important;
+}
+
+/* D) Círculos de redes (puedes usar tus propios SVG/PNG) */
+.social{
+  width:44px;
+  height:44px;
+  border-radius:9999px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  background:#fff;
+  border:1.6px solid #e3e3e3;
+  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+  text-decoration:none;
+}
+.social:hover{
+  transform: translateY(-2px);
+  border-color: var(--blue);
+  box-shadow: 0 6px 14px rgba(0,0,0,.08);
+}
+/* tamaño y encuadre de tus logos */
+.social img{
+  width:20px;
+  height:20px;
+  object-fit:contain;
+  display:block;
+}
+
+/* E) Botón Contact me: único token, más compacto y del mismo ancho que las redes */
+.btn-cta{
+  --cta: var(--orange);
+  width: var(--cta-w);                /* mismo ancho que la bandeja de redes */
+  padding: .56rem .9rem;              /* menos aire lateral */
+  border-radius: 9999px;
+  color: var(--cta);
+  border: 1.6px solid var(--cta);
+  background: transparent;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;            /* texto centrado */
+  gap: .55rem;
+  text-decoration: none;
+  transition: background .2s, color .2s, transform .2s;
+}
+.btn-cta:hover,
+.btn-cta:focus-visible{
+  background: var(--cta);
+  color: #fff;
+}
+.btn-cta .arrow{ transition: transform .2s; }
+.btn-cta:hover .arrow{ transform: translateX(3px); }
+
+/* F) Puntas redondeadas de la foto principal */
+.hero-photo img{
+  border-radius: 16px;    /* si ya tenías otro valor, este lo sobrescribe */
+}
