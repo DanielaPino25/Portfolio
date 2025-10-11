@@ -54,8 +54,11 @@ body{
 
 /* ========== Toolbar ========== */
 .topbar{
-  position: sticky; top: 0; z-index: 100; width: 100%;
+  position: sticky; top: 0; z-index: 1000; width: 100%;
   background: #fff;
+}
+body.scrolled .topbar{
+  box-shadow: 0 4px 18px rgba(0,0,0,.06);
 }
 .topbar-inner{
   width: 100%;
