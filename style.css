@@ -561,3 +561,86 @@ body.index .projects-strip .project:hover{
     align-self: center;
   }
 }
+
+
+BOTON + REDES SOCIALES
+.hero-actions{ display:flex; align-items:center; gap:14px; }
+/* CTA */
+.btn-cta{
+  --cta:var(--orange);
+  display:inline-flex; align-items:center; gap:.55rem;
+  padding:.62rem 1rem; border-radius:9999px;
+  color:var(--cta); border:1.6px solid var(--cta);
+  text-decoration:none; font-weight:600;
+  transition:background .2s,color .2s,transform .2s;
+}
+.btn-cta:hover{ background:var(--cta); color:#fff; }
+.btn-cta .arrow{ transition:transform .2s; }
+.btn-cta:hover .arrow{ transform:translateX(3px); }
+/* Redes */
+.socials{ display:flex; gap:10px; padding:0; margin:0; list-style:none; }
+.social{
+  width:36px; height:36px; display:inline-flex; align-items:center; justify-content:center;
+  border:1.5px solid #ddd; border-radius:50%;
+  color:var(--fg); text-decoration:none; font-size:13px;
+  background:#fff; transition:transform .2s,border-color .2s,box-shadow .2s;
+}
+.social:hover{ transform:translateY(-2px); border-color:var(--blue); box-shadow:0 6px 14px rgba(0,0,0,.08); }
+
+
+/* Contenedor del hero ocupando todo el ancho, con padding solo a la izquierda */
+main.hero{
+  display:grid;
+  grid-template-columns:minmax(520px,1fr) clamp(420px,38vw,540px);
+  align-items:center;
+  column-gap:clamp(24px,3vw,40px);
+  padding-left:var(--pad);
+  padding-right:0;                /* sin margen a la derecha */
+  max-width:none;                 /* que use todo el viewport */
+}
+
+/* Izquierda (texto + proyectos) */
+.hero-left{ display:flex; flex-direction:column; gap:22px; }
+
+/* Foto pegada al borde derecho */
+.hero-photo{ display:flex; justify-content:flex-end; }
+.hero-photo img{
+  height:85svh; width:auto; object-fit:cover;
+  border-radius:10px 0 0 10px;    /* redondeo solo interior */
+}
+
+
+.projects-strip{
+  display:grid;
+  grid-template-columns:repeat(6, minmax(120px,1fr));
+  gap:clamp(12px,1.6vw,18px);
+  align-self:end;                 /* alineados con la base del texto */
+  margin-top:clamp(14px,2vw,22px);
+}
+
+.project{
+  height:clamp(80px, 10vh, 110px);
+  background:#f7f7f7;
+  border:1px solid #e6e6e6;
+  border-radius:8px;
+  box-shadow:0 2px 4px rgba(0,0,0,.04);
+  transition:transform .25s, box-shadow .25s;
+}
+.project:hover{ transform:translateY(-3px); box-shadow:0 8px 18px rgba(0,0,0,.09); }
+
+@media (min-width:901px){
+  body.index{ overflow:hidden; }
+}
+
+
+@media (max-width:900px){
+  main.hero{
+    grid-template-columns:1fr;
+    padding-right:var(--pad);
+    row-gap:18px; text-align:center;
+  }
+  .hero-photo{ order:-1; justify-content:center; }
+  .hero-photo img{ height:50svh; border-radius:10px; }
+  .projects-strip{ grid-template-columns:repeat(2,1fr); align-self:center; }
+}
+
