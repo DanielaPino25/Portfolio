@@ -1,8 +1,8 @@
 /* ========== Variables ========== */
 :root{
   --max: 1200px;
-  --pad: clamp(24px, 6vw, 80px); /* padding lateral coherente */
-  --gap: 16px;                   /* separación base */
+  --pad: clamp(24px, 6vw, 80px);
+  --gap: 16px;
 
   --fg: #3a3a3a;
   --muted: #6b6b6b;
@@ -12,31 +12,10 @@
   --orange: #FB9280;   /* acento nombre / CTA */
   --blue:   #80B3FB;   /* acento rol */
 
-  /* Título: “Hi, I’m” + nombre naranja */
-.hero-title{ margin:0 0 .35rem 0; line-height:1.05; }
-.hero-title .hi{
-  display:inline-block; font-weight:400;
-  font-size:clamp(18px,1.8vw,22px); margin-right:.5rem; color:var(--fg);
-}
-.hero-title .name{
-  display:inline-block; font-weight:700;
-  font-size:clamp(40px,5.4vw,64px);
-  color:var(--orange); letter-spacing:-.5px;
-}
-
-/* Subtítulo azul */
-.role{
-  margin:.2rem 0 1rem 0; font-weight:600;
-  font-size:clamp(20px,2.4vw,28px);
-  color:var(--blue);
-}
-
-/* Párrafo */
-.lead{ color:var(--fg); max-width:60ch; margin:12px 0 18px; }
-
-  /* alturas dinámicas (si las rellenas con JS) */
   --topbar-h: 0px;
   --footer-h: 0px;
+
+  --contact-gap: clamp(28px, 4vw, 48px);
 }
 @media (min-width: 1600px){
   :root{ --max: 1440px; }
@@ -52,14 +31,16 @@ body{
   line-height: 1.6;
 }
 
-/* ========== Toolbar ========== */
+/* ========== Toolbar pegado arriba ========== */
 .topbar{
-  position: sticky; top: 0; z-index: 1000; width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
   background: #fff;
 }
-body.scrolled .topbar{
-  box-shadow: 0 4px 18px rgba(0,0,0,.06);
-}
+body.scrolled .topbar{ box-shadow: 0 4px 18px rgba(0,0,0,.06); }
+
 .topbar-inner{
   width: 100%;
   padding: 28px clamp(16px, 5vw, 64px);
@@ -91,20 +72,20 @@ body.scrolled .topbar{
 }
 .menu a:hover{ opacity: .6; }
 
-/* Selector de idioma (sin tokens) */
+/* Selector de idioma (SIN tokens) */
 .lang-switch{
-  display: flex; align-items: center; gap: 10px;
+  display: inline-flex; align-items: center; gap: 10px;
   margin-left: 40px; white-space: nowrap;
 }
 .lang-switch span{ color: #aaa; }
 .lang-switch a{
-  color: var(--fg);
-  text-decoration: none;
+  display:inline-block; width:24px; text-align:center; /* evita “saltitos” al cambiar grosor */
+  color: var(--fg); text-decoration: none;
   font-size: 12.5px; letter-spacing: .07em; text-transform: uppercase;
   font-weight: 300; transition: opacity .2s ease;
 }
 .lang-switch a:hover{ opacity: .6; }
-.lang-switch a.active{ font-weight: 600; } /* bold solo idioma activo */
+.lang-switch a.active{ font-weight: 600; }
 
 /* Burger solo en móvil */
 .burger{ display:none; margin-left:8px; background:transparent; border:0; cursor:pointer; }
@@ -139,14 +120,17 @@ body.nav-open .burger span:nth-child(3){ transform: translateY(-6px) rotate(-45d
   border-radius: 9999px;
   color: var(--fg);
   background: transparent;
-  transition: background .25s ease, box-shadow .25s ease, transform .2s ease;
+  transition: background .25s ease, box-shadow .25s ease;
 }
+
+/* Token debajo del texto (para que el texto no pierda intensidad) */
 .topbar .menu > a::before,
 #navdrawer > a::before{
   content:""; position:absolute; inset:0; border-radius:inherit;
   background: transparent; box-shadow: none; z-index:-1;
   transition: background .25s ease, box-shadow .25s ease;
 }
+
 /* Hover → azul translúcido */
 .topbar .menu > a:hover::before,
 .topbar .menu > a:focus-visible::before,
@@ -155,6 +139,7 @@ body.nav-open .burger span:nth-child(3){ transform: translateY(-6px) rotate(-45d
   background: rgba(128,179,251,.28);
   box-shadow: inset 0 2px 6px rgba(128,179,251,.45), 0 2px 6px rgba(0,0,0,.04);
 }
+
 /* Activo → naranja translúcido */
 .topbar .menu > a.is-active::before,
 #navdrawer > a.is-active::before{
@@ -179,200 +164,105 @@ h1{ font-weight:700; font-size:clamp(28px,4vw,40px); letter-spacing:-.3px; margi
 h2{ font-weight:600; font-size:clamp(22px,3vw,28px); margin:0 0 .6rem; }
 h3{ font-weight:500; font-size:clamp(18px,2.4vw,22px); margin:0 0 .5rem; }
 
-/* ===== HERO + PROYECTOS alineados ===== */
-.hero{
+/* ========== Tipos del héroe ========== */
+.hero-title{ margin:0 0 .35rem 0; line-height:1.05; }
+.hero-title .hi{
+  display:inline-block; font-weight:400;
+  font-size:clamp(18px,1.8vw,22px); margin-right:.5rem; color:var(--fg);
+}
+.hero-title .name{
+  display:inline-block; font-weight:700;
+  font-size:clamp(40px,5.4vw,64px);
+  color:var(--orange); letter-spacing:-.5px;
+}
+.role{
+  margin:.2rem 0 1rem 0; font-weight:600;
+  font-size:clamp(20px,2.4vw,28px);
+  color:var(--blue);
+}
+.lead{ color:var(--fg); max-width:60ch; margin:12px 0 18px; }
+
+/* ========== HOME (index) sin scroll + layout ========== */
+html{ scrollbar-gutter: stable both-edges; overflow-y: scroll; } /* evita “saltitos” */
+
+body.index{ overflow: hidden; }  /* sin scroll en desktop */
+
+body.index main.hero{
+  min-height: 100svh;
+  display: grid;
+  grid-template-columns: minmax(520px, 1fr) clamp(420px, 38vw, 540px);
+  align-items: center;
+  column-gap: clamp(24px, 3vw, 40px);
+  padding-left: var(--pad);   /* margen a la izquierda */
+  padding-right: 0;           /* sin margen a la derecha: foto pegada */
+  max-width: none;
+}
+
+/* Izquierda (texto + proyectos) */
+.hero{ /* contenedor general cuando no es index */
   display: grid;
   grid-template-columns: minmax(520px, 1fr) clamp(420px, 36vw, 520px);
-  grid-template-areas:
-    "left  photo"
-    "strip photo";
-  align-items: start;
   column-gap: clamp(36px, 5vw, 64px);
   max-width: var(--max);
   margin: 0 auto;
   padding: 0 var(--pad);
 }
+.hero-left{ display:flex; flex-direction:column; gap:22px; }
 
-/* lado izquierdo: texto + proyectos */
-.hero-left { grid-area: left; display:flex; flex-direction:column; gap: 28px; }
-
-/* lado derecho: foto */
-.hero-photo { grid-area: photo; display:flex; justify-content:center; align-items:center; }
-.hero-photo img{
-  width: 100%;
-  max-width: 520px;                 /* consistente con columna */
-  border-radius: 10px;
-  filter: grayscale(100%);
-  object-fit: cover;
-  transition: filter .3s ease, transform .3s ease;
-}
-.hero-photo img:hover{ filter: grayscale(0%); transform: scale(1.02); }
-
-/* 1) Bloquea el ancho de la ventana cuando cambie el scroll (adiós saltos) */
-html{
-  /* En navegadores modernos reserva el canal del scroll siempre */
-  scrollbar-gutter: stable both-edges;
-  /* Fallback universal por si acaso */
-  overflow-y: scroll;
-}
-
-/* 2) Evita que el cambio a bold de EN/ES mueva el layout
-      (reservamos ancho fijo para cada etiqueta) */
-.lang-switch{
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  /* opcional: si quieres clavar aún más el bloque completo
-     descomenta esta línea con un ancho total aproximado
-     width: 82px; justify-content: space-between; */
-}
-.lang-switch a{
-  display: inline-block;
-  width: 24px;        /* ← reserva ancho fijo “ES” / “EN” */
-  text-align: center; /* ambas quedan centradas */
-}
-
-/* 3) Elimina cualquier “empujón” por transformaciones en los enlaces del menú */
-.topbar .menu > a{
-  transform: none !important;
-}
-.topbar .menu > a:hover,
-.topbar .menu > a:focus-visible{
-  /* solo color/overlay del token, sin mover el enlace */
-  transform: none !important;
-}
-/* === FIX: texto SIEMPRE por encima del token y sin perder intensidad === */
-
-/* Enlaces principales del menú (no idiomas) */
-.topbar .menu > a,
-#navdrawer > a{
-  position: relative;
-  z-index: 1;                       /* texto por encima */
-  color: var(--fg) !important;      /* gris constante */
-  background: transparent !important;
-  opacity: 1 !important;            /* nunca bajar la opacidad del texto */
-  text-decoration: none !important;
-  transform: none !important;       /* evita mini saltos */
-}
-
-/* El token va DEBAJO del texto */
-.topbar .menu > a::before,
-#navdrawer > a::before{
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 9999px;
-  background: transparent;
-  box-shadow: none;
-  z-index: -1;                      /* debajo del texto */
-  transition: background .25s ease, box-shadow .25s ease;
-}
-
-/* Hover → azul translúcido, solo en el ::before */
-.topbar .menu > a:hover::before,
-.topbar .menu > a:focus-visible::before,
-#navdrawer > a:hover::before,
-#navdrawer > a:focus-visible::before{
-  background: rgba(128,179,251,.28);  /* #80B3FB */
-  box-shadow:
-    inset 0 2px 6px rgba(128,179,251,.45),
-    0 2px 6px rgba(0,0,0,.04);
-}
-
-/* Activo → naranja translúcido, solo en el ::before */
-.topbar .menu > a.is-active::before,
-#navdrawer > a.is-active::before{
-  background: rgba(251,146,128,.34);  /* #FB9280 */
-  box-shadow:
-    inset 0 2px 8px rgba(251,146,128,.55),
-    0 2px 6px rgba(0,0,0,.03);
-}
-
-/* Anula el desvanecido de hover heredado en los enlaces principales */
-.topbar .menu > a:hover,
-#navdrawer > a:hover{
-  opacity: 1 !important;             /* texto siempre igual de intenso */
-}
-
-/* El selector de idioma sigue sin tokens ni efectos */
-.lang-switch a{
-  background: none !important;
-  box-shadow: none !important;
-  padding: 0 !important;
-  opacity: 1 !important;
-}
-.lang-switch a::before{ content: none !important; }
-
-/* Ajusta el tamaño de la foto para que siempre quepa */
-body.index .hero-photo img {
-  height: 80vh;               /* evita que sea más alta que la pantalla */
-  width: auto;
-  object-fit: cover;
-  border-radius: 10px;
-  display: block;
-}
-/* ===== HOME (index) SIN SCROLL Y GRID AJUSTADO ===== */
-body.index{
-  overflow: hidden;                  /* sin scroll en la principal */
-}
-
-/* Hero a pantalla completa y centrado vertical */
-body.index main.hero{
-  min-height: 195svh;
-  display: grid;
-  grid-template-columns: minmax(520px, 1fr) clamp(420px, 38vw, 540px);
-  align-items: center;
-  column-gap: clamp(24px, 3vw, 40px);
-  padding-inline: clamp(32px, 6vw, 80px); 
-  max-width: none;                      /* ocupa todo el ancho de la ventana */
-}
-body.index .hero-photo {
-  justify-content: flex-end; /* empuja la imagen al borde derecho */
-}
-
-body.index .hero-photo img {
-  max-width: 100%;
-  height: 85svh;
-  object-fit: cover;
-  border-radius: 10px 0 0 10px; /* redondeo solo en el borde interior */
-}
-
-/* Foto contenida para que no provoque scroll */
+/* Foto a la derecha, pegada al borde */
+.hero-photo{ display:flex; justify-content:flex-end; align-items:center; }
 body.index .hero-photo img{
-  max-height: 85svh;                 /* no más alta que la ventana */
-  width: auto;
-  object-fit: cover;
+  height: 85svh; width:auto; object-fit:cover;
+  border-radius:10px 0 0 10px;
 }
 
-/* Responsive: en móvil apilar (con scroll permitido) */
-@media (max-width: 900px){
-  body.index{ overflow: auto; }      /* deja hacer scroll en móvil */
-  body.index main.hero{
-    grid-template-columns: 1fr;
-    text-align: center;
-    min-height: auto;
-  }
-  body.index .hero-photo{ order: -1; }
-  body.index .hero-photo img{ max-height: 50svh; }
-  body.index .projects-strip{
-    grid-template-columns: repeat(2, 1fr);
-    align-self: center;
-  }
+/* Tira de 6 rectángulos bajo el texto, alineados a la base */
+.projects-strip{
+  display:grid;
+  grid-template-columns:repeat(6, minmax(120px,1fr));
+  gap:clamp(12px,1.6vw,18px);
+  align-self:end;
+  margin-top:clamp(14px,2vw,22px);
 }
-
-
-PAGINA DE CONTACTO
-:root{
-  --contact-gap: clamp(28px, 4vw, 48px);
+.projects-strip .project{
+  height:clamp(80px, 10vh, 110px);
+  background:#f7f7f7;
+  border:1px solid #e6e6e6;
+  border-radius:8px;
+  box-shadow:0 2px 4px rgba(0,0,0,.04);
+  transition:transform .25s, box-shadow .25s;
 }
-/* Contenedor principal con palabra gigante de fondo */
+.projects-strip .project:hover{ transform:translateY(-3px); box-shadow:0 8px 18px rgba(0,0,0,.09); }
+
+/* Botón + redes (a la misma línea) */
+.hero-actions{ display:flex; align-items:center; gap:14px; }
+.btn-cta{
+  --cta:var(--orange);
+  display:inline-flex; align-items:center; gap:.55rem;
+  padding:.62rem 1rem; border-radius:9999px;
+  color:var(--cta); border:1.6px solid var(--cta);
+  text-decoration:none; font-weight:600;
+  transition:background .2s,color .2s,transform .2s;
+}
+.btn-cta:hover{ background:var(--cta); color:#fff; }
+.btn-cta .arrow{ transition:transform .2s; }
+.btn-cta:hover .arrow{ transform:translateX(3px); }
+.socials{ display:flex; gap:10px; padding:0; margin:0; list-style:none; }
+.social{
+  width:36px; height:36px; display:inline-flex; align-items:center; justify-content:center;
+  border:1.5px solid #ddd; border-radius:50%;
+  color:var(--fg); text-decoration:none; font-size:13px;
+  background:#fff; transition:transform .2s,border-color .2s,box-shadow .2s;
+}
+.social:hover{ transform:translateY(-2px); border-color:var(--blue); box-shadow:0 6px 14px rgba(0,0,0,.08); }
+
+/* ========== CONTACTO (layout) ========== */
 .contact{
   position: relative;
   max-width: var(--max);
   margin: 0 auto;
   padding: clamp(24px, 4vw, 48px) clamp(16px, 4vw, 40px) 64px;
 }
-/* Palabra gigante “CONTACT” en segundo plano */
 .contact-bg{
   position: absolute;
   inset: clamp(8px, 2vw, 16px) auto auto clamp(16px, 4vw, 40px);
@@ -380,20 +270,18 @@ PAGINA DE CONTACTO
   font-size: clamp(72px, 14vw, 180px);
   letter-spacing: .02em;
   color: #000;
-  opacity: .07;            /* gris muy suave como en tu referencia */
+  opacity: .07;
   line-height: 1;
   pointer-events: none;
   user-select: none;
 }
-/* Dos columnas: texto/rrss vs formulario */
 .contact-grid{
-  position: relative;      /* que se dibuje encima del bg word */
+  position: relative;
   display: grid;
   grid-template-columns: 1.1fr 1fr;
   gap: var(--contact-gap);
   align-items: start;
 }
-/* Izquierda */
 .contact-title{
   font-weight: 600;
   font-size: clamp(28px, 4vw, 44px);
@@ -406,134 +294,35 @@ PAGINA DE CONTACTO
   max-width: 46ch;
   margin: 12px 0 28px;
 }
-/* Redes redondas outline */
-.socials{
-  display: flex; gap: 16px; padding: 0; margin: 12px 0 0; list-style: none;
-}
-.social{
-  width: 56px; height: 56px;
-  display: inline-flex; align-items: center; justify-content: center;
-  border-radius: 50%;
-  border: 1.6px solid #ddd;
-  color: var(--fg);
-  background: #fff;
-  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
-}
-.social:hover{
-  transform: translateY(-2px);
-  border-color: var(--blue);
-  box-shadow: 0 6px 14px rgba(0,0,0,.08);
-}
-/* Derecha: formulario */
-.contact-form{
-  display: grid;
-  gap: 14px;
-}
+.contact-form{ display: grid; gap: 14px; }
 .field{ display: grid; gap: 6px; }
-.field .label{
-  font-size: 12px; color: var(--muted); letter-spacing: .02em;
-}
-/* Inputs pill */
+.field .label{ font-size: 12px; color: var(--muted); letter-spacing: .02em; }
 .contact-form input,
 .contact-form textarea{
   width: 100%;
-  border: 1.4px solid #ddd;
-  background: #fff;
-  color: var(--fg);
-  border-radius: 9999px;           /* pill */
-  padding: 12px 16px;
-  font-family: inherit;
-  font-size: 14px;
-  outline: none;
-  transition: border-color .2s ease, box-shadow .2s ease;
+  border: 1.4px solid #ddd; background: #fff; color: var(--fg);
+  border-radius: 9999px; padding: 12px 16px; font: inherit; font-size: 14px;
+  outline: none; transition: border-color .2s, box-shadow .2s;
 }
 .contact-form textarea{
-  border-radius: 16px;             /* área más rectangular */
-  resize: vertical;
-  min-height: 160px;
+  border-radius: 16px; resize: vertical; min-height: 160px;
 }
 .contact-form input:focus,
-.contact-form textarea:focus{
-  border-color: var(--blue);
-  box-shadow: 0 0 0 4px rgba(128,179,251,.18);
-}
-/* Botón CTA coherente con el resto */
-.contact-form .btn-cta{
-  justify-self: start;
-  margin-top: 6px;
-  border-color: var(--orange);
-  color: var(--orange);
-}
+.contact-form textarea:focus{ border-color: var(--blue); box-shadow: 0 0 0 4px rgba(128,179,251,.18); }
+.contact-form .btn-cta{ justify-self: start; margin-top: 6px; border-color: var(--orange); color: var(--orange); }
 .contact-form .btn-cta:hover,
-.contact-form .btn-cta:focus-visible{
-  background: var(--orange);
-  color:#fff;
+.contact-form .btn-cta:focus-visible{ background: var(--orange); color:#fff; }
+
+/* ========== Responsive ========== */
+@media (max-width: 1200px){
+  .projects-strip{ grid-template-columns: repeat(3, 1fr); }
 }
-/* Responsive */
 @media (max-width: 980px){
-  .contact-grid{
-    grid-template-columns: 1fr;
-  }
-  .contact-form .btn-cta{
-    justify-self: stretch;      /* botón ancho en móvil */
-    text-align: center;
-  }
+  .contact-grid{ grid-template-columns: 1fr; }
+  .contact-form .btn-cta{ justify-self: stretch; text-align: center; }
 }
-/* ===== Ajuste de posición de la foto en la home ===== */
-body.index .hero-photo {
-  margin-top: -50px; /* sube la foto 40px; puedes probar -30 o -50 según tu pantalla */
-}
-/* Además reducimos un poco el alto general para evitar scroll */
-body.index main.hero {
-  min-height: 95svh; /* antes 100svh, así no genera scroll */
-}
-
-
-GRID
-/* ===== HOME: layout sin scroll y foto pegada al borde derecho ===== */
-body.index{ overflow:hidden; }                 /* sin scroll en desktop */
-
-body.index main.hero{
-  min-height: 100svh;                          /* alto pantalla */
-  display: grid;
-  grid-template-columns: minmax(520px, 1fr) clamp(420px, 38vw, 540px);
-  align-items: center;
-  column-gap: clamp(24px, 3vw, 40px);
-  padding-left: var(--pad);                    /* margen a la izquierda */
-  padding-right: 0;                            /* SIN margen a la derecha */
-  max-width: none;                             /* usa todo el viewport */
-}
-
-body.index .hero-photo{ display:flex; justify-content:flex-end; }
-body.index .hero-photo img{
-  height: 85svh;                                /* controla la altura */
-  width: auto; object-fit: cover;
-  border-radius: 10px 0 0 10px;                 /* redondeo interior */
-}
-
-/* ===== Tira de 6 rectángulos ===== */
-body.index .projects-strip{
-  display: grid;
-  grid-template-columns: repeat(6, minmax(120px, 1fr));
-  gap: clamp(12px, 1.6vw, 18px);
-  align-self: end;                              /* alineado a la base del texto */
-  margin-top: clamp(14px, 2vw, 22px);
-}
-body.index .projects-strip .project{
-  height: clamp(80px, 10vh, 110px);
-  background: #f7f7f7;
-  border: 1px solid #e6e6e6;                    /* borde fino (como tu 2ª imagen) */
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,.04);
-  transition: transform .25s, box-shadow .25s;
-}
-body.index .projects-strip .project:hover{
-  transform: translateY(-3px);
-  box-shadow: 0 8px 18px rgba(0,0,0,.09);
-}
-
-/* ===== Responsive: en móvil sí se permite scroll y se apila ===== */
 @media (max-width: 900px){
+  /* en móvil SÍ se permite scroll y se apila */
   body.index{ overflow:auto; }
   body.index main.hero{
     grid-template-columns: 1fr;
@@ -543,91 +332,5 @@ body.index .projects-strip .project:hover{
   }
   body.index .hero-photo{ order:-1; justify-content:center; }
   body.index .hero-photo img{ height:50svh; border-radius:10px; }
-  body.index .projects-strip{
-    grid-template-columns: repeat(2, 1fr);
-    align-self: center;
-  }
+  .projects-strip{ grid-template-columns: repeat(2, 1fr); align-self: center; }
 }
-
-
-BOTON + REDES SOCIALES
-.hero-actions{ display:flex; align-items:center; gap:14px; }
-/* CTA */
-.btn-cta{
-  --cta:var(--orange);
-  display:inline-flex; align-items:center; gap:.55rem;
-  padding:.62rem 1rem; border-radius:9999px;
-  color:var(--cta); border:1.6px solid var(--cta);
-  text-decoration:none; font-weight:600;
-  transition:background .2s,color .2s,transform .2s;
-}
-.btn-cta:hover{ background:var(--cta); color:#fff; }
-.btn-cta .arrow{ transition:transform .2s; }
-.btn-cta:hover .arrow{ transform:translateX(3px); }
-/* Redes */
-.socials{ display:flex; gap:10px; padding:0; margin:0; list-style:none; }
-.social{
-  width:36px; height:36px; display:inline-flex; align-items:center; justify-content:center;
-  border:1.5px solid #ddd; border-radius:50%;
-  color:var(--fg); text-decoration:none; font-size:13px;
-  background:#fff; transition:transform .2s,border-color .2s,box-shadow .2s;
-}
-.social:hover{ transform:translateY(-2px); border-color:var(--blue); box-shadow:0 6px 14px rgba(0,0,0,.08); }
-
-
-/* Contenedor del hero ocupando todo el ancho, con padding solo a la izquierda */
-main.hero{
-  display:grid;
-  grid-template-columns:minmax(520px,1fr) clamp(420px,38vw,540px);
-  align-items:center;
-  column-gap:clamp(24px,3vw,40px);
-  padding-left:var(--pad);
-  padding-right:0;                /* sin margen a la derecha */
-  max-width:none;                 /* que use todo el viewport */
-}
-
-/* Izquierda (texto + proyectos) */
-.hero-left{ display:flex; flex-direction:column; gap:22px; }
-
-/* Foto pegada al borde derecho */
-.hero-photo{ display:flex; justify-content:flex-end; }
-.hero-photo img{
-  height:85svh; width:auto; object-fit:cover;
-  border-radius:10px 0 0 10px;    /* redondeo solo interior */
-}
-
-
-.projects-strip{
-  display:grid;
-  grid-template-columns:repeat(6, minmax(120px,1fr));
-  gap:clamp(12px,1.6vw,18px);
-  align-self:end;                 /* alineados con la base del texto */
-  margin-top:clamp(14px,2vw,22px);
-}
-
-.project{
-  height:clamp(80px, 10vh, 110px);
-  background:#f7f7f7;
-  border:1px solid #e6e6e6;
-  border-radius:8px;
-  box-shadow:0 2px 4px rgba(0,0,0,.04);
-  transition:transform .25s, box-shadow .25s;
-}
-.project:hover{ transform:translateY(-3px); box-shadow:0 8px 18px rgba(0,0,0,.09); }
-
-@media (min-width:901px){
-  body.index{ overflow:hidden; }
-}
-
-
-@media (max-width:900px){
-  main.hero{
-    grid-template-columns:1fr;
-    padding-right:var(--pad);
-    row-gap:18px; text-align:center;
-  }
-  .hero-photo{ order:-1; justify-content:center; }
-  .hero-photo img{ height:50svh; border-radius:10px; }
-  .projects-strip{ grid-template-columns:repeat(2,1fr); align-self:center; }
-}
-
