@@ -193,8 +193,8 @@ body.index main.hero{
   grid-template-columns: minmax(520px, 1fr) clamp(420px, 38vw, 540px);
   align-items: center;
   column-gap: clamp(24px, 3vw, 40px);
-  padding: clamp(24px, 4vw, 48px) clamp(16px, 4vw, 40px); /* ← igual que .contact */
-  padding-top: clamp(8px, 2vw, 24px);
+  padding: clamp(20px, 3vw, 48px) clamp(12px, 3vw, 40px); /* ← igual que .contact */
+  padding-top: clamp(8px, 1.5vw, 20px);
   max-width: var(--max);
   margin: 0 auto;
 }
