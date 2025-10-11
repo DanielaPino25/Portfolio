@@ -60,54 +60,46 @@
   </nav>
 
   <!-- HERO (dos columnas: texto + foto) -->
-<main class="hero">
-  <!-- Columna izquierda: texto -->
-  <div class="hero-left">
-    <div class="hero-text">
-      <h1 class="hero-title">
-        <span class="hi">Hi, I’m</span>
-        <span class="name">Daniela Pino</span>
-      </h1>
+  <main class="hero">
+    <!-- Columna izquierda: texto + proyectos -->
+    <div class="hero-left">
+      <div class="hero-text">
+        <h1 class="hero-title">
+          <span class="hi">Hi, I’m</span>
+          <span class="name">Daniela Pino</span>
+        </h1>
 
-      <h2 class="role">a Product and UX/UI Designer.</h2>
+        <h2 class="role">a Product and UX/UI Designer.</h2>
 
-      <p class="lead">
-        Welcome to my page! Here you can explore a glimpse of my work.<br>
-        I hope you enjoy it.
-      </p>
+        <p class="lead">
+          Welcome to my page! Here you can explore a glimpse of my work.<br>
+          I hope you enjoy it.
+        </p>
 
-            <div class="hero-actions">
-        <a class="btn-cta" href="Contact.html" aria-label="Go to contact page">
-          Contact me <span class="arrow">→</span>
-        </a>
+        <!-- ÚNICO CTA + redes -->
+        <div class="hero-actions">
+          <a class="btn-cta" href="Contact.html" aria-label="Go to contact page">
+            Contact me <span class="arrow">→</span>
+          </a>
+          <ul class="socials">
+            <li><a class="social" href="#" aria-label="Instagram">ig</a></li>
+            <li><a class="social" href="#" aria-label="LinkedIn">in</a></li>
+            <li><a class="social" href="#" aria-label="Behance">be</a></li>
+          </ul>
+        </div>
+      </div>
 
-        <ul class="socials">
-          <li><a class="social" href="#" aria-label="Instagram">ig</a></li>
-          <li><a class="social" href="#" aria-label="LinkedIn">in</a></li>
-          <li><a class="social" href="#" aria-label="Behance">be</a></li>
-        </ul>
+      <!-- TIRA de 6 proyectos (rectángulos) -->
+      <div class="projects-strip">
+        <div class="project"></div>
+        <div class="project"></div>
+        <div class="project"></div>
+        <div class="project"></div>
+        <div class="project"></div>
+        <div class="project"></div>
       </div>
     </div>
 
-      <a class="btn-cta" href="Contact.html" aria-label="Go to contact page">
-        <span>Contact me</span>
-        <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </a>
-    </div>
-      
-<!-- TIRA de 6 proyectos (rectángulos) -->
-    <div class="projects-strip">
-      <div class="project"></div>
-      <div class="project"></div>
-      <div class="project"></div>
-      <div class="project"></div>
-      <div class="project"></div>
-      <div class="project"></div>
-    </div>
-  </div>
-    
     <!-- Columna derecha: foto -->
     <div class="hero-photo">
       <img src="assets/principal.jpg" alt="Daniela Pino" />
@@ -140,7 +132,7 @@
       });
     })();
 
-    // Burger / drawer
+    // Burger / drawer + sombra en scroll
     (function(){
       const burger = document.querySelector('.burger');
       burger?.addEventListener('click', () => {
@@ -150,9 +142,11 @@
       document.querySelectorAll('#navdrawer a').forEach(a => {
         a.addEventListener('click', () => document.body.classList.remove('nav-open'));
       });
-      window.addEventListener('scroll', () => {
+      const onScroll = () => {
         document.body.classList.toggle('scrolled', window.scrollY > 10);
-      });
+      };
+      window.addEventListener('scroll', onScroll, {passive:true});
+      onScroll();
     })();
 
     // El logo respeta el idioma preferido (no lo cambia)
@@ -172,16 +166,5 @@
       }
     })();
   </script>
-  <script>
-  // Sombra del toolbar cuando hay desplazamiento
-  (function(){
-    const onScroll = () => {
-      document.body.classList.toggle('scrolled', window.scrollY > 8);
-    };
-    window.addEventListener('scroll', onScroll, {passive:true});
-    onScroll(); // estado inicial
-  })();
-</script>
-<body>
+</body>
 </html>
-
