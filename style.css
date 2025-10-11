@@ -170,7 +170,6 @@ h3{ font-weight:500; font-size:clamp(18px,2.4vw,22px); margin:0 0 .5rem; }
 
 /* lado izquierdo: texto + proyectos */
 .hero-left { grid-area: left; display:flex; flex-direction:column; gap: 28px; }
-.projects-row{ grid-area: strip; }
 
 /* lado derecho: foto */
 .hero-photo { grid-area: photo; display:flex; justify-content:center; align-items:center; }
@@ -184,43 +183,6 @@ h3{ font-weight:500; font-size:clamp(18px,2.4vw,22px); margin:0 0 .5rem; }
 }
 .hero-photo img:hover{ filter: grayscale(0%); transform: scale(1.02); }
 
-/* ===== Proyectos: 6 rectángulos en línea ===== */
-.projects-row{
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: var(--gap);
-}
-.project-card{
-  height: 110px;                     /* rectángulos horizontales */
-  background: #f5f5f5;
-  border-radius: 10px;
-  border: 1.5px solid #eee;
-  box-shadow: 0 2px 4px rgba(0,0,0,.05);
-  transition: transform .25s ease, box-shadow .25s ease;
-}
-.project-card:hover{
-  transform: translateY(-4px);
-  box-shadow: 0 6px 14px rgba(0,0,0,.1);
-}
-
-/* ===== Responsive ===== */
-@media (max-width: 1200px){
-  .projects-row{ grid-template-columns: repeat(3, 1fr); }
-}
-@media (max-width: 900px){
-  .hero{
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "photo"
-      "left"
-      "strip";
-    text-align: center;
-    row-gap: 24px;
-  }
-  .hero-photo{ order: -1; }
-  .projects-row{ grid-template-columns: repeat(2, 1fr); }
-  .project-card{ height: 120px; }
-}
 /* 1) Bloquea el ancho de la ventana cuando cambie el scroll (adiós saltos) */
 html{
   /* En navegadores modernos reserva el canal del scroll siempre */
@@ -526,4 +488,69 @@ body.index .hero-photo {
 /* Además reducimos un poco el alto general para evitar scroll */
 body.index main.hero {
   min-height: 95svh; /* antes 100svh, así no genera scroll */
+}
+/* ===== HOME (index) SIN SCROLL Y GRID AJUSTADO ===== */
+body.index{
+  overflow: hidden;                  /* sin scroll en la principal */
+}
+
+/* Hero a pantalla completa y centrado vertical */
+body.index main.hero{
+  min-height: 95svh;                 /* menos que 100 para evitar scroll */
+  display: grid;
+  grid-template-columns: minmax(520px, 1fr) clamp(420px, 36vw, 520px);
+  align-items: center;
+  column-gap: clamp(32px, 5vw, 64px);
+  padding-inline: var(--pad);
+}
+
+/* Sube la foto para “pegarla” al toolbar */
+body.index .hero-photo{
+  margin-top: -40px;                 /* prueba -30 o -50 según tu pantalla */
+}
+
+/* Foto contenida para que no provoque scroll */
+body.index .hero-photo img{
+  max-height: 85svh;
+  width: auto;
+  object-fit: cover;
+}
+
+/* Tira de 6 proyectos en una sola línea, alineada a la parte baja del texto */
+body.index .projects-strip{
+  display: grid;
+  grid-template-columns: repeat(6, minmax(160px, 1fr));  /* más anchos */
+  gap: clamp(12px, 1.8vw, 20px);
+  align-self: end;                   /* “pega” la fila hacia abajo */
+  margin-top: clamp(20px, 3vw, 40px);
+}
+
+/* Tarjetas tipo rectángulo bajo (como tu boceto) */
+body.index .projects-strip .project{
+  height: 96px;                      /* rectángulo horizontal */
+  border-radius: 12px;
+  background: #f5f5f5;
+  border: 1.5px solid #eee;
+  box-shadow: 0 2px 4px rgba(0,0,0,.05);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+body.index .projects-strip .project:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0,0,0,.10);
+}
+
+/* Responsive: en móvil sí permitimos scroll y apilamos */
+@media (max-width: 900px){
+  body.index{ overflow: auto; }
+  body.index main.hero{
+    grid-template-columns: 1fr;
+    text-align: center;
+    min-height: auto;
+  }
+  body.index .hero-photo{ order: -1; margin-top: 0; }
+  body.index .hero-photo img{ max-height: 50svh; }
+  body.index .projects-strip{
+    grid-template-columns: repeat(2, 1fr);
+    align-self: center;
+  }
 }
