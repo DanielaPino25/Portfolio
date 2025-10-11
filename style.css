@@ -313,7 +313,6 @@ body.index .hero-photo img{
   width: auto;
   object-fit: cover;
 }
-
 /* Tira de 6 proyectos en una sola línea, alineada con la parte baja del texto */
 body.index .projects-strip{
   display: grid;
@@ -322,7 +321,6 @@ body.index .projects-strip{
   align-self: end;                   /* “pega” la fila hacia abajo */
   margin-top: clamp(20px, 3vw, 40px);
 }
-
 /* Tarjetas tipo rectángulo bajo (como tu boceto) */
 body.index .projects-strip .project{
   height: clamp(72px, 11vh, 110px);
@@ -336,7 +334,6 @@ body.index .projects-strip .project:hover{
   transform: translateY(-4px);
   box-shadow: 0 6px 14px rgba(0,0,0,.10);
 }
-
 /* Responsive: en móvil apilar (con scroll permitido) */
 @media (max-width: 900px){
   body.index{ overflow: auto; }      /* deja hacer scroll en móvil */
@@ -352,11 +349,12 @@ body.index .projects-strip .project:hover{
     align-self: center;
   }
 }
-/* ===== CONTACT PAGE ===== */
+
+
+PAGINA DE CONTACTO
 :root{
   --contact-gap: clamp(28px, 4vw, 48px);
 }
-
 /* Contenedor principal con palabra gigante de fondo */
 .contact{
   position: relative;
@@ -364,7 +362,6 @@ body.index .projects-strip .project:hover{
   margin: 0 auto;
   padding: clamp(24px, 4vw, 48px) clamp(16px, 4vw, 40px) 64px;
 }
-
 /* Palabra gigante “CONTACT” en segundo plano */
 .contact-bg{
   position: absolute;
@@ -378,7 +375,6 @@ body.index .projects-strip .project:hover{
   pointer-events: none;
   user-select: none;
 }
-
 /* Dos columnas: texto/rrss vs formulario */
 .contact-grid{
   position: relative;      /* que se dibuje encima del bg word */
@@ -387,7 +383,6 @@ body.index .projects-strip .project:hover{
   gap: var(--contact-gap);
   align-items: start;
 }
-
 /* Izquierda */
 .contact-title{
   font-weight: 600;
@@ -401,7 +396,6 @@ body.index .projects-strip .project:hover{
   max-width: 46ch;
   margin: 12px 0 28px;
 }
-
 /* Redes redondas outline */
 .socials{
   display: flex; gap: 16px; padding: 0; margin: 12px 0 0; list-style: none;
@@ -420,7 +414,6 @@ body.index .projects-strip .project:hover{
   border-color: var(--blue);
   box-shadow: 0 6px 14px rgba(0,0,0,.08);
 }
-
 /* Derecha: formulario */
 .contact-form{
   display: grid;
@@ -430,7 +423,6 @@ body.index .projects-strip .project:hover{
 .field .label{
   font-size: 12px; color: var(--muted); letter-spacing: .02em;
 }
-
 /* Inputs pill */
 .contact-form input,
 .contact-form textarea{
@@ -450,13 +442,11 @@ body.index .projects-strip .project:hover{
   resize: vertical;
   min-height: 160px;
 }
-
 .contact-form input:focus,
 .contact-form textarea:focus{
   border-color: var(--blue);
   box-shadow: 0 0 0 4px rgba(128,179,251,.18);
 }
-
 /* Botón CTA coherente con el resto */
 .contact-form .btn-cta{
   justify-self: start;
@@ -469,7 +459,6 @@ body.index .projects-strip .project:hover{
   background: var(--orange);
   color:#fff;
 }
-
 /* Responsive */
 @media (max-width: 980px){
   .contact-grid{
@@ -484,16 +473,16 @@ body.index .projects-strip .project:hover{
 body.index .hero-photo {
   margin-top: -50px; /* sube la foto 40px; puedes probar -30 o -50 según tu pantalla */
 }
-
 /* Además reducimos un poco el alto general para evitar scroll */
 body.index main.hero {
   min-height: 95svh; /* antes 100svh, así no genera scroll */
 }
-/* ===== HOME (index) SIN SCROLL Y GRID AJUSTADO ===== */
+
+
+GRID
 body.index{
   overflow: hidden;                  /* sin scroll en la principal */
 }
-
 /* Hero a pantalla completa y centrado vertical */
 body.index main.hero{
   min-height: 95svh;                 /* menos que 100 para evitar scroll */
@@ -503,19 +492,16 @@ body.index main.hero{
   column-gap: clamp(32px, 5vw, 64px);
   padding-inline: var(--pad);
 }
-
 /* Sube la foto para “pegarla” al toolbar */
 body.index .hero-photo{
   margin-top: -40px;                 /* prueba -30 o -50 según tu pantalla */
 }
-
 /* Foto contenida para que no provoque scroll */
 body.index .hero-photo img{
   max-height: 85svh;
   width: auto;
   object-fit: cover;
 }
-
 /* Tira de 6 proyectos en una sola línea, alineada a la parte baja del texto */
 body.index .projects-strip{
   display: grid;
@@ -524,7 +510,6 @@ body.index .projects-strip{
   align-self: end;                   /* “pega” la fila hacia abajo */
   margin-top: clamp(20px, 3vw, 40px);
 }
-
 /* Tarjetas tipo rectángulo bajo (como tu boceto) */
 body.index .projects-strip .project{
   height: 96px;                      /* rectángulo horizontal */
@@ -538,7 +523,6 @@ body.index .projects-strip .project:hover{
   transform: translateY(-4px);
   box-shadow: 0 6px 14px rgba(0,0,0,.10);
 }
-
 /* Responsive: en móvil sí permitimos scroll y apilamos */
 @media (max-width: 900px){
   body.index{ overflow: auto; }
