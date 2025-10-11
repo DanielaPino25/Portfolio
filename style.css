@@ -302,9 +302,11 @@ html{
 
 /* Ajusta el tamaño de la foto para que siempre quepa */
 body.index .hero-photo img {
-  height: 85vh;               /* evita que sea más alta que la pantalla */
+  height: 80vh;               /* evita que sea más alta que la pantalla */
   width: auto;
   object-fit: cover;
+  border-radius: 10px;
+  display: block;
 }
 /* ===== HOME (index) SIN SCROLL Y GRID AJUSTADO ===== */
 body.index{
@@ -313,7 +315,7 @@ body.index{
 
 /* Hero a pantalla completa y centrado vertical */
 body.index main.hero{
-  min-height: 100svh;
+  min-height: 195svh;
   display: grid;
   grid-template-columns: minmax(520px, 1fr) clamp(420px, 38vw, 540px);
   align-items: center;
