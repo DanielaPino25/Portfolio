@@ -156,7 +156,7 @@ main{ max-width: var(--max); margin: 0 auto; padding: 0 clamp(16px, 2.5vw, 32px)
 
 /* ========== Footer (sin línea) ========== */
 footer{
-  text-align:center; padding:16px 0; border-top:none; color:var(--muted); background:transparent;
+  text-align:center; padding:16px 0 40px; border-top:none; color:var(--muted); background:transparent;
 }
 
 /* ========== Títulos genéricos ========== */
