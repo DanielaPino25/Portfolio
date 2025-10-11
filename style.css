@@ -1,7 +1,7 @@
 /* ========== Variables ========== */
 :root{
   --max: 1200px;
-  --pad: clamp(16px, 4vw, 40px); /* padding lateral coherente */
+  --pad: clamp(24px, 6vw, 80px); /* padding lateral coherente */
   --gap: 16px;                   /* separación base */
 
   --fg: #3a3a3a;
@@ -313,13 +313,12 @@ body.index{
 
 /* Hero a pantalla completa y centrado vertical */
 body.index main.hero{
-  min-height: 95svh;
+  min-height: 100svh;
   display: grid;
   grid-template-columns: minmax(520px, 1fr) clamp(420px, 38vw, 540px);
   align-items: center;
   column-gap: clamp(24px, 3vw, 40px);
-  padding-left: clamp(24px, 3vw, 56px); /* margen solo a la izquierda */
-  padding-right: 0;                     /* SIN margen derecho */
+  padding-inline: clamp(32px, 6vw, 80px); 
   max-width: none;                      /* ocupa todo el ancho de la ventana */
 }
 body.index .hero-photo {
