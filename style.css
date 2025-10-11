@@ -12,6 +12,28 @@
   --orange: #FB9280;   /* acento nombre / CTA */
   --blue:   #80B3FB;   /* acento rol */
 
+  /* Título: “Hi, I’m” + nombre naranja */
+.hero-title{ margin:0 0 .35rem 0; line-height:1.05; }
+.hero-title .hi{
+  display:inline-block; font-weight:400;
+  font-size:clamp(18px,1.8vw,22px); margin-right:.5rem; color:var(--fg);
+}
+.hero-title .name{
+  display:inline-block; font-weight:700;
+  font-size:clamp(40px,5.4vw,64px);
+  color:var(--orange); letter-spacing:-.5px;
+}
+
+/* Subtítulo azul */
+.role{
+  margin:.2rem 0 1rem 0; font-weight:600;
+  font-size:clamp(20px,2.4vw,28px);
+  color:var(--blue);
+}
+
+/* Párrafo */
+.lead{ color:var(--fg); max-width:60ch; margin:12px 0 18px; }
+
   /* alturas dinámicas (si las rellenas con JS) */
   --topbar-h: 0px;
   --footer-h: 0px;
