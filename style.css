@@ -299,14 +299,15 @@ body.index{
 
 /* Hero a pantalla completa y centrado vertical */
 body.index main.hero{
-  min-height: 100svh;                /* alto de la ventana (mejor en móvil) */
+  min-height: 95svh;                /* alto de la ventana (mejor en móvil) */
   display: grid;
   grid-template-columns: minmax(520px, 1fr) clamp(420px, 36vw, 520px);
   align-items: center;
-  column-gap: clamp(32px, 5vw, 64px);
-  padding-inline: clamp(16px, 4vw, 40px);
+  column-gap: clamp(24px, 4vw, 48px);       /* menos espacio entre texto y foto */
+  padding-inline: clamp(24px, 3vw, 56px);   /* márgenes laterales más pequeños */
+  max-width: 1300px;                        /* limita ancho general */
+  margin-inline: auto;                      /* centra todo el bloque */
 }
-
 /* Foto contenida para que no provoque scroll */
 body.index .hero-photo img{
   max-height: 85svh;                 /* no más alta que la ventana */
