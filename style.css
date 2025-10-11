@@ -335,3 +335,55 @@ body.index .hero-photo img{
   body.index .hero-photo img{ height:50svh; border-radius:10px; }
   .projects-strip{ grid-template-columns: repeat(2, 1fr); align-self: center; }
 }
+/* === FIX: texto del menú SIEMPRE visible e intenso === */
+
+/* Enlaces principales del menú (no idiomas) */
+.topbar .menu > a,
+#navdrawer > a {
+  position: relative;
+  z-index: 1;                       /* texto por encima del token */
+  color: var(--fg) !important;      /* mantiene el gris original */
+  opacity: 1 !important;            /* evita que se aclare */
+  text-decoration: none !important;
+  background: transparent !important;
+  transform: none !important;
+}
+
+/* Token debajo del texto */
+.topbar .menu > a::before,
+#navdrawer > a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  z-index: -1;                      /* token detrás del texto */
+  background: transparent;
+  box-shadow: none;
+  transition: background .25s ease, box-shadow .25s ease;
+}
+
+/* Hover → azul translúcido */
+.topbar .menu > a:hover::before,
+.topbar .menu > a:focus-visible::before,
+#navdrawer > a:hover::before,
+#navdrawer > a:focus-visible::before {
+  background: rgba(128,179,251,.28);
+  box-shadow:
+    inset 0 2px 6px rgba(128,179,251,.45),
+    0 2px 6px rgba(0,0,0,.04);
+}
+
+/* Activo → naranja translúcido */
+.topbar .menu > a.is-active::before,
+#navdrawer > a.is-active::before {
+  background: rgba(251,146,128,.34);
+  box-shadow:
+    inset 0 2px 8px rgba(251,146,128,.55),
+    0 2px 6px rgba(0,0,0,.03);
+}
+
+/* Anula el desvanecido de hover heredado */
+.topbar .menu > a:hover,
+#navdrawer > a:hover {
+  opacity: 1 !important;  /* texto siempre igual de fuerte */
+}
