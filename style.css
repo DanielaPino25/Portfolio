@@ -494,7 +494,7 @@ body.index main.hero{
 }
 /* Sube la foto para “pegarla” al toolbar */
 body.index .hero-photo{
-  margin-top: -40px;                 /* prueba -30 o -50 según tu pantalla */
+  margin-top: -60px;                 /* prueba -30 o -50 según tu pantalla */
 }
 /* Foto contenida para que no provoque scroll */
 body.index .hero-photo img{
