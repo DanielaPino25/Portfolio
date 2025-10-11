@@ -339,27 +339,7 @@ body.index .hero-photo img{
   width: auto;
   object-fit: cover;
 }
-/* Tira de 6 proyectos en una sola línea, alineada con la parte baja del texto */
-body.index .projects-strip{
-  display: grid;
-  grid-template-columns: repeat(6, minmax(120px, 1fr));
-  gap: clamp(12px, 1.8vw, 20px);
-  align-self: end;                   /* “pega” la fila hacia abajo */
-  margin-top: clamp(20px, 3vw, 40px);
-}
-/* Tarjetas tipo rectángulo bajo (como tu boceto) */
-body.index .projects-strip .project{
-  height: clamp(72px, 11vh, 110px);
-  border-radius: 12px;
-  background: #f5f5f5;
-  border: 1.5px solid #eee;
-  box-shadow: 0 2px 4px rgba(0,0,0,.05);
-  transition: transform .25s ease, box-shadow .25s ease;
-}
-body.index .projects-strip .project:hover{
-  transform: translateY(-4px);
-  box-shadow: 0 6px 14px rgba(0,0,0,.10);
-}
+
 /* Responsive: en móvil apilar (con scroll permitido) */
 @media (max-width: 900px){
   body.index{ overflow: auto; }      /* deja hacer scroll en móvil */
@@ -506,59 +486,59 @@ body.index main.hero {
 
 
 GRID
-body.index{
-  overflow: hidden;                  /* sin scroll en la principal */
-}
-/* Hero a pantalla completa y centrado vertical */
+/* ===== HOME: layout sin scroll y foto pegada al borde derecho ===== */
+body.index{ overflow:hidden; }                 /* sin scroll en desktop */
+
 body.index main.hero{
-  min-height: 95svh;                 /* menos que 100 para evitar scroll */
+  min-height: 100svh;                          /* alto pantalla */
   display: grid;
-  grid-template-columns: minmax(520px, 1fr) clamp(420px, 36vw, 520px);
+  grid-template-columns: minmax(520px, 1fr) clamp(420px, 38vw, 540px);
   align-items: center;
-  column-gap: clamp(32px, 5vw, 64px);
-  padding-inline: var(--pad);
+  column-gap: clamp(24px, 3vw, 40px);
+  padding-left: var(--pad);                    /* margen a la izquierda */
+  padding-right: 0;                            /* SIN margen a la derecha */
+  max-width: none;                             /* usa todo el viewport */
 }
-/* Sube la foto para “pegarla” al toolbar */
-body.index .hero-photo{
-  margin-top: -20px;                 /* prueba -30 o -50 según tu pantalla */
-}
-/* Foto contenida para que no provoque scroll */
+
+body.index .hero-photo{ display:flex; justify-content:flex-end; }
 body.index .hero-photo img{
-  max-height: 85svh;
-  width: auto;
-  object-fit: cover;
+  height: 85svh;                                /* controla la altura */
+  width: auto; object-fit: cover;
+  border-radius: 10px 0 0 10px;                 /* redondeo interior */
 }
-/* Tira de 6 proyectos en una sola línea, alineada a la parte baja del texto */
+
+/* ===== Tira de 6 rectángulos ===== */
 body.index .projects-strip{
   display: grid;
-  grid-template-columns: repeat(6, minmax(160px, 1fr));  /* más anchos */
-  gap: clamp(12px, 1.8vw, 20px);
-  align-self: end;                   /* “pega” la fila hacia abajo */
-  margin-top: clamp(20px, 3vw, 40px);
+  grid-template-columns: repeat(6, minmax(120px, 1fr));
+  gap: clamp(12px, 1.6vw, 18px);
+  align-self: end;                              /* alineado a la base del texto */
+  margin-top: clamp(14px, 2vw, 22px);
 }
-/* Tarjetas tipo rectángulo bajo (como tu boceto) */
 body.index .projects-strip .project{
-  height: 96px;                      /* rectángulo horizontal */
-  border-radius: 12px;
-  background: #f5f5f5;
-  border: 1.5px solid #eee;
-  box-shadow: 0 2px 4px rgba(0,0,0,.05);
-  transition: transform .25s ease, box-shadow .25s ease;
+  height: clamp(80px, 10vh, 110px);
+  background: #f7f7f7;
+  border: 1px solid #e6e6e6;                    /* borde fino (como tu 2ª imagen) */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,.04);
+  transition: transform .25s, box-shadow .25s;
 }
 body.index .projects-strip .project:hover{
-  transform: translateY(-4px);
-  box-shadow: 0 6px 14px rgba(0,0,0,.10);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0,0,0,.09);
 }
-/* Responsive: en móvil sí permitimos scroll y apilamos */
+
+/* ===== Responsive: en móvil sí se permite scroll y se apila ===== */
 @media (max-width: 900px){
-  body.index{ overflow: auto; }
+  body.index{ overflow:auto; }
   body.index main.hero{
     grid-template-columns: 1fr;
+    row-gap: 18px;
     text-align: center;
-    min-height: auto;
+    padding-right: var(--pad);
   }
-  body.index .hero-photo{ order: -1; margin-top: 0; }
-  body.index .hero-photo img{ max-height: 50svh; }
+  body.index .hero-photo{ order:-1; justify-content:center; }
+  body.index .hero-photo img{ height:50svh; border-radius:10px; }
   body.index .projects-strip{
     grid-template-columns: repeat(2, 1fr);
     align-self: center;
