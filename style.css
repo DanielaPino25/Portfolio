@@ -213,7 +213,7 @@ body.index .hero-photo img{
   width: 100% !important; 
   height: auto !important;
   max-width: 520px !important;  
-  border-radius: 20px !important;
+  border-radius: 30px !important;
   object-fit: cover !important; 
   display: block;
 }
