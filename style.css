@@ -469,4 +469,46 @@ body.index .hero-photo img{
 }
 @media (max-width: 900px){
   .projects-strip{ grid-template-columns: repeat(2, 1fr); }
+/* ===== Layout base: topbar + main + footer (sin scroll por el footer) ===== */
+html, body{
+  height: 100%;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;      /* alto de ventana “real” en móvil */
+  overflow-x: hidden;
+}
+
+/* El main ocupa lo flexible; el footer empuja al fondo sin salir del viewport */
+main{
+  flex: 1 0 auto;
+}
+
+/* Footer dentro de la página, sin sumar scroll extra */
+footer{
+  margin-top: auto;        /* se pega al final del flujo flex */
+  padding: 12px 0;         /* reduce padding para evitar rebases */
+}
+
+/* En la home: sin scroll vertical, ajustamos el alto del hero al hueco real */
+body.index{
+  overflow-y: hidden;
+}
+
+/* Alto del hero = ventana - topbar - footer */
+body.index main.hero{
+  height: calc(100svh - var(--topbar-h) - var(--footer-h));
+  min-height: calc(100svh - var(--topbar-h) - var(--footer-h));
+  display: grid;
+  align-items: center;
+}
+
+/* La foto no puede ser más alta que el hueco disponible */
+body.index .hero-photo img{
+  max-height: calc(100svh - var(--topbar-h) - var(--footer-h) - 12px);
+  width: auto;
+  object-fit: cover;
+}
 
