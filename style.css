@@ -219,7 +219,7 @@ body.index main.hero{
 .hero-photo{ display:flex; justify-content:flex-end; align-items:center; }
 body.index .hero-photo img{
   height: 80svh; width:auto; object-fit:cover;
-  border-radius:10px 0 0 10px;
+  border-radius:12px
 }
 
 /* Tira de 6 rectángulos bajo el texto, alineados a la base */
