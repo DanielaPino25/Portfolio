@@ -202,7 +202,7 @@ body.index main.hero{
   margin: 0 auto;
   padding-left: clamp(40px, 6vw, 80px);
   padding-right: clamp(40px, 6vw, 80px); 
-  padding-top: clamp(20px, 2vh, 40px);
+  padding-top: clamp(10px, 1vh, 24px);
     /* 🔹 Altura completa sin scroll */
   min-height: 100svh;
   max-width: none;
