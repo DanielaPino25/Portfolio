@@ -192,132 +192,114 @@ html{ scrollbar-gutter: stable both-edges; overflow-y: scroll; } /* evita “sal
 body.index{ overflow: hidden; }  /* sin scroll en desktop */
 
 body.index main.hero{
-  min-height: calc(100svh - var(--topbar-h));
   display: grid;
   grid-template-columns: minmax(520px, 1fr) clamp(420px, 38vw, 540px);
   align-items: center;
-  column-gap: clamp(32px, 4vw, 64px);
-  padding-top: clamp(4px, 0.8vw, 10px);
-  max-width: var(--max);
-  margin: 0 auto;
-  padding-left: clamp(40px, 6vw, 80px);
-  padding-right: clamp(40px, 6vw, 80px); 
-  padding-top: clamp(10px, 1vh, 24px);
-    /* 🔹 Altura completa sin scroll */
-  min-height: 100svh;
-  max-width: none;
+  column-gap: clamp(32px, 4vw, 64px);  
+  min-height: 100svh !important;
+  padding: clamp(8px, 1vw, 16px); clamp(48px, 6vw, 80px) 0 !important;
+  max-width: none !important;
+  }
+body.index .hero-left{ min-height: auto !important; }
+body.index .hero-photo{ display: flex; justify-content: center !important; align-items: center;
 }
-/* ===== FOTO ===== */
-body.index .hero-photo {
-  display: flex;
-  justify-content: center; /* centrada con márgenes iguales */
-  align-items: center;
-}
-body.index .hero-photo img {
-  width: 100%;
-  max-width: 520px;
-  height: auto;
-  border-radius: 20px;
-  object-fit: cover;
-}
-
-/* Izquierda (texto + proyectos) */
-.hero{ /* contenedor general cuando no es index */
-  display: grid;
-  grid-template-columns: minmax(520px, 1fr) clamp(420px, 36vw, 520px);
-  column-gap: clamp(36px, 5vw, 64px);
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 0 var(--pad);
-}
-.hero-left{
-  min-height: 80svh;                        /* igual al alto de la foto */
-  display:flex;
-  flex-direction:column;
-}
-
-/* Foto a la derecha, pegada al borde */
-.hero-photo{ display:flex; justify-content:flex-end; align-items:center; }
 body.index .hero-photo img{
-  height: 80svh; width:auto; object-fit:cover;
-  border-radius:20px
+  max-height: 80svh !important;  
+  width: auto !important;  
+  max-width: 520px !important;  
+  border-radius: 20px;
+  object-fit: cover !important; 
+  display: block;
 }
-
-/* Tira de 6 rectángulos bajo el texto, alineados a la base */
+.hero-actions{
+  display:flex !important;
+  align-items:center !important;
+  gap: var(--token-gap) !important;
+}
+.social{
+  inline-size: var(--social-size) !important;
+  block-size: var(--social-size) !important;
+  display:grid !important;
+  place-items:center !important;
+  border:1.6px solid #e6e6e6 !important;
+  border-radius:50% !important;
+  background:#fff !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,.05) !important;
+}
+.social img{
+  inline-size: 100% !important;
+  block-size: 100% !important;
+  object-fit: cover !important;
+  border-radius: 50% !important;
+  display: block !important;
+}
+.btn-cta{
+  --cta: var(--orange);
+  padding: var(--cta-pad-y) var(--cta-pad-x) !important;
+  inline-size: fit-content !important;   /* corto, según texto */
+  min-width: 0 !important;
+  border-radius: 9999px !important;
+  color: var(--cta) !important;
+  background: transparent !important;
+  border: 1.6px solid var(--cta) !important;
+  font-weight: 600 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: .55rem !important;
+  text-decoration: none !important;
+  position: relative !important;
+  z-index: 0 !important;
+}
+.btn-cta::before{
+  content:"" !important;
+  position:absolute !important;
+  inset:0 !important;
+  border-radius: inherit !important;
+  background: rgba(251,146,128,.22) !important;
+  box-shadow:
+    inset 0 2px 6px rgba(251,146,128,.45),
+    0 2px 6px rgba(0,0,0,.04) !important;
+  z-index:-1 !important;
+  transition: background .25s, box-shadow .25s !important;
+}
+.btn-cta:hover,
+.btn-cta:focus-visible{
+  color:#fff !important;
+  background: var(--cta) !important;
+}
+.btn-cta:hover::before,
+.btn-cta:focus-visible::before{
+  background: rgba(251,146,128,.34) !important;
+  box-shadow:
+    inset 0 2px 8px rgba(251,146,128,.55),
+    0 2px 8px rgba(0,0,0,.06) !important;
+}
 .projects-strip{
-  display:grid;
-  grid-template-columns:repeat(6, minmax(120px,1fr));
-  gap:clamp(16px,1.2vw,10px);
-  align-self:end;
-  margin-top: auto;
+  display:grid !important;
+  grid-template-columns: repeat(6, minmax(112px, 1fr)) !important;
+  gap: clamp(10px, 1.2vw, 16px) !important;
+  align-self: stretch !important;
+  margin-top: clamp(12px, 1.6vw, 20px) !important;
 }
-.projects-strip .project{
-  height:clamp(80px, 10vh, 110px);
-  background:#f7f7f7;
-  border:1px solid #e6e6e6;
-  border-radius:8px;
-  box-shadow:0 2px 4px rgba(0,0,0,.04);
-  transition:transform .25s, box-shadow .25s;
-}
-.projects-strip .project:hover{ transform:translateY(-3px); box-shadow:0 8px 18px rgba(0,0,0,.09); }
 .project{
-  height: clamp(72px, 9vh, 100px);
-  background:#f7f7f7;
-  border:1px solid #e6e6e6;
-  border-radius:8px;
-  box-shadow:0 2px 4px rgba(0,0,0,.04);
-  transition: transform .25s, box-shadow .25s;
+  height: clamp(72px, 9vh, 100px) !important;
+  background:#f7f7f7 !important;
+  border:1px solid #e6e6e6 !important;
+  border-radius:8px !important;
+  box-shadow:0 2px 4px rgba(0,0,0,.04) !important;
+  transition: transform .25s, box-shadow .25s !important;
 }
 .project:hover{
   transform: translateY(-3px);
   box-shadow: 0 8px 18px rgba(0,0,0,.09);
 }
+
+
+
+
 /* Botón + redes (a la misma línea) */
 .hero-actions{ display:flex; align-items:center; column-gap: var(--token-gap);}
-.btn-cta{
-  --cta: var(--orange);
-  position: relative;
-  display:inline-flex; align-items:center; gap:.55rem;
-  padding: .56rem .9rem;                /* menos ancho lateral */
-  border-radius: 9999px;
-  color: var(--cta);
-  text-decoration: none;
-  font-weight: 600;
-  z-index: 0;                           /* el ::before va debajo */
-}
-
-/* El “token” se dibuja debajo del texto */
-.btn-cta::before{
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: rgba(251,146,128,.22);    /* naranja translúcido */
-  box-shadow:
-    inset 0 2px 6px rgba(251,146,128,.45),
-    0 2px 6px rgba(0,0,0,.04);           /* glow suave */
-  transition: background .25s ease, box-shadow .25s ease, transform .2s ease;
-  z-index: -1;
-}
-/* Hover como los tokens del menú */
-.btn-cta:hover::before,
-.btn-cta:focus-visible::before{
-  background: rgba(251,146,128,.34);
-  box-shadow:
-    inset 0 2px 8px rgba(251,146,128,.55),
-    0 2px 8px rgba(0,0,0,.06);
-}
-.btn-cta:hover{ background:var(--cta); color:#fff; }
-.btn-cta .arrow{ transition:transform .2s; }
-.btn-cta:hover .arrow{ transform:translateX(3px); }
-.socials{ display:flex; gap:10px; padding:0; margin:0; list-style:none; }
-.social{
-  width:36px; height:36px; display:inline-flex; align-items:center; justify-content:center;
-  border:1.5px solid #ddd; border-radius:50%;
-  color:var(--fg); text-decoration:none; font-size:13px;
-  background:#fff; transition:transform .2s,border-color .2s,box-shadow .2s;
-}
-.social:hover{ transform:translateY(-2px); border-color:var(--blue); box-shadow:0 6px 14px rgba(0,0,0,.08); }
 
 /* ========== CONTACTO (layout) ========== */
 .contact{
@@ -460,29 +442,6 @@ body.index .hero-photo img{
   gap:18px;                 /* separación entre texto/botón y el grid */
 }
 
-/* === GRID FINAL: 6 rectángulos en una sola línea (desktop) === */
-.projects-strip{
-  display:grid;
-  grid-template-columns: repeat(6, minmax(112px, 1fr));
-  gap: clamp(10px, 1.2vw, 16px);
-  align-self: stretch;                    /* ocupa ancho de su columna */
-  margin-top: clamp(12px, 1.6vw, 20px);
-}
-
-/* Tarjetas: rectangulares, borde fino */
-.project{
-  height: clamp(72px, 9vh, 100px);        /* rectángulo bajo */
-  background:#f7f7f7;
-  border:1px solid #e6e6e6;               /* como tu referencia */
-  border-radius:8px;
-  box-shadow:0 2px 4px rgba(0,0,0,.04);
-  transition: transform .25s, box-shadow .25s;
-}
-.project:hover{
-  transform: translateY(-3px);
-  box-shadow: 0 8px 18px rgba(0,0,0,.09);
-}
-
 /* === Responsivo: cuando falte ancho, cambia a 3 y luego 2 columnas === */
 @media (max-width: 1200px){
   .projects-strip{ grid-template-columns: repeat(3, 1fr); }
@@ -497,87 +456,10 @@ body.index .hero-photo img{
   gap:14px;
 }
 
-/* Redes: misma distancia entre círculos */
-.socials{
-  display: flex;
-  gap: var(--token-gap);                 /* misma distancia entre iconos */
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-/* cada círculo */
-.social{
-  inline-size: var(--social-size);
-  block-size: var(--social-size);
-  display:grid;
-  place-items:center;
-  border:1.6px solid #e6e6e6;
-  border-radius:50%;
-  background:#fff;
-  box-shadow: 0 2px 6px rgba(0,0,0,.05);
-  transition:transform .2s,border-color .2s,box-shadow .2s;
-}
-.social:hover{ transform:translateY(-2px); border-color:var(--blue); box-shadow:0 6px 14px rgba(0,0,0,.08); }
-
-/* botón con el MISMO ancho/alto */
-.btn-cta{
-  --cta: var(--orange);
-  display:inline-flex; align-items:center; justify-content:center; gap:.55rem;
-  height:var(--cta-h);
-  min-width:var(--cta-w);
-  padding:0 16px;
-  border-radius:9999px;
-  color:var(--cta); border:1.6px solid var(--cta);
-  background:#fff;
-  text-decoration:none; font-weight:600;
-  transition:background .2s,color .2s,transform .2s;
-}
-.btn-cta:hover{ background:var(--cta); color:#fff; }
-.btn-cta .arrow{ transition:transform .2s; }
-.btn-cta:hover .arrow{ transform:translateX(3px); }
-
 /* B) Rail de acciones: fija un ancho común para redes y botón */
 .hero-actions{
   --cta-w: clamp(220px, 24vw, 280px);   /* ancho compartido */
   display:flex;
   align-items:center;
   gap:16px;
-}
-
-/* tamaño y encuadre de tus logos */
-.social img{
-  inline-size: 100%;
-  block-size: 100%;
-  border-radius: 50%;
-  object-fit: cover;
-  display: block;
-}
-/* E) Botón Contact me: único token, más compacto y del mismo ancho que las redes */
-.btn-cta{
-  --cta: var(--orange);
-  width: var(--cta-w);                /* mismo ancho que la bandeja de redes */
-  border: 1.6px solid var(--cta);
-  background: transparent;
-  font-weight: 600;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;            /* texto centrado */
-  gap: .55rem;
-  text-decoration: none;
-  transition: background .2s, color .2s, transform .2s;
-}
-.btn-cta:hover,
-.btn-cta:focus-visible{
-  background: var(--cta);
-  color: #fff;
-}
-.btn-cta .arrow{ transition: transform .2s; }
-.btn-cta:hover .arrow{ transform: translateX(3px); }
-
-/* Botón más corto, ajustado al texto */
-.btn-cta{
-  padding: var(--cta-pad-y) var(--cta-pad-x);
-  inline-size: fit-content;              /* se ajusta al texto */
-  white-space: nowrap;
-  min-width: 0;
 }
