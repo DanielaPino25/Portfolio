@@ -250,6 +250,10 @@ body.index .hero-photo img{
   border-radius: 50% !important;
   display: block !important;
 }
+.social:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 8px 14px rgba(0, 0, 0, 0.15) !important;
+}
 .btn-cta{
   --cta: var(--orange);
   padding: var(--cta-pad-y) var(--cta-pad-x) !important;
