@@ -193,13 +193,13 @@ body.index{ overflow: hidden; }  /* sin scroll en desktop */
 
 body.index main.hero{
   display: grid;
-  grid-template-columns: minmax(520px, 1fr) clamp(420px, 38vw, 540px);
-  align-items: start !important;
+  grid-template-columns: 1fr 1fr !important;
+  align-items: center !important;
   column-gap: clamp(32px, 4vw, 64px);  
   min-height: 100svh !important;
   max-width: none !important;
-  padding-left: clamp(32px, 6vw, 80px) !important;
-  padding-right: clamp(32px, 6vw, 80px) !important;
+  padding-left: clamp(48px, 6vw, 80px) !important;
+  padding-right: clamp(48px, 6vw, 80px) !important;
   padding-top: clamp(4px, 0.6vw, 12px) !important;
   }
 body.index .hero-left{ min-height: auto !important; }
@@ -211,7 +211,8 @@ body.index .hero-photo{
 }
 body.index .hero-photo img{
   max-height: calc(100svh - 110px) !important;  
-  width: auto !important;  
+  width: 100% !important; 
+  height: auto !important;
   max-width: 520px !important;  
   border-radius: 20px !important;
   object-fit: cover !important; 
