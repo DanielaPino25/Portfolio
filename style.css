@@ -16,7 +16,7 @@
   --footer-h: 0px;
 
   --contact-gap: clamp(28px, 4vw, 48px);
-    --token-gap: clamp(16px, 2vw, 28px);   /* distancia entre iconos y con el botón */
+    --token-gap: clamp(28px, 4vw, 48px);   /* distancia entre iconos y con el botón */
   --social-size: 44px;                   /* diámetro de los círculos */
   --cta-pad-x: 16px;                     /* padding horizontal del botón */
   --cta-pad-y: 10px;                     /* padding vertical del botón */
@@ -194,31 +194,45 @@ body.index{ overflow: hidden; }  /* sin scroll en desktop */
 body.index main.hero{
   display: grid;
   grid-template-columns: minmax(520px, 1fr) clamp(420px, 38vw, 540px);
-  align-items: center;
+  align-items: start !important;
   column-gap: clamp(32px, 4vw, 64px);  
   min-height: 100svh !important;
-  padding: clamp(8px, 1vw, 16px); clamp(48px, 6vw, 80px) 0 !important;
   max-width: none !important;
+  padding-left: clamp(32px, 6vw, 80px) !important;
+  padding-right: clamp(32px, 6vw, 80px) !important;
+  padding-top: clamp(4px, 0.6vw, 12px) !important;
   }
 body.index .hero-left{ min-height: auto !important; }
-body.index .hero-photo{ display: flex; justify-content: center !important; align-items: center;
+body.index .hero-photo{ 
+  display: flex; 
+  justify-content: center !important; 
+  align-self: start !important;
 }
 body.index .hero-photo img{
-  max-height: 80svh !important;  
+  max-height: calc(100svh - 110px) !important;  
   width: auto !important;  
   max-width: 520px !important;  
-  border-radius: 20px;
+  border-radius: 20px !important;
   object-fit: cover !important; 
   display: block;
 }
 .hero-actions{
   display:flex !important;
   align-items:center !important;
-  gap: var(--token-gap) !important;
+  gap: 16px;
+  flex-wrap: nowrap;
+}
+.hero-actions .socials{
+  display: inline-flex !important;
+  flex-direction: row !important;
+  gap: 14px;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
 }
 .social{
-  inline-size: var(--social-size) !important;
-  block-size: var(--social-size) !important;
+  inline-size: 44px;
+  block-size: 44px;
   display:grid !important;
   place-items:center !important;
   border:none!important;
@@ -448,18 +462,4 @@ body.index .hero-photo img{
 }
 @media (max-width: 900px){
   .projects-strip{ grid-template-columns: repeat(2, 1fr); }
-}
-/* === Acciones del hero: bandeja de redes + botón ======================= */
-.hero-actions{
-  display:flex;
-  align-items:center;
-  gap:14px;
-}
 
-/* B) Rail de acciones: fija un ancho común para redes y botón */
-.hero-actions{
-  --cta-w: clamp(220px, 24vw, 280px);   /* ancho compartido */
-  display:flex;
-  align-items:center;
-  gap:16px;
-}
