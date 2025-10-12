@@ -180,5 +180,29 @@
       }
     })();
   </script>
+  <script>
+  // Rellena --topbar-h y --footer-h para los cálculos del alto del hero
+  (function setHeights(){
+    const root = document.documentElement;
+    const top  = document.querySelector('.topbar');
+    const foot = document.querySelector('footer');
+
+    function apply(){
+      root.style.setProperty('--topbar-h', (top?.offsetHeight || 0) + 'px');
+      root.style.setProperty('--footer-h', (foot?.offsetHeight || 0) + 'px');
+    }
+
+    window.addEventListener('load', apply);
+    window.addEventListener('resize', apply);
+    apply(); // inicial
+  })();
+
+  // Año © dinámico (muestra 2025 este año y seguirá actualizando en el futuro)
+  (function(){
+    const y = document.getElementById('year');
+    if (y) y.textContent = new Date().getFullYear();
+  })();
+</script>
+
 </body>
 </html>
