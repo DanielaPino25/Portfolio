@@ -221,10 +221,10 @@ body.index .hero-photo img{
   block-size: var(--social-size) !important;
   display:grid !important;
   place-items:center !important;
-  border:1.6px solid #e6e6e6 !important;
+  border:none!important;
   border-radius:50% !important;
-  background:#fff !important;
-  box-shadow: 0 2px 6px rgba(0,0,0,.05) !important;
+  background:transparent !important;
+  box-shadow: none !important;
 }
 .social img{
   inline-size: 100% !important;
