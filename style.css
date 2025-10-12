@@ -207,7 +207,7 @@ body.index .hero-photo{
   display: flex; 
   justify-content: center !important; 
   align-self: start !important;
-  height: 65px;
+  height: 80px;
 }
 body.index .hero-photo img{
   max-height: calc(100svh - 110px) !important;  
