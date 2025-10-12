@@ -469,6 +469,7 @@ body.index .hero-photo img{
 }
 @media (max-width: 900px){
   .projects-strip{ grid-template-columns: repeat(2, 1fr); }
+} 
 /* ===== Layout base: topbar + main + footer (sin scroll por el footer) ===== */
 html, body{
   height: 100%;
