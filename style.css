@@ -196,12 +196,30 @@ body.index main.hero{
   display: grid;
   grid-template-columns: minmax(520px, 1fr) clamp(420px, 38vw, 540px);
   align-items: center;
-  column-gap: clamp(24px, 3vw, 40px);
+  column-gap: clamp(32px, 4vw, 64px);
   padding-top: clamp(4px, 0.8vw, 10px);
   max-width: var(--max);
   margin: 0 auto;
-  padding-left: clamp(40px, 6vw, 110px);
-  padding-right: clamp(40px, 6vw, 110px); 
+  padding-left: clamp(40px, 6vw, 80px);
+  padding-right: clamp(40px, 6vw, 80px); 
+  padding-top: clamp(20px, 2vh, 40px);
+    /* 🔹 Altura completa sin scroll */
+  min-height: 100svh;
+  max-width: none;
+}
+/* ===== FOTO ===== */
+body.index .hero-photo {
+  display: flex;
+  justify-content: center; /* centrada con márgenes iguales */
+  align-items: center;
+}
+body.index .hero-photo img {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  border-radius: 20px;
+  object-fit: cover;
+  display: block;
 }
 
 /* Izquierda (texto + proyectos) */
