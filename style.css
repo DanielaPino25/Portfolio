@@ -16,6 +16,10 @@
   --footer-h: 0px;
 
   --contact-gap: clamp(28px, 4vw, 48px);
+    --token-gap: clamp(16px, 2vw, 28px);   /* distancia entre iconos y con el botón */
+  --social-size: 44px;                   /* diámetro de los círculos */
+  --cta-pad-x: 16px;                     /* padding horizontal del botón */
+  --cta-pad-y: 10px;                     /* padding vertical del botón */
 }
 @media (min-width: 1600px){
   :root{ --max: 1440px; }
@@ -196,8 +200,8 @@ body.index main.hero{
   padding-top: clamp(4px, 0.8vw, 10px);
   max-width: var(--max);
   margin: 0 auto;
-  padding-left: clamp(48px, 6vw, 120px);
-  padding-right: clamp(48px, 6vw, 120px); 
+  padding-left: clamp(40px, 6vw, 110px);
+  padding-right: clamp(40px, 6vw, 110px); 
 }
 
 /* Izquierda (texto + proyectos) */
@@ -252,7 +256,7 @@ body.index .hero-photo img{
   box-shadow: 0 8px 18px rgba(0,0,0,.09);
 }
 /* Botón + redes (a la misma línea) */
-.hero-actions{ display:flex; align-items:center; gap:14px; }
+.hero-actions{ display:flex; align-items:center; column-gap: var(--token-gap);}
 .btn-cta{
   --cta: var(--orange);
   position: relative;
@@ -476,37 +480,24 @@ body.index .hero-photo img{
   gap:14px;
 }
 
-/* ancho y altura unificados para ambos */
-:root{
-  --cta-h: 46px;
-  --cta-w: 240px;      /* ← ajusta aquí si quieres más/menos ancho */
+/* Redes: misma distancia entre círculos */
+.socials{
+  display: flex;
+  gap: var(--token-gap);                 /* misma distancia entre iconos */
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
-
-/* bandeja que contiene los 3 círculos, con el MISMO ancho del botón */
-.socials-tray{
-  display:inline-flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:10px;
-  height:var(--cta-h);
-  min-width:var(--cta-w);
-  padding:0 12px;
-  border:1.6px solid var(--orange);
-  border-radius:9999px;
-  color:var(--orange);
-  background:#fff;
-}
-
 /* cada círculo */
 .social{
-  width:36px; height:36px;
-  display:inline-flex; align-items:center; justify-content:center;
-  border:1.5px solid #ddd;
+  inline-size: var(--social-size);
+  block-size: var(--social-size);
+  display:grid;
+  place-items:center;
+  border:1.6px solid #e6e6e6;
   border-radius:50%;
-  color:var(--fg);
-  text-decoration:none;
-  font-size:13px;
   background:#fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,.05);
   transition:transform .2s,border-color .2s,box-shadow .2s;
 }
 .social:hover{ transform:translateY(-2px); border-color:var(--blue); box-shadow:0 6px 14px rgba(0,0,0,.08); }
@@ -528,21 +519,6 @@ body.index .hero-photo img{
 .btn-cta .arrow{ transition:transform .2s; }
 .btn-cta:hover .arrow{ transform:translateX(3px); }
 
-/* Si aún tienes la lista <ul class="socials">, neutralízala para que no interfiera */
-.socials{ display:none !important; }
-.social i {
-  width: 18px;
-  height: 18px;
-  stroke-width: 1.8;
-}
-/* ===== Ajustes home (index) ===== */
-
-/* A) Menos espacio entre toolbar y contenido */
-body.index main.hero{
-  /* si ya tienes padding-top, esta regla lo hará más pequeño */
-  padding-top: clamp(6px, 1.2vh, 14px);
-}
-
 /* B) Rail de acciones: fija un ancho común para redes y botón */
 .hero-actions{
   --cta-w: clamp(220px, 24vw, 280px);   /* ancho compartido */
@@ -551,50 +527,18 @@ body.index main.hero{
   gap:16px;
 }
 
-/* C) Bandeja de redes sin token (sin borde/fondo) */
-.socials-tray{
-  width: var(--cta-w);
-  display:flex;
-  align-items:center;
-  justify-content:space-between;  /* extiende los círculos para ocupar el mismo ancho del botón */
-  padding:0;
-  background: transparent !important;
-  border: none !important;
-}
-
-/* D) Círculos de redes (puedes usar tus propios SVG/PNG) */
-.social{
-  width:44px;
-  height:44px;
-  border-radius:9999px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  background:#fff;
-  border:1.6px solid #e3e3e3;
-  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
-  text-decoration:none;
-}
-.social:hover{
-  transform: translateY(-2px);
-  border-color: var(--blue);
-  box-shadow: 0 6px 14px rgba(0,0,0,.08);
-}
 /* tamaño y encuadre de tus logos */
 .social img{
-  width:20px;
-  height:20px;
-  object-fit:contain;
-  display:block;
+  inline-size: 100%;
+  block-size: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
 }
-
 /* E) Botón Contact me: único token, más compacto y del mismo ancho que las redes */
 .btn-cta{
   --cta: var(--orange);
   width: var(--cta-w);                /* mismo ancho que la bandeja de redes */
-  padding: .56rem .9rem;              /* menos aire lateral */
-  border-radius: 9999px;
-  color: var(--cta);
   border: 1.6px solid var(--cta);
   background: transparent;
   font-weight: 600;
@@ -616,4 +560,11 @@ body.index main.hero{
 /* F) Puntas redondeadas de la foto principal */
 .hero-photo img{
   border-radius: 16px;    /* si ya tenías otro valor, este lo sobrescribe */
+}
+/* Botón más corto, ajustado al texto */
+.btn-cta{
+  padding: var(--cta-pad-y) var(--cta-pad-x);
+  inline-size: fit-content;              /* se ajusta al texto */
+  white-space: nowrap;
+  min-width: 0;
 }
