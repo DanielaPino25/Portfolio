@@ -219,7 +219,6 @@ body.index .hero-photo img {
   height: auto;
   border-radius: 20px;
   object-fit: cover;
-  display: block;
 }
 
 /* Izquierda (texto + proyectos) */
@@ -575,10 +574,6 @@ body.index .hero-photo img{
 .btn-cta .arrow{ transition: transform .2s; }
 .btn-cta:hover .arrow{ transform: translateX(3px); }
 
-/* F) Puntas redondeadas de la foto principal */
-.hero-photo img{
-  border-radius: 16px;    /* si ya tenías otro valor, este lo sobrescribe */
-}
 /* Botón más corto, ajustado al texto */
 .btn-cta{
   padding: var(--cta-pad-y) var(--cta-pad-x);
