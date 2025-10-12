@@ -198,9 +198,10 @@ body.index main.hero{
   column-gap: clamp(32px, 4vw, 64px);  
   min-height: 100svh !important;
   max-width: none !important;
-  padding-left: clamp(48px, 6vw, 80px) !important;
-  padding-right: clamp(48px, 6vw, 80px) !important;
+  padding-left: clamp(40px, 6vw, 72px) !important;
+  padding-right: clamp(40px, 6vw, 72px) !important;
   padding-top: clamp(4px, 0.6vw, 12px) !important;
+  padding-bottom: clamp(4px, 0.6vw, 12px);
   }
 body.index .hero-left{ min-height: auto !important; }
 body.index .hero-photo{ 
