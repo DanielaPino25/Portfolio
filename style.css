@@ -240,6 +240,8 @@ body.index .hero-photo img{
   border-radius:50% !important;
   background:transparent !important;
   box-shadow: none !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+  cursor: pointer;
 }
 .social img{
   inline-size: 100% !important;
