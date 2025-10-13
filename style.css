@@ -20,6 +20,11 @@
   --social-size: 44px;                   /* diámetro de los círculos */
   --cta-pad-x: 16px;                     /* padding horizontal del botón */
   --cta-pad-y: 10px;                     /* padding vertical del botón */
+
+  --proj-cols: 6;              /* nº de columnas en desktop */
+  --proj-gap: 14px;            /* separación entre tarjetas */
+  --proj-height: 120px;         /* alto de cada rectángulo */
+  --proj-min: 90px;           /* ancho mínimo de cada tarjeta */
 }
 @media (min-width: 1600px){
   :root{ --max: 1440px; }
@@ -224,6 +229,16 @@ body.index .hero-photo img{
   gap: 16px;
   flex-wrap: nowrap;
 }
+
+
+.hero-left{
+  display:flex;
+  flex-direction:column;
+  gap: 18px;          /* espacio entre texto/acciones y el grid */
+}
+
+
+
 .hero-actions .socials{
   display: inline-flex !important;
   flex-direction: row !important;
@@ -298,11 +313,31 @@ body.index .hero-photo img{
     0 2px 8px rgba(0,0,0,.06) !important;
 }
 .projects-strip{
-  display:grid !important;
-  grid-template-columns: repeat(6, minmax(112px, 1fr)) !important;
-  gap: clamp(10px, 1.2vw, 16px) !important;
-  align-self: stretch !important;
-  margin-top: clamp(12px, 1.6vw, 20px) !important;
+  display: grid !important;
+  grid-template-columns: grid-template-columns: repeat(var(--proj-cols), minmax(var(--proj-min), 1fr));
+  gap: var(--proj-gap)
+  align-self: end;
+  margin-top: clamp(10px, 1.6vw, 18px);
+}
+.projects-strip .project{
+  height: var(--proj-height);
+  background: #f7f7f7;
+  border: 1px solid #e6e6e6;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,.04);
+  transition: transform .25s, box-shadow .25s;
+}
+.projects-strip .project:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0,0,0,.09);
+}
+
+/* Responsivo: cambia columnas si hace falta */
+@media (max-width: 1200px){
+  .projects-strip{ grid-template-columns: repeat(3, minmax(var(--proj-min), 1fr)); }
+}
+@media (max-width: 900px){
+  .projects-strip{ grid-template-columns: repeat(2, minmax(var(--proj-min), 1fr)); }
 }
 .project{
   height: clamp(72px, 9vh, 100px) !important;
@@ -312,11 +347,6 @@ body.index .hero-photo img{
   box-shadow:0 2px 4px rgba(0,0,0,.04) !important;
   transition: transform .25s, box-shadow .25s !important;
 }
-.project:hover{
-  transform: translateY(-3px);
-  box-shadow: 0 8px 18px rgba(0,0,0,.09);
-}
-
 
 
 
