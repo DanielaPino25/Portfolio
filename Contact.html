@@ -143,22 +143,31 @@
         a.addEventListener('click', ()=> document.body.classList.remove('nav-open'));
       });
     })();
+<script>
+(function(){
+  const KEY = 'siteLang';
 
-    // Logo respeta preferencia de idioma (si la usas)
-    (function(){
-      const KEY = 'siteLang';
-      document.querySelectorAll('.lang-switch a').forEach(a=>{
-        a.addEventListener('click', ()=>{
-          const txt = (a.textContent||'').trim().toLowerCase();
-          localStorage.setItem(KEY, txt.includes('es') ? 'es':'en');
-        });
-      });
-      const pageLang = (document.documentElement.lang || 'en').toLowerCase();
-      const pref = localStorage.getItem(KEY) || pageLang;
-      const logo = document.querySelector('a.logo');
-      if (logo) logo.setAttribute('href', pref === 'es' ? 'index-es.html' : 'index.html');
-    })();
-  </script>
+  // Guarda preferencia SOLO al pulsar ES/EN
+  document.querySelectorAll('.lang-switch a').forEach(a=>{
+    a.addEventListener('click', ()=>{
+      const txt = (a.textContent || '').trim().toLowerCase();
+      localStorage.setItem(KEY, txt.includes('es') ? 'es' : 'en'); // ← correcto
+    });
+  });
+
+  // Logo y enlaces a home siguen el idioma de esta página
+  const pageLang = (document.documentElement.lang || 'en').slice(0,2).toLowerCase();
+  const homeHref = pageLang === 'es' ? 'index-es.html' : 'index.html';
+
+  const logo = document.querySelector('a.logo');
+  if (logo) logo.setAttribute('href', homeHref);
+
+  // (Opcional) Normaliza otros links que apunten al home
+  document.querySelectorAll('a[href$="index.html"], a[href$="index-es.html"]').forEach(a=>{
+    a.setAttribute('href', homeHref);
+  });
+})();
+</script>
   <script>
   // Sombra del toolbar cuando hay desplazamiento
   (function(){
