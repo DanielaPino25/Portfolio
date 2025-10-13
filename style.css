@@ -314,7 +314,7 @@ body.index .hero-photo img{
 }
 .projects-strip{
   display: grid !important;
-  grid-template-columns: grid-template-columns: repeat(var(--proj-cols), minmax(var(--proj-min), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(var(--proj-min), 1fr));
   gap: var(--proj-gap)
   align-self: end;
   margin-top: clamp(10px, 1.6vw, 18px);
