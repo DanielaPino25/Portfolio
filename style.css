@@ -208,7 +208,12 @@ body.index main.hero{
   padding-top: clamp(4px, 0.6vw, 12px) !important;
   padding-bottom: clamp(4px, 0.6vw, 12px);
   }
-body.index .hero-left{ min-height: auto !important; }
+body.index .hero-left{ 
+  min-height: auto !important;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* espacio entre texto, botones y proyectos */
+}
 body.index .hero-photo{ 
   display: flex; 
   justify-content: center !important; 
@@ -314,13 +319,14 @@ body.index .hero-photo img{
 }
 .projects-strip{
   display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(var(--proj-min), 1fr));
-  gap: var(--proj-gap)
-  align-self: end;
-  margin-top: clamp(10px, 1.6vw, 18px);
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 16px;
+  align-self: start;
+  margin-top: 24px;
+  width: 100%;
 }
 .projects-strip .project{
-  height: var(--proj-height);
+  height: 100px;
   background: #f7f7f7;
   border: 1px solid #e6e6e6;
   border-radius: 8px;
