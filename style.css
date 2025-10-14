@@ -229,7 +229,7 @@ body.index .hero-photo img{
 .hero-actions{
   display:flex !important;
   align-items:center !important;
-  gap: 16px;
+  gap: 18px;
   flex-wrap: nowrap;
 }
 .hero-left{
