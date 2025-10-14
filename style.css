@@ -16,7 +16,7 @@
   --footer-h: 0px;
 
   --contact-gap: clamp(28px, 4vw, 48px);
-    --token-gap: clamp(28px, 4vw, 48px);   /* distancia entre iconos y con el botón */
+  --token-gap: clamp(12px, 1.6vw, 18px);   /* distancia entre iconos y con el botón */
   --social-size: 44px;                   /* diámetro de los círculos */
   --cta-pad-x: 16px;                     /* padding horizontal del botón */
   --cta-pad-y: 10px;                     /* padding vertical del botón */
@@ -222,7 +222,7 @@ body.index .hero-photo{
 body.index .hero-photo img{
   width: 100% !important; 
   height: auto !important;
-  max-width: 520px !important;  
+  max-width: 520px; width: 100%;
   border-radius: 30px !important;
   object-fit: cover !important; 
   display: block;
@@ -230,7 +230,7 @@ body.index .hero-photo img{
 .hero-actions{
   display:flex !important;
   align-items:center !important;
-  gap: 18px;
+  gap: clamp(10px, 1.2vw, 16px);
   flex-wrap: nowrap;
 }
 .hero-left{
@@ -241,14 +241,14 @@ body.index .hero-photo img{
 .hero-actions .socials{
   display: inline-flex !important;
   flex-direction: row !important;
-  gap: 14px;
+  gap: var(--token-gap);
   margin: 0 !important;
   padding: 0 !important;
   list-style: none !important;
 }
 .social{
-  inline-size: 44px;
-  block-size: 44px;
+  inline-size: var(--social-size);
+  block-size: var(--social-size);
   display:grid !important;
   place-items:center !important;
   border:none!important;
@@ -315,8 +315,8 @@ body.index .hero-photo img{
 
 
 :root{
-  --tile-w: clamp(80px, 10vw, 120px);  /* ANCHO de cada tarjeta */
-  --tile-h: clamp(100px, 12vh, 160px);  /* ALTO de cada tarjeta  */
+  --tile-w: clamp(80px, 12vw, 140px);  /* ANCHO de cada tarjeta */
+  --tile-h: clamp(100px, 12vh, 110px);  /* ALTO de cada tarjeta  */
   --tile-gap: clamp(10px, 1.2vw, 16px);
 }
 body.index .projects-strip{
@@ -326,7 +326,7 @@ body.index .projects-strip{
   grid-auto-rows: var(--tile-h);
   gap: var(--tile-gap);
   justify-content: start;
-  margin-top: auto;
+  margin-top: clamp(12px, 1.6vw, 20px);
   margin-bottom: 2vh;
   width: 100%;
 }
