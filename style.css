@@ -198,12 +198,12 @@ body.index main.hero{
   align-item: center !important;
   justify-item: start !important;
   column-gap: clamp(32px, 4vw, 64px);  
-  min-height: 100svh !important;
+  min-height: 100svh;
   max-width: var(--max);
   margin-inline: auto;  
-  padding-left: clamp(20px, 2vw, 40px) !important;
-  padding-right: clamp(20px, 2vw, 40px) !important;
-  padding-top: clamp(6px, 0.6vw, 12px) !important;
+  padding-left: clamp(0px, 0vw, 0px);
+  padding-right: clamp(20px, 2vw, 40px);
+  padding-top: clamp(6px, 0.6vw, 12px);
 }
 body.index .hero-left{ 
   min-height: auto !important;
