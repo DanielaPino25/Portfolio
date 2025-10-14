@@ -26,9 +26,9 @@
   --proj-height: 120px;         /* alto de cada rectángulo */
   --proj-min: 90px;           /* ancho mínimo de cada tarjeta */  
 
-  --tile-w: clamp(80px, 12vw, 140px);  /* ANCHO de cada tarjeta */
-  --tile-h: clamp(100px, 12vh, 110px);  /* ALTO de cada tarjeta  */
-  --tile-gap: clamp(10px, 1.2vw, 16px);
+  --tile-min: 110px;     /* ↓ baja este valor si no te caben 6 */
+  --tile-gap: 14px;
+  --tile-h: 100px;       /* alto del rectángulo */
 }
 @media (min-width: 1600px){
   :root{ --max: 1440px; }
@@ -204,7 +204,7 @@ body.index main.hero{
   justify-self: center !important;
   grid-template-columns: minmax(520px, 1fr) clamp(420px, 36vw, 520px);
   align-item: center !important;
-  justify-item: start;
+  justify-item: start !important;
   column-gap: clamp(32px, 4vw, 64px);  
   min-height: 100svh !important;
   max-width: var(--max);
@@ -215,7 +215,8 @@ body.index main.hero{
 }
 body.index .hero-left{ 
   min-height: auto !important;
-  display: flex;
+  display: grid !important;
+  grid-template-rows: auto auto 1fr auto !important;
   flex-direction: column;
   gap: 18px; /* espacio entre texto, botones y proyectos */
 }
@@ -317,47 +318,44 @@ body.index .hero-photo img{
     0 2px 8px rgba(0,0,0,.06) !important;
 }
 
+
 body.index .projects-strip{
-  display: grid !important;
-  align-self: end;
-  grid-template-columns: repeat(6, var(--tile-w));
-  grid-auto-rows: var(--tile-h);
+  display: grid;
+  /* Fuerza una sola fila: flujo en columnas y 6 columnas auto */
+  grid-auto-flow: column;
+  grid-template-columns: repeat(6, minmax(var(--tile-min), 1fr));
+  grid-auto-columns: minmax(var(--tile-min), 1fr);
   gap: var(--tile-gap);
-  justify-content: start;
-  margin-top: clamp(12px, 1.6vw, 20px);
-  margin-bottom: 2vh;
-  width: 100%;
+  /* Alineación dentro de la columna izquierda */
+  align-self: end;        /* baja el strip al fondo de la columna izquierda */
+  justify-self: stretch;  /* usa todo el ancho disponible de la columna */
+  margin-top: 8px;
 }
-.projects-strip .project{
-  width: var(--tile-w);
+body.index .projects-strip .project{
   height: var(--tile-h);
   background:#f7f7f7;
-  border: 1px solid #e6e6e6;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0,0,0,.04);
+  border:1px solid #e6e6e6;
+  border-radius:10px;
+  box-shadow:0 2px 4px rgba(0,0,0,.04);
   transition: transform .25s, box-shadow .25s;
 }
-.projects-strip .project:hover{
+body.index .projects-strip .project:hover{
   transform: translateY(-3px);
   box-shadow: 0 8px 18px rgba(0,0,0,.09);
 }
 
-/* Responsivo: cambia columnas si hace falta */
+/* Responsive: cuando falte ancho, que pasen a 3 y 2 columnas */
 @media (max-width: 1200px){
-  .projects-strip{ grid-template-columns: repeat(3, minmax(var(--proj-min), 1fr)); }
+  body.index .projects-strip{
+    grid-auto-flow: row;
+    grid-template-columns: repeat(3, minmax(var(--tile-min), 1fr));
+  }
 }
 @media (max-width: 900px){
-  .projects-strip{ grid-template-columns: repeat(2, minmax(var(--proj-min), 1fr)); }
-}
-.project{
-  height: clamp(72px, 9vh, 100px) !important;
-  background:#f7f7f7 !important;
-  border:1px solid #e6e6e6 !important;
-  border-radius:8px !important;
-  box-shadow:0 2px 4px rgba(0,0,0,.04) !important;
-  transition: transform .25s, box-shadow .25s !important;
-}
-
+  body.index .projects-strip{
+    grid-template-columns: repeat(2, minmax(var(--tile-min), 1fr));
+    justify-self: center;
+  }
 
 
 /* Botón + redes (a la misma línea) */
