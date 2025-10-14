@@ -25,6 +25,10 @@
   --proj-gap: 14px;            /* separación entre tarjetas */
   --proj-height: 120px;         /* alto de cada rectángulo */
   --proj-min: 90px;           /* ancho mínimo de cada tarjeta */  
+
+  --tile-w: clamp(80px, 12vw, 140px);  /* ANCHO de cada tarjeta */
+  --tile-h: clamp(100px, 12vh, 110px);  /* ALTO de cada tarjeta  */
+  --tile-gap: clamp(10px, 1.2vw, 16px);
 }
 @media (min-width: 1600px){
   :root{ --max: 1440px; }
@@ -312,13 +316,6 @@ body.index .hero-photo img{
     0 2px 8px rgba(0,0,0,.06) !important;
 }
 
-
-
-:root{
-  --tile-w: clamp(80px, 12vw, 140px);  /* ANCHO de cada tarjeta */
-  --tile-h: clamp(100px, 12vh, 110px);  /* ALTO de cada tarjeta  */
-  --tile-gap: clamp(10px, 1.2vw, 16px);
-}
 body.index .projects-strip{
   display: grid !important;
   align-self: end;
