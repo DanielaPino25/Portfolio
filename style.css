@@ -26,9 +26,9 @@
   --proj-height: 120px;         /* alto de cada rectángulo */
   --proj-min: 90px;           /* ancho mínimo de cada tarjeta */  
 
-  --tile-min: 80px;     /* ↓ baja este valor si no te caben 6 */
+  --tile-min: 90px;     /* ↓ baja este valor si no te caben 6 */
   --tile-gap: 14px;
-  --tile-h: 100px;       /* alto del rectángulo */
+  --tile-h: 120px;       /* alto del rectángulo */
 }
 @media (min-width: 1600px){
   :root{ --max: 1440px; }
