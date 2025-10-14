@@ -24,12 +24,11 @@
   --proj-cols: 6;              /* nº de columnas en desktop */
   --proj-gap: 14px;            /* separación entre tarjetas */
   --proj-height: 120px;         /* alto de cada rectángulo */
-  --proj-min: 90px;           /* ancho mínimo de cada tarjeta */
+  --proj-min: 90px;           /* ancho mínimo de cada tarjeta */  
 }
 @media (min-width: 1600px){
   :root{ --max: 1440px; }
 }
-
 /* ========== Base ========== */
 *{ box-sizing: border-box; }
 html, body{ margin:0; padding:0; }
@@ -39,7 +38,6 @@ body{
   background: var(--bg);
   line-height: 1.6;
 }
-
 /* ========== Toolbar pegado arriba ========== */
 .topbar{
   position: sticky;
@@ -199,7 +197,7 @@ body.index{ overflow: hidden; }  /* sin scroll en desktop */
 body.index main.hero{
   display: grid;
   grid-template-columns: 1fr 1fr !important;
-  align-items: center !important;
+  align-items: end !important;
   column-gap: clamp(32px, 4vw, 64px);  
   min-height: 100svh !important;
   max-width: none !important;
@@ -212,12 +210,12 @@ body.index .hero-left{
   min-height: auto !important;
   display: flex;
   flex-direction: column;
-  gap: 20px; /* espacio entre texto, botones y proyectos */
+  gap: 18px; /* espacio entre texto, botones y proyectos */
 }
 body.index .hero-photo{ 
   display: flex; 
   justify-content: center !important; 
-  align-self: start !important;
+  align-self: end !important;
 }
 body.index .hero-photo img{
   max-height: calc(90svh - 110px) !important;  
@@ -315,18 +313,24 @@ body.index .hero-photo img{
 
 
 
-
+:root{
+  --tile-w: clamp(80px, 12vw, 160px);  /* ANCHO de cada tarjeta */
+  --tile-h: clamp(100px, 10vh, 110px);  /* ALTO de cada tarjeta  */
+  --tile-gap: clamp(10px, 1.2vw, 16px);
+}
 .projects-strip{
   display: grid !important;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 16px;
-  align-self: start;
-  margin-top: 24px;
+  grid-template-columns: repeat(6, var(--tile-w));
+  grid-auto-rows: var(--tile-h);
+  gap: var(--tile-gap);
+  justify-content: start;
+  margin-top: auto;
   width: 100%;
 }
 .projects-strip .project{
-  height: 100px;
-  background: #f7f7f7;
+  width: var(--tile-w);
+  height: var(--tile-h);
+  background:#f7f7f7;
   border: 1px solid #e6e6e6;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0,0,0,.04);
