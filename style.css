@@ -484,3 +484,75 @@ body{
 main{
   flex: 1 0 auto;
 }
+
+/* ====== INDEX: layout definitivo (alineado con la foto) ====== */
+body.index main.hero{
+  /* 2 columnas + 2 filas: texto arriba, grid abajo; la foto ocupa ambas filas */
+  display: grid !important;
+  grid-template-columns: minmax(520px, 1fr) clamp(420px, 36vw, 520px) !important;
+  grid-template-areas:
+    "left  photo"
+    "strip photo" !important;
+  align-items: start !important;
+
+  /* márgenes iguales a los lados + menos espacio arriba/abajo */
+  padding-inline: clamp(40px, 6vw, 80px) !important;
+  padding-block: clamp(6px, 1.2vw, 14px) !important;
+
+  max-width: var(--max) !important;
+  margin: 0 auto !important;                 /* centra el conjunto en el viewport */
+  column-gap: clamp(32px, 4vw, 64px) !important;
+}
+
+/* Columna izquierda (texto) */
+body.index .hero-left{
+  grid-area: left !important;
+  display: grid !important;
+  grid-template-rows: auto auto 1fr !important;  /* el 1fr deja aire para que el grid baje */
+  gap: 18px !important;
+}
+
+/* FOTO: baja su base a la línea del grid de proyectos */
+body.index .hero-photo{
+  grid-area: photo !important;
+  display: flex !important;
+  align-items: end !important;   /* ← alinea la base de la imagen con la fila inferior */
+  justify-content: center !important;
+}
+body.index .hero-photo img{
+  display: block !important;
+  width: 100% !important;
+  max-width: 520px !important;
+  height: auto !important;
+  border-radius: 30px !important;
+  object-fit: cover !important;
+}
+
+/* PROYECTOS: SIEMPRE UNA SOLA FILA (6) alineada con la base de la foto */
+body.index .projects-strip{
+  grid-area: strip !important;
+  display: grid !important;
+  grid-template-columns: repeat(6, minmax(110px, 1fr)) !important; /* ajusta 110px si necesitas */
+  gap: clamp(10px, 1.2vw, 16px) !important;
+  align-self: end !important;    /* ← pega el grid a la base de su columna (coincide con la foto) */
+  margin-top: 8px !important;
+}
+body.index .projects-strip .project{
+  height: 100px !important;      /* ajusta la altura del rectángulo a gusto */
+  background: #f7f7f7 !important;
+  border: 1px solid #e6e6e6 !important;
+  border-radius: 10px !important;
+  box-shadow: 0 2px 4px rgba(0,0,0,.04) !important;
+}
+
+/* RESPONSIVE (opcional): cuando no quepan 6, pasa a 3 y 2 */
+@media (max-width: 1200px){
+  body.index .projects-strip{
+    grid-template-columns: repeat(3, minmax(110px, 1fr)) !important;
+  }
+}
+@media (max-width: 900px){
+  body.index .projects-strip{
+    grid-template-columns: repeat(2, minmax(110px, 1fr)) !important;
+  }
+}
