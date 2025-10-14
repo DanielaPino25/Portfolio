@@ -195,9 +195,11 @@ html{ scrollbar-gutter: stable both-edges; overflow-y: scroll; } /* evita “sal
 body.index{ overflow: hidden; }  /* sin scroll en desktop */
 
 body.index main.hero{
-  display: grid;
+  display: grid !important;
+  justify-content: center !important; 
+  justify-self: center !important;
   grid-template-columns: 1fr 1fr !important;
-  align-items: center !important;
+  align-self: center !important;
   column-gap: clamp(32px, 4vw, 64px);  
   min-height: 100svh !important;
   max-width: none !important;
@@ -221,7 +223,7 @@ body.index .hero-photo img{
   max-height: calc(90svh - 110px) !important;  
   width: 100% !important; 
   height: auto !important;
-  max-width: 540px !important;  
+  max-width: 520px !important;  
   border-radius: 30px !important;
   object-fit: cover !important; 
   display: block;
