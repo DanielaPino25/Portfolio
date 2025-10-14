@@ -201,8 +201,8 @@ body.index main.hero{
   min-height: 100svh !important;
   max-width: var(--max);
   margin-inline: auto;  
-  padding-left: clamp(25px, 2vw, 40px) !important;
-  padding-right: clamp(25px, 2vw, 40px) !important;
+  padding-left: clamp(20px, 2vw, 40px) !important;
+  padding-right: clamp(20px, 2vw, 40px) !important;
   padding-top: clamp(6px, 0.6vw, 12px) !important;
 }
 body.index .hero-left{ 
