@@ -209,9 +209,10 @@ body.index main.hero{
   min-height: 100svh !important;
   max-width: var(--max);
   margin-inline: auto;  
-  padding-block: clamp(6px, 0.8vw, 14px);       /* arriba/abajo */
-  padding-inline: clamp(45px, 6vw, 70px);       /* izquierda/derecha */
-  }
+  padding-left: clamp(32px, 4vw, 60px) !important;
+  padding-right: clamp(32px, 4vw, 60px) !important;
+  padding-top: clamp(4px, 0.6vw, 12px) !important;
+}
 body.index .hero-left{ 
   min-height: auto !important;
   display: flex;
@@ -234,7 +235,7 @@ body.index .hero-photo img{
 .hero-actions{
   display:flex !important;
   align-items:center !important;
-  gap: clamp(10px, 1.2vw, 16px);
+  gap: 20px;
   flex-wrap: nowrap;
 }
 .hero-left{
@@ -245,7 +246,7 @@ body.index .hero-photo img{
 .hero-actions .socials{
   display: inline-flex !important;
   flex-direction: row !important;
-  gap: var(--token-gap);
+  gap: 20;
   margin: 0 !important;
   padding: 0 !important;
   list-style: none !important;
