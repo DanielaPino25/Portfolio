@@ -234,16 +234,11 @@ body.index .hero-photo img{
   gap: 16px;
   flex-wrap: nowrap;
 }
-
-
 .hero-left{
   display:flex;
   flex-direction:column;
   gap: 18px;          /* espacio entre texto/acciones y el grid */
 }
-
-
-
 .hero-actions .socials{
   display: inline-flex !important;
   flex-direction: row !important;
@@ -317,9 +312,13 @@ body.index .hero-photo img{
     inset 0 2px 8px rgba(251,146,128,.55),
     0 2px 8px rgba(0,0,0,.06) !important;
 }
+
+
+
+
 .projects-strip{
   display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  grid-template-columns: repeat(6, 1fr);
   gap: 16px;
   align-self: start;
   margin-top: 24px;
@@ -329,7 +328,7 @@ body.index .hero-photo img{
   height: 100px;
   background: #f7f7f7;
   border: 1px solid #e6e6e6;
-  border-radius: 8px;
+  border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0,0,0,.04);
   transition: transform .25s, box-shadow .25s;
 }
