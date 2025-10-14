@@ -314,17 +314,19 @@ body.index .hero-photo img{
 
 
 :root{
-  --tile-w: clamp(80px, 12vw, 160px);  /* ANCHO de cada tarjeta */
-  --tile-h: clamp(100px, 10vh, 110px);  /* ALTO de cada tarjeta  */
+  --tile-w: clamp(80px, 10vw, 120px);  /* ANCHO de cada tarjeta */
+  --tile-h: clamp(100px, 12vh, 160px);  /* ALTO de cada tarjeta  */
   --tile-gap: clamp(10px, 1.2vw, 16px);
 }
-.projects-strip{
+body.index .projects-strip{
   display: grid !important;
+  align-self: end;
   grid-template-columns: repeat(6, var(--tile-w));
   grid-auto-rows: var(--tile-h);
   gap: var(--tile-gap);
   justify-content: start;
   margin-top: auto;
+  margin-bottom: 2vh;
   width: 100%;
 }
 .projects-strip .project{
