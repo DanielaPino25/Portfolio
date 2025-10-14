@@ -304,7 +304,6 @@ body.index .hero-photo img{
     0 2px 8px rgba(0,0,0,.06) !important;
 }
 
-
 body.index .projects-strip{
   display: grid;
   /* Fuerza una sola fila: flujo en columnas y 6 columnas auto */
@@ -517,24 +516,3 @@ footer{
   margin-top: auto;        /* se pega al final del flujo flex */
   padding: 12px 0;         /* reduce padding para evitar rebases */
 }
-
-/* En la home: sin scroll vertical, ajustamos el alto del hero al hueco real */
-body.index{
-  overflow-y: hidden;
-}
-
-/* Alto del hero = ventana - topbar - footer */
-body.index main.hero{
-  height: calc(100svh - var(--topbar-h) - var(--footer-h));
-  min-height: calc(100svh - var(--topbar-h) - var(--footer-h));
-  display: grid;
-  align-items: center;
-}
-
-/* La foto no puede ser más alta que el hueco disponible */
-body.index .hero-photo img{
-  max-height: calc(100svh - var(--topbar-h) - var(--footer-h) - 12px);
-  width: auto;
-  object-fit: cover;
-}
-
