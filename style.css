@@ -219,7 +219,7 @@ body.index .hero-photo{
 body.index .hero-photo img{
   width: 100% !important; 
   height: auto !important;
-  max-width: 500px;
+  max-width: 480px;
   border-radius: 30px !important;
   object-fit: cover !important; 
   display: block;
