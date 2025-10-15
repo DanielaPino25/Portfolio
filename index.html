@@ -203,6 +203,21 @@
     if (y) y.textContent = new Date().getFullYear();
   })();
 </script>
+<script>
+(function(){
+  function setChromeHeights(){
+    const tb = document.querySelector('.topbar');
+    const ft = document.querySelector('footer');
+    const tbh = tb ? tb.offsetHeight : 0;
+    const fth = ft ? ft.offsetHeight : 0;
+    const root = document.documentElement.style;
+    root.setProperty('--topbar-h', tbh + 'px');
+    root.setProperty('--footer-h', fth + 'px');
+  }
+  window.addEventListener('load', setChromeHeights);
+  window.addEventListener('resize', setChromeHeights);
+})();
+</script>
 
 </body>
 </html>
