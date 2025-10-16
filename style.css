@@ -188,42 +188,8 @@ h3{ font-weight:500; font-size:clamp(18px,2.4vw,22px); margin:0 0 .5rem; }
 /* ========== HOME (index) sin scroll + layout ========== */
 html{ scrollbar-gutter: stable both-edges; overflow-y: scroll; } /* evita “saltitos” */
 
-body.index{ overflow: hidden; }  /* sin scroll en desktop */
+body.index{ overflow: hidden; }
 
-body.index main.hero{
-  display: grid !important;
-  justify-content: center !important; 
-  justify-self: center !important;
-  grid-template-columns: minmax(520px, 1fr) clamp(420px, 36vw, 520px);
-  align-item: center !important;
-  justify-item: start !important;
-  column-gap: clamp(32px, 4vw, 64px);  
-  min-height: 100svh;
-  max-width: var(--max);
-  margin-inline: auto;  
-  padding-left: clamp(0px, 0vw, 0px);
-  padding-right: clamp(20px, 2vw, 40px);
-  padding-top: clamp(6px, 0.6vw, 12px);
-}
-body.index .hero-left{ 
-  min-height: auto !important;
-  display: grid !important;
-  grid-template-rows: auto auto 1fr auto !important;
-  gap: 18px; /* espacio entre texto, botones y proyectos */
-}
-body.index .hero-photo{ 
-  display: flex; 
-  justify-content: center !important; 
-  align-self: center !important;
-}
-body.index .hero-photo img{
-  width: 100% !important; 
-  height: auto !important;
-  max-width: 480px;
-  border-radius: 30px !important;
-  object-fit: cover !important; 
-  display: block;
-}
 .hero-actions{
   display:flex !important;
   align-items:center !important;
@@ -341,7 +307,7 @@ body.index .projects-strip .project:hover{
     grid-template-columns: repeat(2, minmax(var(--tile-min), 1fr));
     justify-self: center;
   }
-
+}
 
 /* Botón + redes (a la misma línea) */
 .hero-actions{ display:flex; align-items:center; column-gap: var(--token-gap);}
@@ -554,5 +520,76 @@ body.index .projects-strip .project{
 @media (max-width: 900px){
   body.index .projects-strip{
     grid-template-columns: repeat(2, minmax(110px, 1fr)) !important;
+  }
+}
+
+
+/* ====== INDEX: layout definitivo (alineado con la foto) ====== */
+body.index main.hero{
+  display: grid !important;
+  grid-template-columns: minmax(520px, 1fr) clamp(420px, 36vw, 520px) !important;
+  grid-template-areas:
+    "left  photo"
+    "strip photo" !important;
+  align-items: start !important;
+  justify-items: start !important;
+
+  padding-inline: clamp(40px, 6vw, 80px) !important;
+  padding-block: clamp(6px, 1.2vw, 14px) !important;
+  column-gap: clamp(32px, 4vw, 64px) !important;
+  max-width: var(--max) !important;
+  margin: 0 auto !important;
+}
+
+/* Columna izquierda (texto) */
+body.index .hero-left{
+  grid-area: left !important;
+  display: grid !important;
+  grid-template-rows: auto auto 1fr !important;
+  gap: 18px !important;
+}
+
+/* Foto alineada con el grid */
+body.index .hero-photo{
+  grid-area: photo !important;
+  display: flex !important;
+  align-items: end !important;
+  justify-content: center !important;
+}
+body.index .hero-photo img{
+  display: block !important;
+  width: 100% !important;
+  max-width: 480px !important;   /* tamaño ajustado */
+  height: auto !important;
+  border-radius: 30px !important;
+  object-fit: cover !important;
+}
+
+/* Grid de proyectos */
+body.index .projects-strip{
+  grid-area: strip !important;
+  display: grid !important;
+  grid-template-columns: repeat(6, minmax(110px, 1fr)) !important;
+  gap: clamp(10px, 1.2vw, 16px) !important;
+  align-self: end !important;
+  margin-top: 8px !important;
+}
+body.index .projects-strip .project{
+  height: 100px !important;
+  background: #f7f7f7 !important;
+  border: 1px solid #e6e6e6 !important;
+  border-radius: 10px !important;
+  box-shadow: 0 2px 4px rgba(0,0,0,.04) !important;
+}
+
+@media (max-width: 1200px){
+  body.index .projects-strip{
+    grid-template-columns: repeat(3, minmax(110px, 1fr)) !important;
+  }
+}
+@media (max-width: 900px){
+  body.index .projects-strip{
+    grid-template-columns: repeat(2, minmax(110px, 1fr)) !important;
+    justify-self: center;
   }
 }
