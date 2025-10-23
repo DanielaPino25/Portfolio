@@ -21,20 +21,50 @@
     *,*::before,*::after{box-sizing:border-box}
     html,body{height:100%}
     body{
-      margin:0; font-family: ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Inter,"Helvetica Neue",Arial,"Apple Color Emoji","Segoe UI Emoji";
-      background:var(--bg); color:var(--text); line-height:1.5;
+      margin:0; 
+      font-family: ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Inter,"Helvetica Neue",Arial,"Apple Color Emoji","Segoe UI Emoji";
+      background:var(--bg); 
+      color:var(--text); 
+      line-height:1.5;
     }
     a{color:inherit; text-decoration:none}
     img{max-width:100%; display:block}
     .container{max-width:var(--maxw); margin-inline:auto; padding:24px;}
-    header{display:flex; align-items:center; justify-content:space-between; gap:12px; padding-block:8px;}
+    header{
+      display:flex; 
+      align-items:center; 
+      justify-content:space-between; 
+      gap:12px; 
+      padding-block:8px;}
     .logo{font-weight:700; letter-spacing:.04em;}
-    .logo span{display:inline-grid; place-items:center; width:36px; height:36px; border:1.5px solid var(--border); border-radius:50%; font-weight:600}
+    .logo span{
+      display:inline-grid; 
+      place-items:center; 
+      width:36px; 
+      height:36px; 
+      border:1.5px solid var(--border); 
+      border-radius:50%; 
+      font-weight:600}
     nav{display:flex; gap:22px; align-items:center;}
     nav a{opacity:.9}
     nav a:hover{opacity:1}
-    .lang-toggle{border:1px solid var(--border); padding:6px 10px; border-radius:999px; font-size:.9rem; background:#fff}
-    .hero{display:grid; grid-template-columns:1.15fr .85fr; align-items:center; gap:36px; padding-block:28px}
+    
+    .lang-toggle{
+      border:1px solid var(--border); 
+      padding:6px 10px; 
+      border-radius:999px; 
+      font-size:.9rem; 
+      background:#fff}
+   
+    .hero{
+      display:grid; 
+      grid-template-columns:1.15fr .85fr; 
+      grid-template-rows:auto auto;
+      grid-template-areas:"copy photo" "projects photo";
+      align-items:start;
+      gap:36px; 
+      padding-block:28px}
+    
     .kicker{font-size:1.1rem}
     h1{font-size:clamp(28px, 5.2vw, 56px); margin:.25em 0 .15em}
     .name{color:var(--brand)}
@@ -69,7 +99,7 @@
 <body>
   <div class="container">
     <header>
-<a class="logo" href="#" aria-label="Daniela Pino, go to home">
+      <a class="logo" href="#" aria-label="Daniela Pino, go to home">
   <img class="logo-img" src="assets/logo.svg" alt="Logo Daniela Pino">
 </a>
         <a href="#about" class="nav-link" data-i18n="about">ABOUT ME</a>
