@@ -126,7 +126,6 @@ nav a.active::before {
   color: #4e4e4e;
 }
 .lang-btn.es::after {
-  content: "/";  /* añade la barra */
   display: inline-block;
   margin: 0 10px; /* espacio a los lados */
   color: #4e4e4e;        /* mismo gris */
