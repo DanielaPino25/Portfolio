@@ -166,11 +166,7 @@ nav a.active::before {
 }
 .copy{ grid-area: copy; }
 .photo{ grid-area: photo; }
-.projects{
-  grid-area: projects;
-  align-self: end;   /* alinea el bloque con el final de la foto */
-  margin-top: 0;     /* sin salto extra respecto al copy */
-}
+.projects{ grid-area: projects; }
 
 .kicker{font-size:1.1rem}
 h1{font-size:clamp(28px,5vw,48px);margin:.25em 0 .15em}
