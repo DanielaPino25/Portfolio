@@ -85,7 +85,7 @@ nav a:hover{
   background:transparent;
   font-size:.9rem;
   cursor:pointer;
-  color:var(--text);
+  color: #4e4e4e;
 }
 .lang-switch {
   display: flex;
@@ -111,9 +111,11 @@ nav a:hover{
 .lang-btn.es::after {
   content: "/";  /* añade la barra */
   display: inline-block;
-  margin: 0 4px;         /* espacio a los lados */
+  margin: 0 8px; /* espacio a los lados */
+  padding: 0 2px;
   color: #4e4e4e;        /* mismo gris */
   font-weight: 400;
+  line-height: 1;
   vertical-align: middle;
 }
 
