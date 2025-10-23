@@ -183,5 +183,22 @@
     }
     document.getElementById('langBtn').addEventListener('click', ()=>apply(current==='en'?'es':'en'));
   </script>
+  <script>
+  const header = document.querySelector('header');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) {
+      header.style.background = 'rgba(255, 255, 255, 0.6)';
+      header.style.backdropFilter = 'blur(10px)';
+      header.style.webkitBackdropFilter = 'blur(10px)';
+      header.style.borderBottom = '1px solid rgba(255,255,255,0.4)';
+    } else {
+      header.style.background = 'transparent';
+      header.style.backdropFilter = 'none';
+      header.style.webkitBackdropFilter = 'none';
+      header.style.borderBottom = 'none';
+    }
+  });
+</script>
 </body>
 </html>
