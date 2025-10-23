@@ -38,13 +38,13 @@ header{
   display:flex;
   align-items:center;
   justify-content:flex-start;
-  gap: 32px
-  padding:60px 80px;
+  gap: 32px;
+  padding: 40px 80px;
   background: transparent;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px)
-  transition: background 0.3 ease, backdrop-filter 0.3s ease;
-  border-bottom: 1px solid rgba (255,255,255,0.4);
+  transition: background 0.3s ease, backdrop-filter 0.3s ease;
+  border-bottom: 1px solid rgba(255,255,255,0.4);
 }
 .nav-right{
   margin-left: auto;           /* empuja todo a la derecha */
