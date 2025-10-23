@@ -39,7 +39,7 @@ header{
   align-items:center;
   justify-content:space-between;
   padding:10px 30px;
-  background: rgba(255, 255, 255, 0.6); /* translúcido */
+  background: transparent;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px)
   transition: background 0.3 ease, backdrop-filter 0.3s ease;
