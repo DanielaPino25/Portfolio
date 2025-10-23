@@ -78,11 +78,12 @@ nav a:hover::after {
 }
 
 .lang-toggle{
-  border:1px solid var(--border);
-  padding:6px 10px;
-  border-radius:999px;
-  background:#fff;
+  border:none;
+  padding:0;
+  background:transparent;
   font-size:.9rem;
+  cursor:pointer;
+  color:var(--text);
 }
 
 /* Hero con menos separación */
