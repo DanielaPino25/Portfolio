@@ -39,7 +39,7 @@ header{
   align-items:center;
   justify-content:flex-start;
   gap: 30px;
-  padding: 50px 100px !important;
+  padding: 50px 50px !important;
   background: transparent;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -106,7 +106,7 @@ nav a.active::before {
 }
 .lang-switch {
   display: flex;
-  gap: 8px;
+  gap: 2px !important ;
   align-items: center;
   justify-content: center;
   font-variation-settings: "wght" 500;
@@ -116,7 +116,7 @@ nav a.active::before {
   background: transparent;
   color: #4e4e4e;
   font-size: 0.9rem;
-  cursor: pointer;
+  cursor: default;
   font-weight: 400; /* normal por defecto */
   transition: font-weight 0.2s ease;
 }
@@ -145,11 +145,11 @@ nav a.active::before {
   color: #4e4e4e;
   font-weight: 400;
   font-size: 0.9rem;
-  opacity: 0.9;
-  margin: 0 8px;          /* espacio uniforme a ambos lados */
+  margin: 0 4px;     
   line-height: 1;
-  display: flex;
-  align-items: center;     /* centra verticalmente */
+  display: inline-block;
+  align-items: center;    
+  transform: translateY(1px);
 }
 
 
@@ -166,7 +166,12 @@ nav a.active::before {
 }
 .copy{ grid-area: copy; }
 .photo{ grid-area: photo; }
-.projects{ grid-area: projects; }
+.projects{ 
+  grid-area: projects;
+  align-self: end;
+  margin-top: 0;
+  padding-top: 16px;
+}
 
 .kicker{font-size:1.1rem}
 h1{font-size:clamp(28px,5vw,48px);margin:.25em 0 .15em}
