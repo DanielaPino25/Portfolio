@@ -24,9 +24,9 @@ img{max-width:100%;display:block}
 
 /* Contenedor general con menos margen lateral */
 .container{
-  max-width:var(--maxw);
-  margin-inline:auto;
-  padding:0 2px; 
+  max-width: 100%;
+  margin: 0;
+  padding:0 40px; 
 }
 
 header{
