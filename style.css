@@ -39,7 +39,7 @@ header{
   align-items:center;
   justify-content:flex-start;
   gap: 32px;
-  padding: 40px 100px;
+  padding: 40px 200px;
   background: transparent;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px)
