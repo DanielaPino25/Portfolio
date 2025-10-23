@@ -71,3 +71,113 @@ h1{font-size:clamp(28px,5vw,48px);margin:.25em 0 .15em}
 .name{color:var(--brand)}
 .role{color:var(--accent);font-weight:600}
 .intro{color:var(--muted);max-width:52ch}
+
+.actions{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  margin-top:14px;
+}
+
+.socials{display:flex;gap:10px;}
+.social{
+  width:38px;
+  height:38px;
+  border:1px solid var(--border);
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:#fff;
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+.social img{
+  width:82%;
+  height:82%;
+  object-fit:contain;
+  display:block;
+}
+.social:hover{
+  transform:translateY(-3px);
+  box-shadow:0 6px 16px rgba(0,0,0,.12);
+}
+
+.btn{
+  border:1px solid var(--border);
+  padding:8px 16px;
+  border-radius:999px;
+  background:#fff;
+  box-shadow:0 1px 0 rgba(0,0,0,0.06);
+}
+
+.photo{
+  border-radius:var(--radius);
+  overflow:hidden;
+  border:1px solid var(--border);
+  box-shadow:0 8px 20px rgba(0,0,0,0.05);
+}
+
+/* Grid de proyectos */
+.projects{margin-top:18px;}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:10px;
+}
+.card{
+  position:relative;
+  overflow:hidden;
+  border-radius:var(--radius);
+  border:1px solid var(--border);
+  background:var(--card);
+  aspect-ratio:1/1;
+  transition:.25s;
+}
+.card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.card span{
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  background:rgba(0,0,0,.45);
+  color:#fff;
+  font-size:.9rem;
+  padding:6px 8px;
+  text-align:center;
+  opacity:0;
+  transition:opacity .3s;
+}
+.card:hover span{opacity:1;}
+.card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 6px 20px rgba(0,0,0,.08);
+}
+
+footer{
+  color:#888;
+  font-size:.85rem;
+  text-align:center;
+  padding:24px 0 10px;
+}
+
+/* Responsividad */
+@media(max-width:980px){
+  .hero{
+    grid-template-columns:1fr;
+    grid-template-areas:
+      "copy"
+      "photo"
+      "projects";
+  }
+}
+@media(max-width:720px){
+  .grid{grid-template-columns:repeat(3,1fr);}
+}
+@media(max-width:480px){
+  .grid{grid-template-columns:repeat(2,1fr);}
+}
+52ch}
