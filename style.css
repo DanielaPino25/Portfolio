@@ -62,26 +62,20 @@ header{
 
 nav{display:flex;gap:32px;}
 nav a{
-  position: relative;
-  opacity:.9;
-  transition: color .2s ease;
-}
-nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 0;
-  height: 2px;
-  background: var(--brand); /* color coral */
-  transition: width .3s ease;
+  color: #4e4e4e;
+  font-weight: 400;
+  text-decoration: none;
+  padding: 6px 14px;
+  border-radius: 999px;
+  transition: all 0.3s ease;
 }
 nav a:hover{
-  opacity:1;
-  color: var(--brand);
-}
-nav a:hover::after {
-  width: 100%; /* subrayado suave al pasar */
+  color: #4e4e4e;
+  text-decoration: none;
+  background: linear-gradient(135deg, #8faff5, #b7c8ff);
+  padding: 6px 14px;
+  border-radius: 999px
+  transition: all 0.3s ease;
 }
 
 .lang-toggle{
@@ -95,6 +89,7 @@ nav a:hover::after {
 .lang-switch {
   display: flex;
   gap: 8px;
+  align-items: center;
 }
 
 .lang-btn {
@@ -104,14 +99,20 @@ nav a:hover::after {
   font-size: 0.9rem;
   cursor: pointer;
   font-weight: 400; /* normal por defecto */
-  transition: color 0.2s ease, font-weight 0.2s ease;
+  transition: font-weight 0.2s ease;
 }
 
 /* idioma activo */
 .lang-btn.active {
-  font-weight: 700;       /* en negrita */
-  color: #4e4e4e;    /* coral o color principal */
+  font-weight: 600;       /* en negrita */ 
 }
+.lang-btn.es::after {
+  content: "/";          /* añade la barra */
+  margin: 0 6px;         /* espacio a los lados */
+  color: #4e4e4e;        /* mismo gris */
+  font-weight: 400;
+}
+
 
 /* Hero con menos separación */
 .hero{
