@@ -42,7 +42,7 @@ header{
   padding: 40px 200px;
   background: transparent;
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px)
+  -webkit-backdrop-filter: blur(10px);
   transition: background 0.3s ease, backdrop-filter 0.3s ease;
   border-bottom: 1px solid rgba(255,255,255,0.4);
 }
@@ -74,7 +74,7 @@ nav a:hover{
   text-decoration: none;
   background: radial-gradient(circle at center, #fff 0%, #80b38b 80%);
   padding: 6px 14px;
-  border-radius: 999px
+  border-radius: 999px;
   transition: all 0.3s ease;
   box-shadow: 0 0 8px rgba(143, 175, 245, 0.4);
 }
@@ -202,7 +202,7 @@ h1{font-size:clamp(28px,5vw,48px);margin:.25em 0 .15em}
 
 /* Grid de proyectos */
 .projects{margin-top:18px;}
-.grid{grid-template-columns:repeat(5,1fr); gap:14px;}
+.grid{display:grid grid-template-columns:repeat(5,1fr); gap:14px;}
 .card{
   position:relative;
   overflow:hidden;
@@ -260,4 +260,3 @@ footer{
 @media(max-width:480px){
   .grid{grid-template-columns:repeat(2,1fr);}
 }
-52ch}
