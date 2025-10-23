@@ -67,6 +67,32 @@
       align-items:start;
       gap:36px; 
       padding-block:28px}
+
+    .lang-switch {
+  display: flex;
+  gap: 8px;
+}
+
+.lang-btn {
+  border: none;
+  background: transparent;
+  color: var(--text);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+/* Estado activo (idioma actual) */
+.lang-btn.active {
+  color: var(--brand); /* tu color coral */
+  font-weight: 600;
+}
+
+/* Efecto hover */
+.lang-btn:hover {
+  color: var(--accent); /* azul suave */
+}
+
     
     .kicker{font-size:1.1rem}
     h1{font-size:clamp(28px, 5.2vw, 56px); margin:.25em 0 .15em}
@@ -108,10 +134,12 @@
         <a href="./AboutMe.html">ABOUT ME</a>
         <a href="./Portfolio.html">PORTFOLIO</a>
         <a href="./Contact.html">CONTACTO</a>
-        <button class="lang-toggle">ES / EN</button>
-      </nav>
+      <div class="lang-switch">
+  <button class="lang-btn active" data-lang="es">ES</button>
+  <button class="lang-btn" data-lang="en">EN</button>
+</div>
     </header>
-    
+ 
     <section class="hero" id="home">
       <div class="copy">
         <p class="kicker" data-i18n="kicker">Hi, I’m</p>
@@ -138,6 +166,12 @@
         <img src="assets/PrincipalDP.jpg" alt="Daniela Pino" />
       </div>
     </section>
+
+<div class="lang-switch">
+  <button class="lang-btn es">ES</button>
+  <button class="lang-btn en">EN</button>
+</div>
+
 
     <section class="projects" id="portfolio" aria-label="project teasers">
       <div class="grid">
