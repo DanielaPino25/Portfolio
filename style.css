@@ -22,11 +22,10 @@ body{
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
 
-/* Contenedor general con menos margen lateral */
 .container{
-  max-width: 100%;
-  margin: 0;
-  padding:0 4px; 
+  max-width: 1400px;
+  margin: 0 auto;
+  padding:0 30px; 
 }
 
 header{
@@ -39,7 +38,7 @@ header{
   align-items:center;
   justify-content:flex-start;
   gap: 30px;
-  padding: 40px 100px !important;
+  padding: 30px 100px !important;
   background: transparent;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -106,24 +105,29 @@ nav a.active::before {
 }
 .lang-switch {
   display: flex;
-  gap: 2px !important ;
   align-items: center;
-  justify-content: center;
-  font-variation-settings: "wght" 500;
+  gap: 1px !important;
 }
 .lang-btn {
   border: none;
   background: transparent;
   color: #4e4e4e;
   font-size: 0.9rem;
-  cursor: default;
-  font-weight: 400; /* normal por defecto */
-  transition: font-weight 0.2s ease;
+  cursor: default; /* 🔹 ya no muestra la mano */
+  font-weight: 400;
+  pointer-events: none; /* 🔹 desactiva el hover y el clic */
+  transition: none;
 }
-/* idioma activo */
 .lang-btn.active {
-  font-weight: 600;   /* en negrita */ 
+  font-weight: 600;
   color: #4e4e4e;
+}
+.lang-sep {
+  color: #4e4e4e;
+  font-weight: 400;
+  margin: 0 4px;
+  display: inline-block;
+  transform: translateY(1px);
 }
 .lang-btn.es::after {
   display: inline-block;
@@ -140,16 +144,6 @@ nav a.active::before {
 .lang-switch .lang-btn.active {
   color: #4e4e4e !important; /* evita que se herede el naranja */
   font-weight: 600;
-}
-.lang-sep {
-  color: #4e4e4e;
-  font-weight: 400;
-  font-size: 0.9rem;
-  margin: 0 4px;     
-  line-height: 1;
-  display: inline-block;
-  align-items: center;    
-  transform: translateY(1px);
 }
 
 
