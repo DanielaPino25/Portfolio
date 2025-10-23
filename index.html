@@ -104,7 +104,13 @@
     .btn:focus{outline:3px solid rgba(143,175,245,.35); outline-offset:2px}
     .socials{display:flex; gap:12px;}
     .social{width:40px; height:40px; border:1px solid var(--border); border-radius:50%; display:grid; place-items:center; background:#fff}
-    .photo{border-radius:var(--radius); overflow:hidden; box-shadow:0 8px 24px rgba(0,0,0,.06); border:1px solid var(--border)}
+    
+    .photo{
+      border-radius:var(--radius); 
+      overflow:hidden; 
+      box-shadow:0 8px 24px rgba(0,0,0,.06); 
+      border:1px solid var(--border)
+    }
 
     .projects{margin-top:28px}
     .grid{display:grid; grid-template-columns:repeat(5,1fr); gap:14px}
@@ -126,8 +132,7 @@
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
+      <header>
   <a class="logo" href="#"><img src="assets/Logo.svg" alt="Logo Daniela Pino"></a>
   <nav>
         <a href="./AboutMe.html">ABOUT ME</a>
@@ -135,11 +140,11 @@
         <a href="./Contact.html">CONTACTO</a>
    </nav>
       <div class="lang-switch">
-  <button class="lang-btn active" data-lang="es">ES</button>
-  <button class="lang-btn" data-lang="en">EN</button>
+  <button class="lang-btn active">ES</button>
+  <button class="lang-btn">EN</button>
 </div>
     </header>
- 
+  <div class="container"> 
     <section class="hero" id="home">
       <div class="copy">
         <p class="kicker" data-i18n="kicker">Hi, I’m</p>
