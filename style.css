@@ -117,19 +117,23 @@ nav a:hover{
   vertical-align: middle;
 }
 
-
 /* Hero con menos separación */
 .hero{
   margin-top: 30px;
   display:grid;
-  grid-template-columns:1.1fr .8fr;
-  grid-template-rows:auto auto;
+  grid-template-columns:1.2fr .8fr;
   grid-template-areas:
     "copy photo"
     "projects photo";
   align-items:start;
   gap:24px;
-  padding:10px 0;
+}
+.copy{ grid-area: copy; }
+.photo{ grid-area: photo; }
+.projects{
+  grid-area: projects;
+  align-self: end;   /* alinea el bloque con el final de la foto */
+  margin-top: 0;     /* sin salto extra respecto al copy */
 }
 
 .kicker{font-size:1.1rem}
@@ -198,18 +202,14 @@ h1{font-size:clamp(28px,5vw,48px);margin:.25em 0 .15em}
 
 /* Grid de proyectos */
 .projects{margin-top:18px;}
-.grid{
-  display:grid;
-  grid-template-columns:repeat(5,1fr);
-  gap:10px;
-}
+.grid{grid-template-columns:repeat(5,1fr); gap:14px;}
 .card{
   position:relative;
   overflow:hidden;
   border-radius:var(--radius);
   border:1px solid var(--border);
   background:var(--card);
-  aspect-ratio:1/1;
+  aspect-ratio:3/4;
   transition:.25s;
 }
 .card img{
