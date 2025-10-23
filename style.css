@@ -71,15 +71,6 @@ nav a{
   transition: all 0.25s ease;
   z-index: 0;
 }
-nav a:hover{
-  color: #4e4e4e;
-  text-decoration: none;
-  background: radial-gradient(circle at center, #fff 0%, #80b38b 80%);
-  padding: 6px 14px;
-  border-radius: 999px;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 8px rgba(143, 175, 245, 0.4);
-}
 /* token base: invisible por defecto */
 nav a::before {
   content: "";
@@ -117,8 +108,9 @@ nav a.active::before {
   display: flex;
   gap: 8px;
   align-items: center;
+  justify-content: center;
+  font-variation-settings: "wght" 500;
 }
-
 .lang-btn {
   border: none;
   background: transparent;
@@ -128,7 +120,6 @@ nav a.active::before {
   font-weight: 400; /* normal por defecto */
   transition: font-weight 0.2s ease;
 }
-
 /* idioma activo */
 .lang-btn.active {
   font-weight: 600;   /* en negrita */ 
@@ -137,17 +128,29 @@ nav a.active::before {
 .lang-btn.es::after {
   content: "/";  /* añade la barra */
   display: inline-block;
-  margin: 0 8px; /* espacio a los lados */
-  padding: 0 2px;
+  margin: 0 10px; /* espacio a los lados */
   color: #4e4e4e;        /* mismo gris */
   font-weight: 400;
+  font-size: 0.9rem;
   line-height: 1;
-  vertical-align: middle;
+  position: relative;
+  top: 0.5px;
+  opacoty: 0.9;
 }
 /* 🔹 Fuerza el color gris en los botones de idioma activos */
 .lang-switch .lang-btn.active {
   color: #4e4e4e !important; /* evita que se herede el naranja */
   font-weight: 600;
+}
+.lang-sep {
+  color: #4e4e4e;
+  font-weight: 400;
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin: 0 8px;          /* espacio uniforme a ambos lados */
+  line-height: 1;
+  display: flex;
+  align-items: center;     /* centra verticalmente */
 }
 
 
