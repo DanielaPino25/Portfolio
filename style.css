@@ -302,6 +302,7 @@ h1{font-size:clamp(28px,5vw,48px);margin:.25em 0 .15em}
   height:100%;
   object-fit:cover;
   display:block;
+  transition: transform .4s ease;
 }
 .card span{
   position:absolute;
@@ -316,7 +317,13 @@ h1{font-size:clamp(28px,5vw,48px);margin:.25em 0 .15em}
   opacity:0;
   transition:opacity .3s;
 }
-.card:hover span{opacity:1;}
+.card:hover img {
+  transform: scale(1.05);
+}
+.card:hover span{
+  opacity:1;
+  transform: translateY(0);
+}
 .card:hover{
   transform:translateY(-4px);
   box-shadow:0 6px 20px rgba(0,0,0,.08);
