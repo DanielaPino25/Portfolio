@@ -177,6 +177,7 @@ h1{font-size:clamp(28px,5vw,48px);margin:.25em 0 .15em}
 .actions{
   display:flex;
   align-items:center;
+  gap: 30px;
   margin-top:14px;
 }
 
@@ -237,7 +238,6 @@ h1{font-size:clamp(28px,5vw,48px);margin:.25em 0 .15em}
 }
 
 /* Grid de proyectos */
-.projects{margin-top:18px;}
 .grid{
   display:grid; 
   grid-template-columns:repeat(5,1fr); 
