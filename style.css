@@ -95,7 +95,6 @@ nav a.active::before {
     0 2px 6px rgba(0, 0, 0, 0.03);
 }
 
-
 .lang-toggle{
   border:none;
   padding:0;
@@ -151,7 +150,7 @@ nav a.active::before {
 /* Hero con menos separación */
 .hero{
   height: 100vh;
-  margin-top: 50px;
+  margin-top: 70px;
   display:grid;
   grid-template-columns:1.2fr .8fr;
   grid-template-areas:
