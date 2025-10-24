@@ -162,6 +162,7 @@ nav a.active::before {
 }
 .copy{ grid-area: copy; }
 .photo{ grid-area: photo; }
+
 .projects{ 
   grid-area: projects;
   align-self: end;
