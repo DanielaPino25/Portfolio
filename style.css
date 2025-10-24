@@ -38,7 +38,7 @@ header{
   align-items:center;
   justify-content:flex-start;
   gap: 30px;
-  padding: 16px 100px !important;
+  padding: 16px 85px !important;
   background: transparent;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -49,7 +49,7 @@ header{
   margin-left: auto;           /* empuja todo a la derecha */
   display: flex;
   align-items: center;
-  gap: 32px;                   /* espacio entre nav y ES/EN */
+  gap: 40px;                   /* espacio entre nav y ES/EN */
 }
 
 .logo img{
@@ -125,7 +125,7 @@ nav a.active::before {
 .lang-sep {
   color: #4e4e4e;
   font-weight: 400;
-  margin: 0 4px;
+  margin: 0 1px;
   display: inline-block;
   transform: translateY(1px);
 }
