@@ -26,7 +26,10 @@ img{max-width:100%;display:block}
 .container{
   max-width: 1500px;
   margin: 0 auto;
+  heignt: 100vh;
   padding:0 5px !important; 
+  display: flex;
+  flex-direction: colum;
 }
 
 header{
@@ -149,7 +152,7 @@ nav a.active::before {
 
 /* Hero con menos separación */
 .hero{
-  height: 100vh;
+  flex: 1;
   margin-top: 75px;
   display:grid;
   grid-template-columns:1.2fr .8fr;
@@ -158,6 +161,7 @@ nav a.active::before {
     "projects photo";
   align-items:start;
   gap:16px;
+  overflow: hidden;
 }
 .copy{ grid-area: copy; }
 .photo{ grid-area: photo; }
@@ -300,7 +304,8 @@ h1{font-size:clamp(28px,5vw,48px);margin:.25em 0 .15em}
   box-shadow:0 6px 20px rgba(0,0,0,.08);
 }
 
-footer{
+.footer{
+  flex-shrink: 0;
   color:#888;
   font-size:.85rem;
   text-align:center;
