@@ -54,7 +54,7 @@ header{
 }
 
 .logo img{
-  width:36px;
+  width: 28px;
   height:auto;
   border-radius:0;
   display: block;
@@ -151,7 +151,7 @@ nav a.active::before {
 /* Hero con menos separación */
 .hero{
   height: 100vh;
-  margin-top: 100px;
+  margin-top: 50px;
   display:grid;
   grid-template-columns:1.2fr .8fr;
   grid-template-areas:
