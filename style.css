@@ -24,8 +24,8 @@ img{max-width:100%;display:block}
 
 .container{
   max-width: 1500px;
-  margin: 0 auto;
-  padding:0 15px !important; 
+  margin: 100px 0 auto !important;
+  padding:0 10px !important; 
 }
 
 header{
@@ -243,8 +243,9 @@ h1{font-size:clamp(28px,5vw,48px);margin:.25em 0 .15em}
   border-radius:var(--radius);
   border:1px solid var(--border);
   background:var(--card);
-  aspect-ratio:3/4;
+  aspect-ratio:2/3;
   transition:.25s;
+  display: flex;
 }
 .card img{
   width:100%;
