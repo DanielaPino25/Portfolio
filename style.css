@@ -163,7 +163,6 @@ nav a.active::before {
 .projects{ 
   grid-area: projects;
   align-self: end;
-  margin-top: 0;
   padding-top: 16px;
 }
 
