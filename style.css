@@ -252,7 +252,7 @@ h1{font-size:clamp(28px,5vw,48px);margin:.25em 0 .15em}
 }
 .btn:hover {
   transform: translateY(-3px); 
-  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+  box-shadow: 0 8px 20px rgba(0,0,0,.08);
 }
 .btn:focus,
 .btn:active {
@@ -324,10 +324,10 @@ h1{font-size:clamp(28px,5vw,48px);margin:.25em 0 .15em}
 
 .footer{
   flex-shrink: 0;
-  color:#888;
-  font-size:.85rem;
-  text-align:center;
-  padding:24px 0 10px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #888;
+  padding: 8px 0 10px;
 }
 
 /* Responsividad */
