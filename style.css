@@ -367,7 +367,7 @@ nav a.active::before {
 .intro-headline .name {
   font-size: 70px;
   color: var(--brand);   /* coral */
-  font-weight: 500;
+  font-weight: 400;
   white-space: nowrap;   /* evita que "Daniela Pino" salte de línea */
   line-height: 1.05;
   letter-spacing: 0.03em;
