@@ -266,7 +266,7 @@ h1{font-size:clamp(28px,5vw,48px);margin:.25em 0 .15em}
   overflow:hidden;
   border:none;
   box-shadow:0 8px 20px rgba(0,0,0,0.05);
-  max-height: 550px; 
+  max-height: 560px; 
 }
 
 .photo img {
