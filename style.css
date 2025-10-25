@@ -386,12 +386,12 @@ nav a.active::before {
   font-size: 37px;
 }
 .intro {
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 300;
-  line-height: 1.5;
+  line-height: 1.6;
   color: var(--muted);
   max-width: 50ch;
-  margin: 0 0 24px 0;
+  margin-top: 12px;
   font-family: 'Poppins', sans-serif;
 }
 
