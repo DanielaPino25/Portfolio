@@ -24,7 +24,7 @@ a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
 
 .container{
-  max-width: 1500px;
+  max-width: 1600px;
   margin: 0 auto;
   height: 100vh;
   padding:0 4px !important; 
@@ -42,7 +42,7 @@ header{
   align-items:center;
   justify-content:flex-start;
   gap: 30px;
-  padding: 20px 95px !important;
+  padding: 20px 100px !important;
   background: transparent;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
