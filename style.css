@@ -345,8 +345,8 @@ nav a.active::before {
 
 .intro-headline {
   line-height: 1.2;
-  margin: 0 0 12px 0;
   font-family: 'Poppins', sans-serif;
+  margin-bottom: 0.2em;
 }
 .intro-headline .hi {
   font-size: clamp(28px, 2.2vw, 40px);
