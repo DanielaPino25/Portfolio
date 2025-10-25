@@ -344,17 +344,17 @@ nav a.active::before {
 }
 
 .intro-headline {
-  line-height: 1.2;
+  line-height: 1.15;
+  margin: 0 0 12px 0;
   font-family: 'Poppins', sans-serif;
-  margin-bottom: 0.2em;
-}
+}  
 .intro-headline .hi {
   font-size: clamp(28px, 2.2vw, 40px);
   color: #4e4e4e;
   font-weight: 300;
 }
 .intro-headline .name {
-  font-size: clamp(34px, 3vw, 150px);
+  font-size: clamp(48px, 7vw, 96px);
   color: var(--brand);   /* coral */
   font-weight: 500;
   white-space: nowrap;   /* evita que "Daniela Pino" salte de línea */
@@ -374,7 +374,7 @@ nav a.active::before {
 }
 .intro {
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1.5;
   color: var(--muted);
   max-width: 50ch;
