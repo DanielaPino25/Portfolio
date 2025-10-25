@@ -163,7 +163,10 @@ nav a.active::before {
   gap:10px;
   overflow: hidden;
 }
-.copy{ grid-area: copy; }
+.copy{ 
+  grid-area: copy;
+  margin-top: 40px;
+}
 .photo{ grid-area: photo; }
 .projects{ 
   grid-area: projects;
