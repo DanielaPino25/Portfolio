@@ -1,172 +1,290 @@
-<!doctype html>
-<html lang="es">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Daniela Pino — Portafolio</title>
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-
-  <!-- Meta descripción -->
-  <meta name="description" content="Portafolio de Daniela Pino, diseñadora de producto y UX/UI." />
-
-  <!-- Poppins -->
+  <title>Daniela Pino — Diseñadora de Producto y UX/UI</title>
+  <meta name="description" content="Portfolio home de Daniela Pino — Diseñadora de Producto y UX/UI" />
+  <link rel="stylesheet" href="./style.css?v=22">
+  <link rel="icon" type="image/png" href="./assets/favicon.svg">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- CSS principal (mismo que en inglés) -->
-  <link rel="stylesheet" href="style.css?v=14" />
+  <style>
+    :root{
+      --bg:#ffffff;
+      --text:#333333;
+      --muted:#666666;
+      --brand:#FB9280; /* coral */
+      --accent:#80b3fb; /* soft blue */
+      --card:#f5f5f7;
+      --border:#e7e7ea;
+      --ring: rgba(0,0,0,.08);
+      --radius: 18px;
+      --maxw: 1200px;
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; 
+      font-family: ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Inter,"Helvetica Neue",Arial,"Apple Color Emoji","Segoe UI Emoji";
+      background:var(--bg); 
+      color:var(--text); 
+      line-height:1.5;
+    }
+    a{color:inherit; text-decoration:none}
+    img{max-width:100%; display:block}
+    .container{max-width:var(--maxw); margin-inline:auto; padding:24px;}
+    header{
+      display:flex; 
+      align-items:center; 
+      justify-content:space-between; 
+      gap:12px; 
+      padding-block:8px;}
+    .logo{font-weight:700; letter-spacing:.04em;}
+    .logo span{
+      display:inline-grid; 
+      place-items:center; 
+      width:36px; 
+      height:36px; 
+      border:1.5px solid var(--border); 
+      border-radius:50%; 
+      font-weight:600}
+    nav{display:flex; gap:22px; align-items:center;}
+    nav a{opacity:.9}
+    nav a:hover{opacity:1}
+    
+    .lang-toggle{
+      border:1px solid var(--border); 
+      padding:6px 10px; 
+      border-radius:999px; 
+      font-size:.9rem; 
+      background:#fff}
+   
+    .hero{
+      display:grid; 
+      grid-template-columns:1.15fr .85fr; 
+      grid-template-rows:auto auto;
+      grid-template-areas:"copy photo" "projects photo";
+      align-items:start;
+      gap:36px; 
+      padding-block:28px}
+
+    .lang-switch {
+  display: flex;
+  gap: 8px;
+}
+
+.lang-btn {
+  border: none;
+  background: transparent;
+  color: var(--text);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+/* Estado activo (idioma actual) */
+.lang-btn.active {
+  color: var(--brand); /* tu color coral */
+  font-weight: 600;
+}
+
+/* Efecto hover */
+.lang-btn:hover {
+  color: var(--accent); /* azul suave */
+}
+   
+    .kicker{font-size:1.1rem}
+    h1{font-size:clamp(28px, 5.2vw, 56px); margin:.25em 0 .15em}
+    .name{color:var(--brand)}
+    .role{color:var(--accent); font-weight:600}
+    .intro{color:var(--muted); max-width:56ch}
+    .actions{display:flex; gap:12px; align-items:center; margin-top:14px}
+    .btn{display:inline-flex; align-items:center; gap:8px; border:1px solid var(--border); padding:10px 14px; border-radius:999px; background:#fff; box-shadow:0 1px 0 var(--ring)}
+    .btn:focus{outline:3px solid rgba(143,175,245,.35); outline-offset:2px}
+    .socials{display:flex; gap:12px;}
+    .social{width:40px; height:40px; border:1px solid var(--border); border-radius:50%; display:grid; place-items:center; background:#fff}
+    
+    .photo{
+      border-radius:var(--radius); 
+      overflow:hidden; 
+      box-shadow:0 8px 24px rgba(0,0,0,.06); 
+      border:1px solid var(--border)
+    }
+
+    .projects{margin-top:28px}
+    .grid{display:grid; grid-template-columns:repeat(5,1fr); gap:14px}
+    .card{background:var(--card); border:1px dashed #cfd2d8; aspect-ratio:1/1; border-radius:var(--radius); display:grid; place-items:center; font-size:.9rem; color:#8a90a0}
+    .footer{color:#8a8a8a; font-size:.85rem; text-align:center; padding:38px 0 8px}
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .hero{grid-template-columns:1fr;}
+    }
+    @media (max-width: 720px){
+      nav{gap:14px}
+      .grid{grid-template-columns:repeat(3,1fr)}
+    }
+    @media (max-width: 480px){
+      header{flex-wrap:wrap; gap:8px}
+      .grid{grid-template-columns:repeat(2,1fr)}
+    }
+  </style>
 </head>
+<body>
 
-<body class="index">
-  <!-- TOPBAR -->
-  <header class="topbar">
-    <div class="topbar-inner">
-      <a class="logo" href="index-es.html" aria-label="Inicio">
-        <img src="assets/Logo.svg?v=2" alt="Logo de Daniela Pino" />
+  <header>
+  <a class="logo" href="#">
+    <img src="assets/Logo.svg" alt="Logo Daniela Pino">
+  </a>
+
+  <div class="nav-right"> 
+    <nav>
+      <a href="./AboutMe.html">SOBRE MÍ</a>
+      <a href="./Portfolio.html">PORTFOLIO</a>
+      <a href="./Contact.html">CONTACTO</a>
+    </nav>
+
+  <div class="lang-switch">
+      <button class="lang-btn es">ES</button>
+      <span class="lang-sep">/</span>
+      <button class="lang-btn en active">EN</button>
+    </div>
+  </div> 
+</header>
+
+  <div class="container"> 
+  
+    <section class="hero" id="home">
+      <div class="copy">
+  <h1 class="intro-headline">
+    <span class="hi">Hi, I’m </span>
+    <span class="name">Daniela Pino</span>
+  </h1>
+
+  <h2 class="role-headline">
+    a <span class="role-accent">Product and UX/UI Designer</span>
+  </h2>
+
+  <p class="intro">
+    Welcome to my page! Here you can<br> 
+    explore a glimpse of my work.<br>
+    Hope you enjoy it!
+  </p>
+
+  <div class="actions">
+    <div class="socials" aria-label="social links">
+      <a class="social" href="https://www.instagram.com/bydanipino?igsh=bzJ0MHhnY2JmeTZn&utm_source=qr" target="_blank" rel="noreferrer noopener">
+        <img src="assets/ig.png" alt="Instagram">
+      </a>
+      <a class="social" href="https://www.behance.net/danielapinom" target="_blank" rel="noreferrer noopener">
+        <img src="assets/be.png" alt="Behance">
+      </a>
+      <a class="social" href="https://www.linkedin.com/in/pinodaniela/" target="_blank" rel="noreferrer noopener">
+        <img src="assets/in.png" alt="LinkedIn">
       </a>
 
-      <nav class="menu" aria-label="Principal">
-        <!-- Usa data-nav con el NOMBRE DE ARCHIVO EXACTO -->
-        <a href="SobreMi.html"      data-nav="SobreMi.html">SOBRE MÍ</a>
-        <a href="Portfolio-es.html" data-nav="Portfolio-es.html">PORTAFOLIO</a>
-        <a href="Contacto.html"     data-nav="Contacto.html">CONTACTO</a>
-
-        <!-- Selector de idioma -->
-        <div class="lang-switch" aria-label="Selector de idioma">
-          <a href="index-es.html" class="active">ES</a>
-          <span>/</span>
-          <a href="index.html">EN</a>
-        </div>
-      </nav>
-
-      <button class="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="navdrawer">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
-
-  <!-- MENÚ MÓVIL -->
-  <nav id="navdrawer" class="navdrawer" aria-label="Principal móvil">
-    <a href="SobreMi.html"      data-nav="SobreMi.html">SOBRE MÍ</a>
-    <a href="Portfolio-es.html" data-nav="Portfolio-es.html">PORTAFOLIO</a>
-    <a href="Contacto.html"     data-nav="Contacto.html">CONTACTO</a>
-
-    <div class="lang-switch" aria-label="Selector de idioma">
-      <a href="index-es.html" class="active">ES</a>
-      <span>/</span>
-      <a href="index.html">EN</a>
-    </div>
-  </nav>
-
-<main class="hero">
-  <!-- Columna izquierda: texto -->
-  <div class="hero-left">
-    <div class="hero-text">
-      <h1 class="hero-title">
-        <span class="hi">Hola, soy</span>
-        <span class="name">Daniela Pino</span>
-      </h1>
-
-      <h2 class="role">Diseñadora de Producto y UX/UI.</h2>
-
-      <p class="lead">
-       Bienvenida/o a mi espacio. Aquí puedes explorar mi trabajo.
-        Espero que lo disfrutes!
-      </p>
-
-      <a class="btn-cta" href="Contact.html" aria-label="Go to contact page">
-        <span>Contact me</span>
-        <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </a>
-    </div>
-
-    <!-- TIRA de 6 proyectos (rectángulos) -->
-    <div class="projects-strip">
-      <div class="project"></div>
-      <div class="project"></div>
-      <div class="project"></div>
-      <div class="project"></div>
-      <div class="project"></div>
-      <div class="project"></div>
+      <button class="btn">Contact me!</button>
     </div>
   </div>
+</div>
+      
+      <div class="photo" aria-label="Daniela smiling and reaching out, boardwalk background">
+        <img src="assets/PrincipalDP.jpg" alt="Daniela Pino" />
+      </div>
+      
+    <section class="projects" id="portfolio" aria-label="project teasers">
+      <div class="grid">
+        
+   <div class="project-item">
+      <span>Project 1</span>
+      <div class="card">
+        <img src="assets/projects/Prueba1.jpg" alt="Project 1">
+      </div>
+    </div>
 
-  <!-- Columna derecha: foto -->
-  <div class="hero-photo">
-    <img src="assets/principal.jpg" alt="Daniela Pino"/>
+    <div class="project-item">
+      <span>Project 2</span>
+      <div class="card">
+        <img src="assets/projects/project2.jpg" alt="Project 2">
+      </div>
+    </div>
+
+    <div class="project-item">
+      <span>Project 3</span>
+      <div class="card">
+        <img src="assets/projects/project3.jpg" alt="Project 3">
+      </div>
+    </div>
+
+    <div class="project-item">
+      <span>Project 4</span>
+      <div class="card">
+        <img src="assets/projects/project4.jpg" alt="Project 4">
+      </div>
+    </div>
+
+    <div class="project-item">
+      <span>Project 5</span>
+      <div class="card">
+        <img src="assets/projects/project5.jpg" alt="Project 5">
+      </div>
+    </div>
+   </div>       
+</section>
+  </section>
+      <footer class="footer">© <span id="year"></span> Daniela Pino</footer>
   </div>
-</main>
-
-  <!-- FOOTER SIN LÍNEA -->
-  <footer style="text-align:center; padding:1rem; border-top:none;">
-    © <span id="year"></span> Daniela Pino
-  </footer>
-
-  <!-- SCRIPTS -->
+  
+  
   <script>
-    // Año dinámico
-    document.getElementById('year')?.textContent = new Date().getFullYear();
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Resaltar enlace activo según archivo
-    (function(){
-      const file = (location.pathname.split('/').pop() || '').replace(/[#?].*$/, '');
-      const htmlLang = (document.documentElement.lang || 'es').toLowerCase();
-      const home = htmlLang === 'es' ? 'index-es.html' : 'index.html';
-      const current = file || home;
-
-      document.querySelectorAll('.menu a[data-nav], #navdrawer a[data-nav]').forEach(a=>{
-        const target = (a.getAttribute('data-nav') || '').toLowerCase();
-        if (target === current.toLowerCase()){
-          a.classList.add('is-active');
-          a.setAttribute('aria-current','page');
-        }
-      });
-    })();
-
-    // Burger / drawer
-    (function(){
-      const burger = document.querySelector('.burger');
-      burger?.addEventListener('click', () => {
-        const open = document.body.classList.toggle('nav-open');
-        burger.setAttribute('aria-expanded', open ? 'true' : 'false');
-      });
-      document.querySelectorAll('#navdrawer a').forEach(a => {
-        a.addEventListener('click', () => document.body.classList.remove('nav-open'));
-      });
-      window.addEventListener('scroll', () => {
-        document.body.classList.toggle('scrolled', window.scrollY > 10);
-      });
-    })();
-
-    // El logo respeta el idioma preferido (no lo cambia)
-    (function(){
-      const KEY = 'siteLang';
-      document.querySelectorAll('.lang-switch a').forEach(a=>{
-        a.addEventListener('click', ()=>{
-          const txt = (a.textContent || '').trim().toLowerCase();
-          localStorage.setItem(KEY, txt.includes('es') ? 'es' : 'en');
-        });
-      });
-      const pageLang = (document.documentElement.lang || 'es').toLowerCase();
-      const pref = localStorage.getItem(KEY) || pageLang;
-      const logo = document.querySelector('a.logo');
-      if (logo){
-        logo.setAttribute('href', pref === 'es' ? 'index-es.html' : 'index.html');
+    // Simple ES / EN toggle
+    const strings = {
+      en: {
+        about: 'ABOUT ME', portfolio: 'PORTFOLIO', contact: 'CONTACT',
+        kicker: "Hi, I’m", role: 'a Product and UX/UI Designer',
+        intro: 'Welcome to my page! Here you can explore a glimpse of my work. Hope you enjoy it!',
+        contactBtn: 'Contact me!'
+      },
+      es: {
+        about: 'SOBRE MÍ', portfolio: 'PORTAFOLIO', contact: 'CONTACTO',
+        kicker: 'Hola, soy', role: 'Diseñadora de Producto y UX/UI',
+        intro: '¡Bienvenida/o! Aquí puedes ver un adelanto de mi trabajo. ¡Espero que te guste!',
+        contactBtn: '¡Contáctame!'
       }
-    })();
+    }
+    let current = 'en';
+    const $ = (sel)=>document.querySelectorAll(sel);
+    const apply = (lang)=>{
+      current = lang;
+      $('[data-i18n]').forEach(el=>{
+        const key = el.getAttribute('data-i18n');
+        el.textContent = strings[lang][key];
+      });
+      document.documentElement.lang = lang;
+    }
+    document.getElementById('langBtn').addEventListener('click', ()=>apply(current==='en'?'es':'en'));
   </script>
   <script>
-  // Sombra del toolbar cuando hay desplazamiento
-  (function(){
-    const onScroll = () => {
-      document.body.classList.toggle('scrolled', window.scrollY > 8);
-    };
-    window.addEventListener('scroll', onScroll, {passive:true});
-    onScroll(); // estado inicial
-  })();
+  const header = document.querySelector('header');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) {
+      header.style.background = 'rgba(255, 255, 255, 0.6)';
+      header.style.backdropFilter = 'blur(10px)';
+      header.style.webkitBackdropFilter = 'blur(10px)';
+      header.style.borderBottom = '1px solid rgba(255,255,255,0.4)';
+    } else {
+      header.style.background = 'transparent';
+      header.style.backdropFilter = 'none';
+      header.style.webkitBackdropFilter = 'none';
+      header.style.borderBottom = 'none';
+    }
+  });
 </script>
 </body>
 </html>
+
