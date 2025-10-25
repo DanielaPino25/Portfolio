@@ -344,10 +344,20 @@ nav a.active::before {
 }
 
 .intro-headline {
-  line-height: 1.15;
-  margin: 0 0 12px 0;
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px;
+  margin: 0 0 4px 0;
   font-family: 'Poppins', sans-serif;
 }  
+.role-headline {
+  margin-top: 0;       /* 🔹 elimina espacio adicional arriba */
+  line-height: 1.2;    /* 🔹 compacta un poco la altura del texto */
+  font-size: clamp(22px, 2vw, 30px);
+  font-weight: 400;
+  color: var(--accent);
+}
 .intro-headline .hi {
   font-size: clamp(28px, 2.2vw, 40px);
   color: #4e4e4e;
@@ -372,6 +382,7 @@ nav a.active::before {
 .role-headline .role-accent {
   color: var(--accent);  /* azul suave */
   font-weight: 500;
+  font-size: 45px;
 }
 .intro {
   font-size: 1rem;
