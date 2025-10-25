@@ -116,10 +116,10 @@ nav a.active::before {
   background: transparent;
   color: #4e4e4e;
   font-size: 0.9rem;
-  cursor: default; /* 🔹 ya no muestra la mano */
+  cursor: pointer; /* 🔹 ya no muestra la mano */
   font-weight: 400;
-  pointer-events: none; /* 🔹 desactiva el hover y el clic */
-  transition: none;
+  pointer-events: auto; /* 🔹 desactiva el hover y el clic */
+  transition: color 0.2s ease;
 }
 .lang-btn.active {
   font-weight: 600;
@@ -382,7 +382,7 @@ nav a.active::before {
 }
 .role-headline .role-accent {
   color: var(--accent);  /* azul suave */
-  font-weight: 300;
+  font-weight: 400;
   font-size: 37px;
 }
 .intro {
