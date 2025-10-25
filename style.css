@@ -369,7 +369,7 @@ nav a.active::before {
   font-weight: 500;
   white-space: nowrap;   /* evita que "Daniela Pino" salte de línea */
   line-height: 1.05;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.1em;
 }
 .role-headline {
   font-size: 38px;
