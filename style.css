@@ -347,7 +347,7 @@ nav a.active::before {
   display: inline-flex;
   flex-wrap: wrap;
   align-items: baseline;
-  gap: 6px;
+  gap: 10px;
   margin: 0 0 4px 0;
   font-family: 'Poppins', sans-serif;
 }  
@@ -382,7 +382,7 @@ nav a.active::before {
 .role-headline .role-accent {
   color: var(--accent);  /* azul suave */
   font-weight: 500;
-  font-size: 45px;
+  font-size: 40px;
 }
 .intro {
   font-size: 1rem;
