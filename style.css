@@ -337,11 +337,13 @@ h1{font-size:clamp(28px,5vw,48px);margin:.25em 0 .15em}
 }
 
 .footer{
-  flex-shrink: 0;
+  margin: 8px auto 12px;
   text-align: center;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
+  line-height: 1.4;
   color: #888;
-  padding: 4px 0;
+  padding: 0;
+  flex-shrink: 0;
 }
 
 /* Responsividad */
