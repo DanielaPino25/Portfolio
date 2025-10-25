@@ -354,11 +354,12 @@ nav a.active::before {
   font-weight: 300;
 }
 .intro-headline .name {
-  font-size: clamp(38px, 4.5vw, 68px);
+  font-size: 70px;
   color: var(--brand);   /* coral */
   font-weight: 500;
   white-space: nowrap;   /* evita que "Daniela Pino" salte de línea */
-  letter-spacing: 0.02em;
+  line-height: 1.05;
+  letter-spacing: -1em;
 }
 .role-headline {
   font-size: clamp(28px, 2.2vw, 40px);
