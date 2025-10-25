@@ -381,7 +381,7 @@ nav a.active::before {
 }
 .role-headline .role-accent {
   color: var(--accent);  /* azul suave */
-  font-weight: 500;
+  font-weight: 300;
   font-size: 40px;
 }
 .intro {
