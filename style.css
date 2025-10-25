@@ -301,7 +301,7 @@ h1{font-size:clamp(28px,5vw,48px);margin:.25em 0 .15em}
   overflow: hidden;
   border: 1px solid var(--border);
   background: var(--card);
-  aspect-ratio: 2/3; /* más vertical, no cuadrado */
+  aspect-ratio: 3/4; 
   box-shadow: 0 8px 20px rgba(0,0,0,0.03);
   transition: transform .25s ease, box-shadow .25s ease;
   display: flex;
