@@ -348,7 +348,7 @@ nav a.active::before {
   display: inline-flex;
   flex-wrap: wrap;
   align-items: baseline;
-  gap: 10px;
+  gap: 12px;
   margin: 0;
   font-family: 'Poppins', sans-serif;
 }  
