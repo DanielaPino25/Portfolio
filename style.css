@@ -425,9 +425,8 @@ body.es .intro {
 
 /* ===== CONTACT PAGE LAYOUT ===== */
 .contact-wrapper {
-  max-width: 1200px;        /* parecido al home */
-  margin: 48px 24px 80px;
-  padding: 0 24px;
+  max-width: 1250px;        /* parecido al home */
+  padding-top: 80px;
   position: relative;
   font-family: 'Poppins', sans-serif;
   color: #4e4e4e;
