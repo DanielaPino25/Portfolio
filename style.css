@@ -397,17 +397,17 @@ nav a.active::before {
 }
 
 body.es .intro-headline .hi {
-  font-size: 30px;
+  font-size: 31px;
 }
 body.es .intro-headline .name {
-  font-size: 57px;
+  font-size: 58px;
   letter-spacing: 0.04em;
 }
 body.es .role-headline {
-  font-size: 30px;
+  font-size: 31px;
 }
 body.es .role-headline .role-accent {
-  font-size: 32px;
+  font-size: 33px;
 }
 body.es .intro {
   font-size: 1rem; 
