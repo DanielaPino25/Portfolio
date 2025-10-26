@@ -585,13 +585,24 @@ body.es .intro {
 }
 /* footer */
 .contact-wrapper .footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   text-align: center;
-  font-size: 0.8rem;
-  font-weight: 300;
   color: #4e4e4e;
-  margin-top: 48px;
+  font-size: 0.8rem;
   line-height: 1.4;
-}  
+  padding: 0;
+  background: transparent;
+  backdrop-filter: none;
+  border: none;  
+  box-shadow: none; 
+  border-top: 1px solid var(--border);
+  z-index: 20;  
+  margin: 16px auto 12px;
+} 
+
 /* ----- responsive stack ----- */
 @media (max-width: 900px){
   .contact-content {
