@@ -395,6 +395,22 @@ nav a.active::before {
   font-family: 'Poppins', sans-serif;
 }
 
+body.es .intro-headline .hi {
+  font-size: 35px;
+}
+body.es .intro-headline .name {
+  font-size: 60px;
+}
+body.es .role-headline {
+  font-size: 35px;
+}
+body.es .role-headline .role-accent {
+  font-size: 37px;
+}
+body.es .intro {
+  font-size: 1rem; 
+}
+
 .footer{
   background: transparent;
   backdrop-filter: none;
