@@ -439,8 +439,8 @@ body.es .intro {
 /* grid principal: texto izq / form der */
 .contact-content {
   display: grid;
-  grid-template-columns: 1.3fr 0.7fr;
-  gap: 60px;
+  grid-template-columns: 1.4fr 0.6fr;
+  gap: 30px;
   margin-top: 270px; /* empuja abajo para que no choque con CONTACT */
   align-items: start;
   justify-content: space-between;
