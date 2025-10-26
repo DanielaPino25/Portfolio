@@ -426,14 +426,15 @@ body.es .intro {
 /* ===== CONTACT PAGE LAYOUT ===== */
 .contact-wrapper {
   max-width: 1250px;        /* parecido al home */
-  padding-top: 80px;
+  padding-top: 40px;
   position: relative;
   font-family: 'Poppins', sans-serif;
   color: #4e4e4e;
 }
 /* palabra CONTACT gigante */
 .contact-hero-word {
-  position: relative;
+  position: absolute;
+  left: 50%;
   right: 0;    
   font-size: 150px;
   font-weight: 500;
