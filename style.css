@@ -400,7 +400,8 @@ body.es .intro-headline .hi {
   font-size: 30px;
 }
 body.es .intro-headline .name {
-  font-size: 55px;
+  font-size: 57px;
+  letter-spacing: 0.04em;
 }
 body.es .role-headline {
   font-size: 30px;
