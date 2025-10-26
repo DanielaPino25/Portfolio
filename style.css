@@ -42,7 +42,7 @@ header{
   align-items:center;
   justify-content:flex-start;
   gap: 30px;
-  padding: 20px 230px !important;
+  padding: 20px 120px !important;
   background: transparent;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -190,7 +190,7 @@ nav a.active::before {
   display:flex;
   align-items:center;
   gap: 20px;
-  margin-top: 500px;
+  margin-top: 30px;
 }
 
 .socials{
