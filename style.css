@@ -437,8 +437,8 @@ body.es .intro {
   position: absolute;
   top: 80px;        /* distancia desde arriba de la página */
   right: 0;    
-  font-size: clamp(48px, 6vw, 96px);
-  font-weight: 300;
+  font-size: 150px;
+  font-weight: 500;
   line-height: 1.1;
   color: rgba(0,0,0,0.08); /* gris súper suave */
   pointer-events: none;
