@@ -443,7 +443,9 @@ body.es .intro {
   gap: 60px;
   margin-top: 150px; /* empuja abajo para que no choque con CONTACT */
   align-items: start;
-  justify-content: space-between;
+  justify-content:center;
+  max-width: 900px;   
+  margin-inline: auto;  
 }
 /* ----- columna izquierda ----- */
 .contact-left {
