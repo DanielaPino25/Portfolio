@@ -400,17 +400,17 @@ body.es .intro-headline .hi {
   font-size: 31px;
 }
 body.es .intro-headline .name {
-  font-size: 60px;
+  font-size: 62px;
   letter-spacing: 0.04em;
 }
 body.es .role-headline {
-  font-size: 32px;
+  font-size: 35px;
 }
 body.es .role-headline .role-accent {
   font-size: 33px;
 }
 body.es .intro {
-  font-size: 1rem; 
+  font-size: 1.1rem; 
 }
 
 .footer{
