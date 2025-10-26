@@ -8,6 +8,128 @@
   <link rel="stylesheet" href="./style.css?v=23">
   <link rel="icon" type="image/png" href="./assets/favicon.svg">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">  
+
+  <style>
+    :root{
+      --bg:#ffffff;
+      --text:#333333;
+      --muted:#666666;
+      --brand:#FB9280; /* coral */
+      --accent:#80b3fb; /* soft blue */
+      --card:#f5f5f7;
+      --border:#e7e7ea;
+      --ring: rgba(0,0,0,.08);
+      --radius: 18px;
+      --maxw: 1200px;
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; 
+      font-family: ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Inter,"Helvetica Neue",Arial,"Apple Color Emoji","Segoe UI Emoji";
+      background:var(--bg); 
+      color:var(--text); 
+      line-height:1.5;
+    }
+    a{color:inherit; text-decoration:none}
+    img{max-width:100%; display:block}
+    .container{max-width:var(--maxw); margin-inline:auto; padding:24px;}
+    header{
+      display:flex; 
+      align-items:center; 
+      justify-content:space-between; 
+      gap:12px; 
+      padding-block:8px;}
+    .logo{font-weight:700; letter-spacing:.04em;}
+    .logo span{
+      display:inline-grid; 
+      place-items:center; 
+      width:36px; 
+      height:36px; 
+      border:1.5px solid var(--border); 
+      border-radius:50%; 
+      font-weight:600}
+    nav{display:flex; gap:22px; align-items:center;}
+    nav a{opacity:.9}
+    nav a:hover{opacity:1}
+    
+    .lang-toggle{
+      border:1px solid var(--border); 
+      padding:6px 10px; 
+      border-radius:999px; 
+      font-size:.9rem; 
+      background:#fff}
+   
+    .hero{
+      display:grid; 
+      grid-template-columns:1.15fr .85fr; 
+      grid-template-rows:auto auto;
+      grid-template-areas:"copy photo" "projects photo";
+      align-items:start;
+      gap:36px; 
+      padding-block:28px}
+
+    .lang-switch {
+  display: flex;
+  gap: 8px;
+}
+
+.lang-btn {
+  border: none;
+  background: transparent;
+  color: var(--text);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+/* Estado activo (idioma actual) */
+.lang-btn.active {
+  color: var(--brand); /* tu color coral */
+  font-weight: 600;
+}
+
+/* Efecto hover */
+.lang-btn:hover {
+  color: var(--accent); /* azul suave */
+}
+   
+    .kicker{font-size:1.1rem}
+    h1{font-size:clamp(28px, 5.2vw, 56px); margin:.25em 0 .15em}
+    .name{color:var(--brand)}
+    .role{color:var(--accent); font-weight:600}
+    .intro{color:var(--muted); max-width:56ch}
+    .actions{display:flex; gap:12px; align-items:center; margin-top:14px}
+    .btn{display:inline-flex; align-items:center; gap:8px; border:1px solid var(--border); padding:10px 14px; border-radius:999px; background:#fff; box-shadow:0 1px 0 var(--ring)}
+    .btn:focus{outline:3px solid rgba(143,175,245,.35); outline-offset:2px}
+    .socials{display:flex; gap:12px;}
+    .social{width:40px; height:40px; border:1px solid var(--border); border-radius:50%; display:grid; place-items:center; background:#fff}
+    
+    .photo{
+      border-radius:var(--radius); 
+      overflow:hidden; 
+      box-shadow:0 8px 24px rgba(0,0,0,.06); 
+      border:1px solid var(--border)
+    }
+
+    .projects{margin-top:28px}
+    .grid{display:grid; grid-template-columns:repeat(5,1fr); gap:14px}
+    .card{background:var(--card); border:1px dashed #cfd2d8; aspect-ratio:1/1; border-radius:var(--radius); display:grid; place-items:center; font-size:.9rem; color:#8a90a0}
+    .footer{color:#8a8a8a; font-size:.85rem; text-align:center; padding:38px 0 8px}
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .hero{grid-template-columns:1fr;}
+    }
+    @media (max-width: 720px){
+      nav{gap:14px}
+      .grid{grid-template-columns:repeat(3,1fr)}
+    }
+    @media (max-width: 480px){
+      header{flex-wrap:wrap; gap:8px}
+      .grid{grid-template-columns:repeat(2,1fr)}
+    }
+  </style>
 </head>
 
   <body class="en">
