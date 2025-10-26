@@ -422,6 +422,7 @@ body.es .intro {
 }
 
 
+
 /* ===== CONTACT PAGE LAYOUT ===== */
 .contact-wrapper {
   max-width: 1200px;        /* parecido al home */
@@ -431,36 +432,28 @@ body.es .intro {
   font-family: 'Poppins', sans-serif;
   color: #4e4e4e;
 }
-
 /* palabra CONTACT gigante */
 .contact-hero-word {
-  position: absolute;
-  top: 0;
-  right: 0;
-  font-size: clamp(48px, 6vw, 120px);
-  line-height: 1;
-  font-weight: 300;
-  color: rgba(0,0,0,0.08); /* gris muy claro tipo watermark */
+  font-family: 'Poppins', sans-serif;
+  position: relative;        /* <<< antes era absolute */
   margin: 0;
-  pointer-events: none;
-  user-select: none;
+  color: rgba(0,0,0,0.08);
+  font-weight: 300;
+  line-height: 1;
+  font-size: clamp(64px, 8vw, 120px);  /* más grande */
+  text-align: right;
 }
-
 /* grid principal: texto izq / form der */
 .contact-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 48px;
-  position: relative;
-  z-index: 1; /* encima del CONTACT gigante */
   margin-top: 80px; /* empuja abajo para que no choque con CONTACT */
 }
-
 /* ----- columna izquierda ----- */
 .contact-left {
-  max-width: 480px;
+  max-width: 520px;
 }
-
 .contact-headline {
   font-size: clamp(28px, 2.2vw, 36px);
   font-weight: 500;
@@ -468,22 +461,21 @@ body.es .intro {
   color: #4e4e4e;
   margin: 0 0 24px 0;
 }
-
 .contact-text {
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 300;
   line-height: 1.6;
   color: #4e4e4e;
   margin: 0 0 24px 0;
-  max-width: 40ch;
+  max-width: 50ch;
 }
-
 /* iconos sociales */
 .contact-socials {
   display: flex;
+  flex-wrap: wrap;
   gap: 12px;
+  margin-bottom: 24px;
 }
-
 .contact-social {
   width: 48px;
   height: 48px;
@@ -504,15 +496,14 @@ body.es .intro {
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(0,0,0,.08);
 }
-
 /* ----- columna derecha (form) ----- */
 .contact-form {
   display: flex;
   flex-direction: column;
   gap: 14px;
   max-width: 420px;
+  align-self: start;
 }
-
 .contact-input {
   width: 100%;
   font-family: 'Poppins', sans-serif;
@@ -528,7 +519,6 @@ body.es .intro {
   box-shadow: 0 0 0 3px rgba(128,179,251,.2);
   border-color: #80b3fb;
 }
-
 .contact-textarea {
   width: 100%;
   min-height: 140px;
@@ -546,14 +536,13 @@ body.es .intro {
   box-shadow: 0 0 0 3px rgba(128,179,251,.2);
   border-color: #80b3fb;
 }
-
 /* botón igual al "Contact me!" del home */
 .contact-submit {
   position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 24px;
+  padding: 12px 28px;
   border: none;
   border-radius: 999px;
   background: transparent;
@@ -566,6 +555,9 @@ body.es .intro {
   box-shadow: none;
   outline: none;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;                 /* <<< ancho completo como en tu captura actual */
+  max-width: 440px;
+  text-align: center;
 }
 .contact-submit::before {
   content: "";
@@ -587,7 +579,6 @@ body.es .intro {
   outline: none;
   box-shadow: none;
 }
-
 /* footer */
 .contact-wrapper .footer {
   text-align: center;
@@ -596,8 +587,7 @@ body.es .intro {
   color: #4e4e4e;
   margin-top: 48px;
   line-height: 1.4;
-}
-  
+}  
 /* ----- responsive stack ----- */
 @media (max-width: 900px){
   .contact-content {
