@@ -448,7 +448,7 @@ body.es .intro {
 /* ----- columna izquierda ----- */
 .contact-left {
   max-width: 520px;
-  padding-left: 70px;
+  padding-left: 50px;
 }
 .contact-headline {
   font-size: clamp(28px, 2.2vw, 36px);
