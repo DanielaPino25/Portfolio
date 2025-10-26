@@ -140,7 +140,7 @@
 
   <div class="nav-right"> 
     <nav>
-      <a href="./AcoutMe.html">ABOUT ME</a>
+      <a href="./AboutMe.html">ABOUT ME</a>
       <a href="./Portfolio.html">PORTFOLIO</a>
       <a href="./Contact.html">CONTACT</a>
     </nav>
@@ -163,7 +163,7 @@
   </h1>
 
   <h2 class="role-headline">
-    a <span class="role-accent">Product and UX/UI Designer</span>
+    <span class="role-accent">Product and UX/UI Designer</span>
   </h2>
 
   <p class="intro">
@@ -233,40 +233,15 @@
    </div>       
 </section>
   </section>
+    
       <footer class="footer">© <span id="year"></span> Daniela Pino</footer>
   </div>
   
   <script>
     // Year
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Simple ES / EN toggle
-    const strings = {
-      en: {
-        about: 'ABOUT ME', portfolio: 'PORTFOLIO', contact: 'CONTACT',
-        kicker: "Hi, I’m", role: 'a Product and UX/UI Designer',
-        intro: 'Welcome to my page! Here you can explore a glimpse of my work. Hope you enjoy it!',
-        contactBtn: 'Contact me!'
-      },
-      es: {
-        about: 'SOBRE MÍ', portfolio: 'PORTAFOLIO', contact: 'CONTACTO',
-        kicker: 'Hola, soy', role: 'Diseñadora de Producto y UX/UI',
-        intro: '¡Bienvenida/o! Aquí puedes ver un adelanto de mi trabajo. ¡Espero que te guste!',
-        contactBtn: '¡Contáctame!'
-      }
-    }
-    let current = 'en';
-    const $ = (sel)=>document.querySelectorAll(sel);
-    const apply = (lang)=>{
-      current = lang;
-      $('[data-i18n]').forEach(el=>{
-        const key = el.getAttribute('data-i18n');
-        el.textContent = strings[lang][key];
-      });
-      document.documentElement.lang = lang;
-    }
-    document.getElementById('langBtn').addEventListener('click', ()=>apply(current==='en'?'es':'en'));
   </script>
+  
   <script>
   const header = document.querySelector('header');
 
@@ -283,6 +258,22 @@
       header.style.borderBottom = 'none';
     }
   });
+</script>
+  <script>
+document.addEventListener("DOMContentLoaded", function() {
+  const currentLang = window.location.pathname.includes("-es") ? "es" : "en";
+
+  const esBtn = document.querySelector(".lang-btn.es");
+  const enBtn = document.querySelector(".lang-btn.en");
+
+  if (currentLang === "es") {
+    esBtn.classList.add("active");
+    enBtn.classList.remove("active");
+  } else {
+    enBtn.classList.add("active");
+    esBtn.classList.remove("active");
+  }
+});
 </script>
 </body>
 </html>
