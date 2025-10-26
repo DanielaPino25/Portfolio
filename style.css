@@ -185,7 +185,6 @@ nav a.active::before {
   align-items:center;
   gap: 20px;
   margin-top: 5rem;
-  top: 40px;
 }
 
 .socials{
@@ -347,13 +346,6 @@ nav a.active::before {
   margin: 0;
   font-family: 'Poppins', sans-serif;
 }  
-.role-headline {
-  margin-top: 0;       /* 🔹 elimina espacio adicional arriba */
-  line-height: 1;    /* 🔹 compacta un poco la altura del texto */
-  font-size: 30px;
-  font-weight: 400;
-  color: var(--accent);
-}
 .intro-headline .hi {
   font-size: 35px;
   color: #4e4e4e;
@@ -425,7 +417,8 @@ body.es .intro {
 
 /* ===== CONTACT PAGE LAYOUT ===== */
 .contact-wrapper {
-  max-width: 1250px;        /* parecido al home */
+  max-width: 72vw;        /* parecido al home */
+  margin: 0 auto;
   padding-top: 10px;
   position: relative;
   font-family: 'Poppins', sans-serif;
@@ -434,8 +427,7 @@ body.es .intro {
 /* palabra CONTACT gigante */
 .contact-hero-word {
   position: absolute;
-  left: 50%;
-  right: 0;    
+  right: 0;  
   font-size: 150px;
   font-weight: 500;
   line-height: 1;
@@ -456,7 +448,7 @@ body.es .intro {
 /* ----- columna izquierda ----- */
 .contact-left {
   max-width: 520px;
-  padding-left: 202px;
+  padding-left: 204px;
 }
 .contact-headline {
   font-size: clamp(28px, 2.2vw, 36px);
