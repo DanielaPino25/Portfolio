@@ -441,7 +441,7 @@ body.es .intro {
   display: grid;
   grid-template-columns: 1fr 0.9fr;
   gap: 60px;
-  margin-top: 250px; /* empuja abajo para que no choque con CONTACT */
+  margin-top: 270px; /* empuja abajo para que no choque con CONTACT */
   align-items: start;
   justify-content: space-between;
   max-width: 900px;   
