@@ -504,9 +504,10 @@ body.es .intro {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  max-width: 460px;
-  justify-self: end;
+  gap: 16px;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: 24px;
 }
 .contact-input {
   width: 100%;
