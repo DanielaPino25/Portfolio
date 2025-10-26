@@ -439,10 +439,10 @@ body.es .intro {
 /* grid principal: texto izq / form der */
 .contact-content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 0.9fr;
   gap: 60px;
-  margin-top: 250px; /* empuja abajo para que no choque con CONTACT */
-  align-items: center;
+  margin-top: 150px; /* empuja abajo para que no choque con CONTACT */
+  align-items: start;
   justify-content: space-between;
 }
 /* ----- columna izquierda ----- */
