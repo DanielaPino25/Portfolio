@@ -1,92 +1,9 @@
-<!doctype html>
-<html lang="es">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sobre mí — Daniela Pino</title>
+<div id="header-placeholder"></div>
 
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <meta name="description" content="Conoce más sobre Daniela Pino, diseñadora de producto y UX/UI." />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=14" />
-</head>
-
-<body>
-  <!-- HEADER -->
-  <header class="topbar">
-    <div class="topbar-inner">
-      <a class="logo" href="index-es.html" aria-label="Inicio">
-        <img src="assets/Logo.svg?v=2" alt="Logo de Daniela Pino" />
-      </a>
-
-      <nav class="menu" aria-label="Principal">
-        <a href="SobreMi.html" data-nav="SobreMi.html">SOBRE MÍ</a>
-        <a href="Portfolio-es.html" data-nav="Portfolio-es.html">PORTAFOLIO</a>
-        <a href="Contacto.html" data-nav="Contacto.html">CONTACTO</a>
-
-        <div class="lang-switch" aria-label="Selector de idioma">
-          <a href="index-es.html" class="active">ES</a>
-          <span>/</span>
-          <a href="index.html">EN</a>
-        </div>
-      </nav>
-
-      <button class="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="navdrawer">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
-
-  <!-- NAV MÓVIL -->
-  <nav id="navdrawer" class="navdrawer" aria-label="Principal móvil">
-    <a href="SobreMi.html" data-nav="SobreMi.html">SOBRE MÍ</a>
-    <a href="Portfolio-es.html" data-nav="Portfolio-es.html">PORTAFOLIO</a>
-    <a href="Contacto.html" data-nav="Contacto.html">CONTACTO</a>
-
-    <div class="lang-switch" aria-label="Selector de idioma">
-      <a href="index-es.html" class="active">ES</a>
-      <span>/</span>
-      <a href="index.html">EN</a>
-    </div>
-  </nav>
-
-  <!-- CONTENIDO -->
-  <main style="padding: 2rem; max-width: 960px; margin: auto;">
-    <h1>Sobre mí</h1>
-    <p>¡Hola! Soy <strong>Daniela Pino</strong>, diseñadora de producto y UX/UI. Me apasiona crear experiencias significativas que conecten a las personas con el diseño funcional y estético.</p>
-    <p>Aquí puedes compartir tu trayectoria, enfoque de diseño, valores o una breve biografía profesional.</p>
-  </main>
-
-  <footer style="text-align:center; padding:1rem; border-top:none;">
-    © <span id="year"></span> Daniela Pino
-  </footer>
-
-  <!-- SCRIPTS -->
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    const file = (location.pathname.split('/').pop() || '').replace(/[#?].*$/, '');
-    document.querySelectorAll('.menu a[data-nav], #navdrawer a[data-nav]').forEach(a=>{
-      if (a.getAttribute('data-nav').toLowerCase() === file.toLowerCase()){
-        a.classList.add('is-active');
-        a.setAttribute('aria-current','page');
-      }
+<script>
+  fetch("header.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("header-placeholder").innerHTML = data;
     });
-
-    const burger=document.querySelector('.burger');
-    burger?.addEventListener('click',()=>{const open=document.body.classList.toggle('nav-open');burger.setAttribute('aria-expanded',open?'true':'false')});
-    document.querySelectorAll('#navdrawer a').forEach(a=>a.addEventListener('click',()=>document.body.classList.remove('nav-open')));
-  </script>
-  <script>
-  // Sombra del toolbar cuando hay desplazamiento
-  (function(){
-    const onScroll = () => {
-      document.body.classList.toggle('scrolled', window.scrollY > 8);
-    };
-    window.addEventListener('scroll', onScroll, {passive:true});
-    onScroll(); // estado inicial
-  })();
 </script>
-</body>
-</html>
-
