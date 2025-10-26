@@ -4,53 +4,93 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact — Daniela Pino</title>
-  <meta name="description" content="Get in touch with Daniela Pino — Product and UX/UI Designer." />
+  <meta name="description" content="Get in touch with Daniela Pino — Product & UX/UI Designer." />
   <link rel="stylesheet" href="./style.css?v=24">
   <link rel="icon" type="image/png" href="./assets/favicon.svg">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 
-<body>
-
-  <!-- 🔹 Header igual que el de la página principal -->
+<body class="en">
+  <!-- HEADER (igual que en Home) -->
   <header>
     <a class="logo" href="index.html">
       <img src="assets/Logo.svg" alt="Logo Daniela Pino">
     </a>
 
-    <div class="nav-right"> 
+    <div class="nav-right">
       <nav>
         <a href="./AboutMe.html">ABOUT ME</a>
         <a href="./Portfolio.html">PORTFOLIO</a>
-        <a class="active" href="./Contact.html">CONTACT</a> <!-- esta es la página actual -->
+        <a class="active" href="./Contact.html">CONTACT</a>
       </nav>
 
       <div class="lang-switch">
         <a class="lang-btn es" href="Contact-es.html">ES</a>
         <span class="lang-sep">/</span>
-        <a class="lang-btn en" href="Contact.html">EN</a>
+        <a class="lang-btn en active" href="Contact.html">EN</a>
       </div>
-    </div> 
+    </div>
   </header>
 
-  <div class="container">
-    <main class="contact">
-      <h1>Let’s connect!</h1>
-      <p>If you’d like to collaborate or just say hi, feel free to reach out:</p>
-      <!-- Aquí luego añadiremos el formulario o la info de contacto -->
-    </main>
+  <!-- MAIN CONTACT CONTENT -->
+  <div class="contact-wrapper">
+    <!-- Big faded word CONTACT in background -->
+    <div class="contact-hero-word">CONTACT</div>
 
-    <footer class="footer">© <span id="year"></span> Daniela Pino</footer>
+    <section class="contact-grid">
+      <!-- LEFT COLUMN -->
+      <div class="contact-left">
+        <h1 class="contact-headline">
+          Thank You for Visiting!<br>
+          Let’s Get in Touch
+        </h1>
+
+        <p class="contact-copy">
+          I hope you enjoyed exploring my work! I’m always open to new opportunities
+          and collaborations. If you have any questions, a project in mind,
+          or just want to say hello, feel free to reach out.
+          Don’t forget to follow me to stay updated on my latest projects!
+        </p>
+
+        <div class="contact-socials">
+          <a class="social" href="https://www.instagram.com/bydanipino?igsh=bzJ0MHhnY2JmeTZn&utm_source=qr" target="_blank" rel="noreferrer noopener">
+            <img src="assets/ig.png" alt="Instagram">
+          </a>
+          <a class="social" href="https://www.behance.net/danielapinom" target="_blank" rel="noreferrer noopener">
+            <img src="assets/be.png" alt="Behance">
+          </a>
+          <a class="social" href="https://www.linkedin.com/in/pinodaniela/" target="_blank" rel="noreferrer noopener">
+            <img src="assets/in.png" alt="LinkedIn">
+          </a>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <form class="contact-form">
+        <label class="field">
+          <input type="text" placeholder="Name:" name="name">
+        </label>
+
+        <label class="field">
+          <input type="text" placeholder="Email or Phone number" name="contactInfo">
+        </label>
+
+        <label class="field field-message">
+          <textarea placeholder="Message" name="message"></textarea>
+        </label>
+
+        <button type="submit" class="btn contact-submit">Send message</button>
+      </form>
+    </section>
+
+    <footer class="footer contact-footer">© <span id="year"></span> Daniela Pino</footer>
   </div>
 
-  <!-- Scripts -->
   <script>
-    // Año automático
+    // Year
     document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 
-  <script>
-    // Idioma activo
+    // Bold active language
     document.addEventListener("DOMContentLoaded", function() {
       const isSpanish = window.location.pathname.includes("-es");
       const esBtn = document.querySelector(".lang-btn.es");
@@ -65,6 +105,5 @@
       }
     });
   </script>
-
 </body>
 </html>
