@@ -435,7 +435,7 @@ body.es .intro {
 /* palabra CONTACT gigante */
 .contact-hero-word {
   position: absolute;
-  top: 40px;        /* distancia desde arriba de la página */
+  top: 0px;        /* distancia desde arriba de la página */
   right: 0;    
   font-size: 150px;
   font-weight: 500;
