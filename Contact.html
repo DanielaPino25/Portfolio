@@ -105,5 +105,58 @@
       }
     });
   </script>
+  <main class="contact-wrapper">
+
+  <!-- Título gigante de fondo -->
+  <h1 class="contact-hero-word">CONTACT</h1>
+
+  <section class="contact-content">
+    <!-- Columna izquierda -->
+    <div class="contact-left">
+      <h2 class="contact-headline">
+        Thank You for Visiting!<br>
+        Let’s Get in Touch
+      </h2>
+
+      <p class="contact-text">
+        I hope you enjoyed exploring my work! I’m always open to new
+        opportunities and collaborations. If you have any questions, a
+        project in mind, or just want to say hello, feel free to reach
+        out. Don’t forget to follow me to stay updated on my latest projects!
+      </p>
+
+      <div class="contact-socials">
+        <a class="contact-social" href="https://www.instagram.com/bydanipino?igsh=bzJ0MHhnY2JmeTZn&utm_source=qr" target="_blank" rel="noreferrer noopener">
+          <img src="assets/ig.png" alt="Instagram">
+        </a>
+        <a class="contact-social" href="https://www.behance.net/danielapinom" target="_blank" rel="noreferrer noopener">
+          <img src="assets/be.png" alt="Behance">
+        </a>
+        <a class="contact-social" href="https://www.linkedin.com/in/pinodaniela/" target="_blank" rel="noreferrer noopener">
+          <img src="assets/in.png" alt="LinkedIn">
+        </a>
+      </div>
+    </div>
+
+    <!-- Columna derecha -->
+    <form class="contact-form">
+      <input type="text" class="contact-input" placeholder="Name:" />
+
+      <input type="text" class="contact-input" placeholder="Email or Phone number" />
+
+      <textarea class="contact-textarea" placeholder="Message"></textarea>
+
+      <button class="contact-submit" type="submit">
+        Send message
+      </button>
+    </form>
+  </section>
+
+  <footer class="footer">© <span id="year"></span> Daniela Pino</footer>
+</main>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
