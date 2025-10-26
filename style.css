@@ -440,7 +440,7 @@ body.es .intro {
 .contact-content {
   display: grid;
   grid-template-columns: 0.55fr 0.45fr;
-  gap: 30px;
+  gap: 10px;
   margin-top: 270px; /* empuja abajo para que no choque con CONTACT */
   align-items: flex-start;
   justify-content: space-between;
