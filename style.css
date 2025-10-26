@@ -599,7 +599,6 @@ body.es .intro {
   backdrop-filter: none;
   border: none;  
   box-shadow: none; 
-  border-top: 1px solid var(--border);
   z-index: 20;  
   margin: 16px auto 12px;
 } 
