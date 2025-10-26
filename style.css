@@ -122,8 +122,8 @@ nav a.active::before {
   transition: color 0.2s ease;
 }
 .lang-btn.active {
-  font-weight: 600;
-  color: #4e4e4e;
+  font-weight: 600 !important;
+  color: #4e4e4e !important;
 }
 .lang-sep {
   color: #4e4e4e;
@@ -143,12 +143,6 @@ nav a.active::before {
   top: 0.5px;
   opacity: 0.9;
 }
-/* 🔹 Fuerza el color gris en los botones de idioma activos */
-.lang-switch .lang-btn.active {
-  color: #4e4e4e !important; /* evita que se herede el naranja */
-  font-weight: 600;
-}
-
 
 /* Hero con menos separación */
 .hero{
