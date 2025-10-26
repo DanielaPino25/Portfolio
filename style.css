@@ -508,9 +508,9 @@ body.es .intro {
   font-size: 0.9rem;
   font-weight: 300;
   color: #4e4e4e;
-  padding: 10px 14px;
+  padding: 6px 16px;
   border: 1px solid #cfd2d8;
-  border-radius: 20px;
+  border-radius: 9999px;
   outline: none;
 }
 .contact-input:focus {
@@ -521,12 +521,12 @@ body.es .intro {
   width: 100%;
   min-height: 140px;
   font-family: 'Poppins', sans-serif;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 300;
   color: #4e4e4e;
-  padding: 10px 14px;
+  padding: 8px 16px;
   border: 1px solid #cfd2d8;
-  border-radius: 9999px;
+  border-radius: 24px;
   outline: none;
   resize: vertical;
 }
