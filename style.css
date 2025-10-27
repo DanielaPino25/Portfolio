@@ -639,3 +639,9 @@ header .lang-btn {
   padding-top: 0 !important;  
   line-height: 1.05 !important; /* reduce el espacio vertical dentro del subtítulo */
 }
+.role-headline {
+  margin-top: 0px !important;     /* une las dos líneas */
+  margin-bottom: 6px !important;
+  padding-top: 0 !important;  
+  line-height: 1.05 !important; /* reduce el espacio vertical dentro del subtítulo */
+}
