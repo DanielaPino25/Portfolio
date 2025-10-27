@@ -405,17 +405,21 @@ body.es .intro {
 }
 
 .footer{
-  background: transparent;
-  backdrop-filter: none;
-  border: none;          
-  box-shadow: none;     
-  margin: 16px auto 12px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   text-align: center;
+  color: #4e4e4e;
   font-size: 0.8rem;
   line-height: 1.4;
-  color: #4e4e4e;
   padding: 0;
-  flex-shrink: 0;
+  background: transparent;
+  backdrop-filter: none;
+  border: none;  
+  box-shadow: none; 
+  z-index: 20;  
+  margin: 16px auto 12px;
 }
 
 
