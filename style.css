@@ -196,7 +196,7 @@ nav a.active::before {
 
 .socials{
   display:flex;
-  gap:10px;
+  gap:12px;
   margin-right: 14px;
 }
 .social{
@@ -477,7 +477,7 @@ body.es .intro {
 .contact-socials {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 12px;
   margin-top: 10px;
 }
 .contact-social {
