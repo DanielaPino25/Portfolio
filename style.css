@@ -19,6 +19,7 @@ body{
   background:var(--bg);
   color:var(--text);
   overflow: hidden;
+  padding-bottom: 40px;
 }
 
 a{color:inherit;text-decoration:none}
