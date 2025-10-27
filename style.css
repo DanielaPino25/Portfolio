@@ -473,16 +473,14 @@ body.es .intro {
 }
 /* iconos sociales */
 .contact-socials {
-  width: 48px;         
-  height: 48px; 
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 24px;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
 }
 .contact-social {
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   overflow: hidden;
   display: flex;
@@ -495,6 +493,7 @@ body.es .intro {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;  
 }
 .contact-social:hover {
   transform: translateY(-3px);
