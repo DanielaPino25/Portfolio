@@ -1,52 +1,63 @@
-// header-loader.js
 document.addEventListener("DOMContentLoaded", async () => {
+  // 1. buscamos el contenedor donde irá el header
   const headerSlot = document.getElementById("site-header");
   if (!headerSlot) return;
 
+  // 2. cargamos el header.html
   try {
     const res = await fetch("header.html");
-    const html = await res.text();
-    headerSlot.innerHTML = html;
+    const headerHTML = await res.text();
+    headerSlot.innerHTML = headerHTML;
+  } catch (err) {
+    console.error("No pude cargar header.html", err);
+    return;
+  }
 
-    const path = window.location.pathname;
-    const isSpanish = path.includes("-es");
+  // 3. ahora que el header ya está en el DOM, ajustamos idioma / activo
+  const path = window.location.pathname;
+  const isSpanish = path.includes("-es");
 
-    // Detecta botones idioma
-    const esBtn = headerSlot.querySelector(".lang-btn.es");
-    const enBtn = headerSlot.querySelector(".lang-btn.en");
+  // idioma activo
+  const esBtn = headerSlot.querySelector(".lang-btn.es");
+  const enBtn = headerSlot.querySelector(".lang-btn.en");
+
+  if (isSpanish) {
+    esBtn.classList.add("active");
+    enBtn.classList.remove("active");
+  } else {
+    enBtn.classList.add("active");
+    esBtn.classList.remove("active");
+  }
+
+  // 4. actualizar textos y hrefs del menú si estamos en español
+  const navLinks = headerSlot.querySelectorAll("nav a");
+  navLinks.forEach(link => {
+    const hrefEn = link.getAttribute("href");      // ej: "AboutMe.html"
+    const hrefEs = link.getAttribute("data-es");   // ej: "SobreMi-es.html"
 
     if (isSpanish) {
-      esBtn.classList.add("active");
-      enBtn.classList.remove("active");
+      // cambiar los textos visibles
+      if (link.textContent.trim() === "ABOUT ME") link.textContent = "SOBRE MÍ";
+      if (link.textContent.trim() === "PORTFOLIO") link.textContent = "PORTAFOLIO";
+      if (link.textContent.trim() === "CONTACT") link.textContent = "CONTACTO";
+
+      // cambiar la ruta al .html en español si existe
+      if (hrefEs) {
+        link.setAttribute("href", hrefEs);
+      }
     } else {
-      enBtn.classList.add("active");
-      esBtn.classList.remove("active");
+      // en inglés dejamos los textos como están y href normal
+      link.setAttribute("href", hrefEn);
     }
 
-    // Si estás en español, cambia los textos del menú y los hrefs
-    const navLinks = headerSlot.querySelectorAll("nav a");
-    navLinks.forEach(link => {
-      const enHref = link.getAttribute("href");
-      const esHref = link.getAttribute("data-es");
-
-      if (isSpanish) {
-        // cambia los textos del menú
-        if (link.textContent === "ABOUT ME") link.textContent = "SOBRE MÍ";
-        if (link.textContent === "PORTFOLIO") link.textContent = "PORTAFOLIO";
-        if (link.textContent === "CONTACT") link.textContent = "CONTACTO";
-
-        // cambia el destino del href
-        if (esHref) link.setAttribute("href", esHref);
-      } else {
-        // vuelve al inglés
-        link.setAttribute("href", enHref);
-      }
-
-      // marca la página activa automáticamente
-      const linkPath = link.getAttribute("href");
-      if (path.endsWith(linkPath)) link.classList.add("active");
-    });
-  } catch (err) {
-    console.error("No pude cargar el header:", err);
-  }
+    // 5. marcar la página activa con la clase .active
+    // (para que salga el pill coral en CONTACT cuando estás en Contact.html, etc.)
+    const currentPage = path.split("/").pop(); // última parte de la URL
+    if (
+      currentPage === link.getAttribute("href") ||
+      currentPage === link.getAttribute("href").replace("./", "")
+    ) {
+      link.classList.add("active");
+    }
+  });
 });
