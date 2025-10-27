@@ -200,8 +200,8 @@ nav a.active::before {
   margin-right: 14px;
 }
 .social{
-  width:48px;
-  height:48px;
+  width:42px;
+  height:42px;
   border:none !important;
   outline:none !important;
   background: none;
@@ -489,8 +489,8 @@ body.es .intro {
   margin-top: 10px;
 }
 .contact-social {
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   overflow: hidden;
   display: flex;
