@@ -361,6 +361,13 @@ nav a.active::before {
   line-height: 1;
   font-family: 'Playfair Display', serif;
 }
+.role-headline {
+  font-size: 45px;
+  line-height: 1;
+  font-weight: 350;
+  margin-top: 0px;
+  color: #4e4e4e;
+}
 .role-headline .role-accent {
   color: var(--accent);  /* azul suave */
   font-weight: 350;
@@ -629,19 +636,22 @@ header .lang-btn {
   font-weight: 300 !important;
   color: #4e4e4e !important;
 }
-.intro-headline {
-  margin-bottom: 5px !important;  /* elimina espacio extra debajo del nombre */
-  line-height: 1.05 !important;   /* mantiene compacto el texto coral */
-}
-.role-headline .role-accent {
-  margin-top: 0px !important;     /* une las dos líneas */
-  margin-bottom: 6px !important;
-  padding-top: 0 !important;  
-  line-height: 1.05 !important; /* reduce el espacio vertical dentro del subtítulo */
-}
+
+/* compactar bloque título/subtítulo/párrafo en el hero */
 .role-headline {
-  margin-top: 0px !important;     /* une las dos líneas */
-  margin-bottom: 6px !important;
-  padding-top: 0 !important;  
-  line-height: 1.05 !important; /* reduce el espacio vertical dentro del subtítulo */
+  margin-top: 0 !important;         /* ya lo tenías */
+  margin-bottom: 4px !important;     /* 🔥 fuerza a casi cero el espacio debajo del azul */
+  line-height: 1.1 !important;
+  padding: 0 !important;
 }
+.intro {
+  margin-top: 0 !important;          /* quita hueco arriba del párrafo */
+  padding-top: 0 !important;
+  line-height: 1.5;                  /* puedes dejarlo */
+}
+/* por si .intro es un <p> normal y mantiene márgenes del navegador */
+.intro p {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
