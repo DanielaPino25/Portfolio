@@ -355,13 +355,13 @@ nav a.active::before {
   line-height: 1;
 }  
 .intro-headline .hi {
-  font-size: 39px;
+  font-size: 42px;
   color: #4e4e4e;
   font-weight: 300;
   line-height: 1;
 }
 .intro-headline .name {
-  font-size: 70px;
+  font-size: 80px;
   color: var(--brand);   /* coral */
   font-weight: 300;
   white-space: nowrap;   /* evita que "Daniela Pino" salte de línea */
@@ -369,7 +369,7 @@ nav a.active::before {
   font-family: 'Playfair Display', serif;
 }
 .role-headline {
-  font-size: 35px;
+  font-size: 42px;
   line-height: 1; /* 🔹 antes 1.3 → más apretado */
   font-weight: 300;
   margin-top: 6px; /* 🔹 reduce el espacio entre “Daniela Pino” y la línea siguiente */
