@@ -171,7 +171,8 @@ nav a.active::before {
 .projects{ 
   grid-area: projects;
   align-self: end;
-  margin-top: auto;
+  margin-top: 0;
+  margin-botton: -40px;
   padding-top: 0;
   transform: translateY(-8px);
 }
