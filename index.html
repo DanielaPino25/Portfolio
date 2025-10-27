@@ -5,27 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Daniela Pino — Product & UX/UI Designer</title>
   <meta name="description" content="Portfolio home de Daniela Pino — Product & UX/UI Designer" />
-  <link rel="stylesheet" href="./style.css?v=25">
+ 
+  <link rel="stylesheet" href="./style.css?v=26">
   <link rel="icon" type="image/png" href="./assets/favicon.svg">
+ 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">  
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
 </head>
 
   <body class="en">
   <div id="site-header"></div>
- 
-    <!-- el resto de tu página -->
-  <div class="container"> 
-  
+
+  <div class="container">  
     <section class="hero" id="home">
       <div class="copy">
+        
   <h1 class="intro-headline">
     <span class="hi">Hi, I'm </span>
     <span class="name">Daniela </span>
   </h1>
 
   <h2 class="role-headline">
-    <span class="role-accent">      Product & UX/UI Designer</span>
+    <span class="role-accent">Product & UX/UI Designer</span>
   </h2>
 
   <p class="intro">
@@ -45,19 +46,18 @@
       <a class="social" href="https://www.linkedin.com/in/pinodaniela/" target="_blank" rel="noreferrer noopener">
         <img src="assets/in-03.svg" alt="LinkedIn">
       </a>
-
+    </div>
+    
       <a href="./Contact.html" class="btn">Contact me!</a>
     </div>
   </div>
-</div>
-      
+
       <div class="photo" aria-label="Daniela smiling and reaching out, boardwalk background">
         <img src="assets/PrincipalDP.jpg" alt="Daniela Pino" />
       </div>
       
     <section class="projects" id="portfolio" aria-label="project teasers">
-      <div class="grid">
-        
+      <div class="grid">  
    <div class="project-item">
       <span>Project 1</span>
       <div class="card">
@@ -100,12 +100,13 @@
     <footer class="footer">© <span id="year"></span> Daniela Pino</footer>
   
   <script>
-    // Year
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
   
   <script>
-  const header = document.querySelector('header');
+document.addEventListener("DOMContentLoaded", () => {
+      const header = document.querySelector('header');
+      if (!header) return;
 
   window.addEventListener('scroll', () => {
     if (window.scrollY > 20) {
@@ -120,14 +121,15 @@
       header.style.borderBottom = 'none';
     }
   });
+  });
 </script>
+    
   <script>
 document.addEventListener("DOMContentLoaded", function() {
   const currentLang = window.location.pathname.includes("-es") ? "es" : "en";
-
   const esBtn = document.querySelector(".lang-btn.es");
   const enBtn = document.querySelector(".lang-btn.en");
-
+  if (esBtn && enBtn) {
   if (currentLang === "es") {
     esBtn.classList.add("active");
     enBtn.classList.remove("active");
@@ -135,6 +137,7 @@ document.addEventListener("DOMContentLoaded", function() {
     enBtn.classList.add("active");
     esBtn.classList.remove("active");
   }
+ }
 });
 </script>
      <script src="header-loader.js"></script>
