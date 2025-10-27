@@ -161,7 +161,7 @@ nav a.active::before {
     "projects photo";
   align-items:end;
   gap:30px;
-  overflow: hidden;
+  overflow: visible;
 }
 .copy{ 
   grid-area: copy;
