@@ -165,7 +165,7 @@ nav a.active::before {
 }
 .copy{ 
   grid-area: copy;
-  margin-top: 10px;
+  margin-top: 0;
 }
 .photo{ 
   grid-area: photo; 
