@@ -153,7 +153,7 @@ nav a.active::before {
 /* Hero con menos separación */
 .hero{
   flex: 1;
-  margin-top: 100px !important;
+  margin-top: 90px !important;
   display:grid;
   grid-template-columns:1.2fr .8fr;
   grid-template-areas:
@@ -642,6 +642,7 @@ header .lang-btn {
 }
 .role-headline {
   margin-top: 0px !important;     /* une las dos líneas */
+  margin-bottom: 6px !important;
   padding-top: 0 !important;  
   line-height: 1.05 !important; /* reduce el espacio vertical dentro del subtítulo */
 }
