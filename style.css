@@ -153,7 +153,7 @@ nav a.active::before {
 /* Hero con menos separación */
 .hero{
   flex: 1;
-  margin-top: 92px !important;
+  margin-top: 85px !important;
   display:grid;
   grid-template-columns:1.2fr .8fr;
   grid-template-areas:
