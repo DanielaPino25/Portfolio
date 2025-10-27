@@ -366,6 +366,7 @@ nav a.active::before {
   font-weight: 300;
   white-space: nowrap;   /* evita que "Daniela Pino" salte de línea */
   line-height: 1;
+  font-family: 'Playfair Display', serif;
 }
 .role-headline {
   font-size: 35px;
@@ -373,7 +374,6 @@ nav a.active::before {
   font-weight: 300;
   margin-top: 6px; /* 🔹 reduce el espacio entre “Daniela Pino” y la línea siguiente */
   color: #4e4e4e;
-  font-family: 'Playfair Display', serif;
 }
 .role-headline .role-accent {
   color: var(--accent);  /* azul suave */
