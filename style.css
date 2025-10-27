@@ -172,7 +172,7 @@ nav a.active::before {
   grid-area: projects;
   align-self: end;
   margin-top: 20px;
-  margin-botton: 30px;
+  margin-bottom: 30px;
   padding-top: 0;
   transform: translateY(-8px);
 }
