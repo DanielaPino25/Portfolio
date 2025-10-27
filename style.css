@@ -132,7 +132,7 @@ nav a.active::before {
 }
 .lang-sep {
   color: #4e4e4e;
-  font-weight: 400;
+  font-weight: 300;
   margin: 0 1px;
   display: inline-block;
   transform: translateY(1px);
@@ -141,7 +141,7 @@ nav a.active::before {
   display: inline-block;
   margin: 0 10px; /* espacio a los lados */
   color: #4e4e4e;        /* mismo gris */
-  font-weight: 400;
+  font-weight: 300;
   font-size: 0.9rem;
   line-height: 1;
   position: relative;
