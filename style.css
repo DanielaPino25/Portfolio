@@ -638,6 +638,14 @@ body.es .intro {
 
 header nav a,
 header .lang-btn {
-  font-weight: 400 !important;
+  font-weight: 300 !important;
   color: #4e4e4e !important;
+}
+.intro-headline {
+  margin-bottom: 0px !important;  /* elimina espacio extra debajo del nombre */
+  line-height: 1.05 !important;   /* mantiene compacto el texto coral */
+}
+.role-headline {
+  margin-top: 0px !important;     /* une las dos líneas */
+  line-height: 1.05 !important;   /* reduce el espacio vertical dentro del subtítulo */
 }
