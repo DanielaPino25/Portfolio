@@ -67,7 +67,7 @@ nav{display:flex;gap:32px;}
 nav a{
   position: relative;
   color: #4e4e4e;
-  font-weight: 400;
+  font-weight: 300;
   text-decoration: none;
   padding: 6px 14px;
   border-radius: 9999px;
