@@ -355,7 +355,7 @@ nav a.active::before {
 .intro-headline .hi {
   font-size: 45px;
   color: #4e4e4e;
-  font-weight: 300;
+  font-weight: 250;
   margin-bottom: 4px !important;
   line-height: 1;
 }
@@ -385,7 +385,7 @@ nav a.active::before {
   line-height: 1.6;
   color: var(--muted);
   max-width: 50ch;
-  margin-top: 12px;
+  margin-top: 5px;
   font-family: 'Poppins', sans-serif;
 }
 
