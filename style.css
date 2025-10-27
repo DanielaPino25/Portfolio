@@ -650,3 +650,9 @@ body.es .intro {
 @media(max-width:480px){
   .grid{grid-template-columns:repeat(2,1fr);}
 }
+
+header nav a,
+header .lang-btn {
+  font-weight: 400 !important;
+  color: #4e4e4e !important;
+}
