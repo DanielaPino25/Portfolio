@@ -178,14 +178,6 @@ nav a.active::before {
 }
 
 .name{color:var(--brand)}
-.intro{
-  color: var(--muted);
-  max-width: 46ch;
-  font-size: 16px;
-  line-height: 1.5;
-  margin: 0 0 24px 0;
-  font-family: 'Poppins', sans-serif;
-}
 
 .actions{
   display:flex;
