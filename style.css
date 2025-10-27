@@ -500,6 +500,11 @@ body.es .intro {
   box-shadow: 0 8px 20px rgba(0,0,0,.08);
 }
 /* ----- columna derecha (form) ----- */
+.contact-right {
+  display: flex;
+  justify-content: flex-end; /* empuja el form al borde derecho */
+  padding-right: 100px; /* 🔹 mueve el formulario hacia la izquierda */
+}
 .contact-form {
   width: 100%;
   display: flex;
