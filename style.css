@@ -159,7 +159,7 @@ nav a.active::before {
   grid-template-areas:
     "copy photo"
     "projects photo";
-  align-items:start;
+  align-items:end;
   gap:30px;
   overflow: hidden;
 }
@@ -171,7 +171,7 @@ nav a.active::before {
 .projects{ 
   grid-area: projects;
   align-self: end;
-  margin-top: 0;
+  margin-top: auto;
   padding-top: 0;
   transform: translateY(-8px);
 }
