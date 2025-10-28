@@ -656,12 +656,12 @@ header .lang-btn {
 }
 .role-headline {
   margin-top: 0 !important;         /* ya lo tenías */
-  margin-bottom: -5px !important;     /* 🔥 fuerza a casi cero el espacio debajo del azul */
+  margin-bottom: -10px !important;     /* 🔥 fuerza a casi cero el espacio debajo del azul */
   line-height: 1.1 !important;
   padding: 0 !important;
 }
 .intro {
-  margin-top: 0 !important;          /* quita hueco arriba del párrafo */
+  margin-top: -10px !important;          /* quita hueco arriba del párrafo */
   padding-top: 0 !important;
   line-height: 1.5;                  /* puedes dejarlo */
 }
