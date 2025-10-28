@@ -462,6 +462,8 @@ body.es .intro {
 }
 /* ----- columna izquierda ----- */
 .contact-left {
+  display: flex;
+  flex-direction: column;
   max-width: 600px;
   padding-left: 0 !important;
   margin-left: -24px !important;
@@ -497,7 +499,8 @@ body.es .intro {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-top: 30px !important;
+  align-self: end;
+  margin-top: auto;
 }
 .contact-social {
   width: 42px;
