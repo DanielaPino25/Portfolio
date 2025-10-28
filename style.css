@@ -496,7 +496,7 @@ body.es .intro {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-top: 10px;
+  margin-top: 30px !important;
 }
 .contact-social {
   width: 42px;
