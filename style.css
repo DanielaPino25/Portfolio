@@ -450,7 +450,7 @@ body.es .intro {
   white-space: nowrap;
 }
 body.es .contact-hero-word {
-  transform: translateY(40px); /* 🔹 en lugar de cambiar el top */
+  transform: translateY(10px); /* 🔹 en lugar de cambiar el top */
 }
 /* grid principal: texto izq / form der */
 .contact-content {
@@ -672,7 +672,7 @@ header .lang-btn {
 
 /* tamaño y espaciado del título principal en español */
 body.es .contact-headline {
-  font-size: 30px !important;     /* más pequeño */
+  font-size: 10px !important;     /* más pequeño */
   font-weight: 300 !important;    /* más fino */
   line-height: 1.2;
   color: #4e4e4e;
@@ -683,7 +683,7 @@ body.es .contact-headline {
 /* la segunda línea "Conectemos" */
 body.es .contact-headline .blue-text {
   display: block;                 /* fuerza salto de línea tipo subtítulo */
-  font-size: 30px !important;     /* mismo tamaño que la línea de arriba */
+  font-size: 10px !important;     /* mismo tamaño que la línea de arriba */
   font-weight: 400 !important;    /* un pelín más marcada */
   color: var(--accent);           /* azul */
   margin-top: 4px;                /* controla qué tan pegadas están las dos líneas */
