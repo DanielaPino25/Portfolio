@@ -525,7 +525,7 @@ body.es .intro {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  max-width: 640px;
+  max-width: 750px;
   margin-right: 0 !important;
 }
 .contact-input {
