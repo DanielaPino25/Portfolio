@@ -737,7 +737,7 @@ body.es .contact-text {
   grid-template-columns: 0.6fr 1.4fr;
   gap: 60px;
   align-items: start;
-  margin-top: 160px; /* empuja para que el texto no choque con el ABOUT ME gigante */
+  margin-top: 100px; /* empuja para que el texto no choque con el ABOUT ME gigante */
 }
 
 /* Columna izquierda */
