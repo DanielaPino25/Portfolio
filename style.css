@@ -647,39 +647,3 @@ header .lang-btn {
   font-weight: 300 !important;
   color: #4e4e4e !important;
 }
-
-/* compactar bloque título/subtítulo/párrafo en el hero */
-.intro-headline {
-  margin-bottom: 0 !important;   /* elimina espacio debajo del h1 */
-  padding-bottom: 0 !important;
-  line-height: 1 !important;     /* compacta el bloque superior */
-}
-.role-headline {
-  margin-top: 0 !important;         /* ya lo tenías */
-  margin-bottom: -10px !important;     /* 🔥 fuerza a casi cero el espacio debajo del azul */
-  line-height: 1.1 !important;
-  padding: 0 !important;
-}
-.intro {
-  margin-top: -10px !important;          /* quita hueco arriba del párrafo */
-  padding-top: 0 !important;
-  line-height: 1.5;                  /* puedes dejarlo */
-}
-/* por si .intro es un <p> normal y mantiene márgenes del navegador */
-.intro p {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-}
-
-/* ===== Márgenes específicos para la versión en español ===== */
-body.es .intro-headline {
-  margin-bottom: 0;  /* 🔹 espacio debajo de “Hola, soy Daniela” */
-}
-body.es .role-headline {
-  margin-top: 0;       /* 🔹 elimina espacio extra arriba */
-  margin-bottom: 2px; /* 🔹 espacio debajo de “Diseñadora de producto y UX/UI” */
-}
-body.es .intro {
-  margin-top: 0;    /* 🔹 espacio encima del párrafo de bienvenida */
-}
-
