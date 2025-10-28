@@ -191,7 +191,7 @@ nav a.active::before {
 .socials{
   display:flex;
   gap:12px;
-  margin-right: -5px;
+  margin-right: -7px;
 }
 .social{
   width:42px;
@@ -226,7 +226,7 @@ nav a.active::before {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding:8px 45px;
+  padding:8px 28px;
   border: none;
   border-radius:999px;
   background: transparent;
