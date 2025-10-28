@@ -464,7 +464,7 @@ body.es .intro {
 .contact-left {
   max-width: 600px;
   padding-left: 0 !important;
-  margin-left: -22px !important;
+  margin-left: -24px !important;
   margin-top: 245px;
   align-self: start;
   justify-self: start;          /* 🔹 asegura que se pegue a la izquierda en el grid */
@@ -586,8 +586,10 @@ body.es .intro {
   box-shadow: none;
   outline: none;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  width: 100%;                 /* <<< ancho completo como en tu captura actual */
-  max-width: 440px;
+  width: 50%;                 /* <<< ancho completo como en tu captura actual */
+  max-width: 220px;
+  margin-left: auto;      /* 🔹 lo empuja hacia la derecha */
+  display: block;         /* 🔹 permite usar margin-left:auto correctamente */
   text-align: center;
 }
 .contact-submit::before {
