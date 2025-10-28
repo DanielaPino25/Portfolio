@@ -370,7 +370,7 @@ body.es .btn {
   font-size: 45px;
   line-height: 1;
   font-weight: 300;
-  margin-top: 0px;
+  margin-top: 4px !important;
   color: #4e4e4e;
 }
 .role-headline .role-accent {
@@ -398,6 +398,7 @@ body.es .intro-headline .name {
 }
 body.es .role-headline {
   font-size: 39px;
+  margin-top: 4px;
 }
 body.es .role-headline .role-accent {
   font-size: 39px;
