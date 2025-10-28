@@ -523,7 +523,7 @@ body.es .intro {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  max-width: 900px !important;
+  max-width: 1000px !important;
   margin-right: 0 !important;
 }
 .contact-input {
