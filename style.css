@@ -449,6 +449,9 @@ body.es .intro {
   user-select: none;
   white-space: nowrap;
 }
+body.es .contact-hero-word {
+  top: 150px;          /* <-- ajusta este valor hasta que CONTACTO baje a donde la querés */
+}
 /* grid principal: texto izq / form der */
 .contact-content {
   display: grid;
