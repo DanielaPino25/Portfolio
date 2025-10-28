@@ -399,7 +399,7 @@ body.es .intro-headline .name {
 }
 body.es .role-headline {
   font-size: 39px;
-  margin-top: 20px;
+  margin-top: 18px;
 }
 body.es .role-headline .role-accent {
   font-size: 39px;
@@ -450,7 +450,7 @@ body.es .intro {
   white-space: nowrap;
 }
 body.es .contact-hero-word {
-  transform: translateY(90px); /* 🔹 en lugar de cambiar el top */
+  transform: translateY(95px); /* 🔹 en lugar de cambiar el top */
 }
 /* grid principal: texto izq / form der */
 .contact-content {
@@ -671,7 +671,7 @@ header .lang-btn {
   
 /* ==== AJUSTES SOLO PARA LA VERSIÓN EN ESPAÑOL ==== */
 body.es .contact-headline {
-  font-size: 36px;          /* 🔹 más pequeño que el original */
+  font-size: 30px;          /* 🔹 más pequeño que el original */
   font-weight: 300;
   line-height: 1.2;
   color: #4e4e4e;
@@ -679,7 +679,7 @@ body.es .contact-headline {
 }
 body.es .contact-headline strong {
   display: block;
-  font-size: 32px;          /* 🔹 un poco más pequeño */
+  font-size: 30px;          /* 🔹 un poco más pequeño */
   font-weight: 400;         /* menos negrita que antes */
   color: var(--accent);     /* azul suave */
   margin-top: 4px;          /* los acerca entre sí */
