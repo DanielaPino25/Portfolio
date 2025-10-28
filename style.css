@@ -504,7 +504,10 @@ body.es .contact-hero-word {
   align-items: center;
   gap: 12px;
   align-self: flex-start;
-  margin-top: 40px;
+  margin-top: 90px !important;
+}
+body.es .contact-socials {
+  margin-top: 100px !important;
 }
 .contact-social {
   width: 42px;
