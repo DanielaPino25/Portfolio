@@ -430,6 +430,7 @@ body.es .intro {
   max-width: 75vw;        /* parecido al home */
   margin: 0 auto;
   padding-top: 10px;
+  padding-bottom: 60px;
   position: relative;
   font-family: 'Poppins', sans-serif;
   color: #4e4e4e;
@@ -452,7 +453,6 @@ body.es .intro {
   grid-template-columns: 1.4fr 0.8fr;
   gap: 20px;
   align-items: start;
-  justify-content: start;
   justify-content:center;
   margin-inline:auto;
   max-width: 1200px;
@@ -465,18 +465,13 @@ body.es .intro {
   margin-top: 250px;
   align-self: start;
 }
-.contact-right {
-  display: flex;
-  justify-content: flex-end;
-  padding-right: 100px;
-  margin-top: 250px;
-}
 .contact-headline {
   font-size: 50px;
   font-weight: 500;
   line-height: 1.3;
   color: #4e4e4e;
   margin-top: 0;
+  margin-bottom: 16px;
 }
 .contact-text {
   font-size: 1rem;
@@ -519,6 +514,7 @@ body.es .intro {
   display: flex;
   justify-content: flex-end; /* empuja el form al borde derecho */
   padding-right: 100px; /* 🔹 mueve el formulario hacia la izquierda */
+  margin-top: 250px;
 }
 .contact-form {
   width: 100%;
@@ -617,12 +613,17 @@ body.es .intro {
   }
   .contact-left {
     max-width: 100%;
+    margin-top: 120px;
+    padding-left: 0;
+  }
+   .contact-right {
+    max-width: 100%;
+    margin-top: 120px;
+    padding-left: 0;
   }
   .contact-form {
     max-width: 100%;
   }
-}
-
 
 /* Responsividad */
 @media(max-width:980px){
