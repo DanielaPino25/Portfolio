@@ -355,7 +355,7 @@ body.es .btn {
   font-size: 45px;
   color: #4e4e4e;
   font-weight: 250;
-  margin-bottom: 4px !important;
+  margin-top: 5px !important;
   line-height: 1;
 }
 .intro-headline .name {
@@ -370,14 +370,14 @@ body.es .btn {
   font-size: 45px;
   line-height: 1;
   font-weight: 300;
-  margin-top: -10px !important;
+  margin-top: -12px !important;
   color: #4e4e4e;
 }
 .role-headline .role-accent {
   color: var(--accent);  /* azul suave */
   font-weight: 300;
   font-size: 45px;
-  margin-bottom: 5px !important;
+  margin-bottom: 0px !important;
 }
 .intro {
   font-size: 1.1rem;
