@@ -241,6 +241,9 @@ nav a.active::before {
   margin-left: 18px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+body.es .btn {
+  font-size: 0.95rem; /* 🔹 ajusta un poco el tamaño de letra si es necesario */
+}
 .btn::before {
   content: "";
   position: absolute;
