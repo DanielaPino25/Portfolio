@@ -514,7 +514,7 @@ body.es .intro {
   display: flex;
   justify-content: flex-end; /* empuja el form al borde derecho */
   padding-right: 100px; /* 🔹 mueve el formulario hacia la izquierda */
-  margin-top: 250px;
+  margin-top: 200px;
 }
 .contact-form {
   width: 100%;
