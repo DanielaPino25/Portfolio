@@ -453,18 +453,18 @@ body.es .intro {
 .contact-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 60px;
   align-items: start;
   justify-content:center;
   margin-inline:auto;
-  max-width: 1200px;
+  max-width: 1100px;
   padding-inline:0px;
 }
 /* ----- columna izquierda ----- */
 .contact-left {
   max-width: 600px;
   padding-left: 0;
-  margin-top: 240px;
+  margin-top: 245px;
   align-self: start;
 }
 .contact-headline {
@@ -516,7 +516,7 @@ body.es .intro {
   display: flex;
   justify-content: flex-end; /* empuja el form al borde derecho */
   padding-right: 100px; /* 🔹 mueve el formulario hacia la izquierda */
-  margin-top: 255px;
+  margin-top: 260px;
 }
 .contact-form {
   width: 100%;
