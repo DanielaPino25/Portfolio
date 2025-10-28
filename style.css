@@ -226,7 +226,7 @@ nav a.active::before {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding:8px 22px;
+  padding:8px 22px !important;
   border: none;
   border-radius:999px;
   background: transparent;
