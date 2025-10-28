@@ -1,1 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contacto — Daniela Pino</title>
+  <meta name="description" content="Ponte en contacto con Daniela Pino — Product & UX/UI Designer" />
+
+  <!-- hoja de estilos -->
+  <link rel="stylesheet" href="./style.css?v=27">
+  <link rel="icon" type="image/png" href="./assets/favicon.svg">
+
+  <!-- tipografías -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">  
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+</head>
+
+<body class="es">
+  <!-- header dinámico -->
+  <div id="site-header"></div>
+
+  <main class="contact-wrapper">
+
+    <!-- palabra gigante de fondo -->
+    <div class="contact-hero-word">CONTACTO</div>
+
+    <section class="contact-content">
+      
+      <!-- Columna IZQUIERDA -->
+      <div class="contact-left">
+
+        <!-- Titular -->
+        <h2 class="contact-headline">
+          Gracias por visitar mi trabajo.<br>
+          <strong>Hablemos</strong>
+        </h2>
+
+        <!-- Párrafo -->
+        <p class="contact-text">
+          Gracias por visitar mi página! 
+          Siempre estoy abierta a nuevas ideas y
+          colaboraciones. No dudes en escribirme 
+          me encantaria leerte y conectar!
+        </p>
+
+        <!-- Redes sociales -->
+        <div class="contact-socials" aria-label="redes sociales">
+          <a class="contact-social" href="https://www.instagram.com/bydanipino?igsh=bzJ0MHhnY2JmeTZn&utm_source=qr" target="_blank" rel="noreferrer noopener">
+            <img src="assets/ig-02.svg" alt="Instagram">
+          </a>
+          <a class="contact-social" href="https://www.behance.net/danielapinom" target="_blank" rel="noreferrer noopener">
+            <img src="assets/be-01.svg" alt="Behance">
+          </a>
+          <a class="contact-social" href="https://www.linkedin.com/in/pinodaniela/" target="_blank" rel="noreferrer noopener">
+            <img src="assets/in-03.svg" alt="LinkedIn">
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Columna DERECHA (formulario) -->
+      <div class="contact-right">
+
+        <form class="contact-form" id="contactFormEs">
+          <input
+            class="contact-input"
+            type="text"
+            name="name"
+            placeholder="Nombre"
+            required
+          />
+
+          <input
+            class="contact-input"
+            type="text"
+            name="contact"
+            placeholder="Email o teléfono"
+            required
+          />
+
+          <textarea
+            class="contact-textarea"
+            name="message"
+            placeholder="Mensaje"
+            required
+          ></textarea>
+
+          <button class="contact-submit" type="submit">
+            Enviar mensaje
+          </button>
+        </form>
+
+      </div>
+
+    </section>
+  </main>
+
+  <footer class="footer">© <span id="year"></span> Daniela Pino</footer>
+
+  <script>
+    // año dinámico en footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+  <!-- carga del header y traducción dinámica de nav -->
+  <script src="header-loader.js"></script>
+</body>
+</html>
 
