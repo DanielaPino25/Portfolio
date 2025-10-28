@@ -480,6 +480,8 @@ body.es .intro {
 }
 .contact-headline .blue-text {
   color: var(--accent); /* 🔹 solo la segunda línea en azul */
+  display: block;
+  margin-top: -4px;
 }
 .contact-text {
   font-size: 1rem;
