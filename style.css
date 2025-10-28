@@ -665,3 +665,20 @@ header .lang-btn {
   font-weight: 300 !important;
   color: #4e4e4e !important;
 }
+  
+  /* === Animación de entrada desde la izquierda === */
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px); /* viene desde la izquierda */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0); /* posición final */
+  }
+}
+.slide-in {
+  animation: slideInLeft 1s ease-out forwards; /* duración y suavidad */
+  animation-delay: 0.5s; /* pequeño retraso opcional */
+}
+
