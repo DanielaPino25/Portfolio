@@ -656,7 +656,7 @@ header .lang-btn {
 }
 .role-headline {
   margin-top: 0 !important;         /* ya lo tenías */
-  margin-bottom: 7px !important;     /* 🔥 fuerza a casi cero el espacio debajo del azul */
+  margin-bottom: 2px !important;     /* 🔥 fuerza a casi cero el espacio debajo del azul */
   line-height: 1.1 !important;
   padding: 0 !important;
 }
@@ -677,7 +677,7 @@ body.es .intro-headline {
 }
 body.es .role-headline {
   margin-top: 0;       /* 🔹 elimina espacio extra arriba */
-  margin-bottom: 7px; /* 🔹 espacio debajo de “Diseñadora de producto y UX/UI” */
+  margin-bottom: 2px; /* 🔹 espacio debajo de “Diseñadora de producto y UX/UI” */
 }
 body.es .intro {
   margin-top: 0;    /* 🔹 espacio encima del párrafo de bienvenida */
