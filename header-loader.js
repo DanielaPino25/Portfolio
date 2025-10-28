@@ -28,7 +28,17 @@ document.addEventListener("DOMContentLoaded", async () => {
     enBtn.classList.add("active");
     esBtn.classList.remove("active");
   }
-
+  
+  // 🔹 🔹 NUEVO BLOQUE: hacer que el logo apunte a la versión correcta según idioma
+  const logoLink = headerSlot.querySelector(".logo");
+  if (logoLink) {
+    if (isSpanish) {
+      logoLink.setAttribute("href", "index-es.html");
+    } else {
+      logoLink.setAttribute("href", "index.html");
+    }
+  }
+  
   // 4. actualizar textos y hrefs del menú si estamos en español
   const navLinks = headerSlot.querySelectorAll("nav a");
   navLinks.forEach(link => {
