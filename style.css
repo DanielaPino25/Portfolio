@@ -369,13 +369,13 @@ body.es .btn {
 .role-headline {
   font-size: 45px;
   line-height: 1;
-  font-weight: 350;
+  font-weight: 400;
   margin-top: 0px;
   color: #4e4e4e;
 }
 .role-headline .role-accent {
   color: var(--accent);  /* azul suave */
-  font-weight: 350;
+  font-weight: 400;
   font-size: 45px;
   margin-bottom: 5px !important;
 }
@@ -466,8 +466,8 @@ body.es .intro {
   align-self: start;
 }
 .contact-headline {
-  font-size: 50px;
-  font-weight: 500;
+  font-size: 45px;
+  font-weight: 400;
   line-height: 1.3;
   color: var(--accent);
   margin-top: 0;
