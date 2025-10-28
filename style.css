@@ -645,7 +645,7 @@ body.es .contact-hero-word {
   .contact-form {
     max-width: 100%;
   }
-
+  }
 /* Responsividad */
 @media(max-width:980px){
   .hero{
