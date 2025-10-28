@@ -464,7 +464,7 @@ body.es .intro {
 .contact-left {
   max-width: 600px;
   padding-left: 0 !important;
-  margin-left: -10px !important;
+  margin-left: -20px !important;
   margin-top: 245px;
   align-self: start;
   justify-self: start;          /* 🔹 asegura que se pegue a la izquierda en el grid */
@@ -525,7 +525,7 @@ body.es .intro {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 50px !important;
+  gap: 15px !important;
   max-width: 1000px !important;
   margin-right: 0 !important;
 }
@@ -546,7 +546,7 @@ body.es .intro {
 }
 .contact-textarea {
   width: 100%;
-  min-height: 140px;
+  min-height: 220px;
   font-family: 'Poppins', sans-serif;
   font-size: 0.85rem;
   font-weight: 300;
