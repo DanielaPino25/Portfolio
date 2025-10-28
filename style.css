@@ -191,7 +191,7 @@ nav a.active::before {
 .socials{
   display:flex;
   gap:12px;
-  margin-right: 0;
+  margin-right: -5px;
 }
 .social{
   width:42px;
