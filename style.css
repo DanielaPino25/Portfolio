@@ -185,13 +185,13 @@ nav a.active::before {
   display:flex;
   align-items:center;
   gap: 20px;
-  margin-top: 20px !important;
+  margin-top: 40px !important;
 }
 
 .socials{
   display:flex;
   gap:12px;
-  margin-right: 10px;
+  margin-right: 5px;
 }
 .social{
   width:42px;
