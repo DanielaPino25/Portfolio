@@ -450,7 +450,7 @@ body.es .intro {
   white-space: nowrap;
 }
 body.es .contact-hero-word {
-  transform: translateY(60px); /* 🔹 en lugar de cambiar el top */
+  transform: translateY(40px); /* 🔹 en lugar de cambiar el top */
 }
 /* grid principal: texto izq / form der */
 .contact-content {
@@ -480,7 +480,7 @@ body.es .contact-hero-word {
   font-size: 45px;
   font-weight: 300;
   line-height: 1.3;
-  color: 4e4e4e;
+  color: #4e4e4e;
   margin-top: 0;
   margin-bottom: 16px;
 }
@@ -668,4 +668,34 @@ header .lang-btn {
   font-weight: 300 !important;
   color: #4e4e4e !important;
 }
+  /* ==== AJUSTES SOLO PARA LA VERSIÓN EN ESPAÑOL (CONTACTO) ==== */
+
+/* tamaño y espaciado del título principal en español */
+body.es .contact-headline {
+  font-size: 30px !important;     /* más pequeño */
+  font-weight: 300 !important;    /* más fino */
+  line-height: 1.2;
+  color: #4e4e4e;
+  margin-top: 0;
+  margin-bottom: 8px;             /* une el título con el párrafo */
+}
+
+/* la segunda línea "Conectemos" */
+body.es .contact-headline .blue-text {
+  display: block;                 /* fuerza salto de línea tipo subtítulo */
+  font-size: 30px !important;     /* mismo tamaño que la línea de arriba */
+  font-weight: 400 !important;    /* un pelín más marcada */
+  color: var(--accent);           /* azul */
+  margin-top: 4px;                /* controla qué tan pegadas están las dos líneas */
+}
+
+/* párrafo debajo ("Gracias por visitar mi página…") */
+body.es .contact-text {
+  font-size: 1.1rem;              /* igual que en la home */
+  line-height: 1.6;
+  font-weight: 300;
+  color: #4e4e4e;
+  margin-top: 0;                  /* quita hueco extra arriba del párrafo */
+}
+
 
