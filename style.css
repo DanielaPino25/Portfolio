@@ -702,3 +702,209 @@ body.es .contact-text {
 }
 
 
+
+/* ===== ABOUT PAGE LAYOUT ===== */
+.about-wrapper {
+  max-width: 75vw;
+  margin: 0 auto;
+  padding-top: 120px;        /* deja respirar debajo del header fijo */
+  padding-bottom: 120px;
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+  color: var(--text);
+}
+
+/* Palabra gigante gris de fondo */
+.about-bg-word {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-5%);
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(80px, 7vw, 140px);
+  font-weight: 400;
+  line-height: 1;
+  color: rgba(0,0,0,0.07); /* gris muy suave */
+  letter-spacing: -0.02em;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+  margin: 0;
+}
+
+/* grid principal (texto izq / fotos der) */
+.about-content {
+  position: relative;
+  display: grid;
+  grid-template-columns: 0.6fr 1.4fr;
+  gap: 60px;
+  align-items: start;
+  margin-top: 160px; /* empuja para que el texto no choque con el ABOUT ME gigante */
+}
+
+/* Columna izquierda */
+.about-left {
+  max-width: 400px;
+  z-index: 2;
+}
+.about-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1.15;
+  color: #000; /* bien oscuro */
+  margin: 0 0 32px 0;
+  letter-spacing: -0.02em;
+}
+.about-text-block {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 360px;
+}
+
+/* párrafos tipo "líneas" del wireframe */
+.about-line {
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 300;
+  color: var(--text);
+  margin: 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #dcdcdc; /* línea gris clara como en el mock */
+}
+
+/* Columna derecha */
+.about-right {
+  position: relative;
+  min-height: 380px; /* nos da espacio físico para apilar las fotos */
+}
+/* Stack de fotos */
+.about-photo-stack {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* estilo base de cada foto */
+.about-photo {
+  position: absolute;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  background: var(--card);
+}
+.about-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/*
+  Posiciones de las 3 fotos (imitando tu wireframe):
+  - una a la izquierda más alta
+  - una más baja en el medio
+  - otra a la derecha un poco más alta
+*/
+.about-photo-a {
+  top: 0;
+  left: 0;
+  width: 260px;
+  height: 300px;
+  z-index: 3;
+}
+.about-photo-b {
+  top: 120px;
+  left: 180px;
+  width: 260px;
+  height: 300px;
+  z-index: 2;
+}
+.about-photo-c {
+  top: 0;
+  left: 360px;
+  width: 260px;
+  height: 300px;
+  z-index: 4;
+}
+
+/* Flechita abajo "scroll hint" */
+.about-scroll-hint {
+  margin-top: 120px;
+  text-align: center;
+  color: #4e4e4e;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  font-size: 28px;
+  line-height: 1;
+  opacity: 0.6;
+}
+.about-scroll-hint .arrow-down {
+  display: inline-block;
+  animation: arrow-bounce 2s infinite;
+}
+/* animación sutil de la flecha */
+@keyframes arrow-bounce {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(6px); }
+}
+
+/* ===== responsive breakpoints ===== */
+@media(max-width: 980px){
+  .about-content {
+    grid-template-columns: 1fr;
+    margin-top: 140px;
+  }
+ .about-left {
+    max-width: 100%;
+  }
+  .about-name {
+    font-size: 32px;
+  }
+  .about-text-block {
+    max-width: 100%;
+  }
+  .about-right {
+    margin-top: 40px;
+    min-height: 360px;
+  }
+
+  /* Reposicionar las fotos en stack vertical-ish para mobile */
+  .about-photo-a {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 230px;
+    height: 260px;
+    margin: 0 auto;
+  }
+  .about-photo-b {
+    position: relative;
+    top: -40px;
+    left: 40px;
+    width: 230px;
+    height: 260px;
+    margin: 0 auto;
+  }
+  .about-photo-c {
+    position: relative;
+    top: -80px;
+    left: -40px;
+    width: 230px;
+    height: 260px;
+    margin: 0 auto;
+  }
+  .about-bg-word {
+    font-size: clamp(60px, 10vw, 100px);
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+  }
+  .about-scroll-hint {
+    margin-top: 40px;
+  }
+}
+
+
