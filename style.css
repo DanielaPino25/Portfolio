@@ -577,7 +577,7 @@ body.es .intro {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 28px;
+  padding: 8px 22px;
   border: none;
   border-radius: 999px;
   background: transparent;
@@ -590,7 +590,7 @@ body.es .intro {
   box-shadow: none;
   outline: none;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  width: 45%;                 /* <<< ancho completo como en tu captura actual */
+  width: 40%;                 /* <<< ancho completo como en tu captura actual */
   max-width: 220px;
   margin-left: auto;      /* 🔹 lo empuja hacia la derecha */
   display: block;         /* 🔹 permite usar margin-left:auto correctamente */
