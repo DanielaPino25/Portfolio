@@ -386,17 +386,17 @@ nav a.active::before {
 }
 
 body.es .intro-headline .hi {
-  font-size: 45px;
+  font-size: 43px;
 }
 body.es .intro-headline .name {
-  font-size: 90px;
+  font-size: 87px;
   letter-spacing: 0.01em;
 }
 body.es .role-headline {
-  font-size: 45px;
+  font-size: 43px;
 }
 body.es .role-headline .role-accent {
-  font-size: 45px;
+  font-size: 43px;
 }
 body.es .intro {
   font-size: 1.1rem; 
