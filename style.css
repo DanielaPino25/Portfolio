@@ -427,7 +427,7 @@ body.es .intro {
 
 /* ===== CONTACT PAGE LAYOUT ===== */
 .contact-wrapper {
-  max-width: 72vw;        /* parecido al home */
+  max-width: 75vw;        /* parecido al home */
   margin: 0 auto;
   padding-top: 10px;
   position: relative;
