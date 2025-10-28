@@ -226,7 +226,7 @@ nav a.active::before {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding:8px 28px;
+  padding:8px 22px;
   border: none;
   border-radius:999px;
   background: transparent;
@@ -243,6 +243,7 @@ nav a.active::before {
 }
 body.es .btn {
   font-size: 0.95rem; /* 🔹 ajusta un poco el tamaño de letra si es necesario */
+  padding:8px 22px !important;
 }
 .btn::before {
   content: "";
