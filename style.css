@@ -587,7 +587,7 @@ body.es .intro {
   box-shadow: none;
   outline: none;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  width: 50%;                 /* <<< ancho completo como en tu captura actual */
+  width: 45%;                 /* <<< ancho completo como en tu captura actual */
   max-width: 220px;
   margin-left: auto;      /* 🔹 lo empuja hacia la derecha */
   display: block;         /* 🔹 permite usar margin-left:auto correctamente */
