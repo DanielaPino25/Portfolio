@@ -450,7 +450,7 @@ body.es .intro {
   white-space: nowrap;
 }
 body.es .contact-hero-word {
-  transform: translateY(-20px); /* 🔹 en lugar de cambiar el top */
+  transform: translateY(-30px); /* 🔹 en lugar de cambiar el top */
 }
 /* grid principal: texto izq / form der */
 .contact-content {
