@@ -727,7 +727,7 @@ body.es .contact-text {
   user-select: none;
   white-space: nowrap;
   margin: 0;
-  top:5px;
+  top:150px;
 }
 
 /* grid principal (texto izq / fotos der) */
