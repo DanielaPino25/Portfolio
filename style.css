@@ -717,12 +717,9 @@ body.es .contact-text {
 /* Palabra gigante gris de fondo */
 .about-bg-word {
   position: absolute;
-  top: 80px;
-  left: 50%;
-  transform: translateX(-5%);
-  font-family: 'Poppins', sans-serif;
-  font-size: clamp(80px, 7vw, 140px);
-  font-weight: 400;
+  right:0;
+  font-size: 150px;
+  font-weight: 500;
   line-height: 1;
   color: rgba(0,0,0,0.07); /* gris muy suave */
   letter-spacing: -0.02em;
@@ -843,6 +840,11 @@ body.es .contact-text {
 .about-scroll-hint .arrow-down {
   display: inline-block;
   animation: arrow-bounce 2s infinite;
+}
+.about-wrapper + .footer {
+  position: static !important;   /* ✅ lo saca del modo fijo */
+  margin-top: 120px;             /* separa del contenido */
+  padding-bottom: 20px;
 }
 /* animación sutil de la flecha */
 @keyframes arrow-bounce {
