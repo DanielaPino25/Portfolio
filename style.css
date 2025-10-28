@@ -450,7 +450,7 @@ body.es .intro {
 .contact-content {
   display: grid;
   grid-template-columns: 1.4fr 0.8fr;
-  gap: 50px;
+  gap: 20px;
   align-items: start;
   margin-top: 250px; /* empuja abajo para que no choque con CONTACT */
   justify-content: start;
@@ -465,6 +465,11 @@ body.es .intro {
   padding-left: 0;
   margin-top: 0;
   align-self: start;
+}
+.contact-right {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 100px;
 }
 .contact-headline {
   font-size: 50px;
