@@ -1,86 +1,102 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contacto — Daniela Pino</title>
+  <meta name="description" content="Ponte en contacto con Daniela Pino — Product & UX/UI Designer" />
 
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <meta name="description" content="Ponte en contacto con Daniela Pino, diseñadora de producto y UX/UI." />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=14" />
+  <!-- tu CSS -->
+  <link rel="stylesheet" href="./style.css?v=27">
+  <link rel="icon" type="image/png" href="./assets/favicon.svg">
+
+  <!-- fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">  
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
 </head>
 
-<body>
-  <header class="topbar">
-    <div class="topbar-inner">
-      <a class="logo" href="index-es.html" aria-label="Inicio">
-        <img src="assets/Logo.svg?v=2" alt="Logo de Daniela Pino" />
-      </a>
+<body class="es">
+  <!-- header dinámico -->
+  <div id="site-header"></div>
 
-      <nav class="menu" aria-label="Principal">
-        <a href="SobreMi.html" data-nav="SobreMi.html">SOBRE MÍ</a>
-        <a href="Portfolio-es.html" data-nav="Portfolio-es.html">PORTAFOLIO</a>
-        <a href="Contacto.html" data-nav="Contacto.html">CONTACTO</a>
+  <main class="contact-wrapper">
+    <!-- palabra gigante CONTACT -->
+    <div class="contact-hero-word">CONTACTO</div>
 
-        <div class="lang-switch" aria-label="Selector de idioma">
-          <a href="index-es.html" class="active">ES</a>
-          <span>/</span>
-          <a href="index.html">EN</a>
+    <section class="contact-content">
+      
+      <!-- Columna izquierda -->
+      <div class="contact-left">
+        <h2 class="contact-headline">
+          Gracias por visitar mi trabajo.<br>
+          <strong>Hablemos</strong>
+        </h2>
+
+        <p class="contact-text">
+          Espero que hayas disfrutado explorando mi trabajo.  
+          Estoy abierta a nuevas oportunidades y colaboraciones.  
+          Si tienes alguna pregunta, una idea en mente o simplemente quieres saludar,
+          escríbeme. Y no olvides seguirme para ver mis últimos proyectos.
+        </p>
+
+        <div class="contact-socials" aria-label="redes sociales">
+          <a class="contact-social" href="https://www.instagram.com/bydanipino?igsh=bzJ0MHhnY2JmeTZn&utm_source=qr" target="_blank" rel="noreferrer noopener">
+            <img src="assets/ig-02.svg" alt="Instagram">
+          </a>
+          <a class="contact-social" href="https://www.behance.net/danielapinom" target="_blank" rel="noreferrer noopener">
+            <img src="assets/be-01.svg" alt="Behance">
+          </a>
+          <a class="contact-social" href="https://www.linkedin.com/in/pinodaniela/" target="_blank" rel="noreferrer noopener">
+            <img src="assets/in-03.svg" alt="LinkedIn">
+          </a>
         </div>
-      </nav>
+      </div>
 
-      <button class="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="navdrawer">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
+      <!-- Columna derecha (formulario) -->
+      <div class="contact-right">
+        <form class="contact-form">
+          
+          <input
+            class="contact-input"
+            type="text"
+            name="name"
+            placeholder="Nombre"
+            required
+          />
 
-  <nav id="navdrawer" class="navdrawer" aria-label="Principal móvil">
-    <a href="SobreMi-es.html" data-nav="SobreMi.html">SOBRE MÍ</a>
-    <a href="Portfolio-es.html" data-nav="Portfolio-es.html">PORTAFOLIO</a>
-    <a href="Contacto-es.html" data-nav="Contacto.html">CONTACTO</a>
+          <input
+            class="contact-input"
+            type="text"
+            name="contact"
+            placeholder="Email o teléfono"
+            required
+          />
 
-    <div class="lang-switch" aria-label="Selector de idioma">
-      <a href="index-es.html" class="active">ES</a>
-      <span>/</span>
-      <a href="index.html">EN</a>
-    </div>
-  </nav>
+          <textarea
+            class="contact-textarea"
+            name="message"
+            placeholder="Mensaje"
+            required
+          ></textarea>
 
-  <main style="padding: 2rem; max-width: 700px; margin: auto;">
-    <h1>Contacto</h1>
-    <p>Si quieres ponerte en contacto conmigo, puedes escribirme a:</p>
-    <p><a href="mailto:tuemail@ejemplo.com" style="color:#FB9280; font-weight:600;">tuemail@ejemplo.com</a></p>
-    <p>O a través de mis redes sociales.</p>
+          <button class="contact-submit" type="submit">
+            Enviar mensaje
+          </button>
+
+        </form>
+      </div>
+
+    </section>
   </main>
 
-  <footer style="text-align:center; padding:1rem; border-top:none;">
-    © <span id="year"></span> Daniela Pino
-  </footer>
+  <footer class="footer">© <span id="year"></span> Daniela Pino</footer>
 
   <script>
+    // año dinámico
     document.getElementById('year').textContent = new Date().getFullYear();
-    const file = (location.pathname.split('/').pop() || '').replace(/[#?].*$/, '');
-    document.querySelectorAll('.menu a[data-nav], #navdrawer a[data-nav]').forEach(a=>{
-      if (a.getAttribute('data-nav').toLowerCase() === file.toLowerCase()){
-        a.classList.add('is-active');
-        a.setAttribute('aria-current','page');
-      }
-    });
-    const burger=document.querySelector('.burger');
-    burger?.addEventListener('click',()=>{const open=document.body.classList.toggle('nav-open');burger.setAttribute('aria-expanded',open?'true':'false')});
-    document.querySelectorAll('#navdrawer a').forEach(a=>a.addEventListener('click',()=>document.body.classList.remove('nav-open')));
   </script>
-  <script>
-  // Sombra del toolbar cuando hay desplazamiento
-  (function(){
-    const onScroll = () => {
-      document.body.classList.toggle('scrolled', window.scrollY > 8);
-    };
-    window.addEventListener('scroll', onScroll, {passive:true});
-    onScroll(); // estado inicial
-  })();
-</script>
+
+  <!-- header loader (ya lo tienes configurado para idioma) -->
+  <script src="header-loader.js"></script>
 </body>
 </html>
