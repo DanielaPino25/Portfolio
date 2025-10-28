@@ -470,7 +470,8 @@ body.es .intro {
   margin-top: 255px;
   align-self: start;
   justify-self: start;          /* 🔹 asegura que se pegue a la izquierda en el grid */
-  text-align: left;             /* 🔹 por si acaso */
+  text-align: left;  /* 🔹 por si acaso */
+  height: 100%;
 }
 .contact-headline {
   font-size: 45px;
@@ -499,8 +500,8 @@ body.es .intro {
   display: flex;
   align-items: center;
   gap: 12px;
-  align-self: end;
-  margin-top: auto;
+  align-self: flex-start;
+  margin-top: 40px;
 }
 .contact-social {
   width: 42px;
