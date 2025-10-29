@@ -755,7 +755,7 @@ body.es .contact-text {
   letter-spacing: -0.02em;
   top:-100px;
   position: relative; 
-  margin-bottom: 10px;
+  margin-bottom: -50px;
 }
 .about-text-block {
   display: flex;
@@ -924,6 +924,6 @@ body.es .contact-text {
   }
 }
 .about-text-block p {
-  margin-top: -150px !important; /* 🔹 súbelo — puedes probar -15px, -20px o -30px */
+  margin-top: -200px !important; /* 🔹 súbelo — puedes probar -15px, -20px o -30px */
 }
 
