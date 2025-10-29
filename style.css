@@ -761,6 +761,7 @@ body.es .contact-text {
   flex-direction: column;
   gap: 20px;
   max-width: 360px;
+  margin_top: -20px;
 }
 
 /* párrafos tipo "líneas" del wireframe */
@@ -824,7 +825,7 @@ body.es .contact-text {
   width: 280px;
   height: 370px;
   z-index: 2;
-  left:120px !important;
+  left:125px !important;
 }
 .about-photo-c {
   top: 0;
