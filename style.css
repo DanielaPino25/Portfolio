@@ -1060,6 +1060,10 @@ body.about .about-wrapper + .footer {
   border: none;
   z-index: 1;
 }
+body.about {
+  overflow-y: auto !important;
+  overflow-x: hidden;
+}
 
 /* ===== responsive para pantallas más pequeñas ===== */
 @media (max-width: 980px) {
