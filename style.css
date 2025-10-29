@@ -727,7 +727,7 @@ body.es .contact-text {
   user-select: none;
   white-space: nowrap;
   margin: 0;
-  top:150px;
+  top:100px;
 }
 
 /* grid principal (texto izq / fotos der) */
@@ -786,7 +786,11 @@ body.es .contact-text {
 
 /* estilo base de cada foto */
 .about-photo {
-  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items:flex-end;
+  transform: translateY(-40px);
+  margin-right: 0;
   border-radius: var(--radius);
   overflow: hidden;
   border: 1px solid var(--border);
@@ -795,8 +799,10 @@ body.es .contact-text {
 }
 .about-photo img {
   display: block;
-  width: 100%;
-  height: 100%;
+  width: 115%;
+  max-width: none;
+  border-radius: var(--radius);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
   object-fit: cover;
 }
 /*
