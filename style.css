@@ -925,8 +925,10 @@ body.es .contact-text {
   }
 }
 .about-text-block p {
-  margin-top: 8px !important; /* 🔹 súbelo — puedes probar -15px, -20px o -30px */
+  margin-top: -10px !important; /* 🔹 súbelo — puedes probar -15px, -20px o -30px */
 }
+
+
 
 /* ===== RESUME SECTION (debajo del about) ===== */
 .resume-section {
