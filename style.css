@@ -853,10 +853,14 @@ body.es .contact-text {
   font-size: 28px;
   line-height: 1;
   opacity: 0.6;
+  margin-top: 60px;           /* separa de las imágenes */
+  animation: fadeIn 1.5s ease forwards;
 }
 .about-scroll-hint .arrow-down {
   display: inline-block;
   animation: arrow-bounce 2s infinite;
+  cursor: default;
+  color: rgba(0, 0, 0, 0.25);
 }
 .about-wrapper + .footer {
   position: static !important;   /* ✅ lo saca del modo fijo */
