@@ -737,7 +737,7 @@ body.es .contact-text {
   grid-template-columns: 0.6fr 1.4fr;
   gap: 60px;
   align-items: start;
-  margin-top: 100px; /* empuja para que el texto no choque con el ABOUT ME gigante */
+  margin-top: 115px; /* empuja para que el texto no choque con el ABOUT ME gigante */
 }
 
 /* Columna izquierda */
@@ -784,7 +784,7 @@ body.es .contact-text {
   position: relative;
   width: 100%;
   height: 100%;
-  transform: translate(40px, -40px)
+  transform: translate(20px, -20px)
 }
 /* estilo base de cada foto */
 .about-photo {
