@@ -753,7 +753,7 @@ body.es .contact-text {
   color: #4e4e4e; /* bien oscuro */
   margin: 0 0 32px 0;
   letter-spacing: -0.02em;
-  top:-60px;
+  top:-70px;
   position: relative; 
 }
 .about-text-block {
@@ -784,6 +784,7 @@ body.es .contact-text {
   position: relative;
   width: 100%;
   height: 100%;
+  transform: translate(40px, -40px)
 }
 /* estilo base de cada foto */
 .about-photo {
