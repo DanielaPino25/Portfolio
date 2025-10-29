@@ -762,12 +762,16 @@ body.es .contact-text {
   flex-direction: column;
   gap: 20px;
   max-width: 360px;
-  margin_top: -50px;
+  margin_top: 50px;
   font-family: 'Poppins', sans-serif !important;
   font-weight: 300 !important;
   color: #4e4e4e !important;
   line-height: 1.6 !important; 
   letter-spacing: 0.01em;
+}
+.about-text-block strong {
+  font-weight: 400; /* más sutil que el 700 por defecto */
+  color: #4e4e4e;   /* mantiene el tono del texto */
 }
 
 /* párrafos tipo "líneas" del wireframe */
