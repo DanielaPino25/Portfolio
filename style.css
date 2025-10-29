@@ -727,7 +727,7 @@ body.es .contact-text {
   user-select: none;
   white-space: nowrap;
   margin: 0;
-  top:120px;
+  top:115px;
 }
 
 /* grid principal (texto izq / fotos der) */
@@ -778,28 +778,14 @@ body.es .contact-text {
   min-height: 380px; /* nos da espacio físico para apilar las fotos */
 }
 
-/* Flechita abajo "scroll hint" */
-.about-scroll-hint {
-  margin-top: 120px;
-  text-align: center;
-  color: #4e4e4e;/* Stack de fotos */
-
-  .about-photo-stack {
+.about-photo-stack {
   position: relative;
   width: 100%;
-  max-width: 700px;         /* qué tan ancho puede ser el collage total */
-  height: 480px;            /* reserva altura para que no colapse el flujo */
-  transform: translate(80px, -40px);
+  height: 100%;
 }
 /* estilo base de cada foto */
 .about-photo {
   position: absolute;
-  display: flex;
-  flex-direction: column;
-  align-items:center;
-  justify-content:center;
-  transform: translateY(-40px);
-  margin-right: 0;
   border-radius: var(--radius);
   overflow: hidden;
   border: 1px solid var(--border);
@@ -808,10 +794,8 @@ body.es .contact-text {
 }
 .about-photo img {
   display: block;
-  width: 115%;
-  max-width: none;
-  border-radius: var(--radius);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 /*
@@ -842,6 +826,12 @@ body.es .contact-text {
   z-index: 4;
 }
 
+
+/* Flechita abajo "scroll hint" */
+.about-scroll-hint {
+  margin-top: 120px;
+  text-align: center;
+  color: #4e4e4e;/* Stack de fotos */
   font-family: 'Poppins', sans-serif;
   font-weight: 300;
   font-size: 28px;
