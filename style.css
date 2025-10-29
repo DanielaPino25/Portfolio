@@ -816,7 +816,7 @@ body.es .contact-text {
   width: 280px;
   height: 370px;
   z-index: 1;
-  left:-50px !important;
+  left:-100px !important;
 }
 .about-photo-b {
   top: 120px;
@@ -832,7 +832,7 @@ body.es .contact-text {
   width: 280px;
   height: 370px;
   z-index: 3;
-  Left:370px !important;
+  Left:360px !important;
 }
 
 
