@@ -747,13 +747,13 @@ body.es .contact-text {
 }
 .about-name {
   font-family: 'Playfair Display', serif;
-  font-size: 40px;
+  font-size: 60px;
   font-weight: 400;
   line-height: 1;
   color: #4e4e4e; /* bien oscuro */
   margin: 0 0 32px 0;
   letter-spacing: -0.02em;
-  top:-40px;
+  top:-60px;
   position: relative; 
 }
 .about-text-block {
