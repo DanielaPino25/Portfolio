@@ -785,8 +785,8 @@ body.es .contact-text {
   position: relative;
   width: 100%;
   height: 100%;
-  transform: translateX(100px)
-  transform: translateY(-10px);
+  transform: translateX(130px)
+  transform: translateY(10px);
   
 }
 /* estilo base de cada foto */
