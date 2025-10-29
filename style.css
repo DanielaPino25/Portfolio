@@ -769,11 +769,6 @@ body.es .contact-text {
   line-height: 1.6 !important; 
   letter-spacing: 0.01em;
 }
-.about-text-block strong {
-  font-weight: 450; /* más sutil que el 700 por defecto */
-  color: #4e4e4e;   /* mantiene el tono del texto */
-  margin_top: -200px !important;
-}
 
 /* párrafos tipo "líneas" del wireframe */
 .about-line {
