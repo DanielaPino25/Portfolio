@@ -786,6 +786,8 @@ body.es .contact-text {
   width: 100%;
   height: 100%;
   transform: translateX(100px)
+  transform: translateY(-10px);
+  
 }
 /* estilo base de cada foto */
 .about-photo {
@@ -820,7 +822,7 @@ body.es .contact-text {
   left:-100px !important;
 }
 .about-photo-b {
-  top: 100px;
+  top: 90px;
   left: 180px;
   width: 280px;
   height: 370px;
