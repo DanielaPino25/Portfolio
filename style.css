@@ -783,17 +783,21 @@ body.es .contact-text {
   margin-top: 120px;
   text-align: center;
   color: #4e4e4e;/* Stack de fotos */
-.about-photo-stack {
+
+  .about-photo-stack {
   position: relative;
   width: 100%;
-  height: 100%;
+  max-width: 700px;         /* qué tan ancho puede ser el collage total */
+  height: 480px;            /* reserva altura para que no colapse el flujo */
+  transform: translate(80px, -40px);
 }
-
 /* estilo base de cada foto */
 .about-photo {
+  position: absolute;
   display: flex;
   flex-direction: column;
-  align-items:flex-end;
+  align-items:center;
+  justify-content:center;
   transform: translateY(-40px);
   margin-right: 0;
   border-radius: var(--radius);
@@ -819,22 +823,22 @@ body.es .contact-text {
 .about-photo-a {
   top: 0;
   left: 0;
-  width: 260px;
-  height: 300px;
+  width: 300px;
+  height: 350px;
   z-index: 3;
 }
 .about-photo-b {
   top: 120px;
   left: 180px;
-  width: 260px;
-  height: 300px;
+  width: 300px;
+  height: 350px;
   z-index: 2;
 }
 .about-photo-c {
   top: 0;
   left: 360px;
-  width: 260px;
-  height: 300px;
+  width: 300px;
+  height: 350px;
   z-index: 4;
 }
 
