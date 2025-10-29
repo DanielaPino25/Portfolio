@@ -928,3 +928,160 @@ body.es .contact-text {
   margin-top: 8px !important; /* 🔹 súbelo — puedes probar -15px, -20px o -30px */
 }
 
+/* ===== RESUME SECTION (debajo del about) ===== */
+.resume-section {
+  position: relative;
+  max-width: 75vw;
+  margin: 200px auto 0;      /* empuja esta sección hacia abajo, separada del bloque ABOUT */
+  padding-bottom: 120px;     /* espacio de respiración antes del footer */
+  color: #4e4e4e;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* palabra RESUME grande en gris claro (como ABOUT ME) */
+.resume-hero-word {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 150px;
+  font-weight: 500;
+  line-height: 1;
+  color: rgba(0,0,0,0.07); /* gris muy suave */
+  letter-spacing: -0.02em;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+  margin: 0;
+}
+
+/* grid de 3 columnas: Experience / Studies / Skills */
+.resume-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* 3 columnas iguales */
+  gap: 60px;
+  margin-top: 160px; /* baja el contenido para que no choque con el "RESUME" gigante */
+}
+
+/* cada columna */
+.resume-column {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* subtítulos tipo "Experience", "Studies", "Skills" */
+.resume-title {
+  font-size: 24px;
+  font-weight: 400;
+  color: #4e4e4e;
+  margin: 0 0 16px 0;
+  line-height: 1.2;
+}
+
+/* listas internas con línea */
+.resume-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px 0;
+  border-top: 1px solid #dcdcdc; /* línea gris clara arriba */
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.6;
+  color: #4e4e4e;
+}
+.resume-list li {
+  border-bottom: 1px solid #e9e9e9;
+  padding: 10px 0;
+}
+
+/* software icons tipo fila de logos */
+.software-icons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+.software-icons img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  opacity: 0.9;
+  border-radius: 8px;
+}
+
+/* Botón lateral "Download CV" tipo etiqueta rotada */
+.download-cv {
+  position: absolute;
+  right: -60px;
+  top: 50%;
+  transform: rotate(-90deg) translateY(50%);
+  transform-origin: right center;
+  background: transparent;
+  border: 1px solid #dcdcdc;
+  border-radius: 999px;
+  padding: 10px 24px;
+  font-size: 0.9rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  color: #4e4e4e;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow:
+    0 8px 20px rgba(0,0,0,0.03),
+    0 2px 6px rgba(0,0,0,0.04);
+}
+.download-cv:hover {
+  background: rgba(251,146,128,0.08);                 /* coral translúcido */
+  border-color: rgba(251,146,128,0.4);
+}
+
+/* ===== footer en la página About: que NO sea fijo =====
+   - esto asegura que haya scroll normal y el footer quede abajo del contenido,
+     no pegado a la pantalla como en la home.
+*/
+body.en .about-wrapper + .footer,
+body.es .about-wrapper + .footer,
+body.about .about-wrapper + .footer {
+  position: static !important;
+  bottom: auto !important;
+  left: auto !important;
+  width: 100%;
+  text-align: center;
+  color: #4e4e4e;
+  font-size: 0.75rem;
+  line-height: 1.2;
+  padding: 40px 0 20px;
+  margin-top: 60px;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  border: none;
+  z-index: 1;
+}
+
+/* ===== responsive para pantallas más pequeñas ===== */
+@media (max-width: 980px) {
+  .resume-section {
+    max-width: 85vw;
+    margin-top: 160px;
+    padding-bottom: 100px;
+  }
+  .resume-hero-word {
+    font-size: clamp(60px, 10vw, 100px);
+    right: 0;
+    left: 0;
+    text-align: center;
+  }
+  .resume-grid {
+    grid-template-columns: 1fr; /* una columna bajo la otra */
+    gap: 40px;
+    margin-top: 120px;
+  }
+  .download-cv {
+    position: static;
+    transform: none;
+    margin: 20px auto 0;
+    right: auto;
+    top: auto;
+  }
+}
