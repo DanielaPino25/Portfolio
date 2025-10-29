@@ -737,7 +737,7 @@ body.es .contact-text {
   grid-template-columns: 0.6fr 1.4fr;
   gap: 60px;
   align-items: start;
-  margin-top: 115px; /* empuja para que el texto no choque con el ABOUT ME gigante */
+  margin-top: 110px; /* empuja para que el texto no choque con el ABOUT ME gigante */
 }
 
 /* Columna izquierda */
@@ -753,7 +753,7 @@ body.es .contact-text {
   color: #4e4e4e; /* bien oscuro */
   margin: 0 0 32px 0;
   letter-spacing: -0.02em;
-  top:-90px;
+  top:-100px;
   position: relative; 
 }
 .about-text-block {
