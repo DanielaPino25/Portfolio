@@ -824,7 +824,7 @@ body.es .contact-text {
   width: 280px;
   height: 370px;
   z-index: 2;
-  left:0 !important;
+  left:200px !important;
 }
 .about-photo-c {
   top: 0;
