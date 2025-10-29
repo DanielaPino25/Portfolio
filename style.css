@@ -763,6 +763,9 @@ body.es .contact-text {
   gap: 20px;
   max-width: 360px;
   margin_top: -50px;
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 300 !important;
+  color: #4e4e4e !important;
 }
 
 /* párrafos tipo "líneas" del wireframe */
