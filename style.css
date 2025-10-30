@@ -782,9 +782,9 @@ body.es .contact-text {
 .about-left {
   overflow: visible !important;
 }
-html, body {
+body.about {
+  overflow-y: auto !important;
   overflow-x: hidden;
-  overflow-y: auto;
 }
 
 /* Columna derecha */
@@ -1099,20 +1099,22 @@ body.about {
   display: grid;
   grid-template-columns: 0.6fr 1.4fr; /* ajusta si quieres */
   gap: 60px;
-  align-items: start;
+  align-items: stretch !important;
 }
 
 /* Rail izquierda que abarca todo; no corta el sticky */
 .left-rail{
   position: relative;
-  overflow: visible;           /* importante para sticky */
+  overflow: visible !important;           /* importante para sticky */
+  display: flex;
+  flex-direction: column;
   min-height: 100%;  /* se extiende con el contenido de la derecha */
   max-width: 420px;
 }
 
 /* El nombre se pega durante TODO el scroll del rail */
 .left-rail .about-name{
-  position: sticky;
+  position: sticky !important;
   top: 120px;                   /* ajusta para alinear con el ABOUT ME de fondo */
   font-family: 'Playfair Display', serif;
   font-size: 60px;
@@ -1121,6 +1123,7 @@ body.about {
   color: #4e4e4e;
   margin: 0;                   /* sin empujes raros */
   z-index: 10;
+  transform: none !important;
 }
 .left-rail .about-text-block{
   font-family: 'Poppins', sans-serif;
