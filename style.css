@@ -764,13 +764,17 @@ body.es .contact-text {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 5px !important;
+  gap: -15px !important;
   max-width: 360px;
   font-family: 'Poppins', sans-serif !important;
   font-weight: 300 !important;
   color: #4e4e4e !important;
   line-height: 1.6 !important; 
   letter-spacing: 0.01em;
+}
+.about-text-block p {
+  margin: 0;             /* elimina margen superior e inferior */
+  padding: 0;
 }
 .about-wrapper,
 .about-content,
