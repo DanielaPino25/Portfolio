@@ -805,7 +805,6 @@ html, body {
   box-shadow:
     0 24px 50px rgba(0,0,0,0.06),
     0 4px 12px rgba(0,0,0,0.04);
-  top: 200px !important;
 }
 .about-photo img {
   display: block;
