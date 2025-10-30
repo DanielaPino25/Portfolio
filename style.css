@@ -793,7 +793,7 @@ html, body {
   height: 100%;
   transform: none !important; 
   right: -500px !important;
-  top: -500px !important;
+  top: -700px !important;
 }
 /* estilo base de cada foto */
 .about-photo {
@@ -1133,6 +1133,8 @@ body.about {
   min-height: 100%;
   overflow: visible;
 }
+html, body { overflow-x: hidden; overflow-y: auto; }
+.about-wrapper, .about-two-col, .left-rail, .right-flow { overflow: visible; }
 
 /* Ajuste responsivo: en móvil, quita sticky para evitar solapes */
 @media (max-width: 980px){
