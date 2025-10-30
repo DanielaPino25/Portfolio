@@ -785,7 +785,6 @@ html, body {
 /* Columna derecha */
 .about-right {
   position: relative;
-  min-height: 380px; /* nos da espacio físico para apilar las fotos */
 }
 
 .about-photo-stack {
