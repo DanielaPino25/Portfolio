@@ -727,7 +727,7 @@ body.es .contact-text {
   user-select: none;
   white-space: nowrap;
   margin: 0;
-  top:110px;
+  top:0;
 }
 
 /* grid principal (texto izq / fotos der) */
@@ -786,6 +786,7 @@ html, body {
 .about-right {
   position: relative;
   min-height: 380px; /* nos da espacio físico para apilar las fotos */
+  top:120px;
 }
 
 .about-photo-stack {
