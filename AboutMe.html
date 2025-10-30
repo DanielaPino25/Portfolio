@@ -127,7 +127,24 @@
     // footer year
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+  
+<script>
+  // Desvanece la flecha al llegar al final de la página
+  window.addEventListener("scroll", function() {
+    const scrollHint = document.querySelector(".about-scroll-hint");
+    const footer = document.querySelector("footer");
 
+    const scrollBottom = window.scrollY + window.innerHeight;
+    const footerTop = footer.offsetTop;
+
+    if (scrollBottom >= footerTop - 50) {
+      scrollHint.classList.add("hidden");
+    } else {
+      scrollHint.classList.remove("hidden");
+    }
+  });
+</script>
+  
   <script src="header-loader.js"></script>
 </body>
 </html>
