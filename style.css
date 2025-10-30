@@ -745,7 +745,7 @@ body.es .contact-text {
   position: relative !important;
   max-width: 400px;
   z-index: 2;
-  margin-top: 150px !important;
+  margin-top: 0 !important;
 }
 .about-name {
   font-family: 'Playfair Display', serif;
@@ -755,9 +755,9 @@ body.es .contact-text {
   color: #4e4e4e; /* bien oscuro */
   margin: 0 0 32px 0 !important;
   letter-spacing: -0.02em;
-  top: 150px !important;
+  top: 120px !important;
   position: sticky !important; 
-  margin-bottom: -10px !important;
+  margin-bottom: 10px !important;
   transform: none !important;
 }
 .about-text-block {
