@@ -786,7 +786,6 @@ html, body {
 .about-right {
   position: relative;
   min-height: 380px; /* nos da espacio físico para apilar las fotos */
-  top:120px;
 }
 
 .about-photo-stack {
@@ -806,6 +805,7 @@ html, body {
   box-shadow:
     0 24px 50px rgba(0,0,0,0.06),
     0 4px 12px rgba(0,0,0,0.04);
+  top: 200px !important;
 }
 .about-photo img {
   display: block;
