@@ -1136,3 +1136,39 @@ html, body { overflow-x: hidden; overflow-y: auto; }
     gap: 32px;
   }
 }
+.about-two-col {
+  display: grid;
+  grid-template-columns: 0.6fr 1.4fr;
+  gap: 60px;
+  align-items: start;
+  overflow: visible;
+}
+
+.left-rail {
+  position: relative;
+  overflow: visible;
+  background: white;
+}
+
+.left-rail .about-name {
+  position: sticky;
+  top: 120px;
+  font-family: 'Playfair Display', serif;
+  font-size: 60px;
+  font-weight: 400;
+  color: #4e4e4e;
+  z-index: 10;
+  margin: 0;
+}
+
+.left-rail .about-text-block {
+  margin-top: 20px;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  color: #4e4e4e;
+}
+
+.right-flow {
+  overflow: visible;
+  background: #fafafa;
+}
