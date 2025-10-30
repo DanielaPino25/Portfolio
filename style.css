@@ -793,7 +793,7 @@ html, body {
   height: 100%;
   transform: none !important; 
   right: -500px !important;
-  top: -500px;
+  top: -500px !important;
 }
 /* estilo base de cada foto */
 .about-photo {
