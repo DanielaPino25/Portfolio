@@ -1106,7 +1106,7 @@ body.about {
 /* El nombre se pega durante TODO el scroll del rail */
 .left-rail .about-name{
   position: sticky;
-  top: 80px;                   /* ajusta para alinear con el ABOUT ME de fondo */
+  top: 120px;                   /* ajusta para alinear con el ABOUT ME de fondo */
   font-family: 'Playfair Display', serif;
   font-size: 60px;
   font-weight: 400;
