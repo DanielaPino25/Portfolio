@@ -754,7 +754,7 @@ body.es .contact-text {
   color: #4e4e4e; /* bien oscuro */
   margin: 0 0 32px 0 !important;
   letter-spacing: -0.02em;
-  top:100px !important;
+  top: 0px !important;
   position: sticky !important; 
   margin-bottom: -70px;
   transform: none !important;
