@@ -1115,7 +1115,18 @@ body.about {
   margin: 0;                   /* sin empujes raros */
   z-index: 10;
 }
-
+.left-rail .about-text-block{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  color: #4e4e4e;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;               /* espacio entre párrafos */
+  /* evita que parezca muy pegado al nombre si lo necesitas */
+  /* margin-top: 6px; */
+}
 /* Columna derecha: contiene About + Resume en flujo */
 .right-flow{
   min-height: 100%;
