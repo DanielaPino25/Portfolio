@@ -934,8 +934,8 @@ body.about {
 .resume-section {
   position: relative;
   max-width: 75vw;
-  margin: 200px auto 0;      /* empuja esta sección hacia abajo, separada del bloque ABOUT */
-  padding-bottom: 120px;     /* espacio de respiración antes del footer */
+  margin: 120px auto 0;      /* empuja esta sección hacia abajo, separada del bloque ABOUT */
+  padding-bottom: 50px;     /* espacio de respiración antes del footer */
   color: #4e4e4e;
   font-family: 'Poppins', sans-serif;
 }
@@ -1052,7 +1052,7 @@ body.about .about-wrapper + .footer {
   color: #4e4e4e;
   font-size: 0.75rem;
   line-height: 1.2;
-  padding: 10px 0 20px;
+  padding: 10px 0 !important;
   margin-top: 60px;
   background: transparent;
   box-shadow: none;
