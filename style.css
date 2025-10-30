@@ -745,6 +745,7 @@ body.es .contact-text {
   position: relative !important;
   max-width: 400px;
   z-index: 2;
+  margin-top: 150px !important;
 }
 .about-name {
   font-family: 'Playfair Display', serif;
