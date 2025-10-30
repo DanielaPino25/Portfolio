@@ -712,18 +712,17 @@ html, body.contact {
 body.about {
   min-height: 100vh;           /* ocupa toda la altura de la ventana */
   display: flex;
-  flex-direction: column;      /* header + main (se expande) + footer */
+  flex-direction: column;  /* header + main (se expande) + footer */
+  overflow-y: auto !important;
+  overflow-x: hidden;
 }
-.about-wrapper {
-  flex: 1;
-}
+
 /* Footer NO fijo en About */
 body.about .footer {
   position: static !important; /* que no sea pegajoso */
   margin-top: 40px;
   padding: 20px 0;
 }
-
 .about-wrapper {
   max-width: 75vw;
   margin: 0 auto;
@@ -732,8 +731,8 @@ body.about .footer {
   position: relative;
   font-family: 'Poppins', sans-serif;
   color: var(--text);
+  flex: 1;
 }
-
 /* Palabra gigante gris de fondo */
 .about-bg-word {
   position: absolute;
@@ -1053,17 +1052,13 @@ body.about .about-wrapper + .footer {
   color: #4e4e4e;
   font-size: 0.75rem;
   line-height: 1.2;
-  padding: 40px 0 20px;
+  padding: 10px 0 20px;
   margin-top: 60px;
   background: transparent;
   box-shadow: none;
   backdrop-filter: none;
   border: none;
   z-index: 1;
-}
-body.about {
-  overflow-y: auto !important;
-  overflow-x: hidden;
 }
 
 /* ===== responsive para pantallas más pequeñas ===== */
