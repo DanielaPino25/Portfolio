@@ -1079,7 +1079,7 @@ body.about {
   display: grid;
   grid-template-columns: 0.6fr 1.4fr; /* ajusta si quieres */
   gap: 60px;
-  align-items: stretch !important;
+  align-items: start !important;
 }
 
 /* Rail izquierda que abarca todo; no corta el sticky */
