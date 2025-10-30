@@ -709,6 +709,21 @@ html, body.contact {
   height: 100%;
   overflow: hidden;              /* 🔒 sin scroll global */
 }
+body.about {
+  min-height: 100vh;           /* ocupa toda la altura de la ventana */
+  display: flex;
+  flex-direction: column;      /* header + main (se expande) + footer */
+}
+.about-wrapper {
+  flex: 1;
+}
+/* Footer NO fijo en About */
+body.about .footer {
+  position: static !important; /* que no sea pegajoso */
+  margin-top: 40px;
+  padding: 20px 0;
+}
+
 .about-wrapper {
   max-width: 75vw;
   margin: 0 auto;
