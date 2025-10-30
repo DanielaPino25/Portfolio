@@ -742,6 +742,7 @@ body.es .contact-text {
 
 /* Columna izquierda */
 .about-left {
+  position: revert-layer;
   max-width: 400px;
   z-index: 2;
 }
@@ -751,13 +752,15 @@ body.es .contact-text {
   font-weight: 400;
   line-height: 1;
   color: #4e4e4e; /* bien oscuro */
-  margin: 0 0 32px 0;
+  margin: 0 0 32px 0 !important;
   letter-spacing: -0.02em;
-  top:-100px;
-  position: relative; 
+  top:-100px !important;
+  position: sticky; 
   margin-bottom: -70px;
+  transform: none !important;
 }
 .about-text-block {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 20px;
