@@ -716,13 +716,6 @@ body.about {
   overflow-y: auto !important;
   overflow-x: hidden;
 }
-
-/* Footer NO fijo en About */
-body.about .footer {
-  position: static !important; /* que no sea pegajoso */
-  margin-top: 40px;
-  padding: 20px 0;
-}
 .about-wrapper {
   max-width: 75vw;
   margin: 0 auto;
@@ -943,7 +936,7 @@ body.about {
 /* palabra RESUME grande en gris claro (como ABOUT ME) */
 .resume-hero-word {
   position: absolute;
-  top: -50 !important;
+  top: -50px !important;
   right: 0;
   font-size: 150px;
   font-weight: 500;
