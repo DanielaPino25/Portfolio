@@ -764,7 +764,7 @@ body.es .contact-text {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 0px !important;
+  gap: 5px !important;
   max-width: 360px;
   font-family: 'Poppins', sans-serif !important;
   font-weight: 300 !important;
