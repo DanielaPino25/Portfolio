@@ -792,6 +792,7 @@ html, body {
   width: 100%;
   height: 100%;
   transform: none !important; 
+  right: 300px !important;
 }
 /* estilo base de cada foto */
 .about-photo {
@@ -1122,7 +1123,7 @@ body.about {
   letter-spacing: 0.01em;
   display: flex;
   flex-direction: column;
-  gap: 14px;               /* espacio entre párrafos */
+  gap: 0px;               /* espacio entre párrafos */
   /* evita que parezca muy pegado al nombre si lo necesitas */
   /* margin-top: 6px; */
 }
