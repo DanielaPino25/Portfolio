@@ -705,6 +705,10 @@ body.es .contact-text {
 
 
 /* ===== ABOUT PAGE LAYOUT ===== */
+html, body.contact {
+  height: 100%;
+  overflow: hidden;              /* 🔒 sin scroll global */
+}
 .about-wrapper {
   max-width: 75vw;
   margin: 0 auto;
