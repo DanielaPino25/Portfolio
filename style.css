@@ -756,7 +756,7 @@ body.es .contact-text {
   letter-spacing: -0.02em;
   top: 0px !important;
   position: sticky !important; 
-  margin-bottom: -70px;
+  margin-bottom: -10px !important;
   transform: none !important;
 }
 .about-text-block {
@@ -770,17 +770,6 @@ body.es .contact-text {
   color: #4e4e4e !important;
   line-height: 1.6 !important; 
   letter-spacing: 0.01em;
-}
-
-/* párrafos tipo "líneas" del wireframe */
-.about-line {
-  font-size: 1rem;
-  line-height: 1.6;
-  font-weight: 300;
-  color: var(--text);
-  margin: 0;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #dcdcdc; /* línea gris clara como en el mock */
 }
 
 /* Columna derecha */
