@@ -1073,6 +1073,7 @@ body.about {
     max-width: 85vw;
     margin-top: 160px;
     padding-bottom: 100px;
+    margin-top: 80px !important;
   }
   .resume-hero-word {
     font-size: clamp(60px, 10vw, 100px);
