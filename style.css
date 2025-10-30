@@ -739,27 +739,6 @@ body.es .contact-text {
   align-items: start;
   margin-top: 120px; /* empuja para que el texto no choque con el ABOUT ME gigante */
 }
-
-/* Columna izquierda */
-.about-left {
-  position: relative !important;
-  max-width: 400px;
-  z-index: 2;
-  margin-top: 0 !important;
-}
-.about-name {
-  font-family: 'Playfair Display', serif;
-  font-size: 60px;
-  font-weight: 400;
-  line-height: 1;
-  color: #4e4e4e; /* bien oscuro */
-  margin: 0 0 32px 0 !important;
-  letter-spacing: -0.02em;
-  top: 120px !important;
-  position: sticky !important; 
-  margin-bottom: 0px !important;
-  transform: none !important;
-}
 .about-text-block {
   position: relative;
   display: flex;
