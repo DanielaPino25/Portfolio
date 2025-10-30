@@ -763,7 +763,7 @@ body.es .contact-text {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 5px !important;
   max-width: 360px;
   font-family: 'Poppins', sans-serif !important;
   font-weight: 300 !important;
@@ -924,9 +924,6 @@ body.es .contact-text {
   .about-scroll-hint {
     margin-top: 40px;
   }
-}
-.about-text-block p {
-  margin-top: -10px !important; /* 🔹 súbelo — puedes probar -15px, -20px o -30px */
 }
 
 
