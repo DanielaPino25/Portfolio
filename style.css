@@ -1,4 +1,4 @@
-:root{
+ :root{
   --bg:#ffffff;
   --text:#4e4e4e;
   --muted:#666666;
@@ -793,7 +793,7 @@ html, body {
   height: 100%;
   transform: none !important; 
   right: -490px !important;
-  top: -600px !important;
+  top: -630px !important;
 }
 /* estilo base de cada foto */
 .about-photo {
