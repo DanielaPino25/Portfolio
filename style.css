@@ -962,7 +962,6 @@ body.about {
   width: auto !important;
   min-width: 0 !important;
   max-width: none !important;
-  top: -500px !important;
 }
 
 /* subtítulos tipo "Experience", "Studies", "Skills" */
