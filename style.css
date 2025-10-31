@@ -1014,7 +1014,9 @@ body.about {
   margin: 4px 0 12px 0; /* 🔹 deja espacio solo antes y después del texto largo */
   max-width: 60ch;
 }
-
+.resume-list li + li {
+  border-top: none; /* elimina el borde duplicado del siguiente li */
+}
 
 /* software icons tipo fila de logos */
 .software-icons {
