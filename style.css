@@ -970,7 +970,7 @@ body.about {
   font-weight: 500;
   color:var(--accent);
   margin: 0 0 16px 0;
-  line-height: 1.2;
+  line-height: 1.5;
 }
 
 /* listas internas con línea */
@@ -990,6 +990,7 @@ body.about {
 }
 /* ===== ESTILOS DE EXPERIENCIA (ajustado) ===== */
 .job-role {
+  font-style: italic;
   font-weight: 500;
   font-size: 1rem;
   color: #4e4e4e;
@@ -999,7 +1000,7 @@ body.about {
 .job-company {
   font-weight: 500;
   color: #4e4e4e;
-  margin-top: 2px;
+  margin-top: 0;
   margin-bottom:0;
 }
 .job-year {
@@ -1014,7 +1015,7 @@ body.about {
   color: #4e4e4e;
   line-height: 1.6;
   font-size: 0.95rem;
-  margin: 4px 0 12px 0; /* 🔹 deja espacio solo antes y después del texto largo */
+  margin: 6px 0 12px 0; /* 🔹 deja espacio solo antes y después del texto largo */
   max-width: 60ch;
 }
 .resume-list li + li {
