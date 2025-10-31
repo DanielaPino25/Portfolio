@@ -937,7 +937,7 @@ body.about {
 .resume-hero-word {
   position: absolute;
   top: 50px !important;
-  right: -800px;
+  right: -820px;
   font-size: 150px;
   font-weight: 500;
   line-height: 1;
@@ -970,6 +970,7 @@ body.about {
   margin: 0 0 16px 0;
   line-height: 1.2;
   letter-spacing: 0.1em;
+  top: 100px !important;
 }
 
 /* listas internas con línea */
