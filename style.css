@@ -988,6 +988,33 @@ body.about {
   border-bottom: 1px solid #e9e9e9;
   padding: 0px 0;
 }
+/* ===== ESTILOS DE EXPERIENCIA (ajustado) ===== */
+.job-role {
+  font-weight: 500;
+  font-size: 1rem;
+  color: #4e4e4e;
+  margin: 0; /* sin espacio extra */
+}
+.job-company {
+  font-weight: 500;
+  color: var(--accent);
+  margin: 2px 0 0 0; /* 🔹 apenas un pequeño espacio arriba */
+}
+.job-year {
+  font-style: italic;
+  color: #666;
+  font-size: 0.9rem;
+  margin: 2px 0 6px 0; /* 🔹 un poco de aire debajo */
+}
+.job-description {
+  font-weight: 300;
+  color: #4e4e4e;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin: 4px 0 12px 0; /* 🔹 deja espacio solo antes y después del texto largo */
+  max-width: 60ch;
+}
+
 
 /* software icons tipo fila de logos */
 .software-icons {
