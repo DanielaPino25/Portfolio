@@ -952,7 +952,7 @@ body.about {
 /* grid de 3 columnas: Experience / Studies / Skills */
 .resume-grid {
   display: grid;
-  grid-template-columns: minmax(280px, 1fr) !important;
+  grid-template-columns: minmax(300px, 1.5fr) !important;
   gap: 50px;
  
 }
