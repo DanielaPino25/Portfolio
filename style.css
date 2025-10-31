@@ -788,8 +788,8 @@ body.about {
   width: 100%;
   height: 100%;
   transform: none !important; 
-  right: 250px !important;
-  top: 550px !important;
+  right: -500px !important;
+  top: -1000px !important;
 }
 /* estilo base de cada foto */
 .about-photo {
