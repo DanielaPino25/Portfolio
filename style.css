@@ -936,8 +936,8 @@ body.about {
 /* palabra RESUME grande en gris claro (como ABOUT ME) */
 .resume-hero-word {
   position: absolute;
-  top: -50px !important;
-  right: 0;
+  top: 50px !important;
+  right: 250;
   font-size: 150px;
   font-weight: 500;
   line-height: 1;
