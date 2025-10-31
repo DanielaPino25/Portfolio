@@ -937,7 +937,7 @@ body.about {
 .resume-hero-word {
   position: absolute;
   top: 50px !important;
-  right: 220px;
+  right: -500px;
   font-size: 150px;
   font-weight: 500;
   line-height: 1;
