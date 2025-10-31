@@ -971,7 +971,7 @@ body.about {
   color:var(--accent);
   margin: 0 0 16px 0;
   line-height: 1.2;
-  letter-spacing: 0.09em;
+  letter-spacing: 0.1em;
 }
 
 /* listas internas con línea */
