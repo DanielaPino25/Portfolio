@@ -952,7 +952,7 @@ body.about {
 /* grid de 3 columnas: Experience / Studies / Skills */
 .resume-grid {
   display: grid;
-  grid-template-columns: minmax(480px, 1.5fr) !important;
+  grid-template-columns: minmax(300px, 1.2fr) !important;
   gap: 50px;
 }
 /* cada columna */
@@ -962,6 +962,7 @@ body.about {
   width: auto !important;
   min-width: 0 !important;
   max-width: none !important;
+  top: -500px !important;
 }
 
 /* subtítulos tipo "Experience", "Studies", "Skills" */
@@ -972,7 +973,6 @@ body.about {
   margin: 0 0 16px 0;
   line-height: 1.2;
   letter-spacing: 0.1em;
-  top: -200px !important;
 }
 
 /* listas internas con línea */
