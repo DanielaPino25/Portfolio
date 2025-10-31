@@ -967,8 +967,8 @@ body.about {
 /* subtítulos tipo "Experience", "Studies", "Skills" */
 .resume-title {
   font-size: 24px;
-  font-weight: 400;
-  color: #4e4e4e;
+  font-weight: 500;
+  color:var(--accent);
   margin: 0 0 16px 0;
   line-height: 1.2;
 }
@@ -998,7 +998,7 @@ body.about {
 }
 .job-company {
   font-weight: 500;
-  color: var(--accent);
+  color: #4e4e4e;
   margin-top: 2px;
   margin-bottom:0;
 }
