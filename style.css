@@ -986,25 +986,26 @@ body.about {
 }
 .resume-list li {
   border-bottom: 1px solid #e9e9e9;
-  padding: 3px 0;
+  padding: 0px 0;
 }
 /* ===== ESTILOS DE EXPERIENCIA (ajustado) ===== */
 .job-role {
   font-weight: 500;
   font-size: 1rem;
   color: #4e4e4e;
-  margin-bottom: -2px;
+  margin-bottom: -3px;
+  margin-top: 3px;
 }
 .job-company {
   font-weight: 500;
   color: var(--accent);
-  margin-bottom: -2px;
+  margin-bottom: -3px;
 }
 .job-year {
   font-style: italic;
   color: #666;
   font-size: 0.9rem;
-  margin-bottom:-2px;
+  margin-bottom:1px;
 }
 .job-description {
   font-weight: 300;
