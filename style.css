@@ -970,7 +970,7 @@ body.about {
   font-weight: 500;
   color:var(--accent);
   margin: 0 0 16px 0;
-  line-height: 2;
+  line-height: 2.5;
 }
 
 /* listas internas con línea */
