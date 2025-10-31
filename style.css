@@ -1022,9 +1022,8 @@ body.about {
 }
 
 /* software icons tipo fila de logos */
-.resume-softwares {
-  grid-column: 2 / 4;   /* de la col 2 hasta antes de la 4 -> ocupa 2 y 3 */
-  align-self: end;     /* arranca arriba del track */
+.software-block {
+  grid-column: 2;   /* de la col 2 hasta antes de la 4 -> ocupa 2 y 3 */
 }
 .resume-softwares {
   border-top: 1px solid #dcdcdc;
@@ -1033,7 +1032,7 @@ body.about {
 }
 .software-icons {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
   gap: 15px;
 }
@@ -1043,6 +1042,7 @@ body.about {
   object-fit: contain;
   opacity: 0.9;
   border-radius: 8px;
+ display: block;
 }
 
 /* Botón lateral "Download CV" tipo etiqueta rotada */
