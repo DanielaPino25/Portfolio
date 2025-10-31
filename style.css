@@ -1000,7 +1000,7 @@ body.about {
 .job-company {
   font-weight: 400;
   color: #4e4e4e;
-  margin-top: -1;
+  margin-top: -2px;
   margin-bottom:0;
 }
 .job-year {
