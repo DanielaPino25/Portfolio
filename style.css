@@ -789,7 +789,7 @@ body.about {
   height: 100%;
   transform: none !important; 
   right: -200px !important;
-  top: 0px !important;
+  top: -30px !important;
 }
 /* estilo base de cada foto */
 .about-photo {
