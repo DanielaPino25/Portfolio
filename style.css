@@ -952,8 +952,8 @@ body.about {
 /* grid de 3 columnas: Experience / Studies / Skills */
 .resume-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr; /* 3 columnas iguales */
-  gap: 60px;
+  grid-template-columns: 1.1fr 0.9fr 0.9fr; /* 3 columnas iguales */
+  gap: 50px;
   margin-top: 160px; /* baja el contenido para que no choque con el "RESUME" gigante */
 }
 
@@ -1004,7 +1004,6 @@ body.about {
   margin-bottom:0;
 }
 .job-year {
-  font-style: italic;
   color: #666;
   font-size: 0.9rem;
   margin-top: 2px;
