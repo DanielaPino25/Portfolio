@@ -1002,14 +1002,14 @@ body.about {
   color: #4e4e4e;
   margin-top: -2px;
   margin-bottom:0;
-  margin-right:2px;
+  margin-right:10px !important;
 }
 .job-year {
   color: #666;
   font-size: 0.9rem;
   margin-top: 2px;
   margin-bottom:0;
-  margin-right:2px;
+  margin-right:10px !important;
 }
 .job-description {
   font-weight: 300;
@@ -1018,7 +1018,7 @@ body.about {
   font-size: 0.95rem;
   margin: 6px 0 12px 0; /* 🔹 deja espacio solo antes y después del texto largo */
   max-width: 60ch;
-  margin-right:2px;
+  margin-right:10px !important;
 }
 .resume-list li + li {
   border-top: none !important; /* elimina el borde duplicado del siguiente li */
