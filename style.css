@@ -954,9 +954,7 @@ body.about {
   display: grid;
   grid-template-columns: 2fr 1.5fr 1.5fr; /* 3 columnas iguales */
   gap: 50px;
-  margin-top: 160px; /* baja el contenido para que no choque con el "RESUME" gigante */
 }
-
 /* cada columna */
 .resume-column {
   display: flex;
