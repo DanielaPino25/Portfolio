@@ -1022,11 +1022,20 @@ body.about {
 }
 
 /* software icons tipo fila de logos */
+.resume-softwares {
+  grid-column: 2 / 4;   /* de la col 2 hasta antes de la 4 -> ocupa 2 y 3 */
+  align-self: end;     /* arranca arriba del track */
+}
+.resume-softwares {
+  border-top: 1px solid #dcdcdc;
+  padding-top: 12px;
+  margin-top: 8px;
+}
 .software-icons {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 12px;
+  gap: 15px;
 }
 .software-icons img {
   width: 40px;
