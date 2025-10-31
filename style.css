@@ -202,7 +202,7 @@ nav a.active::before {
   background: none;
   border-radius:50%;
   display:flex;
-  place-items:center;
+  align-items:center;
   justify-content: center;
   background:none;
   overflow: hidden;
@@ -1049,7 +1049,7 @@ body.about {
 
 /* software icons tipo fila de logos */
 .software-block {
-  grid-column: 2; /* de la col 2 hasta antes de la 4 -> ocupa 2 y 3 */
+  grid-column: 2/4; /* de la col 2 hasta antes de la 4 -> ocupa 2 y 3 */
   margin-top: -200px;
 }
 .resume-softwares {
