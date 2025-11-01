@@ -780,7 +780,7 @@ body.about{
   overflow:hidden;
   background:#f3f3f3;
   box-shadow: 0 8px 28px rgba(0,0,0,0.06);
-  top: 130px;
+  top: -250px;
 }
 .about-photo img{
   width:100%;
@@ -793,6 +793,7 @@ body.about{
   top:12%;
   width: 42%;
   height: 76%;
+  z-index:1;
 }
 .about-photo-b{
   left: 34%;
@@ -806,6 +807,7 @@ body.about{
   top: 12%;
   width: 42%;
   height: 76%;
+  z-index:3;
 }
 
 /* Flecha animada abajo (hint de scroll) */
