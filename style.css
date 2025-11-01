@@ -804,22 +804,22 @@ body.about{
 }
 /* Tres marcos como en el mockup: izquierda, centro (marcado en azul), derecha */
 .about-photo-a{
-  left:-20px;
-  top:50px;
+  left:0px;
+  top:30px;
   width: 280px;
   height: 370px;
   z-index:1;
 }
 .about-photo-b{
   left: 220px;
-  bottom: -20px !important;
+  bottom: -10px !important;
   width: 280px;
   height: 370px;
   z-index:2;
 }
 .about-photo-c{
   right:20px;
-  top: 20px;
+  top: 0px;
   width: 280px;
   height: 370px;
   z-index:3;
