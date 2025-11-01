@@ -719,13 +719,13 @@ body.about{
 .about-bg-word{
   position:absolute;
   inset:auto 0 auto 0;
-  top: 120px;
+  top: 112px;
   margin:0;
   text-align:center;
-  font-family: 'Playfair Display', serif;
-  font-weight:600;
+  font-family:'Poppins',sans-serif;
+  font-weight:500;
   letter-spacing:0.06em;
-  font-size: clamp(56px, 17vw, 180px);
+  font-size: 150px;
   line-height:1;
   color: rgba(0,0,0,0.06);
   z-index:0;         /* detrás de todo */
@@ -756,6 +756,7 @@ body.about{
   font-size: clamp(40px, 6vw, 64px);
   line-height:0.92;
   letter-spacing:0.02em;
+  font-family: 'Playfair Display', serif;
 }
 .about-text-block{
   max-width: 520px;
