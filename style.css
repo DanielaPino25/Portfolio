@@ -755,7 +755,7 @@ body.about{
 .about-name{
   position: fixed;
   align-self: start;
-  top: 40px;
+  top: 0px;
   z-index: 100;
   font-weight:500;
   font-size: clamp(40px, 6vw, 64px);
