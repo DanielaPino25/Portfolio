@@ -765,7 +765,7 @@ body.about{
   box-shadow: none !important;
   backdrop-filter: none !important;
   background: #fff;
-  padding: 180px 60px 25px 25px;
+  padding: 175px 60px 25px 25px;
   text-transform: none;
   text-align: left;
 }
@@ -781,7 +781,7 @@ body.about{
 }
 .about-text-block{
   max-width: 520px;
-  top: -300px !important;
+  top: 0px !important;
   color:#4e4e4e;
   font-weight:300;
   line-height:1.75;
@@ -800,7 +800,7 @@ body.about{
   position:relative;
   width: 700px;
   height: 460px;
-  top: 140px;
+  top: 140px !important;
 }
 .about-photo{
   position:absolute;
