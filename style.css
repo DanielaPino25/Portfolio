@@ -762,9 +762,9 @@ body.about{
   line-height:1;
   letter-spacing:0.02em;
   font-family: 'Playfair Display', serif;
-  box-shadow: 0 0 20px rgba(255,255,255,0.9); /* suaviza los bordes */
+  box-shadow: 0 2px 8px rgba(251,1466,128,0.4), 0 10px 20px rgba(0, 0, 0, 0.08); /* suaviza los bordes */
   background: #fff;
-  padding: 50px 60px 25px 25px;
+  padding: 100px 60px 25px 25px;
   text-transform: none;
   text-align: left;
 }
@@ -815,21 +815,21 @@ body.about{
 .about-photo-a{
   left:-30px;
   top:10px;
-  width: 280px;
+  width: 270px;
   height: 370px;
   z-index:1;
 }
 .about-photo-b{
   left: 220px;
   bottom: 40px !important;
-  width: 280px;
+  width: 270px;
   height: 370px;
   z-index:2;
 }
 .about-photo-c{
   left: 470px;
   top: -15px;
-  width: 280px;
+  width: 270px;
   height: 370px;
   z-index:3;
 }
