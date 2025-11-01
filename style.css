@@ -721,7 +721,7 @@ body.about{
   position:absolute;
   inset:auto 0 auto 0;
   top: 112px;
-  left: 500px !important;
+  left: 520px !important;
   margin:0;
   text-align:center;
   font-family:'Poppins',sans-serif;
@@ -789,7 +789,7 @@ body.about{
   margin: 0 auto;
   right: 600px;
   top: 200px;
-  right: 0px;
+  right: 500px;
 }
 .about-photo{
   position:absolute;
