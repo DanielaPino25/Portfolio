@@ -719,7 +719,8 @@ body.about{
 .about-bg-word{
   position:absolute;
   inset:auto 0 auto 0;
-  top: clamp(10px, 4vw, 24px);
+  top: 120px;
+ 
   margin:0;
   text-align:center;
   font-family: 'Playfair Display', serif;
