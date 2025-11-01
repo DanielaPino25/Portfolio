@@ -755,7 +755,7 @@ body.about{
 .about-name{
   position: fixed;
   align-self: start;
-  top: 120px;
+  top: 80px;
   z-index: 100;
   font-weight:500;
   font-size: clamp(40px, 6vw, 64px);
@@ -764,7 +764,8 @@ body.about{
   font-family: 'Playfair Display', serif;
   box-shadow: 0 0 20px rgba(255,255,255,0.9); /* suaviza los bordes */
   background: #fff;
-  border-radius: 8px;
+  padding: 30px 40px;
+  border-radius: 12px;
   text-transform: none;
 }
 .about-wrapper,
