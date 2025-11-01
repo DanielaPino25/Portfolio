@@ -756,7 +756,7 @@ body.about{
   position: fixed;
   align-self: start;
   top:-98px;
-  left: 50px !important;
+  left: 150px !important;
   z-index: 100;
   font-weight:500;
   font-size: clamp(40px, 6vw, 64px);
@@ -766,7 +766,7 @@ body.about{
   box-shadow: none !important;
   backdrop-filter: none !important;
   background: #fff;
-  padding: 175px 60px 32px 25px;
+  padding: 175px 60px 45px 25px;
   text-transform: none;
   text-align: left;
 }
@@ -818,21 +818,21 @@ body.about{
 /* Tres marcos como en el mockup: izquierda, centro (marcado en azul), derecha */
 .about-photo-a{
   left:-20px;
-  top:55px;
+  top:65px;
   width: 270px;
   height: 370px;
   z-index:1;
 }
 .about-photo-b{
   left: 220px;
-  bottom: 5px !important;
+  bottom: 15px !important;
   width: 270px;
   height: 370px;
   z-index:2;
 }
 .about-photo-c{
   left: 460px;
-  top: 35px;
+  top: 45px;
   width: 270px;
   height: 370px;
   z-index:3;
