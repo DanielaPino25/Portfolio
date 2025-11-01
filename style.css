@@ -807,14 +807,14 @@ body.about{
 /* Tres marcos como en el mockup: izquierda, centro (marcado en azul), derecha */
 .about-photo-a{
   left:0px;
-  top:0px;
+  top:30px;
   width: 270px;
   height: 360px;
   z-index:1;
 }
 .about-photo-b{
-  left: 0px;
-  top: -50px;
+  left: 220px;
+  top: 70px;
   width: 270px;
   height: 360px;
   z-index:2;
