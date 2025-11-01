@@ -743,7 +743,7 @@ body.about {
 /* Palabra gigante gris de fondo */
 .about-bg-word {
   position: absolute;
-  margin-right:160px !important;
+  margin-right:0px !important;
   font-size: 150px;
   font-weight: 500;
   line-height: 1;
@@ -755,7 +755,9 @@ body.about {
   margin: 0;
   top:112px !important;
 }
-
+.left-rail .about-name{
+  transform: translateX(8px) !important;
+} 
 /* grid principal (texto izq / fotos der) */
 .about-content {
   position: relative;
