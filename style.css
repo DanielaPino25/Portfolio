@@ -721,7 +721,7 @@ body.about{
   position:absolute;
   inset:auto 0 auto 0;
   top: 112px;
-  left: 480px !important;
+  left: 450px !important;
   margin:0;
   text-align:center;
   font-family:'Poppins',sans-serif;
@@ -762,7 +762,7 @@ body.about{
   font-family: 'Playfair Display', serif;
 }
 .highlight{
-  color: var(--accent); /* azul corporativo */
+  color: var(--brand); 
 }
 .about-text-block{
   max-width: 520px;
@@ -782,7 +782,7 @@ body.about{
  margin-top: -140px;
  overflow: visible;
  top: 200px;
- right:1000px;
+ right:0px;
 }
 .about-photo-stack{
   position:relative;
