@@ -756,7 +756,7 @@ body.about{
   position: fixed;
   align-self: start;
   top:-98px;
-  left: -15px !important;
+  left: 50px !important;
   z-index: 100;
   font-weight:500;
   font-size: clamp(40px, 6vw, 64px);
@@ -818,7 +818,7 @@ body.about{
 /* Tres marcos como en el mockup: izquierda, centro (marcado en azul), derecha */
 .about-photo-a{
   left:-20px;
-  top:-45px;
+  top:55px;
   width: 270px;
   height: 370px;
   z-index:1;
@@ -832,7 +832,7 @@ body.about{
 }
 .about-photo-c{
   left: 460px;
-  top: -65px;
+  top: 35px;
   width: 270px;
   height: 370px;
   z-index:3;
