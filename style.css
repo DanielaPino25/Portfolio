@@ -762,9 +762,10 @@ body.about{
   line-height:1;
   letter-spacing:0.02em;
   font-family: 'Playfair Display', serif;
-  box-shadow: 0 2px 8px rgba(251,1466,128,0.4), 0 10px 20px rgba(0, 0, 0, 0.08); /* suaviza los bordes */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6px);
   background: #fff;
-  padding: 100px 60px 25px 25px;
+  padding: 150px 60px 25px 25px;
   text-transform: none;
   text-align: left;
 }
