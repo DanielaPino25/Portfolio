@@ -756,11 +756,13 @@ body.about{
 .about-name{
   margin:0;
   font-weight:500;
-  text-transform:uppercase;
   font-size: clamp(40px, 6vw, 64px);
   line-height:0.92;
   letter-spacing:0.02em;
   font-family: 'Playfair Display', serif;
+}
+.highlight{
+  color: var(--accent); /* azul corporativo */
 }
 .about-text-block{
   max-width: 520px;
