@@ -814,14 +814,14 @@ body.about{
 }
 .about-photo-b{
   left: 0px;
-  top: 0px;
+  top: -50px;
   width: 270px;
   height: 360px;
   z-index:2;
 }
 .about-photo-c{
   right:0px;
-  top: 0px;
+  top: 25px;
   width: 270px;
   height: 360px;
   z-index:3;
