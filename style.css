@@ -721,7 +721,7 @@ body.about{
   position:absolute;
   inset:auto 0 auto 0;
   top: 112px;
-  left: 450px !important;
+  left: 480px !important;
   margin:0;
   text-align:center;
   font-family:'Poppins',sans-serif;
@@ -750,7 +750,7 @@ body.about{
   display:flex;
   flex-direction:column;
   gap: clamp(18px, 2.8vw, 28px);
-  max-width: 330px;
+  max-width: 300px;
 }
 .about-name{
   margin:0;
@@ -760,7 +760,6 @@ body.about{
   line-height:0.92;
   letter-spacing:0.02em;
   font-family: 'Playfair Display', serif;
-  right: 50px !important;
 }
 .about-text-block{
   max-width: 520px;
@@ -783,7 +782,7 @@ body.about{
  margin-top: -140px;
  overflow: visible;
  top: 200px;
- right:800px;
+ right:1000px;
 }
 .about-photo-stack{
   position:relative;
@@ -805,25 +804,25 @@ body.about{
 }
 /* Tres marcos como en el mockup: izquierda, centro (marcado en azul), derecha */
 .about-photo-a{
-  left:0px;
+  left:-10px;
   top:30px;
   width: 270px;
   height: 360px;
-  z-index:3;
+  z-index:1;
 }
 .about-photo-b{
   left: 220px;
-  bottom: -50px !important;
+  bottom: -30px !important;
   width: 270px;
   height: 360px;
   z-index:2;
 }
 .about-photo-c{
-  right:0px;
-  top: 25px;
+  right:10px;
+  top: 50px;
   width: 270px;
   height: 360px;
-  z-index:1;
+  z-index:3;
 }
 
 /* Flecha animada abajo (hint de scroll) */
