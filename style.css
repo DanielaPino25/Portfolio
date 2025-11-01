@@ -721,7 +721,7 @@ body.about{
   position:absolute;
   inset:auto 0 auto 0;
   top: 112px;
-  left: 520px !important;
+  left: 505px !important;
   margin:0;
   text-align:center;
   font-family:'Poppins',sans-serif;
@@ -780,6 +780,7 @@ body.about{
  justify-self: center;
  align-items: center;
  width:100% !important;
+ margin-top: -140px;
 }
 .about-photo-stack{
   position:relative;
