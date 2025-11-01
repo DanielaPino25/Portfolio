@@ -743,7 +743,7 @@ body.about {
 /* Palabra gigante gris de fondo */
 .about-bg-word {
   position: absolute;
-  right:193px !important;
+  right:195px !important;
   font-size: 150px;
   font-weight: 500;
   line-height: 1;
@@ -764,7 +764,7 @@ body.about {
   gap: 60px;
   align-items: start;
   margin-top: 120px;/* empuja para que el texto no choque con el ABOUT ME gigante */
-  left:90px !important;
+  left:85px !important;
 }
 .about-text-block {
   position: relative;
@@ -804,7 +804,7 @@ body.about {
   width: 100%;
   height: 100%;
   transform: none !important; 
-  right: -70px !important;
+  right: -80px !important;
   top: 105px !important;
 }
 /* estilo base de cada foto */
