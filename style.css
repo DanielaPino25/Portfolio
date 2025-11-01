@@ -756,7 +756,7 @@ body.about {
   top:112px !important;
 }
 .left-rail .about-name{
-  transform: translateX(8px) !important;
+  margin-left:120px;
 } 
 /* grid principal (texto izq / fotos der) */
 .about-content {
