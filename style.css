@@ -755,7 +755,7 @@ body.about{
 .about-name{
   position: fixed;
   align-self: start;
-  top:-100px;
+  top:-98px;
   z-index: 100;
   font-weight:500;
   font-size: clamp(40px, 6vw, 64px);
@@ -817,21 +817,21 @@ body.about{
 /* Tres marcos como en el mockup: izquierda, centro (marcado en azul), derecha */
 .about-photo-a{
   left:-20px;
-  top:5px;
+  top:-45px;
   width: 270px;
   height: 370px;
   z-index:1;
 }
 .about-photo-b{
   left: 220px;
-  bottom: 50px !important;
+  bottom: 5px !important;
   width: 270px;
   height: 370px;
   z-index:2;
 }
 .about-photo-c{
   left: 460px;
-  top: -15px;
+  top: -65px;
   width: 270px;
   height: 370px;
   z-index:3;
