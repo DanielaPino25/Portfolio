@@ -713,6 +713,7 @@ body.about{
 .about-wrapper{
   position:relative;
   padding: clamp(24px, 5vw, 48px)  clamp(20px, 6vw, 80px);
+  padding-inline: clamp(24px, 6vw, 80px);
   overflow:visible;
 }
 /* Palabra gigante de fondo: ABOUT ME */
@@ -720,7 +721,7 @@ body.about{
   position:absolute;
   inset:auto 0 auto 0;
   top: 112px;
-  left: 512px !important;
+  left: 517px !important;
   margin:0;
   text-align:center;
   font-family:'Poppins',sans-serif;
@@ -736,7 +737,7 @@ body.about{
 .about-two-col{
   position:relative;
   z-index:1;         /* por encima del texto gigante */
-  max-width: 1200px;
+  max-width: 1120px;
   margin: 0 auto;
   display:grid;
   grid-template-columns: 0.9fr 1.2fr;
@@ -745,11 +746,11 @@ body.about{
 }
 /* Columna izquierda */
 .left-rail{ 
-  margin-left: 100px;
+  margin-left: 90px;
   display:flex;
   flex-direction:column;
   gap: clamp(18px, 2.8vw, 28px);
-  max-width: 350px;
+  max-width: 300px;
 }
 .about-name{
   margin:0;
@@ -773,16 +774,17 @@ body.about{
 .about-right{ 
  position:relative; 
  display:flex;
- justify-content: center;
+ justify-self: center;
  align-items: center;
  width:100% !important;
 }
 .about-photo-stack{
   position:relative;
   width: 100%;
-  max-width: 720px;
+  max-width: 620px;
   height: clamp(360px, 60vh, 520px); /* genera una caja para el posicionamiento */
   margin: 0 auto;
+
 }
 .about-photo{
   position:absolute;
