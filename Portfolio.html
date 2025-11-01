@@ -1,1 +1,252 @@
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio — Daniela Pino</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#ffffff;
+      --text:#333333;
+      --muted:#666666;
+      --brand:#111;
+      --line:#E6E6E6;
+      --accent:#FB9280; /* úsalo si quieres resaltar algo */
+    }
+
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+
+    /* ===== Header (igual estilo base que el resto del sitio) ===== */
+    header.site-header{
+      position:sticky;top:0;z-index:20;background:var(--bg);
+      border-bottom:1px solid var(--line);
+    }
+    .header-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:16px 24px;gap:24px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:600}
+    .brand .logo{width:28px;height:28px;border:1px solid var(--text);display:grid;place-items:center;font-size:10px}
+    nav.primary{display:flex;gap:28px;align-items:center}
+    nav.primary a{font-weight:500;opacity:.75}
+    nav.primary a.active, nav.primary a:hover{opacity:1}
+    .lang{opacity:.6}
+
+    /* ===== Layout general ===== */
+    main{
+      min-height:100vh;display:grid;grid-template-columns: 260px 1fr;gap:32px;max-width:1200px;margin:0 auto;padding:32px 24px 80px;
+    }
+
+    /* ===== Sidebar izquierda (Nombre + Filtros con anclas) ===== */
+    .side{
+      position:relative
+    }
+    .name{
+      font-size:40px;line-height:1.05;font-weight:600;margin:0 0 28px;
+    }
+    .filters{display:grid;gap:12px}
+    .filters a{display:block;padding:6px 0;color:var(--muted)}
+    .filters a:hover,.filters a.is-active{color:var(--text);font-weight:600}
+
+    /* Social (3 círculos) */
+    .social{display:flex;gap:16px;margin-top:28px}
+    .social a{width:44px;height:44px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;font-size:12px}
+
+    /* ===== Contenido derecha ===== */
+    .content{position:relative}
+
+    /* Marca de agua "PORTFOLIO" */
+    .watermark{
+      position:absolute;inset:0;pointer-events:none;z-index:0;display:flex;align-items:flex-start
+    }
+    .watermark h1{
+      margin:0;font-size:160px;letter-spacing:2px;font-weight:600;color:#000;opacity:.07;line-height:1;white-space:nowrap;transform:translateY(-10px);
+    }
+
+    /* Cita alineada con los proyectos */
+    .quote{position:relative;z-index:1;max-width:760px;margin:0 0 28px 0}
+    .quote p{margin:0;font-size:14px;color:var(--muted);text-align:center}
+
+    /* Grid de proyectos: 3 columnas fijas */
+    .grid{
+      position:relative;z-index:1;display:grid;grid-template-columns: 1.3fr 1fr 1fr;gap:32px;align-items:start
+    }
+
+    /* Tarjetas */
+    .card{position:relative;background:#fafafa;border:1px solid var(--line)}
+    .card .thumb{aspect-ratio: 4 / 3; background:#f2f2f2; display:block; overflow:hidden}
+    .card .thumb img{width:100%;height:100%;object-fit:cover}
+    .card .meta{padding:10px 12px;border-top:1px solid var(--line);font-size:12px;color:var(--muted)}
+
+    /* Botón flecha para cambiar imagen */
+    .card .next{
+      position:absolute;right:10px;bottom:10px;border:1px solid var(--line);width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:#fff;cursor:pointer;transition:transform .15s ease;border-color:#dcdcdc
+    }
+    .card .next:hover{transform:translateX(2px)}
+
+    /* Secciones (anclas) */
+    section{scroll-margin-top:96px}
+    .section-title{font-size:18px;margin:18px 0 12px;color:var(--muted);font-weight:500}
+
+    /* ===== Footer (igual estilo base) ===== */
+    footer.site-footer{border-top:1px solid var(--line);padding:18px 24px;color:var(--muted)}
+    .footer-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:16px}
+    .footer-inner small{opacity:.8}
+
+    /* ===== Responsive ===== */
+    @media (max-width: 1060px){
+      .watermark h1{font-size:120px}
+      .grid{grid-template-columns: 1fr 1fr 1fr}
+    }
+    @media (max-width: 880px){
+      main{grid-template-columns:1fr;gap:12px}
+      .watermark{justify-content:center}
+      .watermark h1{font-size:96px}
+      .quote p{text-align:left}
+    }
+    @media (max-width: 640px){
+      .grid{grid-template-columns:1fr}
+      .watermark h1{font-size:64px}
+    }
+  </style>
+</head>
+<body class="portfolio">
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="./index.html">
+        <span class="logo">LOGO</span>
+        <span>Daniela Pino — Product &amp; UX/UI Designer</span>
+      </a>
+      <nav class="primary">
+        <a href="about.html">ABOUT ME</a>
+        <a class="active" href="#">PORTFOLIO</a>
+        <a href="contacto.html">CONTACTO</a>
+        <span class="lang">ES / EN</span>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== Layout ===== -->
+  <main>
+    <!-- Columna izquierda -->
+    <aside class="side">
+      <h2 class="name">DANIELA<br>PINO</h2>
+      <nav class="filters" id="filters">
+        <a href="#all" class="is-active">All</a>
+        <a href="#uxui">UX/UI Design</a>
+        <a href="#product">Product Design</a>
+        <a href="#others">Others</a>
+      </nav>
+      <div class="social">
+        <a href="#" aria-label="LinkedIn">in</a>
+        <a href="#" aria-label="Behance">be</a>
+        <a href="#" aria-label="Instagram">ig</a>
+      </div>
+    </aside>
+
+    <!-- Columna derecha -->
+    <section class="content" id="all">
+      <!-- Marca de agua -->
+      <div class="watermark" aria-hidden="true"><h1>PORTFOLIO</h1></div>
+
+      <!-- Cita alineada con la rejilla -->
+      <div class="quote"><p>“Me encanta el diseño de producto y crear soluciones que sean innovadoras, sostenibles y súper funcionales, siempre pensando en mejorar la experiencia de las personas”.</p></div>
+
+      <!-- Grid 3 columnas fijas -->
+      <div class="grid">
+        <!-- Card 1 (col grande) -->
+        <article class="card" data-images='["https://picsum.photos/id/1040/1200/900","https://picsum.photos/id/1027/1200/900","https://picsum.photos/id/1025/1200/900"]'>
+          <a class="thumb" href="#uxui" aria-label="Abrir proyecto BioBloom">
+            <img src="https://picsum.photos/id/1040/1200/900" alt="Proyecto principal" />
+          </a>
+          <button class="next" aria-label="Siguiente imagen" title="Siguiente">→</button>
+          <div class="meta">
+            <strong>BioBloom</strong><br>
+            <span>Kit DIY de Biomateriales</span>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="card" data-images='["https://picsum.photos/id/1011/800/600","https://picsum.photos/id/1008/800/600","https://picsum.photos/id/1005/800/600"]'>
+          <a class="thumb" href="#product" aria-label="Abrir proyecto Dimma">
+            <img src="https://picsum.photos/id/1011/800/600" alt="Proyecto 2" />
+          </a>
+          <button class="next" aria-label="Siguiente imagen" title="Siguiente">→</button>
+          <div class="meta">
+            <strong>Dimma</strong><br>
+            <span>Lámpara con plantas para bienestar</span>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="card" data-images='["https://picsum.photos/id/1003/800/600","https://picsum.photos/id/1002/800/600","https://picsum.photos/id/1001/800/600"]'>
+          <a class="thumb" href="#others" aria-label="Abrir proyecto Aseito">
+            <img src="https://picsum.photos/id/1003/800/600" alt="Proyecto 3" />
+          </a>
+          <button class="next" aria-label="Siguiente imagen" title="Siguiente">→</button>
+          <div class="meta">
+            <strong>Aseito</strong><br>
+            <span>Branding &amp; Packaging de champú infantil</span>
+          </div>
+        </article>
+      </div>
+
+      <!-- Secciones de ancla (para los enlaces de la izquierda) -->
+      <h3 id="uxui" class="section-title">UX/UI Design</h3>
+      <p class="section-text">Aquí puedes listar los proyectos de UX/UI o enlazar a sus páginas internas.</p>
+
+      <h3 id="product" class="section-title">Product Design</h3>
+      <p class="section-text">Descripción breve de la categoría o tarjetas adicionales.</p>
+
+      <h3 id="others" class="section-title">Others</h3>
+      <p class="section-text">Contenido complementario, experimentos o artículos.</p>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <small>© <span id="y"></span> Daniela Pino</small>
+      <small>Hecho con cariño y buen diseño</small>
+    </div>
+  </footer>
+
+  <script>
+    // Año en footer
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Filtros con anclas: marcar activo
+    const filterLinks = document.querySelectorAll('#filters a');
+    filterLinks.forEach(a=>{
+      a.addEventListener('click',()=>{
+        filterLinks.forEach(x=>x.classList.remove('is-active'));
+        a.classList.add('is-active');
+      })
+    })
+
+    // Carrusel por tarjeta (cambia imagen con la flecha)
+    document.querySelectorAll('.card').forEach(card=>{
+      const imgs = JSON.parse(card.dataset.images || '[]');
+      if(!imgs.length) return;
+      const imgEl = card.querySelector('img');
+      let idx = 0;
+      const nextBtn = card.querySelector('.next');
+      nextBtn.addEventListener('click', (e)=>{
+        e.preventDefault();
+        idx = (idx + 1) % imgs.length;
+        // suave transición
+        imgEl.style.opacity = 0;
+        setTimeout(()=>{
+          imgEl.src = imgs[idx];
+          imgEl.onload = ()=>{ imgEl.style.opacity = 1; };
+        },120);
+      });
+    });
+
+    // Desplazamiento suave a secciones (por si tu CSS global no lo tiene)
+    document.documentElement.style.scrollBehavior = 'smooth';
+  </script>
+</body>
+</html>
 
