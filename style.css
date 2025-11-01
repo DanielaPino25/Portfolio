@@ -755,7 +755,7 @@ body.about{
 .about-name{
   position: sticky;
   align-self: start;
-  top: 90px;
+  top: 112px;
   font-weight:500;
   font-size: clamp(40px, 6vw, 64px);
   line-height:1;
@@ -815,7 +815,7 @@ body.about{
 }
 .about-photo-c{
   left: 470px;
-  top: 0px;
+  top: 15px;
   width: 280px;
   height: 370px;
   z-index:3;
