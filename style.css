@@ -776,11 +776,12 @@ body.about{
 /* Columna derecha: stack de fotos */
 .about-right{ 
  position:relative; 
- display:flex;
+ display:block;
  justify-self: center;
  align-items: center;
  width:100% !important;
  margin-top: -140px;
+ overflow: visible;
 }
 .about-photo-stack{
   position:relative;
