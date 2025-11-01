@@ -755,7 +755,7 @@ body.about{
 .about-name{
   position: fixed;
   align-self: start;
-  top:-50px;
+  top:-100px;
   z-index: 100;
   font-weight:500;
   font-size: clamp(40px, 6vw, 64px);
@@ -800,7 +800,7 @@ body.about{
   position:relative;
   width: 700px;
   height: 460px;
-  top: 150px;
+  top: 130px;
 }
 .about-photo{
   position:absolute;
