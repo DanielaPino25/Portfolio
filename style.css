@@ -746,7 +746,7 @@ body.about{
 }
 /* Columna izquierda */
 .left-rail{ 
-  margin-left: 75px;
+  margin-left: 0px;
   display:flex;
   flex-direction:column;
   gap: clamp(18px, 2.8vw, 28px);
