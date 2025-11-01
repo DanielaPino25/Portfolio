@@ -765,7 +765,7 @@ body.about{
   box-shadow: none !important;
   backdrop-filter: none !important;
   background: #fff;
-  padding: 200px 60px 25px 25px;
+  padding: 180px 60px 25px 25px;
   text-transform: none;
   text-align: left;
 }
@@ -800,7 +800,7 @@ body.about{
   position:relative;
   width: 700px;
   height: 460px;
-  top: 130px;
+  top: 140px;
 }
 .about-photo{
   position:absolute;
