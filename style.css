@@ -809,14 +809,14 @@ body.about{
   z-index:1;
 }
 .about-photo-b{
-  left: 0px;
+  left: 200px;
   bottom: 0px !important;
   width: 280px;
   height: 370px;
   z-index:2;
 }
 .about-photo-c{
-  left: 0px;
+  left: 400px;
   top: 0px;
   width: 280px;
   height: 370px;
