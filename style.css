@@ -781,12 +781,11 @@ body.about{
 }
 .about-text-block{
   max-width: 520px;
-  top: 200px !important;
+  top: 500px !important;
   color:#333;
   font-weight:300;
   line-height:1.75;
   font-size: clamp(14px, 1.5vw, 16px);
-  top:-10px;
 }
 /* Columna derecha: stack de fotos */
 .about-right{ 
@@ -801,7 +800,7 @@ body.about{
   position:relative;
   width: 700px;
   height: 460px;
-  top: 200px;
+  top: 150px;
 }
 .about-photo{
   position:absolute;
@@ -832,7 +831,7 @@ body.about{
 }
 .about-photo-c{
   left: 460px;
-  top: -20px;
+  top: -15px;
   width: 270px;
   height: 370px;
   z-index:3;
