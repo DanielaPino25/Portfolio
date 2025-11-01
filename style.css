@@ -720,7 +720,6 @@ body.about{
   position:absolute;
   inset:auto 0 auto 0;
   top: 120px;
- 
   margin:0;
   text-align:center;
   font-family: 'Playfair Display', serif;
@@ -858,13 +857,13 @@ body.about{
   position:relative;
   z-index:1;
   display:grid;
-  grid-template-columns: 1.25fr 1fr 1fr; /* izquierda un poco más ancha */
-  gap: clamp(24px, 4vw, 60px);
-  align-items:flex-start;
+  grid-template-columns: minmax(0,1.25fr) minmax(0,1fr) minmax(0,1fr);
+  gap: clamp(28px, 5vw, 64px);
+  align-items:start;
 }
 .resume-column{ min-width:0; }
 .resume-title{
-  margin: 0 0 10px 0;
+  margin: 0 0 12px 0;
   font-weight:600;
   letter-spacing:0.06em;
   text-transform:uppercase;
@@ -892,14 +891,8 @@ body.about{
 .job-year{ margin:2px 0 6px 0; color:var(--muted); font-weight:300; }
 .job-description{ margin:0 0 12px 0; color:#333; font-weight:300; }
 
-/* Courses bloque (tu HTML lo tiene fuera de la columna central).
-   Opcional: si quieres que "COURSES" esté dentro de la misma columna del medio,
-   envuélvelo en el mismo <div class="resume-column"> en tu HTML. 
-*/
-
-/* Bloque de software ocupa toda la fila de abajo y centra iconos */
 .software-block{
-  grid-column: 1 / -1;
+  grid-column: 2 / 4;
   margin-top: clamp(10px, 5vw, 24px);
 }
 
