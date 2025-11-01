@@ -719,9 +719,9 @@ body.about {
 .about-wrapper .resume-section .resume-grid {
   display: grid !important;
   grid-template-columns: 1.3fr 1fr 1fr !important; /* 🔹 3 columnas proporcionales */
-  gap: 60px !important; /* espacio entre columnas */
+  gap: 70px !important; /* espacio entre columnas */
   align-items: start;
-  justify-content: space-between;
+  justify-content: cente !important;
   width: 100%;
 }
 
@@ -731,6 +731,13 @@ body.about {
   flex-direction: column;
   width: 100%;
   min-width: 0;
+}
+.about-wrapper .resume-section {
+  width: 100%;
+  max-width: 1100px;           /* 🔹 da espacio suficiente sin ocupar todo el viewport */
+  margin: 120px auto 0 auto;   /* 🔹 centra el bloque */
+  padding: 0 40px;             /* 🔹 deja margen lateral interno */
+  box-sizing: border-box;
 }
 
 /* Palabra gigante gris de fondo */
