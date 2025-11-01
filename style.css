@@ -785,13 +785,9 @@ body.about{
 }
 .about-photo-stack{
   position:relative;
-  width: 100%;
-  max-width: 620px;
-  height: clamp(360px, 60vh, 520px); /* genera una caja para el posicionamiento */
+  width: 700px;
+  height: 460px;
   margin: 0 auto;
-  right: 600px;
-  top: 200px;
-  right: 500px;
 }
 .about-photo{
   position:absolute;
@@ -800,7 +796,6 @@ body.about{
   overflow:hidden;
   background:#f3f3f3;
   box-shadow: 0 8px 28px rgba(0,0,0,0.06);
-  top:0px !important;
 }
 .about-photo img{
   width:100%;
