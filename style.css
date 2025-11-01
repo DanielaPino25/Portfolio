@@ -720,7 +720,7 @@ body.about{
   position:absolute;
   inset:auto 0 auto 0;
   top: 112px;
-  left: 400px !important;
+  left: 500px !important;
   margin:0;
   text-align:center;
   font-family:'Poppins',sans-serif;
@@ -757,7 +757,7 @@ body.about{
   line-height:0.92;
   letter-spacing:0.02em;
   font-family: 'Playfair Display', serif;
-  left: 30px !important;
+  right: 30px !important;
 }
 .about-text-block{
   max-width: 520px;
@@ -765,7 +765,7 @@ body.about{
   font-weight:300;
   line-height:1.75;
   font-size: clamp(14px, 1.5vw, 16px);
-   left: 30px !important;
+  right: 30px !important;
 }
 /* Columna derecha: stack de fotos */
 .about-right{ position:relative; }
