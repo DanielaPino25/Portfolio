@@ -721,7 +721,7 @@ body.about{
   position:absolute;
   inset:auto 0 auto 0;
   top: 112px;
-  left: 530px !important;
+  left: 500px !important;
   margin:0;
   text-align:center;
   font-family:'Poppins',sans-serif;
@@ -746,7 +746,7 @@ body.about{
 }
 /* Columna izquierda */
 .left-rail{ 
-  margin-left: 80px;
+  margin-left: 75px;
   display:flex;
   flex-direction:column;
   gap: clamp(18px, 2.8vw, 28px);
@@ -788,7 +788,7 @@ body.about{
   height: clamp(360px, 60vh, 520px); /* genera una caja para el posicionamiento */
   margin: 0 auto;
   right: 600px;
-  top: 120px;
+  top: 200px;
 }
 .about-photo{
   position:absolute;
@@ -808,21 +808,21 @@ body.about{
 .about-photo-a{
   left:0px;
   top:100px;
-  width: 300px;
+  width: 280px;
   height: 360px;
   z-index:1;
 }
 .about-photo-b{
   left: 210px;
   top: 50px;
-  width: 300px;
+  width: 280px;
   height: 360px;
   z-index:2;
 }
 .about-photo-c{
   right:0px;
   top: 0px;
-  width: 300px;
+  width: 280px;
   height: 360px;
   z-index:3;
 }
