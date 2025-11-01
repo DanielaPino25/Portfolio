@@ -787,7 +787,8 @@ body.about{
   max-width: 620px;
   height: clamp(360px, 60vh, 520px); /* genera una caja para el posicionamiento */
   margin: 0 auto;
-  right: 300px;
+  right: 600px;
+  top: 120px;
 }
 .about-photo{
   position:absolute;
