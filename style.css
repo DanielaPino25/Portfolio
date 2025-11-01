@@ -721,7 +721,7 @@ body.about{
   position:absolute;
   inset:auto 0 auto 0;
   top: 112px;
-  left: 450px !important;
+  left: 400px !important;
   margin:0;
   text-align:center;
   font-family:'Poppins',sans-serif;
@@ -751,7 +751,7 @@ body.about{
   display:flex;
   flex-direction:column;
   gap: clamp(18px, 2.8vw, 28px);
-  max-width: 300px;
+  max-width: 310px;
 }
 .about-name{
   margin:0;
@@ -760,9 +760,6 @@ body.about{
   line-height:0.92;
   letter-spacing:0.02em;
   font-family: 'Playfair Display', serif;
-}
-.highlight{
-  color: var(--brand); 
 }
 .about-text-block{
   max-width: 520px;
@@ -779,10 +776,7 @@ body.about{
  justify-self: center;
  align-items: center;
  width:100% !important;
- margin-top: -140px;
  overflow: visible;
- top: 200px;
- right:0px;
 }
 .about-photo-stack{
   position:relative;
