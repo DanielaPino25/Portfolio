@@ -720,7 +720,7 @@ body.about{
   position:absolute;
   inset:auto 0 auto 0;
   top: 112px;
-  left: 500px !important;
+  left: 507px !important;
   margin:0;
   text-align:center;
   font-family:'Poppins',sans-serif;
@@ -757,7 +757,7 @@ body.about{
   line-height:0.92;
   letter-spacing:0.02em;
   font-family: 'Playfair Display', serif;
-  right: 30px !important;
+  right: 100px !important;
 }
 .about-text-block{
   max-width: 520px;
@@ -765,7 +765,7 @@ body.about{
   font-weight:300;
   line-height:1.75;
   font-size: clamp(14px, 1.5vw, 16px);
-  right: 30px !important;
+  right: 100px !important;
 }
 /* Columna derecha: stack de fotos */
 .about-right{ 
@@ -788,7 +788,7 @@ body.about{
   overflow:hidden;
   background:#f3f3f3;
   box-shadow: 0 8px 28px rgba(0,0,0,0.06);
-  top:200px !important;
+  top:0px !important;
 }
 .about-photo img{
   width:100%;
