@@ -762,12 +762,15 @@ body.about{
   line-height:1;
   letter-spacing:0.02em;
   font-family: 'Playfair Display', serif;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(6px);
+  box-shadow: none !important;
+  backdrop-filter: none !important;
   background: #fff;
   padding: 150px 60px 25px 25px;
   text-transform: none;
   text-align: left;
+}
+.about-name.shadow-on{
+  box-shadow: 0 16px 28px rgba(0,0,0,.10); 
 }
 .about-wrapper,
 .about-two-col,
@@ -815,7 +818,7 @@ body.about{
 /* Tres marcos como en el mockup: izquierda, centro (marcado en azul), derecha */
 .about-photo-a{
   left:-20px;
-  top:10px;
+  top:5px;
   width: 270px;
   height: 370px;
   z-index:1;
@@ -829,7 +832,7 @@ body.about{
 }
 .about-photo-c{
   left: 460px;
-  top: -15px;
+  top: -10px;
   width: 270px;
   height: 370px;
   z-index:3;
