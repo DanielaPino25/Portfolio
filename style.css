@@ -809,7 +809,7 @@ body.about{
   z-index:1;
 }
 .about-photo-b{
-  left: 220px;
+  left: -220px;
   bottom: 0px !important;
   width: 280px;
   height: 370px;
