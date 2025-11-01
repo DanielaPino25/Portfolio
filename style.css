@@ -721,7 +721,7 @@ body.about{
   position:absolute;
   inset:auto 0 auto 0;
   top: 112px;
-  left: 400px !important;
+  left: 405px !important;
   margin:0;
   text-align:center;
   font-family:'Poppins',sans-serif;
@@ -751,7 +751,7 @@ body.about{
   display:flex;
   flex-direction:column;
   gap: clamp(18px, 2.8vw, 28px);
-  max-width: 310px;
+  max-width: 315px;
 }
 .about-name{
   margin:0;
@@ -760,6 +760,7 @@ body.about{
   line-height:0.92;
   letter-spacing:0.02em;
   font-family: 'Playfair Display', serif;
+  bottom:0px;
 }
 .about-text-block{
   max-width: 520px;
@@ -767,7 +768,7 @@ body.about{
   font-weight:300;
   line-height:1.75;
   font-size: clamp(14px, 1.5vw, 16px);
-  right: 50px !important;
+  top:5px;
 }
 /* Columna derecha: stack de fotos */
 .about-right{ 
