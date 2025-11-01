@@ -811,11 +811,11 @@ body.about{
   top:30px;
   width: 270px;
   height: 360px;
-  z-index:1;
+  z-index:3;
 }
 .about-photo-b{
   left: 220px;
-  top: 70px;
+  bottom: -50px !important;
   width: 270px;
   height: 360px;
   z-index:2;
@@ -825,7 +825,7 @@ body.about{
   top: 25px;
   width: 270px;
   height: 360px;
-  z-index:3;
+  z-index:1;
 }
 
 /* Flecha animada abajo (hint de scroll) */
