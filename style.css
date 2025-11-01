@@ -704,533 +704,286 @@ body.es .contact-text {
 
 
 
-/* ===== ABOUT PAGE LAYOUT ===== */
-html, body.contact {
-  height: 100%;
-  overflow: hidden;              /* 🔒 sin scroll global */
+/* ========== About (hero superior) ========== */
+body.about{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
 }
-body.about {
-  min-height: 100vh;           /* ocupa toda la altura de la ventana */
-  display: flex;
-  flex-direction: column;  /* header + main (se expande) + footer */
-  overflow-y: auto !important;
-  overflow-x: hidden;
+.about-wrapper{
+  position:relative;
+  padding: clamp(24px, 5vw, 48px)  clamp(20px, 6vw, 80px);
+  overflow:visible;
 }
-.about-wrapper .resume-section .resume-grid {
-  display: grid !important;
-  grid-template-columns: 1.3fr 1fr 1fr !important; /* 🔹 3 columnas proporcionales */
-  gap: 70px !important; /* espacio entre columnas */
-  align-items: start;
-  justify-content: cente !important;
-  width: 100%;
-}
-
-/* Asegura que cada columna se comporte correctamente */
-.about-wrapper .resume-section .resume-grid .resume-column {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  min-width: 0;
-}
-.about-wrapper .resume-section {
-  width: 100%;
-  max-width: 1100px;           /* 🔹 da espacio suficiente sin ocupar todo el viewport */
-  margin: 120px auto 0 auto;   /* 🔹 centra el bloque */
-  padding: 0 40px;             /* 🔹 deja margen lateral interno */
-  box-sizing: border-box;
-}
-
-/* Palabra gigante gris de fondo */
-.about-bg-word {
-  position: absolute;
-  left:500px !important;
-  font-size: 150px;
-  font-weight: 500;
-  line-height: 1;
-  color: rgba(0,0,0,0.07); /* gris muy suave */
-  letter-spacing: -0.02em;
-  pointer-events: none;
-  user-select: none;
-  white-space: nowrap;
-  margin: 0;
-  top:112px !important;
-}
-.left-rail .about-name{
-  left:300px;
-} 
-/* grid principal (texto izq / fotos der) */
-.about-content {
-  position: relative;
-  display: grid;
-  grid-template-columns: 0.6fr 1.4fr;
-  gap: 60px;
-  align-items: start;
-  margin-top: 120px;/* empuja para que el texto no choque con el ABOUT ME gigante */
-  left:700px !important;
-}
-.about-text-block {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 5px !important;
-  max-width: 360px;
-  font-family: 'Poppins', sans-serif !important;
-  font-weight: 300 !important;
-  color: #4e4e4e !important;
-  line-height: 1.6 !important; 
-  letter-spacing: 0.01em;
-  margin-top: 20px !important;
-  left:200px !important;
-}
-.about-text-block p {
-  margin: 0;             /* elimina margen superior e inferior */
-  padding: 0;
-}
-.about-wrapper,
-.about-content,
-.about-left {
-  overflow: visible !important;
-}
-body.about {
-  overflow-y: auto !important;
-  overflow-x: hidden;
-}
-
-/* Columna derecha */
-.about-right {
-  position: relative;
-}
-
-.about-photo-stack {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transform: none !important; 
-  left: -500px !important;
-  top: 105px !important;
-}
-/* estilo base de cada foto */
-.about-photo {
-  position: absolute;
-  border-radius: var(--radius);
-  overflow: hidden;
-  border: 1px solid var(--border);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-  background: var(--card);
-  box-shadow:
-    0 24px 50px rgba(0,0,0,0.06),
-    0 4px 12px rgba(0,0,0,0.04);
-}
-.about-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-/*
-  Posiciones de las 3 fotos (imitando tu wireframe):
-  - una a la izquierda más alta
-  - una más baja en el medio
-  - otra a la derecha un poco más alta
-*/
-.about-photo-a {
-  top: 0;
-  width: 280px;
-  height: 370px;
-  z-index: 1;
-  left:-100px !important;
-}
-.about-photo-b {
-  top: 90px;
-  width: 280px;
-  height: 370px;
-  z-index: 2;
-  left:125px !important;
-}
-.about-photo-c {
-  top: -25px;
-  width: 280px;
-  height: 370px;
-  z-index: 3;
-  left:360px !important;
-}
-
-
-/* Flechita abajo "scroll hint" */
-.about-scroll-hint {
-  position: fixed;
-  bottom: 25px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: rgba(0,0,0,0.25);
-  font-family: 'Poppins', sans-serif;
-  font-weight: 300;
-  font-size: 28px;
-  line-height: 1;
-  opacity: 0.6;
-  z-index: 50;
-  transition: opacity 0.6s ease, transform 0.6s ease;
-  animation: arrow-bounce 2s infinite;
-}
-.about-scroll-hint.hidden {
-  opacity: 0;
-  transform: translate(-50%, 10px); /* se desvanece y baja un poquito */
-  pointer-events: none;
-}
-/* animación sutil de la flecha */
-@keyframes arrow-bounce {
-  0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(6px); }
-}
-
-/* ===== responsive breakpoints ===== */
-@media(max-width: 980px){
-  .about-content {
-    grid-template-columns: 1fr;
-    margin-top: 140px;
-  }
- .about-left {
-    max-width: 100%;
-  }
-  .about-name {
-    font-size: 32px;
-  }
-  .about-text-block {
-    max-width: 100%;
-  }
-  .about-right {
-    margin-top: 40px;
-    min-height: 360px;
-  }
-
-  /* Reposicionar las fotos en stack vertical-ish para mobile */
-  .about-photo-a {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 230px;
-    height: 260px;
-    margin: 0 auto;
-  }
-  .about-photo-b {
-    position: relative;
-    top: -40px;
-    left: 40px;
-    width: 230px;
-    height: 260px;
-    margin: 0 auto;
-  }
-  .about-photo-c {
-    position: relative;
-    top: -80px;
-    left: -40px;
-    width: 230px;
-    height: 260px;
-    margin: 0 auto;
-  }
-  .about-bg-word {
-    font-size: clamp(60px, 10vw, 100px);
-    top: 60px;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-  }
-  .about-scroll-hint {
-    margin-top: 40px;
-  }
-}
-
-
-
-/* ===== RESUME SECTION (debajo del about) ===== */
-.resume-section {
-  position: relative;
-  width: 100%;
-  max-width: 1200px; 
-  margin: 0 auto !important;  
-  padding: 0 40px;
-  box-sizing: border-box;
-  color: #4e4e4e;
-  font-family: 'Poppins', sans-serif;
-}
-
-/* palabra RESUME grande en gris claro (como ABOUT ME) */
-.resume-hero-word {
-  position: absolute;
-  top: 50px !important;
-  right: -822px;
-  font-size: 150px;
-  font-weight: 500;
-  line-height: 1;
-  color: rgba(0,0,0,0.07); /* gris muy suave */
-  letter-spacing: -0.02em;
-  pointer-events: none;
-  user-select: none;
-  white-space: nowrap;
-  margin: 0;
-}
-
-/* grid de 3 columnas: Experience / Studies / Skills */
-.resume-grid {
-  display: grid !important;
-  grid-template-columns: 1.2fr 1fr 1fr !important; /* 🔹 3 columnas bien distribuidas */
-  gap: 60px !important;
-  justify-content: center !important;
-  align-items: start;
-  width: 100%;
-}
-/* cada columna */
-.resume-column {
-  display: flex;
-  flex-direction: column;
-  width: 100% !important;
-  min-width: 0 !important;
-}
-
-/* subtítulos tipo "Experience", "Studies", "Skills" */
-.resume-title {
-  font-size: 24px;
-  font-weight: 500;
-  color:var(--accent);
-  margin: 0 0 16px 0;
-  line-height: 1.2;
-  letter-spacing: 0.1em;
-}
-
-/* listas internas con línea */
-.resume-list {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 32px 0;
-  border-top: 1px solid #dcdcdc; /* línea gris clara arriba */
-  font-size: 0.95rem;
-  font-weight: 300;
-  line-height: 1.6;
-  color: #4e4e4e;
-}
-.resume-list li {
-  border-bottom: 1px solid #e9e9e9;
-  padding: 0px 0;
-}
-/* ===== ESTILOS DE EXPERIENCIA (ajustado) ===== */
-.job-role {
-  font-weight: 500;
-  font-size: 1rem;
-  color: #4e4e4e;
-  margin-bottom: 0;
-  margin-top: 7px;
-}
-.job-company {
-  font-weight: 400;
-  color: #4e4e4e;
-  margin-top: -2px;
-  margin-bottom:0;
-  padding-left:10px !important;
-}
-.job-year {
-  color: #666;
-  font-size: 0.9rem;
-  margin-top: 2px;
-  margin-bottom:0;
-  padding-left:10px !important;
-}
-.job-description {
-  font-weight: 300;
-  color: #4e4e4e;
-  line-height: 1.6;
-  font-size: 0.95rem;
-  margin: 6px 0 12px 0; /* 🔹 deja espacio solo antes y después del texto largo */
-  max-width: 60ch;
-  padding-left:10px !important;
-}
-.resume-list li + li {
-  border-top: none !important; /* elimina el borde duplicado del siguiente li */
-}
-
-.study-item {
-  border-top: 1px solid #dcdcdc;
-}
-.study-degree {
-  font-weight: 500;
-  font-size: 1rem;
-  color: #4e4e4e;
-  margin-bottom: 0;
-  margin-top: 7px;
-}
-.study-school {
-  font-weight: 400;
-  color: #4e4e4e;
-  margin-top: -2px;
-  margin-bottom:0;
-}
-.study-year {
-  color: #666;
-  font-size: 0.9rem;
-  margin-top: 2px;
-  margin-bottom:0;
-}
-
-/* software icons tipo fila de logos */
-.software-block {
-  grid-column: 2/4; /* de la col 2 hasta antes de la 4 -> ocupa 2 y 3 */
-  margin-top: -200px;
-}
-.resume-softwares {
-  border-top: 1px solid #dcdcdc;
-  padding-top: 12px;
-  margin-top: 8px;
-}
-.software-icons {
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  gap: 15px;
-}
-.software-icons img {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-  opacity: 0.9;
-  border-radius: 8px;
- display: block;
-}
-
-/* Botón lateral "Download CV" tipo etiqueta rotada */
-.download-cv {
-  position: absolute;
-  right: -60px;
-  top: 50%;
-  transform: rotate(-90deg) translateY(50%);
-  transform-origin: right center;
-  background: transparent;
-  border: 1px solid #dcdcdc;
-  border-radius: 999px;
-  padding: 10px 24px;
-  font-size: 0.9rem;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 300;
-  color: #4e4e4e;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  box-shadow:
-    0 8px 20px rgba(0,0,0,0.03),
-    0 2px 6px rgba(0,0,0,0.04);
-}
-.download-cv:hover {
-  background: rgba(251,146,128,0.08);                 /* coral translúcido */
-  border-color: rgba(251,146,128,0.4);
-}
-
-/* ===== footer en la página About: que NO sea fijo =====
-   - esto asegura que haya scroll normal y el footer quede abajo del contenido,
-     no pegado a la pantalla como en la home.
-*/
-body.en .about-wrapper + .footer,
-body.es .about-wrapper + .footer,
-body.about .about-wrapper + .footer {
-  position: static !important;
-  bottom: auto !important;
-  left: auto !important;
-  width: 100%;
-  text-align: center;
-  color: #4e4e4e;
-  font-size: 0.75rem;
-  line-height: 1.2;
-  padding: 10px 0 !important;
-  margin-top: 60px;
-  background: transparent;
-  box-shadow: none;
-  backdrop-filter: none;
-  border: none;
-  z-index: 1;
-}
-
-/* ===== responsive para pantallas más pequeñas ===== */
-@media (max-width: 980px) {
-  .resume-section {
-    max-width: 85vw;
-    margin-top: 160px;
-    padding-bottom: 100px;
-    margin-top: 80px !important;
-  }
-  .resume-hero-word {
-    font-size: clamp(60px, 10vw, 100px);
-    right: 0;
-    left: 0;
-    text-align: center;
-  }
-  .resume-grid {
-    grid-template-columns: 1fr; /* una columna bajo la otra */
-    gap: 40px;
-    margin-top: 120px;
-  }
-  .download-cv {
-    position: static;
-    transform: none;
-    margin: 20px auto 0;
-    right: auto;
-    top: auto;
-  }
-}
-/* Layout de dos columnas para toda la página About+Resume */
-.about-two-col{
-  display: grid;
-  grid-template-columns: 0.6fr 1.4fr; /* ajusta si quieres */
-  gap: 60px;
-  align-items: start !important;
-}
-
-/* Rail izquierda que abarca todo; no corta el sticky */
-.left-rail{
-  position: relative;
-  overflow: visible !important;           /* importante para sticky */
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;  /* se extiende con el contenido de la derecha */
-  max-width: 420px;
-}
-
-/* El nombre se pega durante TODO el scroll del rail */
-.left-rail .about-name{
-  position: sticky !important;
-  top: 120px;                   /* ajusta para alinear con el ABOUT ME de fondo */
+/* Palabra gigante de fondo: ABOUT ME */
+.about-bg-word{
+  position:absolute;
+  inset:auto 0 auto 0;
+  top: clamp(10px, 4vw, 24px);
+  margin:0;
+  text-align:center;
   font-family: 'Playfair Display', serif;
-  font-size: 60px;
-  font-weight: 400;
-  line-height: 1;
-  color: #4e4e4e;
-  margin: 0;                   /* sin empujes raros */
-  z-index: 10;
-  transform: none !important;
+  font-weight:600;
+  letter-spacing:0.06em;
+  font-size: clamp(56px, 17vw, 180px);
+  line-height:1;
+  color: rgba(0,0,0,0.06);
+  z-index:0;         /* detrás de todo */
+  pointer-events:none;
+  user-select:none;
 }
-.left-rail .about-text-block{
-  font-family: 'Poppins', sans-serif;
-  font-weight: 300;
-  color: #4e4e4e;
-  line-height: 1.6;
-  letter-spacing: 0.01em;
-  display: flex;
-  flex-direction: column;
-  gap: 0px;               /* espacio entre párrafos */
-  /* evita que parezca muy pegado al nombre si lo necesitas */
-  /* margin-top: 6px; */
+/* Dos columnas: nombre/texto + stack de fotos */
+.about-two-col{
+  position:relative;
+  z-index:1;         /* por encima del texto gigante */
+  max-width: 1200px;
+  margin: 0 auto;
+  display:grid;
+  grid-template-columns: 0.9fr 1.2fr;
+  gap: clamp(28px, 5vw, 64px);
+  align-items: center;
 }
-/* Columna derecha: contiene About + Resume en flujo */
-.right-flow{
-  min-height: 100%;
-  overflow: visible;
+/* Columna izquierda */
+.left-rail{ 
+  display:flex;
+  flex-direction:column;
+  gap: clamp(18px, 2.8vw, 28px);
 }
-html, body { overflow-x: hidden; overflow-y: auto; }
-.about-wrapper, .about-two-col, .left-rail, .right-flow { overflow: visible; }
+.about-name{
+  margin:0;
+  font-weight:500;
+  text-transform:uppercase;
+  font-size: clamp(40px, 6vw, 64px);
+  line-height:0.92;
+  letter-spacing:0.02em;
+}
+.about-text-block{
+  max-width: 520px;
+  color:#333;
+  font-weight:300;
+  line-height:1.75;
+  font-size: clamp(14px, 1.5vw, 16px);
+}
+/* Columna derecha: stack de fotos */
+.about-right{ position:relative; }
+.about-photo-stack{
+  position:relative;
+  width: 100%;
+  max-width: 760px;
+  aspect-ratio: 16/10; /* genera una caja para el posicionamiento */
+  margin-inline:auto;
+}
+.about-photo{
+  position:absolute;
+  border:1px solid #d9d9d9;
+  border-radius: 8px;
+  overflow:hidden;
+  background:#f3f3f3;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.06);
+}
+.about-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+/* Tres marcos como en el mockup: izquierda, centro (marcado en azul), derecha */
+.about-photo-a{
+  left:0%;
+  top:12%;
+  width: 42%;
+  height: 76%;
+}
+.about-photo-b{
+  left: 34%;
+  top: 8%;
+  width: 36%;
+  height: 86%;
+  border: 2px solid var(--brand);
+  z-index:2;
+}
+.about-photo-c{
+  right:0%;
+  top: 12%;
+  width: 42%;
+  height: 76%;
+}
 
-/* Ajuste responsivo: en móvil, quita sticky para evitar solapes */
-@media (max-width: 980px){
-  .left-rail .about-name{
-    position: static;
-    margin-bottom: 16px;
-  }
+/* Flecha animada abajo (hint de scroll) */
+.about-scroll-hint{
+  position:relative;
+  margin: clamp(24px, 6vw, 48px) auto 0;
+  width:max-content;
+  opacity:0.85;
+  transition: opacity .25s ease;
+}
+.about-scroll-hint.hidden{ opacity:0; pointer-events:none; }
+.arrow-down{
+  display:inline-block;
+  font-size: clamp(18px, 3vw, 26px);
+  animation: bob 1.6s ease-in-out infinite;
+  user-select:none;
+}
+@keyframes bob{
+  0%,100%{ transform: translateY(0); }
+  50%{ transform: translateY(6px); }
+}
+
+/* ========== Sección RESUME (al hacer scroll) ========== */
+.resume-section{
+  position:relative;
+  margin-top: clamp(60px, 12vw, 140px);
+  padding: clamp(24px, 5vw, 48px) clamp(20px, 6vw, 80px) clamp(80px, 10vw, 120px);
+  max-width: 1280px;
+  margin-inline:auto;
+}
+/* Palabra gigante RESUME de fondo */
+.resume-hero-word{
+  position:absolute;
+  inset: 0;
+  top: clamp(-6px, -1vw, -12px);
+  margin:0;
+  text-align:center;
+  font-family: 'Playfair Display', serif;
+  font-weight:600;
+  letter-spacing:0.06em;
+  font-size: clamp(56px, 15vw, 170px);
+  line-height:1;
+  color: rgba(0,0,0,0.06);
+  z-index:0;
+  pointer-events:none;
+}
+/* Grid de 3 columnas + fila de software */
+.resume-grid{
+  position:relative;
+  z-index:1;
+  display:grid;
+  grid-template-columns: 1.25fr 1fr 1fr; /* izquierda un poco más ancha */
+  gap: clamp(24px, 4vw, 60px);
+  align-items:flex-start;
+}
+.resume-column{ min-width:0; }
+.resume-title{
+  margin: 0 0 10px 0;
+  font-weight:600;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  font-size: clamp(18px, 2.2vw, 22px);
+}
+.resume-list{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.resume-list li{
+  position:relative;
+  padding-left: 0;
+  color:#333;
+  font-weight:300;
+  line-height:1.6;
+  font-size: clamp(14px, 1.45vw, 16px);
+}
+/* Detalles experiencia/estudios */
+.job-role{ margin:0; font-weight:500; }
+.job-company{ margin:2px 0 0 0; color:var(--muted); }
+.job-year{ margin:2px 0 6px 0; color:var(--muted); font-weight:300; }
+.job-description{ margin:0 0 12px 0; color:#333; font-weight:300; }
+
+/* Courses bloque (tu HTML lo tiene fuera de la columna central).
+   Opcional: si quieres que "COURSES" esté dentro de la misma columna del medio,
+   envuélvelo en el mismo <div class="resume-column"> en tu HTML. 
+*/
+
+/* Bloque de software ocupa toda la fila de abajo y centra iconos */
+.software-block{
+  grid-column: 1 / -1;
+  margin-top: clamp(10px, 5vw, 24px);
+}
+
+.software-icons{
+  display:flex;
+  flex-wrap:wrap;
+  gap: clamp(8px, 1.8vw, 16px);
+  align-items:center;
+  justify-content:center;
+  padding-top: clamp(8px, 2vw, 12px);
+}
+
+.software-icons img{
+  width: clamp(28px, 5.2vw, 48px);
+  height: clamp(28px, 5.2vw, 48px);
+  object-fit:contain;
+  filter: grayscale(0.2);
+  opacity:0.9;
+}
+
+/* Botón vertical “Download CV” a la derecha */
+.download-cv{
+  position: fixed;
+  right: clamp(8px, 1.8vw, 18px);
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  transform-origin:center;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius: 999px;
+  padding: 10px 18px;
+  font-size: 14px;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  cursor:pointer;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.06);
+  z-index:10;
+}
+
+/* Footer simple */
+.footer{
+  padding: 24px;
+  text-align:center;
+  color:var(--muted);
+  font-size:14px;
+  border-top:1px solid #eee;
+}
+
+/* ========== Responsivo ========== */
+@media (max-width: 990px){
   .about-two-col{
+    grid-template-columns: 1fr; 
+    gap: 36px;
+  }
+  .about-photo-stack{
+    max-width: 640px;
+    aspect-ratio: 3/2;
+  }
+  .about-photo-a, .about-photo-b, .about-photo-c{
+    top:auto; bottom:auto;
+  }
+  /* reacomodo más apilado para móvil/tablet */
+  .about-photo-a{ left:2%; top:14%; width:46%; height:70%; }
+  .about-photo-b{ left:34%; top:6%;  width:42%; height:82%; }
+  .about-photo-c{ right:2%; top:14%; width:46%; height:70%; }
+
+  .resume-grid{
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 28px;
+  }
+  .software-block{ grid-column: 1; }
+  .download-cv{
+    position: sticky; /* deja de flotar en móvil */
+    transform: none;
+    top: auto;
+    right:auto;
+    display:block;
+    margin: 18px auto 0;
+    rotate: 0deg;
   }
 }
-
+@media (max-width: 560px){
+  .about-bg-word,
+  .resume-hero-word{
+    font-size: clamp(48px, 16vw, 96px);
+    letter-spacing:0.04em;
+  }
+}
