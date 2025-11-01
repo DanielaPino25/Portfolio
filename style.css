@@ -769,6 +769,9 @@ body.about{
   line-height:1.75;
   font-size: clamp(14px, 1.5vw, 16px);
   right: 100px !important;
+  text-align: justify;
+  text-justify: inter-word;   
+  hyphens: auto;  
 }
 /* Columna derecha: stack de fotos */
 .about-right{ 
