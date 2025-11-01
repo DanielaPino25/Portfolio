@@ -746,7 +746,7 @@ body.about{
 }
 /* Columna izquierda */
 .left-rail{ 
-  margin-left: -15px;
+  margin-left: -12px;
   display:flex;
   flex-direction:column;
   gap: clamp(18px, 2.8vw, 28px);
@@ -782,6 +782,8 @@ body.about{
  width:100% !important;
  margin-top: -140px;
  overflow: visible;
+ top: 200px;
+ left:-200px;
 }
 .about-photo-stack{
   position:relative;
