@@ -720,7 +720,7 @@ body.about{
   position:absolute;
   inset:auto 0 auto 0;
   top: 112px;
-  left: 507px !important;
+  left: 512px !important;
   margin:0;
   text-align:center;
   font-family:'Poppins',sans-serif;
@@ -745,9 +745,11 @@ body.about{
 }
 /* Columna izquierda */
 .left-rail{ 
+  margin-left: 100px;
   display:flex;
   flex-direction:column;
   gap: clamp(18px, 2.8vw, 28px);
+  max-width: 350px;
 }
 .about-name{
   margin:0;
