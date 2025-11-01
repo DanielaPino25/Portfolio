@@ -789,7 +789,7 @@ body.about{
   margin: 0 auto;
   right: 600px;
   top: 200px;
- left: 100px;
+  right: 250px;
 }
 .about-photo{
   position:absolute;
