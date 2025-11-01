@@ -724,7 +724,6 @@ body.about{
   text-align:center;
   font-family:'Poppins',sans-serif;
   font-weight:500;
-  letter-spacing:0.06em;
   font-size: 150px;
   line-height:1;
   color: rgba(0,0,0,0.06);
@@ -781,6 +780,7 @@ body.about{
   overflow:hidden;
   background:#f3f3f3;
   box-shadow: 0 8px 28px rgba(0,0,0,0.06);
+  top: 130px;
 }
 .about-photo img{
   width:100%;
@@ -799,7 +799,6 @@ body.about{
   top: 8%;
   width: 36%;
   height: 86%;
-  border: 2px solid var(--brand);
   z-index:2;
 }
 .about-photo-c{
@@ -846,7 +845,6 @@ body.about{
   text-align:center;
   font-family:'Poppins',sans-serif;
   font-weight:500;
-  letter-spacing:0.06em;
   font-size: 150px;
   line-height:1;
   color: rgba(0,0,0,0.06);
