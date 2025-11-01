@@ -768,12 +768,17 @@ body.about{
   right: 30px !important;
 }
 /* Columna derecha: stack de fotos */
-.about-right{ position:relative; }
+.about-right{ 
+ position:relative; 
+ display:flex;
+ justify-content: center;
+ align-items: center;
+}
 .about-photo-stack{
   position:relative;
   width: 100%;
   max-width: 760px;
-  aspect-ratio: 16/10; /* genera una caja para el posicionamiento */
+  height: clamp(360px, 60vh, 520px); /* genera una caja para el posicionamiento */
   margin-inline:auto;
 }
 .about-photo{
