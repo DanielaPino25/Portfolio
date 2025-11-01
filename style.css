@@ -754,10 +754,12 @@ body.about{
   max-width: 315px;
 }
 .about-name{
-  margin:0;
+  position: sticky;
+  align-self: start;
+  top: 80px;
   font-weight:500;
   font-size: clamp(40px, 6vw, 64px);
-  line-height:0.92;
+  line-height:1;
   letter-spacing:0.02em;
   font-family: 'Playfair Display', serif;
   bottom:0px;
