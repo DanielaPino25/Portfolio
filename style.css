@@ -764,8 +764,7 @@ body.about{
   font-family: 'Playfair Display', serif;
   box-shadow: 0 0 20px rgba(255,255,255,0.9); /* suaviza los bordes */
   background: #fff;
-  padding: 30px 40px;
-  border-radius: 12px;
+  padding: 50px 60px 25px 25px;
   text-transform: none;
   text-align: left;
 }
@@ -798,7 +797,7 @@ body.about{
   position:relative;
   width: 700px;
   height: 460px;
-  margin: 0 auto;
+  top: 200px;
 }
 .about-photo{
   position:absolute;
