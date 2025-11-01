@@ -953,11 +953,10 @@ body.about{
 
 /* Footer simple */
 .footer{
-  padding: 24px;
+  padding: 10px;
   text-align:center;
   color:var(--muted);
   font-size:14px;
-  border-top:1px solid #eee;
 }
 
 /* ========== Responsivo ========== */
