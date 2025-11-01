@@ -778,6 +778,7 @@ body.about{
 }
 .about-text-block{
   max-width: 520px;
+  top: 200px !important;
   color:#333;
   font-weight:300;
   line-height:1.75;
