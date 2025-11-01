@@ -716,16 +716,23 @@ body.about {
   overflow-y: auto !important;
   overflow-x: hidden;
 }
-.about-wrapper {
-  max-width: 75vw;
-  margin: 0 auto;
-  padding-top: 120px;        /* deja respirar debajo del header fijo */
-  padding-bottom: 120px;
-  position: relative;
-  font-family: 'Poppins', sans-serif;
-  color: var(--text);
-  flex: 1;
+.about-wrapper .resume-section .resume-grid {
+  display: grid !important;
+  grid-template-columns: 1.3fr 1fr 1fr !important; /* 🔹 3 columnas proporcionales */
+  gap: 60px !important; /* espacio entre columnas */
+  align-items: start;
+  justify-content: space-between;
+  width: 100%;
 }
+
+/* Asegura que cada columna se comporte correctamente */
+.about-wrapper .resume-section .resume-grid .resume-column {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 0;
+}
+
 /* Palabra gigante gris de fondo */
 .about-bg-word {
   position: absolute;
