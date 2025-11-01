@@ -743,7 +743,7 @@ body.about {
 /* Palabra gigante gris de fondo */
 .about-bg-word {
   position: absolute;
-  left:800px !important;
+  left:500px !important;
   font-size: 150px;
   font-weight: 500;
   line-height: 1;
@@ -806,7 +806,7 @@ body.about {
   width: 100%;
   height: 100%;
   transform: none !important; 
-  left: 0px !important;
+  left: -500px !important;
   top: 105px !important;
 }
 /* estilo base de cada foto */
@@ -944,9 +944,11 @@ body.about {
 /* ===== RESUME SECTION (debajo del about) ===== */
 .resume-section {
   position: relative;
-  max-width: 75vw;
-  margin: 120px auto 0;      /* empuja esta sección hacia abajo, separada del bloque ABOUT */
-  padding-bottom: 50px;     /* espacio de respiración antes del footer */
+  width: 100%;
+  max-width: 1200px; 
+  margin: 0 auto !important;  
+  padding: 0 40px;
+  box-sizing: border-box;
   color: #4e4e4e;
   font-family: 'Poppins', sans-serif;
 }
@@ -969,16 +971,19 @@ body.about {
 
 /* grid de 3 columnas: Experience / Studies / Skills */
 .resume-grid {
-  display: grid;
-  gap: 50px;
+  display: grid !important;
+  grid-template-columns: 1.2fr 1fr 1fr !important; /* 🔹 3 columnas bien distribuidas */
+  gap: 60px !important;
+  justify-content: center !important;
+  align-items: start;
+  width: 100%;
 }
 /* cada columna */
 .resume-column {
   display: flex;
   flex-direction: column;
-  width: auto !important;
+  width: 100% !important;
   min-width: 0 !important;
-  max-width: none !important;
 }
 
 /* subtítulos tipo "Experience", "Studies", "Skills" */
