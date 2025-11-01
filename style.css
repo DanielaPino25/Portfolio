@@ -799,8 +799,8 @@ body.about{
 }
 /* Tres marcos como en el mockup: izquierda, centro (marcado en azul), derecha */
 .about-photo-a{
-  left:0px;
-  top:40px;
+  left:-10px;
+  top:20px;
   width: 280px;
   height: 370px;
   z-index:1;
@@ -813,7 +813,7 @@ body.about{
   z-index:2;
 }
 .about-photo-c{
-  left: 440px;
+  left: 450px;
   top: 40px;
   width: 280px;
   height: 370px;
