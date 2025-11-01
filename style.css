@@ -746,11 +746,11 @@ body.about{
 }
 /* Columna izquierda */
 .left-rail{ 
-  margin-left: 90px;
+  margin-left: 80px;
   display:flex;
   flex-direction:column;
   gap: clamp(18px, 2.8vw, 28px);
-  max-width: 300px;
+  max-width: 330px;
 }
 .about-name{
   margin:0;
