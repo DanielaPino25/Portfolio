@@ -773,13 +773,14 @@ body.about{
  display:flex;
  justify-content: center;
  align-items: center;
+ width:100% !important;
 }
 .about-photo-stack{
   position:relative;
   width: 100%;
-  max-width: 760px;
+  max-width: 720px;
   height: clamp(360px, 60vh, 520px); /* genera una caja para el posicionamiento */
-  margin-inline:auto;
+  margin: 0 auto;
 }
 .about-photo{
   position:absolute;
