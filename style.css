@@ -736,7 +736,7 @@ body.about {
 /* Palabra gigante gris de fondo */
 .about-bg-word {
   position: absolute;
-  right:0;
+  right:100px !important;
   font-size: 150px;
   font-weight: 500;
   line-height: 1;
