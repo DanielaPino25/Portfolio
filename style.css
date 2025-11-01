@@ -859,7 +859,7 @@ body.about{
   position:relative;
   z-index:1;
   display:grid;
-  grid-template-columns: minmax(320px, 1.2fr) minmax(320px, 1fr) minmax(320px, 1fr);;
+  grid-template-columns: minmax(320px, 1.2fr) minmax(320px, 1fr) minmax(320px, 1fr);
   gap: clamp(48px, 6vw, 90px);
   align-items:start;
   justify-content: space-between;
