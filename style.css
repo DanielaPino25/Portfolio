@@ -755,7 +755,7 @@ body.about{
 .about-name{
   position: sticky;
   align-self: start;
-  top: 50px;
+  top: 80px;
   font-weight:500;
   font-size: clamp(40px, 6vw, 64px);
   line-height:1;
