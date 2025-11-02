@@ -833,7 +833,7 @@ body.about{
 }
 .about-photo-c{
   left: 460px;
-  top: 50px;
+  top: -100px;
   width: 270px;
   height: 370px;
   z-index:3;
