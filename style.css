@@ -782,7 +782,7 @@ body.about{
 }
 .about-text-block{
   max-width: 520px;
-  margin-top: 150px !important;
+  margin-top: 230px !important;
   color:#4e4e4e;
   font-weight:300;
   line-height:1.75;
@@ -832,7 +832,7 @@ body.about{
 }
 .about-photo-c{
   left: 460px;
-  top: 5px;
+  top: 25px;
   width: 270px;
   height: 370px;
   z-index:3;
