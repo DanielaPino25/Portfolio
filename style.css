@@ -819,7 +819,7 @@ body.about{
 /* Tres marcos como en el mockup: izquierda, centro (marcado en azul), derecha */
 .about-photo-a{
   left:-20px;
-  top:100px;
+  top:0px;
   width: 270px;
   height: 370px;
   z-index:1;
