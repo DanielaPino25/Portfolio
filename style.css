@@ -756,7 +756,7 @@ body.about{
   position: fixed;
   align-self: start;
   top:-98px;
-  left: 180px !important;
+  left: 150px !important;
   z-index: 100;
   font-weight:500;
   font-size: clamp(40px, 6vw, 64px);
@@ -782,7 +782,7 @@ body.about{
 }
 .about-text-block{
   max-width: 520px;
-  margin-top: 220px !important;
+  margin-top: 210px !important;
   color:#4e4e4e;
   font-weight:300;
   line-height:1.75;
