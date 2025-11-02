@@ -819,29 +819,31 @@ body.about{
 /* Tres marcos como en el mockup: izquierda, centro (marcado en azul), derecha */
 .about-photo-a{
   left:-20px;
-  top:0px;
-  width: 270px;
+  top:10px;
+  width: 280px;
   height: 370px;
   z-index:1;
 }
 .about-photo-b{
   left: 220px;
   bottom: 80px !important;
-  width: 270px;
+  width: 280px;
   height: 370px;
   z-index:2;
 }
 .about-photo-c{
   left: 460px;
   top: -30px;
-  width: 270px;
+  width: 280px;
   height: 370px;
   z-index:3;
 }
 /* Flecha animada abajo (hint de scroll) */
 .about-scroll-hint{
-  position:relative;
+  position: fixed;
   margin: 40px auto 0;
+  left: 50%;
+  transform: translateX(-50%);
   width:max-content;
   opacity:0.9;
   transition: opacity 0.3s ease;
@@ -854,7 +856,7 @@ body.about{
   font-size: clamp(28px, 3.5vw, 40px);
   animation: bob 1.6s ease-in-out infinite;
   user-select:none;
- color: rgba(0, 0, 0, 0.12);
+ color: rgba(0, 0, 0, 0.15);
 }
 @keyframes bob{
   0%,100%{ transform: translateY(0); }
