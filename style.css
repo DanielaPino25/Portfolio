@@ -849,6 +849,7 @@ body.about{
   transition: opacity 0.3s ease;
   z-index: 250;
   justify-content: center;  /* asegura centrado */
+  bottom: 20px;
 }
 .about-scroll-hint.hidden{ opacity:0; pointer-events:none; }
 .arrow-down{
@@ -875,10 +876,10 @@ body.about{
 .resume-hero-word{
   position:absolute;
   inset: 0;
-  top: clamp(-6px, -1vw, -12px);
-  left:100px;
+  top: -40px;
+  right: 120px;
   margin:0;
-  text-align:center;
+  text-align:right;
   font-family:'Poppins',sans-serif;
   font-weight:500;
   font-size: 150px;
