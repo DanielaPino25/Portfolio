@@ -756,7 +756,7 @@ body.about{
   position: fixed;
   align-self: start;
   top:-98px;
-  left: 150px !important;
+  left: 160px !important;
   z-index: 100;
   font-weight:500;
   font-size: clamp(40px, 6vw, 64px);
@@ -782,7 +782,7 @@ body.about{
 }
 .about-text-block{
   max-width: 520px;
-  top: 0px !important;
+  margin-top: 80px !important;
   color:#4e4e4e;
   font-weight:300;
   line-height:1.75;
@@ -825,7 +825,7 @@ body.about{
 }
 .about-photo-b{
   left: 220px;
-  bottom: 50px !important;
+  bottom: 40px !important;
   width: 270px;
   height: 370px;
   z-index:2;
