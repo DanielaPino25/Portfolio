@@ -899,9 +899,10 @@ body.about{
 .resume-title{
   margin: 0 0 12px 0;
   font-weight:600;
-  letter-spacing:0.06em;
+  letter-spacing:1em;
   text-transform:uppercase;
   font-size: clamp(18px, 2.2vw, 22px);
+  color: var(--accent);
 }
 .resume-list{
   list-style:none;
