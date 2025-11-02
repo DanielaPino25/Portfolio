@@ -843,17 +843,18 @@ body.about{
   position:relative;
   margin: 40px auto 0;
   width:max-content;
-  opacity:0.85;
-  transition: opacity .25s ease;
+  opacity:0.9;
+  transition: opacity 0.3s ease;
   z-index: 250;
+  justify-content: center;  /* asegura centrado */
 }
 .about-scroll-hint.hidden{ opacity:0; pointer-events:none; }
 .arrow-down{
   display:inline-block;
-  font-size: clamp(18px, 3vw, 26px);
+  font-size: clamp(28px, 3.5vw, 40px);
   animation: bob 1.6s ease-in-out infinite;
   user-select:none;
- color: rgba(0, 0, 0, 0.06);
+ color: rgba(0, 0, 0, 0.12);
 }
 @keyframes bob{
   0%,100%{ transform: translateY(0); }
