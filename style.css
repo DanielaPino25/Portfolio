@@ -826,7 +826,7 @@ body.about{
 }
 .about-photo-b{
   left: 220px;
-  bottom: 20px !important;
+  bottom: 80px !important;
   width: 270px;
   height: 370px;
   z-index:2;
