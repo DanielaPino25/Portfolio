@@ -750,7 +750,7 @@ body.about{
   display:flex;
   flex-direction:column;
   gap: clamp(18px, 2.8vw, 28px);
-  max-width: 290px;
+  max-width: 270px;
 }
 .about-name{
   position: fixed;
@@ -833,7 +833,7 @@ body.about{
 }
 .about-photo-c{
   left: 460px;
-  top: 0px;
+  top: 50px;
   width: 270px;
   height: 370px;
   z-index:3;
