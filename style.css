@@ -756,7 +756,7 @@ body.about{
   position: fixed;
   align-self: start;
   top:-98px;
-  left: 160px !important;
+  left: 180px !important;
   z-index: 100;
   font-weight:500;
   font-size: clamp(40px, 6vw, 64px);
